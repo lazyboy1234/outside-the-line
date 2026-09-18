@@ -398,7 +398,6 @@ h1,h2{
     <button type="button" data-step="5">6</button>
     <button type="button" data-step="6">7</button>
     <button type="button" data-step="7">8</button>
-    <button type="button" data-step="8">9</button>
   </nav>
   <button type="button" id="explorebtn">Explore the map</button>
 </header>
@@ -567,15 +566,11 @@ h1,h2{
       <article class="step" data-step="7" hidden aria-label="What we can buy now">
         <p class="beat">What we can buy now</p>
         <div class="facts">
-          <p>We were not inventing a new budget, so the first horizon was the Mott Haven grid, and it could start now through Parks and DEP programs that already had money in them, and East 138th got six open blocks under the street's own tree average with honeylocust, coffeetree, or zelkova in tree-pit rain gardens, and block 10 got plants on the walls with spaced trees, and East 141st, East 132nd, East 135th, and Exterior Street got the same open-crown package, and we kept away from London plane and other dense crowns here becuase a closed roof of leaves would hold highway air at breathing height instead of clearing it, and Southern Blvd and the Cross Bronx frontage on Park, Jerome, and Boone were the next tranche, and Bruckner with Westchester was the medium-term truck corridor, with green medians instead of quiet sidewalk planting alone, and planning-grade i-Tree numbers said the whole corridor program removed about 10.6 pounds of PM2.5 a year and caught about 7.2 million gallons of stormwater, but that PM2.5 number did not cancel a +1.29 µg/m³ highway hit, which was why the lid stayed in the last step.</p>
-          <p class="red-note">We bet our solution was in the Bronx, and the citywide ranking put East 138th in the top three non-overlapping corridors, so that bet held.</p>
-        </div>
-      </article>
-
-      <article class="step" data-step="8" hidden aria-label="Constraint and solutions">
-        <p class="beat">Constraint + solutions</p>
-        <div class="facts">
-          <p class="red-note" id="cost-line">So based on our constraints, we weren't architects, we were data analysts, and we couldn't invent a magic cheap new structure, so we had to use what humanity has already done, and the main issue at Mott Haven by I-87 was the highway trench, becuase exhaust sat at breathing height under and beside the sunken Deegan, and the community sensor that got worse after the fee sat right there, so trees and rain gardens were what we could buy now, and they helped around the edges, but they didn't shut the road off, thus the idea we came up with was to put a lid on the sunken Deegan, so cars stayed under, the top became ground, a park, vents took the exhaust away, other cities already did this (Klyde Warren in Dallas), trees cleaned around it, and the cap locked the pollution under, and our measured stretch estimate was a lid from East 138th to East 149th (~12.9 acres), with public comps about $20M to $90M per acre, so about $250M to $1.2B for this stretch, and those were estimates, becuase nobody had priced this exact span yet, and we still weren't engineers, so exact bay widths, vent stacks, and constructability details stayed open, and the corridor photo showed trucks, towers, thin edge with trees, so the detailing was real work, but the road was already down, so the lid went up, and based on looking at the I-87 section that was most ideal and fit our criteria, this ramp going up was the easiest to build on becuase you could theoretically build a lid, so fumes from that ramp got reduced, light pollution stayed lower if that stretch was more like a covered tunnel, and you separated the highway everyone was blasting through from the common neighborhood road people took home (E 135th / local streets vs I-87), and the lid was later, becuase Deegan is a state road (I-87 / NYSDOT), so the clock was years: FHWA NEPA, city CEQR, maybe ULURP if the top became mapped parkland, so we planted the Mott Haven grid now and put the cap on the table so the real fix had a start date.</p>
+          <p>We didn't invent a new budget. Parks and DEP already had money in them, so we could start planting Mott Haven streets now.</p>
+          <p>Open trees and rain gardens on the open blocks. Wall plants and spaced trees on the canyon block. (look to the right)</p>
+          <p>We skipped dense leafy roofs near the highway. Those trap air at breathing height instead of clearing it.</p>
+          <p>i-Tree said the corridor program removed about 10.6 pounds of PM2.5 a year and caught about 7.2 million gallons of stormwater. That does not cancel a +1.29 µg/m³ highway hit. So the lid stays for later.</p>
+          <p class="red-note" id="cost-line">We weren't architects. The Deegan sits in a trench, exhaust at breathing height, and trees only help around the edges. The bigger move was a lid over that sunken road: cars under, park on top, vents for the fumes (Klyde Warren in Dallas already did this). About East 138th to East 149th, ~12.9 acres, roughly $250M to $1.2B, and those were estimates. Deegan is a state road, so the clock is years. We plant now and put the lid on the table.</p>
           <table class="sit-table">
             <caption>Four options, with estimate ranges.</caption>
             <thead>
@@ -978,7 +973,6 @@ h1,h2{
     {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
     {center:[-73.90, 40.84], zoom:11.2, pitch:0, bearing:0},
     {center:[-73.9242, 40.8092], zoom:14.6, pitch:0, bearing:0},
-    {center:[-73.925, 40.8105], zoom:14.2, pitch:35, bearing:-18},
     {center:[-73.9265, 40.809], zoom:13.4, pitch:0, bearing:0}
   ];
 
@@ -1030,8 +1024,7 @@ h1,h2{
       case 4: show(['crz-line','traffic','traffic-label']); setStoryScroll(true); break;
       case 5: show(['ranktop','ranktop-label','choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
       case 6: show(['place','place-label','site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
-      case 7: show(['place','place-label','bld','seg','trees','site','site-label']); setStoryScroll(false); break;
-      case 8: show(['place','place-label','trees','cap','cap-label']); setStoryScroll(false); break;
+      case 7: show(['place','place-label','bld','seg','trees','cap','cap-label']); setStoryScroll(false); break;
       default: show(['crz-line']); setStoryScroll(false); break;
     }
   }
@@ -1284,7 +1277,7 @@ h1,h2{
     }
     if(exploring) return;
     const n = parseInt(e.key, 10);
-    if(n >= 1 && n <= 9) applyStep(n - 1, true);
+    if(n >= 1 && n <= 8) applyStep(n - 1, true);
   });
   window.addEventListener('resize', () => map.resize());
 })();
