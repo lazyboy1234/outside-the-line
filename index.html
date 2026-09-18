@@ -207,10 +207,14 @@ h1,h2{
 }
 .dset p:last-child{margin:0}
 .plate{
-  height:42vh;
-  min-height:220px;
-  margin:.45rem 0 .2rem;
+  height:62vh;
+  min-height:360px;
+  margin:.55rem 0 .35rem;
   position:relative;
+}
+.plate.tall{
+  height:74vh;
+  min-height:480px;
 }
 .plate img{
   position:absolute;
@@ -228,13 +232,17 @@ h1,h2{
   right:0;
   bottom:0;
   margin:0;
-  padding:.3rem 0 0;
+  padding:.35rem 0 0;
   background:var(--paper);
   color:var(--mute);
-  font-size:12px;
+  font-size:13px;
   line-height:1.35;
 }
-.plate.captioned img{height:calc(100% - 2rem)}
+.plate.captioned{
+  height:68vh;
+  min-height:400px;
+}
+.plate.captioned img{height:calc(100% - 2.4rem)}
 .credit{
   flex:0 0 auto;
   margin:0;
@@ -363,6 +371,18 @@ h1,h2{
   .facts p,
   .lede,
   .dset p{font-size:14px}
+  .plate{
+    height:52vh;
+    min-height:300px;
+  }
+  .plate.tall{
+    height:64vh;
+    min-height:380px;
+  }
+  .plate.captioned{
+    height:56vh;
+    min-height:320px;
+  }
 }
 </style>
 </head>
@@ -452,7 +472,7 @@ h1,h2{
             </tbody>
           </table>
         </div>
-        <figure class="plate captioned" style="height:52vh">
+        <figure class="plate captioned">
           <img src="paper/refs/cornell-npj-fig1.png" alt="Fraser's paper, Figure 1. About 22 percent lower inside the paid zone." width="611" height="685">
           <figcaption>Fraser's paper, Figure 1. The bottom panel is the 22 percent.</figcaption>
         </figure>
@@ -519,7 +539,7 @@ h1,h2{
           </table>
           <p>Southern Blvd comes first on the cleaned list, then East 138th. Southern wins on income, heat, and highway adjacency, but there's no published post-fee monitor on it, so I wouldn't call it a fee-spill street. East 138th is the highest-ranked corridor that also sits on the South Bronx Unite Deegan peak of +1.29 µg/m³.</p>
         </div>
-        <figure class="plate">
+        <figure class="plate tall">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
         </figure>
       </article>
