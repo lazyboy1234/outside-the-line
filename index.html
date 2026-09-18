@@ -147,6 +147,7 @@ h1,h2{
 }
 .facts p:last-child,
 .lede:last-child{margin-bottom:0}
+.facts > .copy:last-child > p:last-child{margin-bottom:0}
 .lede b,
 .facts b{font-weight:700}
 .dsets{margin:0}
@@ -406,107 +407,88 @@ h1,h2{
 <div class="stage">
   <aside class="pane" id="pane">
     <div class="steps">
-      <article class="step is-on" data-step="0" aria-label="Introduction">
-        <p class="beat">Introduction</p>
-        <h1>Congestion pricing didn't dump a detectable car spill on the Bronx. The real hit was local highway air on East 138th next to the Deegan, so we plant now and we put a lid on the table.</h1>
+      <article class="step is-on" data-step="0" data-story="thesis" aria-label="Introduction">
+        <p class="beat"></p>
+        <h1></h1>
         <div class="facts">
-          <p>For some context, the downtown fee was there because Manhattan below 60th was the high-traffic core, and the idea was to push drivers onto the MTA. The open question was whether cars dumped north of that line, where nobody paid.</p>
-          <p>The paid zone stopped at 60th Street, and the Bronx had no fee gates, so the gate file couldn't see Mott Haven at all. The spill question was the bridges. Those crossings were the only vehicle counts we could use to ask whether cars dodged the fee by going north.</p>
-          <p class="red-note">Congestion pricing didn't dump a detectable car spill on the Bronx. The real hit was local highway air on East 138th next to the Deegan. So we plant now, and we put a lid on the table. The next pages are how we prove it.</p>
+          <div class="copy" data-copy="lead"></div>
         </div>
         <figure class="plate">
           <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero." width="927" height="588">
         </figure>
       </article>
 
-      <article class="step" data-step="1" hidden aria-label="Night air">
-        <p class="beat">Body<span class="beat-sub"> / night air</span></p>
-        <h2>Night trucks meant night air next to the highway</h2>
+      <article class="step" data-step="1" data-story="night_trucks" hidden aria-label="Night air">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p id="fee-line">We compared overnight shares in the 2025 fee file, multi-unit trucks against cars. Multi-unit trucks took 31.8 percent of their entries overnight, and cars took 19.7 percent, so the gap was 12.1 points. The null was that those two shares were equal. The chi-square was about 57,241 on 1 degree of freedom, and the p-value was about 0, but the file has entries in the tens of millions, so that p-value would fire on almost any gap. Cramer's V was 0.0185, which is small. The number that proves the claim is the 12.1 point gap, not the p-value. A car paid $9 in the morning and $2.25 at night, so a company would run trucks overnight to cut the cost, and the file lined up with that price.</p>
-          <p>That gap supports the thesis because people next to a highway breathe the overnight load when windows are open and kids are home. The night share was a night air burden on the highway edge, which is the hit we are arguing, not a new car spill. Matching overnight shares would have falsified it. We wouldn't say the trucks moved, because the file had no before, and a before with the same night share would have killed a moved claim. We didn't have that test, so we didn't make that claim. The shares came from MTA fee entries. The spill question needed a before, and the next page is that file.</p>
+          <div class="copy" data-copy="lead"></div>
         </div>
         <figure class="plate">
           <img src="story-art/fig2-trucks.svg" alt="Overnight share of 2025 paid entries. Multi-unit trucks are higher than cars. Not a moved claim." width="1164" height="591">
         </figure>
       </article>
 
-      <article class="step" data-step="2" hidden aria-label="Spill test">
-        <p class="beat">Body<span class="beat-sub"> / spill test</span></p>
-        <h2>Cars didn't dodge the fee through the Bronx</h2>
+      <article class="step" data-step="2" data-story="spill" hidden aria-label="Spill test">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p>Spill meant drivers dodging the downtown fee by taking Bronx bridges instead of the paid zone. The null was that Bronx bridges grew at the same rate as far bridges the fee shouldn't have touched, which is no spill. The alternative was that the Bronx grew faster. We compared year-over-year growth, Bronx bridges against those far bridges, 2025 against 2024. The Bronx grew about 1.04 percentage points slower than the far bridges. The 95 percent interval ran from -3.6 to +1.6, and the p-value was about 0.49. The interval crossed zero and the p-value was high, so we failed to reject the null. There was no statistically significant evidence of a spill.</p>
-          <p>That result supports the first line of the thesis. A detectable car dump would have been a positive gap, the Bronx growing faster, with the interval sitting above zero. What we got was a gap the wrong way, and a test that couldn't call it different from zero. Shuffling the labels gave the same null. An interval entirely above zero, or a p-value under 0.05 with the Bronx growing faster, would have falsified the no-spill claim.</p>
-          <p>We ran the same comparison on the tunnels that go into the paid zone. Those tunnels came in 2.29 points below the far bridges, and the interval ran from -3.4 to -1.2, so it stayed below zero. January was the biggest drop, at -9.18 points. An interval that crossed zero on the tunnels would have meant the test couldn't see the fee where cars actually pay. It could see it there, and it couldn't see a Bronx spill. Counts came from MTA Bridges and Tunnels. The Bronx case wasn't a new car load. The next page is the air that was already on the Deegan edge.</p>
+          <div class="copy" data-copy="lead"></div>
         </div>
         <figure class="plate">
           <img src="story-art/fig3-did.svg" alt="Bronx bridges stay about flat while tunnels into the paid zone drop." width="1152" height="683">
         </figure>
       </article>
 
-      <article class="step" data-step="3" hidden aria-label="The air">
-        <p class="beat">Body<span class="beat-sub"> / the air</span></p>
-        <h2>The Deegan rose locally, not as a citywide background rise</h2>
+      <article class="step" data-step="3" data-story="air" hidden aria-label="The air">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p class="red-note">We had no other-city air control. The control we used was the city's own. DOHMH treated the Van Wyck as a highway the fee should not have touched, and over a year they found no fee-sized change they could call.</p>
-          <p>What we compared was the Deegan community sensor by the Third Avenue Bridge against that Van Wyck control, against the South Bronx Unite network, and against downtown monitors inside the paid zone. South Bronx Unite ran 19 community sensors, 2024 against 2025. Twelve to fourteen went up. The mean rise across those 19 was only +0.22 µg/m³. The Deegan edge jumped +1.29 µg/m³, right next to East 138th. If the Bronx were just riding a shared background, the Deegan wouldn't stick out that far above the local mean.</p>
-          <p>Downtown moved the other way. Fraser's paper, Figure 1, showed the paid zone about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That 22 percent is Fraser's Figure 1, and it is only inside the zone. Barber's thesis, Table A.8, showed downtown falling from 8.70 to 7.56, which was 13 percent. That 13 percent is Barber's Table A.8, not Fraser's 22 percent. DOHMH also noted traffic was only about 14 percent of PM2.5 here. Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six, so the street answered to the Deegan sensor we could name, not to the zone's 22 percent in Fraser's Figure 1.</p>
-          <p>The +1.29 supports the thesis because the real hit was local highway air, not a citywide background rise and not a car spill. If the rise were weather or a global background, the Van Wyck and the 19-sensor mean would have jumped with the Deegan, and downtown would have risen too. The controls stayed small, and downtown fell. What would have falsified the local-hit claim was a Deegan change about the size of that +0.22 mean, a fee-sized change on the Van Wyck, or downtown rising with the Deegan. The next page is why those controls were the right ones to trust.</p>
+          <div class="copy" data-copy="lead"></div>
           <table class="sit-table">
-            <caption>What rose, what fell, what the control said.</caption>
+            <caption data-caption="air"></caption>
             <thead>
               <tr><th>Place</th><th>What happened</th></tr>
             </thead>
-            <tbody>
-              <tr><td>Paid zone (Fraser, Figure 1)</td><td>About 22% lower vs no-fee model</td></tr>
-              <tr><td>Downtown (Barber, Table A.8)</td><td>13% lower (8.70 to 7.56)</td></tr>
-              <tr><td>SBU network mean</td><td>+0.22 across 19 sensors</td></tr>
-              <tr><td>Deegan / Third Ave Bridge</td><td>+1.29 (peak sensor)</td></tr>
-              <tr><td>Van Wyck (DOHMH control)</td><td>No fee-sized change DOHMH could call</td></tr>
-            </tbody>
+            <tbody data-table="air"></tbody>
           </table>
         </div>
         <figure class="plate captioned">
           <img src="paper/refs/cornell-npj-fig1.png" alt="Fraser's paper, Figure 1. About 22 percent lower inside the paid zone." width="611" height="685">
-          <figcaption>Fraser's paper, Figure 1. The bottom panel is the 22 percent, and it is only inside the paid zone.</figcaption>
+          <figcaption data-cap="0"></figcaption>
         </figure>
         <figure class="plate">
           <img src="story-art/cornell/table-a8-summary.png" alt="Barber Table A.8. PM2.5 8.70 to 7.56, minus 13 percent. Not Fraser's 22 percent." width="1366" height="422">
         </figure>
       </article>
 
-      <article class="step" data-step="4" hidden aria-label="The controls">
-        <p class="beat">Body<span class="beat-sub"> / the controls</span></p>
-        <h2>The controls were the places the fee shouldn't have moved</h2>
+      <article class="step" data-step="4" data-story="controls" hidden aria-label="The controls">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p>The spill test only proves no detectable car dump if the control is a set of crossings the fee doesn't touch. We used the far bridges, not the tunnels that enter the paid zone. Bronx bridges against those far bridges, 2025 against 2024, is the comparison on the spill page. The Bronx grew about 1.04 percentage points slower, the 95 percent interval ran from -3.6 to +1.6, and the p-value was about 0.49, so we failed to reject the null of no spill. Using the paid-zone tunnels as the control would have faked that test. We ran those tunnels as the positive check instead, and their interval stayed below zero, from -3.4 to -1.2. Counts came from MTA Bridges and Tunnels. An interval entirely above zero on the Bronx comparison would have falsified this page.</p>
-          <p>The fee file couldn't be that test. MTA fee entries started on day one, and the Bronx had no gates in it, so it can describe the 12.1 point overnight gap and it can't see a spill. We looked for a South Bronx street in the DOT counts that was counted both before and after the fee, and we didn't find one, so we didn't invent a block-level spill test. A before in the gate file, or a paired DOT street, would have been a different test. We didn't have either, so we didn't pretend we did.</p>
-          <p>The air claim only holds if a highway the fee shouldn't touch stayed put while the Deegan jumped. DOHMH's Van Wyck control had no fee-sized change. The Deegan community sensor was +1.29 µg/m³ against a South Bronx Unite mean of +0.22 across 19 sensors. Downtown went the other way. Fraser's paper, Figure 1, is the about 22 percent inside the paid zone, and Barber's thesis, Table A.8, is the 13 percent from 8.70 to 7.56. We had no other-city air control. Mixing those into one percent would have faked a citywide story the files don't support. A Deegan change about the size of +0.22, or a fee-sized Van Wyck change, would have falsified the local hit.</p>
-          <p>The street files scored people, not a traffic change. Buildings and the 2015 tree census measured the block. The street centerline was every segment we scored. Equal weights were 1/8 on eight factors, then we renormalized. Burden used income, asthma ED, heat, and highway exposure, because an empty street shouldn't win. A score that ignored who lived there would have falsified the ranking we're about to show. The next page is that ranking.</p>
+          <div class="copy" data-copy="lead"></div>
         </div>
       </article>
 
-      <article class="step" data-step="5" hidden aria-label="Who sits on the edge">
-        <p class="beat">Body<span class="beat-sub"> / the people</span></p>
-        <h2>Scores ranked people on the highway edge, not empty streets</h2>
+      <article class="step" data-step="5" data-story="scores" hidden aria-label="Who sits on the edge">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p>The spill test said cars didn't dump onto Bronx bridges, so we still had to pick where to plant. We scored about 99,357 streets from the city's street file into 33,785 stretches. Junk stubs and zoo roads got filtered out first. Equal weights put 1/8 on each of eight factors, then we renormalized. Burden pushed the people inputs higher, health, income, and heat at 0.15 each, exposure at 0.15, and the monitor at 0.10. Feasibility pushed plantable streets instead, height-to-width, canopy gap, and exposure at 0.20 each.</p>
-          <p>We didn't invent a head count. People entered through the inputs we already had: PUMA median income, poverty, and NFH; asthma ER rates by neighborhood; heat; and how close a street sat to a highway, ramp, or bridge landing. Four Mott Haven and Melrose census tracts next to the design site held about 14,525 people, and 94 to 100 percent of them were low- or moderate-income in the city's CDBG file. Adults in Hunts Point and Mott Haven went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Those numbers support burden weights because the score was ranking people who already breathe the corridor, not empty asphalt. Citywide asthma and citywide income on that same edge would have falsified the population case. We saw B01 needed the support; $15,510 median income was crazy, and that was another reason the burden weights belonged in the score.</p>
-          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor was 22 of 33,785 (99.94th percentile), third if you only counted non-overlapping corridors, and burden said the same thing, but feasibility knocked it to non-overlap #13, and it sat on the Deegan +1.29 monitor.</p>
+          <div class="copy" data-copy="lead"></div>
           <table class="sit-table">
-            <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
+            <caption data-caption="rank"></caption>
             <thead>
               <tr><th>#</th><th>Street</th><th>Neighborhood</th><th>Score</th><th>Asthma ED</th><th>HVI</th><th>Monitor</th></tr>
             </thead>
             <tbody id="rank-equal-body"></tbody>
           </table>
-          <p>That rank supports East 138th because it stayed in the top three non-overlapping corridors and it sat on the named +1.29 hit. What would have falsified the pick was equal weights and burden weights both dropping it out of that top set, or the +1.29 sensor sitting on another corridor. Southern Blvd won the cleaned list on income, heat, and highway adjacency, but Monitor was blank because there was no published post-fee air monitor there. A named air hit on Southern Blvd would have flipped the pick. We planted a Mott Haven grid, not one street alone. East 138th stayed the spine, because it is the bridge landing, the Deegan exit, and the worst community sensor, and East 141st, East 132nd, East 135th, and Exterior Street sat next to it on the same scan. The next page is why that spine, block by block.</p>
+          <div class="copy" data-copy="mid"></div>
           <div id="choices-list" class="dsets"></div>
-          <p>Midtown Broadway stayed inside the fee. The Van Wyck was the city's fee control, and we had no other-city air control. Lower-burden corridors lost once income, asthma, and heat were in the score. A ranking that put those corridors first would have meant the burden weights weren't doing the job.</p>
+          <div class="copy" data-copy="tail"></div>
         </div>
         <figure class="plate rank captioned">
           <img src="story-art/household-income-nyc.jpg" alt="Household income choropleth across NYC districts. Bronx runs darker, lower income." width="1024" height="584">
-          <figcaption>We looked at household income across districts as context for burden (Bronx ran darker / lower income). That wasn't a scoring input; our score used PUMA median income and NFH from the derived data.</figcaption>
+          <figcaption data-cap="0"></figcaption>
         </figure>
         <figure class="plate rank">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
@@ -516,52 +498,40 @@ h1,h2{
         </figure>
       </article>
 
-      <article class="step" data-step="6" hidden aria-label="The street">
-        <p class="beat">Body<span class="beat-sub"> / the street</span></p>
-        <h2>East 138th sat on the named air hit next to the Deegan</h2>
+      <article class="step" data-step="6" data-story="location" hidden aria-label="The street">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p>We compared the top corridors against the one place that had a named post-fee air hit. The spill test had already failed to reject no-spill, and the Deegan jump was local, not a shared citywide rise, so the street had to be Bronx and it had to sit on that sensor. The top options were Bronx. East 138th was the closest of those to the paid zone, and it lined up with the bridge counts and the air file we already had. Other hot corridors were harder because trees were already there. Money was already going toward Deegan road work, which helped the case for staying on this trench.</p>
-          <p>East 138th is where the Third Avenue Bridge lands in the Bronx, and it is where the Major Deegan exit dumps into the neighborhood, so the street takes bridge traffic and highway traffic at the same time. The community sensor that got worse after the fee sits at the Deegan by that bridge, at +1.29 µg/m³. The city's own Mott Haven monitor sits on East 135th, about 330 meters south, and it was never one of Fraser's six, so Fraser's Figure 1 (about 22 percent inside the zone) was not measured here. The street runs 1.6 km through Hunts Point, Longwood, and Melrose, about 40 meters wide face to face, with a median height-to-width of 0.38, so nine of ten blocks were open enough for trees to work. Adults here went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Heat was 5 out of 5, and poverty was 29.3 percent. Those numbers say the street deserved the work first. They can't pick one block over another. A +1.29 sensor on a different landing, or a top set that wasn't Bronx, would have falsified this street.</p>
+          <div class="copy" data-copy="lead"></div>
           <table class="sit-table" id="tree-pick-table">
-            <caption>Ten scored 120 m blocks on East 138th, by score. Gap is living trees minus the street's own mean of 7 per block.</caption>
+            <caption data-caption="blocks"></caption>
             <thead>
               <tr><th>Block</th><th>H/W</th><th>Living trees</th><th>Gap vs 7</th><th>Score</th><th>Pick</th></tr>
             </thead>
             <tbody id="tree-pick-body"></tbody>
           </table>
-          <p>The null on the blocks was that living trees were spread evenly, about 7 per block, and they weren't, with a chi-square of 58.86 and a p-value of 2.2e-9, so we rejected even spread. That supports planting the open blocks under the street's own average, which were 4, 3, 9, 5, 12, and 11, because the trees were clustered and those blocks were the gap. A p-value above 0.05 would have falsified that pick and left us with a blanket plant. The one block at height-to-width 0.58 got wall plants plus spaced trees instead of a full row, because a closed roof there would trap air. Blocks on the map followed the real street centerline, so they sat on the road and not through buildings. The next page is what we can do now, and what we can't pretend trees will fix.</p>
+          <div class="copy" data-copy="tail"></div>
         </div>
         <figure class="plate tall captioned">
           <img src="story-art/far-zoning-nyc-2020.jpg" alt="FAR Zoning Map NYC 2020. Max floor area ratio across the five boroughs, red low to blue high." width="1015" height="1024">
-          <figcaption>We looked at FAR zoning intensity across the city as context for how built-up places were. That wasn't our H/W score, but it was the related density picture.</figcaption>
+          <figcaption data-cap="0"></figcaption>
         </figure>
         <figure class="plate">
           <img src="story-art/fig4-canyon.svg" alt="East 138th Street: nine blocks can take trees, one tall-narrow block needs walls." width="1367" height="521">
         </figure>
       </article>
 
-      <article class="step" data-step="7" hidden aria-label="Counters and conclusion">
-        <p class="beat">Counters<span class="beat-sub"> / conclusion</span></p>
-        <h2>We plant now, and we put a lid on the table</h2>
+      <article class="step" data-step="7" data-story="close" hidden aria-label="Counters and conclusion">
+        <p class="beat"></p>
+        <h2></h2>
         <div class="facts">
-          <p>We didn't invent a new budget. Parks and DEP already had money in them, so we could start planting Mott Haven streets now. We put open trees and rain gardens on the open blocks, and the map shows where. We skipped dense leafy roofs near the highway, because those trap air at breathing height instead of clearing it. A roof that cleared the trench would have stayed in the plan, and this one doesn't, so we left it out.</p>
-          <p>We ran i-Tree on the corridor program and compared that removal to the highway hit. It removed about 10.6 pounds of PM2.5 a year and caught about 7.2 million gallons of stormwater. Those numbers don't cancel +1.29 µg/m³, because a few pounds a year isn't a concentration jump on the Deegan edge. An i-Tree removal on the scale of that +1.29 would have meant the trees were the fix, and we would have stopped there. The removal wasn't on that scale, so the trees are the now move, and the lid stays on the table.</p>
-          <p class="red-note" id="cost-line">We weren't architects. The Major Deegan, I-87, sits in a sunken trench through Mott Haven, so exhaust stays at breathing height on the neighborhood edge. A Deegan lid is a deck over that trench. Cars keep running underneath, and a park sits on top, with vents for the fumes. We compared that job to Klyde Warren Park in Dallas, Phase I, which was about $110 million to $112 million for about 5.2 to 5.4 acres, opened in 2012. That was the park deck, not a $2.5 billion highway program. A later Phase 2 expansion is a separate roughly $100 million to $125 million deck job. Our stretch ran about East 138th to East 149th, roughly 12.9 acres. At about $20 million to $90 million per acre from public U.S. lid comparisons, the band is about $250 million to $1.2 billion, and those were estimates. Dallas at about $21 million an acre sits near the low end of that band. A lid priced like pocket change would have killed the case that this takes years. A Phase I sticker of $2.5 billion would have killed the Dallas comparison, and Phase I was about $110 million to $112 million, so that objection fails too. Trees only help around the edges of the trench. They don't cover the highway. The Deegan is a state road, so the clock is years.</p>
-          <p>People will say the air rise was just weather or a global background. That fails because the Van Wyck had no fee-sized change, the South Bronx Unite mean was +0.22 µg/m³, the Deegan jumped +1.29, and downtown fell. Fraser's paper, Figure 1, is the about 22 percent inside the paid zone. Barber's thesis, Table A.8, is the 13 percent, 8.70 to 7.56. We had no other-city air control, and the within-city controls still didn't move with the Deegan.</p>
-          <p>People will say cars spilled north to dodge the fee. That fails because the null was no difference in growth, Bronx bridges against far bridges. The estimate was about 1.04 percentage points slower, the 95 percent interval ran from -3.6 to +1.6, and the p-value was about 0.49. The interval crossed zero, so we didn't reject the null. Counts came from MTA Bridges and Tunnels.</p>
-          <p>People will say trees fix the highway. That fails because about 10.6 pounds of PM2.5 a year doesn't cancel +1.29 µg/m³.</p>
-          <p>People will say Dallas cost $2.5 billion, so a lid is fantasy. That fails because Klyde Warren Phase I was about $110 million to $112 million for about 5.2 to 5.4 acres, not $2.5 billion. Our band is $250 million to $1.2 billion for about 12.9 acres, and Dallas at about $21 million an acre sits near the low end. It is still years, and the Deegan is a state road. We plant now.</p>
-          <p class="red-note">Congestion pricing didn't hand the Bronx a car spill we could detect. The hit we could name was local highway air on East 138th next to the Deegan. The spill interval crossed zero, the Deegan jumped while the Van Wyck and the sensor mean stayed small, downtown got cleaner, the people on that edge were already there, and 10.6 pounds a year doesn't cover the trench. We plant now, and we put a lid on the table.</p>
+          <div class="copy" data-copy="lead"></div>
           <table class="sit-table">
-            <caption>Three options, with estimate ranges.</caption>
+            <caption data-caption="options"></caption>
             <thead>
               <tr><th>Option</th><th>Estimate</th><th>Our call</th></tr>
             </thead>
-            <tbody>
-              <tr><td>Street trees</td><td id="est-trees">about $2,500 to $4,000 each</td><td>Now</td></tr>
-              <tr><td>Rain gardens</td><td id="est-gi">about $40,000 to $50,000 each</td><td>Now, with the trees</td></tr>
-              <tr><td>Deegan cap / lid</td><td id="est-lid">about $250M to $1.2B</td><td>Later, locks pollution under the sunken road</td></tr>
-            </tbody>
+            <tbody data-table="options"></tbody>
           </table>
         </div>
         <figure class="plate">
@@ -569,19 +539,19 @@ h1,h2{
         </figure>
         <figure class="plate captioned">
           <img src="story-art/refs/deegan-corridor-room.png" alt="Sunken Major Deegan corridor with trucks and towers. The road sits below grade, so a lid decks upward over it." width="1280" height="720">
-          <figcaption>Deegan trench near Mott Haven. Road is already below grade, so a lid goes up over it; exact bays and vents are engineering, not our call.</figcaption>
+          <figcaption data-cap="0"></figcaption>
         </figure>
         <figure class="plate tall captioned">
           <img src="story-art/deegan-e135-wall.jpg" alt="E 135th Street beside the Deegan retaining wall, with The Motto building across the way." width="1024" height="579">
-          <figcaption>E 135th beside the Deegan wall. Neighborhood street on one side, highway grade on the other.</figcaption>
+          <figcaption data-cap="1"></figcaption>
         </figure>
         <figure class="plate tall captioned">
           <img src="story-art/deegan-ramp-wall.jpg" alt="Tall brick ramp wall along the local street next to the I-87 edge, white box truck for scale." width="1024" height="674">
-          <figcaption>Ramp wall at the I-87 edge. The barrier that a lid would sit over, street traffic still at the base.</figcaption>
+          <figcaption data-cap="2"></figcaption>
         </figure>
         <figure class="plate tall captioned">
           <img src="story-art/deegan-i87-motto.jpg" alt="I-87 traffic looking toward The Motto building and the Willis Ave / Third Ave Bridge signs." width="1024" height="418">
-          <figcaption>I-87 looking toward The Motto. The stretch where covering the road would cut fumes and light from the neighborhood edge.</figcaption>
+          <figcaption data-cap="3"></figcaption>
         </figure>
       </article>
     </div>
@@ -616,14 +586,11 @@ h1,h2{
 </div>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="data/story.js"></script>
 <script src="data/bundle.js"></script>
 <script>
 (function(){
   const D = window.OTL;
-  if(!D){
-    document.body.insertAdjacentHTML('afterbegin', '<p style="padding:1rem">The map data did not load.</p>');
-    return;
-  }
 
   function usd(n){
     const whole = Math.abs(n - Math.round(n)) < 1e-9;
@@ -638,22 +605,108 @@ h1,h2{
     }
     return '$' + Math.round(n/1e6) + ' million';
   }
-  (function fillCost(){
-    const C = D.policy_cost;
-    if(!C) return;
-    const p = C.cbdtp && C.cbdtp.phase1_ezpass_usd;
-    const fee = document.getElementById('fee-line');
-    if(fee && p){
-      fee.innerHTML = 'We compared overnight shares in the 2025 fee file, multi-unit trucks against cars. Multi-unit trucks took 31.8 percent of their entries overnight, and cars took 19.7 percent, so the gap was 12.1 points. The null was that those two shares were equal. The chi-square was about 57,241 on 1 degree of freedom, and the p-value was about 0, but the file has entries in the tens of millions, so that p-value would fire on almost any gap. Cramer\'s V was 0.0185, which is small. The number that proves the claim is the 12.1 point gap, not the p-value. A car paid ' + usd(p.car_peak) + ' in the morning and ' + usd(p.car_overnight) + ' at night, so a company would run trucks overnight to cut the cost, and the file lined up with that price.';
+  function storyCtx(){
+    const ctx = {};
+    const cost = D && D.policy_cost && D.policy_cost.cbdtp && D.policy_cost.cbdtp.phase1_ezpass_usd;
+    if(cost){
+      ctx.car_peak = usd(cost.car_peak);
+      ctx.car_overnight = usd(cost.car_overnight);
     }
-    // Keep the solutions narrative in #cost-line. Table cells stay as estimate ranges.
-    const treeCell = document.getElementById('est-trees');
-    const giCell = document.getElementById('est-gi');
-    const lidCell = document.getElementById('est-lid');
-    if(treeCell) treeCell.textContent = 'about $2,500 to $4,000 each';
-    if(giCell) giCell.textContent = 'about $40,000 to $50,000 each';
-    if(lidCell) lidCell.textContent = 'about $250M to $1.2B';
-  })();
+    const eq = D && D.citywide && D.citywide.e138 && D.citywide.e138.by_weights && D.citywide.e138.by_weights.equal;
+    if(eq){
+      ctx.rank_all = eq.rank_all.toLocaleString();
+      ctx.n_windows = D.citywide.e138.n_windows.toLocaleString();
+      ctx.percentile = String(eq.percentile);
+      ctx.nonoverlap = eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap);
+      ctx.feas_rank = String(D.citywide.e138.by_weights.feasibility.rank_nonoverlap);
+    }
+    return ctx;
+  }
+  function renderStory(){
+    const S = window.STORY;
+    if(!S){
+      document.body.insertAdjacentHTML('afterbegin', '<p style="padding:1rem">The story dictionary did not load.</p>');
+      return;
+    }
+    const ctx = storyCtx();
+    document.querySelectorAll('article.step[data-story]').forEach(article => {
+      const key = article.dataset.story;
+      const section = key === 'thesis' ? S.thesis : S.sections[key];
+      if(!section) return;
+      const beat = article.querySelector('.beat');
+      if(beat){
+        beat.replaceChildren(document.createTextNode(section.beat || ''));
+        if(section.beatSub){
+          const sub = document.createElement('span');
+          sub.className = 'beat-sub';
+          sub.textContent = ' / ' + section.beatSub;
+          beat.appendChild(sub);
+        }
+      }
+      const head = article.querySelector('h1, h2');
+      if(head && section.headline) head.textContent = section.headline;
+      const slots = {};
+      article.querySelectorAll('[data-copy]').forEach(el => { slots[el.dataset.copy] = el; });
+      Object.keys(slots).forEach(name => slots[name].replaceChildren());
+      (section.render || []).forEach(item => {
+        const slot = slots[item.slot] || slots.lead;
+        if(!slot) return;
+        const p = document.createElement('p');
+        if(item.note) p.className = 'red-note';
+        if(item.id) p.id = item.id;
+        p.textContent = S.fill(item.text, ctx);
+        slot.appendChild(p);
+      });
+      const caps = article.querySelectorAll('figcaption[data-cap]');
+      (section.captions || []).forEach((text, i) => {
+        if(caps[i]) caps[i].textContent = text;
+      });
+    });
+    const air = S.sections.air.table;
+    const airCap = document.querySelector('[data-caption="air"]');
+    const airBody = document.querySelector('[data-table="air"]');
+    if(airCap && air) airCap.textContent = air.caption;
+    if(airBody && air){
+      airBody.replaceChildren();
+      air.rows.forEach(row => {
+        const tr = document.createElement('tr');
+        row.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        airBody.appendChild(tr);
+      });
+    }
+    const opt = S.sections.close.options;
+    const optCap = document.querySelector('[data-caption="options"]');
+    const optBody = document.querySelector('[data-table="options"]');
+    if(optCap && opt) optCap.textContent = opt.caption;
+    if(optBody && opt){
+      optBody.replaceChildren();
+      opt.rows.forEach(row => {
+        const tr = document.createElement('tr');
+        const name = document.createElement('td');
+        name.textContent = row.name;
+        const estimate = document.createElement('td');
+        estimate.id = row.id;
+        estimate.textContent = row.estimate;
+        const call = document.createElement('td');
+        call.textContent = row.call;
+        tr.append(name, estimate, call);
+        optBody.appendChild(tr);
+      });
+    }
+    const rankCap = document.querySelector('[data-caption="rank"]');
+    if(rankCap) rankCap.textContent = S.sections.scores.rankCaption;
+    const blockCap = document.querySelector('[data-caption="blocks"]');
+    if(blockCap) blockCap.textContent = S.sections.location.blockCaption;
+  }
+  renderStory();
+  if(!D){
+    document.body.insertAdjacentHTML('afterbegin', '<p style="padding:1rem">The map data did not load.</p>');
+    return;
+  }
   (function fillTreeSiting(){
     const T = D.tree_siting;
     const tb = document.getElementById('tree-siting-body');
@@ -691,11 +744,6 @@ h1,h2{
   (function fillCitywide(){
     const C = D.citywide;
     if(!C) return;
-    const er = document.getElementById('e138-rank-line');
-    if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
-      const eq = C.e138.by_weights.equal;
-      er.textContent = 'Under equal weights the best half-coverage window on our corridor was ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile), ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' if you only counted non-overlapping corridors, and burden said the same thing, but feasibility knocked it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + ', and it sat on the Deegan +1.29 monitor.';
-    }
     const rb = document.getElementById('rank-equal-body');
     if(rb && C.rankings && C.rankings.equal){
       rb.innerHTML = C.rankings.equal.map(r => {
