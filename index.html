@@ -69,46 +69,6 @@ button{font:inherit;color:inherit}
   color:var(--paper);
 }
 .nums button:hover:not(.is-on){background:#f3f1ec}
-#explorebtn{
-  border:1.5px solid var(--ink);
-  background:var(--paper);
-  padding:.55rem .9rem;
-  font-weight:600;
-  font-size:14px;
-  line-height:1;
-  cursor:pointer;
-  white-space:nowrap;
-}
-#explorebtn:hover{background:var(--ink);color:var(--paper)}
-
-.explorebar{
-  display:none;
-  flex:0 0 auto;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  padding:.65rem 1rem;
-  border-bottom:1px solid var(--rule);
-  background:var(--paper);
-}
-.explore-on .explorebar{display:flex}
-.explore-on .top{display:none}
-.explore-on{overflow:hidden}
-#closeexplore{
-  border:1.5px solid var(--ink);
-  background:var(--paper);
-  padding:.55rem .9rem;
-  font-weight:600;
-  font-size:14px;
-  line-height:1;
-  cursor:pointer;
-}
-#closeexplore:hover{background:var(--ink);color:var(--paper)}
-.explorebar p{
-  margin:0;
-  color:var(--mute);
-  font-size:13px;
-}
 
 .stage{
   flex:1;
@@ -241,6 +201,20 @@ h1,h2{
   min-height:480px;
 }
 .plate.tall.captioned img{height:calc(100% - 3.2rem)}
+
+/* Rankings step (button 6 / data-step 5): oversized plates */
+.step[data-step="5"] .plate,
+.plate.rank{
+  height:84vh;
+  min-height:640px;
+}
+.step[data-step="5"] .plate.captioned,
+.plate.rank.captioned{
+  height:86vh;
+  min-height:680px;
+}
+.step[data-step="5"] .plate.captioned img,
+.plate.rank.captioned img{height:calc(100% - 3.2rem)}
 .credit{
   flex:0 0 auto;
   margin:0;
@@ -290,8 +264,6 @@ h1,h2{
   box-shadow:0 0 0 1px var(--ink);
   border-radius:50%;
 }
-.explore-on .pane,
-.explore-on .rule{display:none}
 
 .maplibregl-ctrl-attrib{
   font-weight:400;
@@ -304,7 +276,6 @@ h1,h2{
 .maplibregl-ctrl-bottom-left,
 .maplibregl-ctrl-top-left,
 .maplibregl-ctrl-top-right{display:none}
-.explore-on .maplibregl-ctrl-top-right{display:block}
 .maplibregl-popup-content{
   font-weight:400;
   font-size:15px;
@@ -354,7 +325,6 @@ h1,h2{
   .top{gap:.5rem;padding:.5rem .6rem}
   .nums{gap:.3rem}
   .nums button{width:1.9rem;height:1.9rem;font-size:13px}
-  #explorebtn{padding:.5rem .6rem;font-size:12px}
   .stage{flex-direction:column}
   .pane{
     flex:0 0 58%;
@@ -384,6 +354,17 @@ h1,h2{
     height:64vh;
     min-height:380px;
   }
+
+  .step[data-step="5"] .plate,
+  .plate.rank{
+    height:78vh;
+    min-height:480px;
+  }
+  .step[data-step="5"] .plate.captioned,
+  .plate.rank.captioned{
+    height:80vh;
+    min-height:520px;
+  }
 }
 </style>
 </head>
@@ -399,13 +380,8 @@ h1,h2{
     <button type="button" data-step="6">7</button>
     <button type="button" data-step="7">8</button>
   </nav>
-  <button type="button" id="explorebtn">Explore the map</button>
 </header>
 
-<div id="explorebar" class="explorebar">
-  <p>Tap a dot and you get one sentence.</p>
-  <button type="button" id="closeexplore">Close</button>
-</div>
 
 <div class="stage">
   <aside class="pane" id="pane">
@@ -529,14 +505,14 @@ h1,h2{
           <p>Midtown Broadway stayed inside the fee, and the Van Wyck was the city's control, and lower-burden corridors lost once income, asthma, and heat were in the score.</p>
           <p>We saw B01 needed the support; $15,510 median income was crazy.</p>
         </div>
-        <figure class="plate tall captioned">
+        <figure class="plate rank captioned">
           <img src="story-art/household-income-nyc.jpg" alt="Household income choropleth across NYC districts. Bronx runs darker, lower income." width="1024" height="584">
           <figcaption>We looked at household income across districts as context for burden (Bronx ran darker / lower income). That wasn't a scoring input; our score used PUMA median income and NFH from the derived data.</figcaption>
         </figure>
-        <figure class="plate tall">
+        <figure class="plate rank">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
         </figure>
-        <figure class="plate">
+        <figure class="plate rank">
           <img src="story-art/map-citywide-heat.png" alt="Citywide heat map of corridor scores across four boroughs, with East 138th outlined." width="1200" height="1200">
         </figure>
       </article>
@@ -937,7 +913,6 @@ h1,h2{
   map.touchZoomRotate.disable();
   map.doubleClickZoom.disable();
 
-  const nav = new maplibregl.NavigationControl({showCompass:false});
   const popup = new maplibregl.Popup({offset:14, closeButton:true, closeOnClick:true, maxWidth:'17rem'});
 
   const ALL = [
@@ -956,7 +931,7 @@ h1,h2{
   const rankLegend = document.getElementById('ranklegend');
 
   function setStoryScroll(on, lg){
-    if(on || exploring) map.scrollZoom.enable();
+    if(on) map.scrollZoom.enable();
     else map.scrollZoom.disable();
     const which = on ? (lg || 'traffic') : null;
     if(legend) legend.hidden = which !== 'traffic';
@@ -978,8 +953,6 @@ h1,h2{
 
   let ready = false;
   let current = -1;
-  let exploring = false;
-
   function show(ids){
     if(!ready) return;
     ALL.forEach(id => {
@@ -1009,7 +982,6 @@ h1,h2{
   }
 
   function applyStep(i, force){
-    if(exploring && !force) return;
     if(ready && i === current && !force) return;
     current = i;
     markStep(i);
@@ -1048,41 +1020,6 @@ h1,h2{
     map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
   }
 
-  function setExplore(on){
-    exploring = on;
-    document.body.classList.toggle('explore-on', on);
-    document.getElementById('explorebtn').setAttribute('aria-expanded', on ? 'true' : 'false');
-    if(popup.isOpen()) popup.remove();
-    if(on){
-      map.stop();
-      map.scrollZoom.enable();
-      map.doubleClickZoom.enable();
-      map.touchZoomRotate.enable();
-      map.touchZoomRotate.disableRotation();
-      if(legend) legend.hidden = true;
-      if(siteLegend) siteLegend.hidden = true;
-      if(airLegend) airLegend.hidden = true;
-      if(rankLegend) rankLegend.hidden = true;
-      if(!map.hasControl(nav)) map.addControl(nav, 'top-right');
-      show(['crz-fill','crz-line','gates','fac','fac-label']);
-      const bounds = new maplibregl.LngLatBounds();
-      D.bt.facilities.forEach(f => bounds.extend([f.lon, f.lat]));
-      D.crz.gates.forEach(g => bounds.extend([g.lon, g.lat]));
-      map.resize();
-      map.fitBounds(bounds, {padding:{top:72, bottom:72, left:72, right:96}, duration:REDUCED?0:800, essential:true, maxZoom:9.7});
-      document.getElementById('closeexplore').focus();
-    }else{
-      map.scrollZoom.disable();
-      map.doubleClickZoom.disable();
-      map.touchZoomRotate.disable();
-      if(map.hasControl(nav)) map.removeControl(nav);
-      const keep = current < 0 ? 0 : current;
-      current = -1;
-      map.resize();
-      applyStep(keep, true);
-      document.getElementById('explorebtn').focus();
-    }
-  }
 
   map.on('load', function(){
     map.addSource('crz', {type:'geojson', data:crzFC});
@@ -1268,14 +1205,7 @@ h1,h2{
     applyStep(+btn.dataset.step, true);
   });
 
-  document.getElementById('explorebtn').addEventListener('click', () => setExplore(true));
-  document.getElementById('closeexplore').addEventListener('click', () => setExplore(false));
   window.addEventListener('keydown', e => {
-    if(e.key === 'Escape' && exploring){
-      setExplore(false);
-      return;
-    }
-    if(exploring) return;
     const n = parseInt(e.key, 10);
     if(n >= 1 && n <= 8) applyStep(n - 1, true);
   });
