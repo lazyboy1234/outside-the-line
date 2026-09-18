@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Outside the Line</title>
+<title>reimagine</title>
 <meta name="description" content="The paid line stops at 60th Street. Mott Haven sits four miles north.">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <style>
@@ -43,13 +43,6 @@ button{font:inherit;color:inherit}
   padding:.65rem 1rem;
   border-bottom:1px solid var(--rule);
   background:var(--paper);
-}
-.brand{
-  margin:0;
-  font-size:11px;
-  font-weight:600;
-  text-transform:uppercase;
-  white-space:nowrap;
 }
 .nums{
   display:flex;
@@ -358,7 +351,6 @@ h1,h2{
 .sit-table .is-canyon{color:var(--line);font-weight:600}
 
 @media (max-width:720px){
-  .brand{display:none}
   .top{gap:.5rem;padding:.5rem .6rem}
   .nums{gap:.3rem}
   .nums button{width:1.9rem;height:1.9rem;font-size:13px}
@@ -397,7 +389,6 @@ h1,h2{
 </head>
 <body>
 <header class="top">
-  <p class="brand">Outside the Line</p>
   <nav class="nums" id="nums" aria-label="Steps">
     <button type="button" data-step="0" class="is-on" aria-current="true">1</button>
     <button type="button" data-step="1">2</button>
@@ -525,8 +516,8 @@ h1,h2{
       <article class="step" data-step="5" hidden aria-label="Citywide rankings">
         <p class="beat">Rankings + scan</p>
         <div class="facts">
-          <p>We scored about 99,357 streets from the city's CSCL file into 33,862 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy), and junk stubs and zoo roads got filtered out first.</p>
-          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor was 22 of 33,862 (99.94th percentile), third if you only counted non-overlapping corridors, and burden said the same thing, but feasibility knocked it to non-overlap #13, and it was still near the top for Bronx corridors on a measured post-fee air hit, and it sat on the Deegan +1.29 monitor.</p>
+          <p>We scored about 99,357 streets from the city's CSCL file into 33,725 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy), and junk stubs and zoo roads got filtered out first.</p>
+          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor was 22 of 33,725 (99.94th percentile), third if you only counted non-overlapping corridors, and burden said the same thing, but feasibility knocked it to non-overlap #13, and it was still near the top for Bronx corridors on a measured post-fee air hit, and it sat on the Deegan +1.29 monitor.</p>
           <table class="sit-table">
             <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
             <thead>
