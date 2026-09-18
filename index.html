@@ -526,10 +526,9 @@ h1,h2{
       <article class="step" data-step="5" hidden aria-label="Citywide rankings">
         <p class="beat">Rankings</p>
         <div class="facts">
-          <p>We stopped picking a street on feel. I scored every car street in the city's Street Centerline — about 99,357 across teh five boroughs — and chained them into 33,785 short stretches. Each stretch got eight factors (highway distance, nearest post-fee monitor, asthma, income, heat, canyon shape, tree gap, highway-adjacent land). We ranked them  three ways: equal, burden-heavy, and plantable-heavy, then let the list pick where teh package goes.</p>
-          <p>We ran it in open-source Python on my Lab's machine — <a href="https://geopandas.org">GeoPandas</a>, <a href="https://shapely.readthedocs.io">Shapely</a>, <a href="https://networkx.org">NetworkX</a>, city's CSCL file (not <a href="https://github.com/gboeing/osmnx">OSMnx</a>).</p>
-          <p>I didn't want East 138th to win becuase we liked the story. Zoo roads and service stubs got filtered out — you don't plant those.</p>
-          <p id="e138-rank-line">East 138th holds. Under equal weights the best window covering at least half our corridor ranks 22 of 33,785 (99.94th percentile) — third among non-overlapping corridors. Burden agrees. Feasibility drops it to non-overlap #13, still near the top of Bronx corridors that sit on a measured post-fee air hit.</p>
+          <p>To know objectively what the best street to build we had to actually combine all the spatial data we had, weighing it. We scored about 99,357 streets into 33,086 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy). Junk stubs and zoo roads got filtered out first. The closest one that was valuable was East 138th (rank 22 / non-overlap #3, and it sits on the Deegan +1.29 monitor). Southern Blvd scores higher, but it has no published post-fee monitor, so it is not the valuable fee-spill pick.</p>
+          <p>Ran it in open-source Python on my Lab's machine, using the city's CSCL file.</p>
+          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor is 22 of 33,086 (99.94th percentile), third if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #13. Still near the top for Bronx corridors on a measured post-fee air hit.</p>
           <table class="sit-table">
             <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
             <thead>
@@ -537,7 +536,7 @@ h1,h2{
             </thead>
             <tbody id="rank-equal-body"></tbody>
           </table>
-          <p>Southern Blvd comes first on the cleaned list, then East 138th. Southern wins on income, heat, and highway adjacency, but there's no published post-fee monitor on it, so I wouldn't call it a fee-spill street. East 138th is the highest-ranked corridor that also sits on the South Bronx Unite Deegan peak of +1.29 µg/m³.</p>
+          <p>Southern Blvd is #1 on burden factors, but Monitor is blank becuase there is no published post-fee air monitor on that corridor (not a hole in our file). E 138 has Major Deegan / Third Ave Bridge. That is why East 138th is the fee-spill pick even though Southern wins  the cleaned list on income, heat, and highway adjacency.</p>
         </div>
         <figure class="plate tall">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
@@ -727,7 +726,7 @@ h1,h2{
     const er = document.getElementById('e138-rank-line');
     if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
       const eq = C.e138.by_weights.equal;
-      er.textContent = 'East 138th holds. Under equal weights the best window covering at least half our corridor ranks ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile) — ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' among non-overlapping corridors. Burden agrees. Feasibility drops it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + ', still near the top of Bronx corridors that sit on a measured post-fee air hit.';
+      er.textContent = 'Under equal weights the best half-coverage window on our corridor is ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile), ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + '. Still near the top for Bronx corridors on a measured post-fee air hit.';
     }
     const rb = document.getElementById('rank-equal-body');
     if(rb && C.rankings && C.rankings.equal){
