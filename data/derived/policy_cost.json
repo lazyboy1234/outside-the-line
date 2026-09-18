@@ -108,10 +108,34 @@
       "acres_reported": [5.2, 5.4],
       "cost_usd_reported": [110000000, 112000000],
       "about_per_acre_usd": 21000000,
+      "opened": "2012-10",
+      "covers": "Phase I park deck + park amenities over recessed Woodall Rodgers Freeway. Public-private: City of Dallas $20M bonds, TxDOT $20M, federal stimulus $16.7M, private balance.",
+      "not_this_number": "A ~$2B to $2.5B figure is not the park deck build cost. Public cites for ~$2B (and later higher) are economic-development / growth claims around the park, not construction. Separate Dallas highway rebuilds (e.g. I-30 Canyon ~$888M) and convention-center programs (up to multi-billion) are also not Klyde Warren's sticker.",
+      "phase2_expansion": {
+        "acres_reported_about": [1.5, 1.7],
+        "cost_usd_reported_about": [100000000, 125000000],
+        "note": "Separate later deck expansion west of St. Paul / toward Akard. NCTCOG funding tables show construction totals near $111M to $125M as design matured; not part of the original $110M–$112M Phase I.",
+        "urls": [
+          "https://nctcog.org/getContentAsset/77676aec-1ba7-45cc-8283-b2d5bbd351ca/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/presentationsrtc11132025.pdf",
+          "https://www.dallasnews.com/news/politics/2021/06/23/klyde-warren-park-expansion-moves-forward-with-financial-approval-from-dallas-city-council/"
+        ]
+      },
       "urls": [
         "https://www.klydewarrenpark.org/our-story",
         "https://www.landscapeperformance.org/case-study-briefs/klyde-warren-park",
-        "https://www.fhwa.dot.gov/ipd/project_profiles/tx_klyde_warren_park.aspx"
+        "https://www.fhwa.dot.gov/ipd/project_profiles/tx_klyde_warren_park.aspx",
+        "https://www.cnu.org/sites/default/files/Spokane%20Case%20Study%204%20-%20Dallas.pdf"
+      ]
+    },
+    "southern_gateway_halperin": {
+      "place": "Dallas, I-35E Oak Cliff / Southern Gateway (Halperin Park)",
+      "park_cost_usd_reported_about": 172000000,
+      "with_highway_cap_program_usd_about": 300000000,
+      "acres_about": 5,
+      "note": "Another Dallas deck-park family member. Park agreement ~$172M; some reporting folds in highway widening / cap work toward ~$300M. Not Klyde Warren.",
+      "urls": [
+        "https://www.dallasnews.com/news/politics/2021/11/11/dallas-approves-deal-for-design-construction-of-i-35e-oak-cliff-deck-park/",
+        "https://www.enr.com/articles/63186-new-park-over-i-35e-in-dallas-exemplifies-a-transportation-trend"
       ]
     },
     "other_us_comps_usd_per_acre": [
