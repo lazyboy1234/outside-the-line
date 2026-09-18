@@ -506,10 +506,10 @@ h1,h2{
       <article class="step" data-step="5" hidden aria-label="Citywide rankings">
         <p class="beat">Rankings</p>
         <div class="facts">
-          <p>We stopped arguing about one street on feel. We scored every car street in the city's own Street Centerline file, about 99,357 of them across five boroughs, and chained them into 33,862 short stretches of about half a mile to a mile and a quarter. Each stretch got eight factors: how close it sits to a bridge or highway, what the nearest post-fee air monitor said, asthma ER rates, income and poverty, heat risk, how tall the buildings are versus how wide the street is (so we know where trees clear air instead of trapping it), how few trees are already there, and how much land sits next to a sunken or elevated highway. We ranked those stretches three ways — equal weight on every factor, more weight on burden, and more weight on what is actually plantable — and we let the list pick where the street package belongs.</p>
-          <p>We ran all of this in open source Python on my Lab's computer. We used <a href="https://geopandas.org">GeoPandas</a> for the streets, buildings, and neighborhood shapes in one table. We used <a href="https://shapely.readthedocs.io">Shapely</a> for the buffers and nearest-neighbor distances. We used <a href="https://networkx.org">NetworkX</a> for chaining street pieces into longer trunks so we could slide the stretches. We used NumPy, SciPy, and pandas for the percentile ranks and the DiD permutations. We used Matplotlib for the rank chart and the heat map. We used the city's own CSCL street file for the citywide run, not <a href="https://github.com/gboeing/osmnx">OSMnx</a>, because that is the file the city keeps. We would use OSMnx next anytime we need OpenStreetMap networks instead of hand-rolled Overpass calls.</p>
-          <p>We did not want East 138th Street to win because we liked the story. Zoo roads, airport stubs, and unnamed service geometry got filtered out of the table below, because those are not places you plant a street package.</p>
-          <p id="e138-rank-line">East 138th holds. Under equal weights the best window that covers at least half of our design corridor ranks 22 out of 33,862, which is the 99.94th percentile, and it is third among non-overlapping corridors. Burden weights say the same thing. Feasibility weights drop it to thirteenth among non-overlapping corridors, which is still the top of the Bronx list that also sits on a measured post-fee air hit.</p>
+          <p>We stopped picking a street on feel. I scored every car street in the city's Street Centerline — about 99,357 across teh five boroughs — and chained them into 33,785 short stretches. Each stretch got eight factors (highway distance, nearest post-fee monitor, asthma, income, heat, canyon shape, tree gap, highway-adjacent land). We ranked them  three ways: equal, burden-heavy, and plantable-heavy, then let the list pick where teh package goes.</p>
+          <p>We ran it in open-source Python on my Lab's machine — <a href="https://geopandas.org">GeoPandas</a>, <a href="https://shapely.readthedocs.io">Shapely</a>, <a href="https://networkx.org">NetworkX</a>, city's CSCL file (not <a href="https://github.com/gboeing/osmnx">OSMnx</a>).</p>
+          <p>I didn't want East 138th to win becuase we liked the story. Zoo roads and service stubs got filtered out — you don't plant those.</p>
+          <p id="e138-rank-line">East 138th holds. Under equal weights the best window covering at least half our corridor ranks 22 of 33,785 (99.94th percentile) — third among non-overlapping corridors. Burden agrees. Feasibility drops it to non-overlap #13, still near the top of Bronx corridors that sit on a measured post-fee air hit.</p>
           <table class="sit-table">
             <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
             <thead>
@@ -517,7 +517,7 @@ h1,h2{
             </thead>
             <tbody id="rank-equal-body"></tbody>
           </table>
-          <p>Southern Blvd comes first on the cleaned list, then East 138th, then Boone Ave and the Mott Haven cross streets. Southern Blvd wins on income, heat, and highway adjacency, but it has no published post-fee monitor on the corridor, so we would not call it a fee-spill street. East 138th is the highest-ranked corridor that also sits on the South Bronx Unite Deegan peak of +1.29 µg/m³.</p>
+          <p>Southern Blvd comes first on the cleaned list, then East 138th. Southern wins on income, heat, and highway adjacency, but there's no published post-fee monitor on it, so I wouldn't call it a fee-spill street. East 138th is the highest-ranked corridor that also sits on the South Bronx Unite Deegan peak of +1.29 µg/m³.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
@@ -527,9 +527,9 @@ h1,h2{
       <article class="step" data-step="6" hidden aria-label="Our choices">
         <p class="beat">Our choices</p>
         <div class="facts">
-          <p>So we picked five moves from that list, and the order is the argument. The first move is a Mott Haven grid, not one street alone. East 138th stays the spine because it is the bridge landing and the Deegan exit and the worst community sensor, and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on the same scan with the same asthma and heat numbers, so we plant them as one package.</p>
+          <p>So we picked five moves, and the order is the argument. First is a Mott Haven grid, not one street alone. East 138th stays the spine — bridge landing, Deegan exit, worst community sensor — and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on teh same scan, so we plant them as one package.</p>
           <div id="choices-list" class="dsets"></div>
-          <p>The reason Midtown Broadway, the Queensboro landing, and the Van Wyck are not on this list is that the scan already put them where they belong. Queensboro got cleaner at about −9 percent in the preprint, Midtown is inside the fee, and Van Wyck is the city's own control. Williamsburg Bridge went up about +6.3 percent, but the surrounding community burden is much lower, so it loses once income, asthma, and heat are in the score.</p>
+          <p>Midtown Broadway, Queensboro, and the Van Wyck aren't here becuase the scan already put them where they belong. Queensboro got cleaner (~−9%), Midtown is inside the fee, Van Wyck is the city's control. Williamsburg Bridge went up ~+6.3%, but burden is lower there, so it loses once income, asthma, and heat are in.</p>
         </div>
         <figure class="plate">
           <img src="story-art/map-citywide-heat.png" alt="Citywide heat map of corridor scores across four boroughs, with East 138th outlined." width="1200" height="1200">
@@ -539,10 +539,10 @@ h1,h2{
       <article class="step" data-step="7" hidden aria-label="What solutions were on the table">
         <p class="beat">What solutions were on the table</p>
         <div class="facts">
-          <p class="red-note">For some context, the brief told us not to default to trees everywhere, and it invited a lid or a boulevard over the Deegan. We priced what the city can do now against what it would take to actually lock the highway air away from East 138th.</p>
-          <p>The current solutions are the ones Parks and DEP already know how to buy. Street trees on the open blocks filter some fine dirt at the curb and cool the sidewalk, and a planted tree with care usually lands in about the $2,500 to $4,000 range, with Parks' own recent average near $3,110. On the one tall-narrow block where a full crown would trap exhaust, we would put plants on the walls instead, which is a one-block ask with the building owners. DEP rain gardens take stormwater and add ground cover, usually about $40,000 to $50,000 each to build, and DEP already has a multi-billion-dollar green infrastructure program that has to be spent, so the Bronx has a claim on that money. Those three can start now, and they help, but they do not shut the Deegan off.</p>
-          <p id="cost-line">The fourth option is physical. Trees and gardens clean around the pollution. A cap locks the pollution under the road. We got that idea by looking back at cities that already did it, places like Dallas's Klyde Warren Park, where they put a deck over a sunken freeway so the cars keep moving underneath and the top becomes ground again. In plain English it is like turning the Deegan into a short tunnel by putting a lid on top of the trench from East 138th to East 149th, about 12.9 acres, so the exhaust gets collected and pushed out through vents instead of rising straight into the sidewalk. Public comps for that kind of work run from about $20 million an acre up past $90 million an acre, so our estimate for this stretch is about $250 million to $1.2 billion, and nobody has priced this exact span yet.</p>
-          <p>The lid is later: the Deegan is a state road, so the clock is years. Plant the Mott Haven grid now; put the cap on the table so the real fix has a start date.</p>
+          <p class="red-note">Brief said don't default to trees everywhere, and invited a lid or boulevard over the Deegan. We priced what the city can buy now against what it takes to lock highway air off East 138th.</p>
+          <p>Trees (~$2,500–$4,000, Parks avg ~$3,110), canyon plants on the one tall-narrow block, and DEP rain gardens (~$40k–$50k) can start now — DEP already has green-infra money the Bronx should claim. They help. They don't shut the Deegan off.</p>
+          <p id="cost-line">Fourth option is physical: a lid from East 138th to East 149th (~12.9 acres), like Dallas's Klyde Warren over a sunken freeway. Comps ~$20M–$90M/acre → about $250M to $1.2B for this stretch. Trees clean around pollution; a cap locks it under the road.</p>
+          <p>Lid is later — Deegan is a state road, so  the clock is years. Plant the Mott Haven grid now; put the cap on the table so the real fix has a start date.</p>
           <table class="sit-table">
             <caption>Four options, with estimate ranges.</caption>
             <thead>
@@ -707,8 +707,7 @@ h1,h2{
     const er = document.getElementById('e138-rank-line');
     if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
       const eq = C.e138.by_weights.equal;
-      const bur = C.e138.by_weights.burden;
-      er.textContent = 'East 138th holds. Under equal weights the best window that covers at least half of our design corridor ranks ' + eq.rank_all.toLocaleString() + ' out of ' + C.e138.n_windows.toLocaleString() + ', which is the ' + eq.percentile + 'th percentile, and it is ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' among non-overlapping corridors. Burden weights put it at rank ' + bur.rank_all.toLocaleString() + ' and non-overlap #' + bur.rank_nonoverlap + '. Feasibility weights drop it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + ', which is still near the top of the Bronx list that also sits on a measured post-fee air hit.';
+      er.textContent = 'East 138th holds. Under equal weights the best window covering at least half our corridor ranks ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile) — ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' among non-overlapping corridors. Burden agrees. Feasibility drops it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + ', still near the top of Bronx corridors that sit on a measured post-fee air hit.';
     }
     const rb = document.getElementById('rank-equal-body');
     if(rb && C.rankings && C.rankings.equal){
