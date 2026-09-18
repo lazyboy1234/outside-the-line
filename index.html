@@ -437,7 +437,7 @@ h1,h2{
         <p class="beat">The fee file</p>
         <div class="facts">
           <p id="fee-line">A car pays <b>$9</b> in the morning and <b>$2.25</b> at night, so more trucks go at night, becuase if you're a company you'd cut your trucking cost by running overnight, and that is exactly what the 2025 fee file shows. We cannot say the trucks "moved" to the night, though, becuase the file has no before to compare against.</p>
-          <p>Online there were a lot of files, and we used this fee file only to describe the gates and the night trucks. We picked Bridges and Tunnels for the spill test becuase that one has a before.</p>
+          <p>We used this fee file only to describe the gates and the night trucks. We picked Bridges and Tunnels for the spill test becuase that one has a before.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig2-trucks.svg" alt="Overnight share of 2025 paid entries. Multi-unit trucks are higher than cars. Not a moved claim." width="1164" height="591">
@@ -447,9 +447,9 @@ h1,h2{
       <article class="step" data-step="2" hidden aria-label="Did cars spill?">
         <p class="beat">Did cars spill?</p>
         <div class="facts">
-          <p>We compared this year against last year on the four Bronx crossings, which are the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, and we set them against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway. If cars were dodging the fee by cutting through the Bronx, the Bronx line would climb above the far bridges after January 2025. It didn't. Pooled over 2025 the Bronx crossings grew 1.04 percentage points slower than the far bridges, with a 95 percent interval from -3.6 to +1.6 and a p-value of 0.49, so that is a flat line and not a spill.</p>
-          <p>Then we ran the exact same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, becuase those tunnels have to show a drop, and if they don't, the tool is broken. They did. The tunnels came in 2.29 points below the far bridges over 2025, with an interval from -3.4 to -1.2, and the first month of the fee was the biggest, at -9.18 points in January, then -7.9 in February and -8.0 in March, before it faded to about zero by the fall. That is what a fee doing its job looks like, and it is what the Bronx bridges do not show.</p>
-          <p id="did-perm-line">Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is -0.15 percent, the two-sided permutation p is 0.77, and the bootstrap 95 percent interval is -1.10 to +0.80, so the flat read holds up under a harder test.</p>
+          <p>We compared this year against last year on the four Bronx crossings, the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway. If cars were dodging the fee by cutting through the Bronx, the Bronx line would climb above the far bridges after January 2025. It didn't. Over 2025 the Bronx grew 1.04 percentage points slower than the far bridges, with an interval from -3.6 to +1.6 and a p-value of 0.49, so that is flat and not a spill.</p>
+          <p>Then we ran the same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, becuase those tunnels have to show a drop or the tool is broken. They did. The tunnels came in 2.29 points below the far bridges over 2025, with an interval from -3.4 to -1.2. January was the biggest, at -9.18 points, then -7.9 in February and -8.0 in March, before it faded to about zero by the fall. That is what a fee doing its job looks like, and it is what the Bronx bridges do not show.</p>
+          <p id="did-perm-line">Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is -0.15 percent, the permutation p is 0.77, and the bootstrap 95 percent interval is -1.10 to +0.80, so it still straddles zero.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig3-did.svg" alt="Bronx bridges stay about flat while tunnels into the paid zone drop." width="1152" height="683">
@@ -459,13 +459,12 @@ h1,h2{
       <article class="step" data-step="3" hidden aria-label="The air">
         <p class="beat">The air</p>
         <div class="facts">
-          <p class="red-note">For some context, the dirt everyone is measuring is PM2.5. It comes off tailpipes, brakes, and tires. The dots on the map are every monitor result we could find, colored by whether the air went down, went up, or did not move.</p>
-          <p>In Fraser's paper, Figure 1 shows the paid zone got about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That drop shrinks as you leave the zone. The 22 percent is Fraser's number for inside the fee line.</p>
-          <p>In Barber's thesis, Table A.8 shows downtown falling from 8.70 to 7.56, which is 13 percent. In the paper on page 25 he quotes Fraser's 22 percent, but he does not claim it as his own, and his placebo plot says to read his number carefully.</p>
-          <p>We looked at a preprint on six live monitors too. Queensboro got better, about -9 percent. Williamsburg, the Cross Bronx, and Broadway at 35th got worse. Only one of the six sites cleaned up.</p>
+          <p class="red-note">The dirt everyone is measuring is PM2.5. It comes off tailpipes, brakes, and tires. The dots on the map are every monitor result we could find, colored by whether the air went down, went up, or did not move.</p>
+          <p>Fraser's paper, Figure 1, shows the paid zone got about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That drop shrinks as you leave the zone.</p>
+          <p>Barber's thesis, Table A.8, shows downtown falling from 8.70 to 7.56, which is 13 percent. He quotes Fraser's 22 percent on page 25 but does not claim it as his own.</p>
           <p>South Bronx Unite put up 19 community sensors. Twelve to fourteen went up. The biggest jump was +1.29 µg/m³ at the Deegan by the Third Avenue Bridge, right next to East 138th.</p>
           <p>The city health department ran official monitors for a year with the Van Wyck as a control. They found no fee-sized change they could call, and they note traffic is only about 14 percent of PM2.5 here.</p>
-          <p>We would say the honest answer is three answers, so we do not average them. Inside the zone the air got cleaner. Outside it depends on the monitor. In Mott Haven the nearest official monitor is on East 135th, and it was never one of Fraser's six, while the community sensors say the Deegan got a little worse. That is why the trees have to answer to the Deegan, not to the fee.</p>
+          <p>The honest answer is three answers, so we do not average them. Inside the zone the air got cleaner. Outside it depends on the monitor. In Mott Haven the nearest official monitor is on East 135th, and it was never one of Fraser's six, while the community sensors say the Deegan got a little worse. That is why the trees have to answer to the Deegan, not to the fee.</p>
           <table class="sit-table">
             <caption>Every air study we read, kept apart.</caption>
             <thead>
@@ -474,7 +473,6 @@ h1,h2{
             <tbody>
               <tr><td>Fraser's paper</td><td>About 22% lower inside the zone</td></tr>
               <tr><td>Barber's thesis</td><td>13% lower downtown (Table A.8)</td></tr>
-              <tr><td>Preprint</td><td>1 of 6 sites down, 3 up</td></tr>
               <tr><td>South Bronx Unite</td><td>+1.29 at the Deegan</td></tr>
               <tr><td>City health dept</td><td>No clear fee change</td></tr>
             </tbody>
@@ -511,15 +509,15 @@ h1,h2{
           </article>
           <article class="dset">
             <h3>Fraser's paper</h3>
-            <p>We used it for about 22 percent less daily-max fine dirt inside the paid zone versus a no-fee model. That 22 percent is Fraser's number for inside the zone, not Barber's.</p>
+            <p>Source for the inside-zone 22 percent (Figure 1). Not Barber's number.</p>
           </article>
           <article class="dset">
             <h3>Barber's thesis</h3>
-            <p>We used Barber's own result: a 13 percent drop from 8.70 to 7.56 in Table A.8. On page 25 he quotes Fraser's 22 percent without claiming it.</p>
+            <p>Source for the downtown 13 percent in Table A.8. Kept apart from Fraser.</p>
           </article>
           <article class="dset">
-            <h3>Preprint / SBU / DOHMH</h3>
-            <p>We read each air paper separately for what it said after the fee. We do not average them, becuase they do not all say the same thing.</p>
+            <h3>SBU / DOHMH</h3>
+            <p>South Bronx Unite for the Deegan +1.29, and the city health dept for the Van Wyck control with no clear fee change. Kept apart.</p>
           </article>
           <article class="dset">
             <h3>NFH <code>r3dx-pew9</code> + HVI <code>4mhf-duep</code></h3>
@@ -534,9 +532,8 @@ h1,h2{
       <article class="step" data-step="5" hidden aria-label="Citywide rankings">
         <p class="beat">Rankings + scan</p>
         <div class="facts">
-          <p>To know objectively what the best street to build we had to actually combine all the spatial data we had, weighing it. We scored about 99,357 streets into 33,785 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy). Junk stubs and zoo roads got filtered out first. The closest one that was valuable was East 138th (rank 22 / non-overlap #3, and it sits on the Deegan +1.29 monitor). Southern Blvd scores higher, but it has no published post-fee monitor, so it is not the valuable fee-spill pick.</p>
-          <p>Ran it in open-source Python on my Lab's machine, using the city's CSCL file.</p>
-          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor is 22 of 33,785 (99.94th percentile), third if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #13. Still near the top for Bronx corridors on a measured post-fee air hit.</p>
+          <p>We scored about 99,357 streets from the city's CSCL file into 33,862 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy). Junk stubs and zoo roads got filtered out first.</p>
+          <p id="e138-rank-line">Under equal weights the best half-coverage window on our corridor is 22 of 33,862 (99.94th percentile), third if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #13. Still near the top for Bronx corridors on a measured post-fee air hit, and it sits on the Deegan +1.29 monitor.</p>
           <table class="sit-table">
             <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
             <thead>
@@ -544,10 +541,10 @@ h1,h2{
             </thead>
             <tbody id="rank-equal-body"></tbody>
           </table>
-          <p>Southern Blvd is #1 on burden factors, but Monitor is blank becuase there is no published post-fee air monitor on that corridor (not a hole in our file). E 138 has Major Deegan / Third Ave Bridge. That is why East 138th is the fee-spill pick even though Southern wins  the cleaned list on income, heat, and highway adjacency.</p>
-          <p>So we picked five moves, and the order is the argument. First is a Mott Haven grid, not one street alone. East 138th stays the spine (bridge landing, Deegan exit, worst community sensor) and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on teh same scan, so we plant them as one package.</p>
+          <p>Southern Blvd wins the cleaned list on income, heat, and highway adjacency, but Monitor is blank becuase there is no published post-fee air monitor on that corridor. E 138 has Major Deegan / Third Ave Bridge, so East 138th is the fee-spill pick.</p>
+          <p>So we picked five moves, and the order is the argument. First is a Mott Haven grid, not one street alone. East 138th stays the spine (bridge landing, Deegan exit, worst community sensor) and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on the same scan, so we plant them as one package.</p>
           <div id="choices-list" class="dsets"></div>
-          <p>Midtown Broadway, Queensboro, and the Van Wyck aren't here becuase the scan already put them where they belong. Queensboro got cleaner (~-9%), Midtown is inside the fee, Van Wyck is the city's control. Williamsburg Bridge went up ~+6.3%, but burden is lower there, so it loses once income, asthma, and heat are in.</p>
+          <p>Midtown Broadway stays inside the fee. The Van Wyck is the city's control. Lower-burden corridors lose once income, asthma, and heat are in the score.</p>
         </div>
         <figure class="plate tall">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
@@ -585,7 +582,6 @@ h1,h2{
           <p>East 138th gets six open blocks under the street's own tree average with honeylocust, coffeetree, or zelkova in tree-pit rain gardens. Block 10 gets plants on the walls with spaced trees. East 141st, East 132nd, East 135th, and Exterior Street get the same open-crown package. Keep away from London plane and other dense crowns here; a closed roof of leaves would hold highway air at breathing height instead of clearing it.</p>
           <p>Southern Blvd and the Cross Bronx frontage on Park, Jerome, and Boone are the next tranche. Bruckner with Westchester is the medium-term truck corridor, with green medians instead of quiet sidewalk planting alone.</p>
           <p>Planning-grade i-Tree numbers say the whole corridor program removes about 10.6 pounds of PM2.5 a year and catches about 7.2 million gallons of stormwater. That PM2.5 number does not cancel a +1.29 µg/m³ highway hit, which is why the lid stays in the last step.</p>
-          <p>Fraser's 22 percent is inside the paid zone. Barber's 13 percent in Table A.8 is his downtown average. Neither one is a tree number and we did not use them here.</p>
           <p class="red-note">We bet our solution was in the Bronx, and the citywide ranking put East 138th in the top three non-overlapping corridors, so that bet held.</p>
         </div>
       </article>
@@ -595,7 +591,7 @@ h1,h2{
         <div class="facts">
           <p class="red-note">We aren't architects. We're data analysts. We can't invent a magic cheap new structure. We had to use what humanity has already done.</p>
           <p>The main issue at Mott Haven by I-87 is the highway trench. Exhaust sits at breathing height under and beside the sunken Deegan, and the community sensor that got worse after the fee sits right there. Trees and rain gardens are what we can buy now. They help around the edges. They don't shut the road off.</p>
-          <p>Thus, the idea we came up with is that: put a lid on the sunken Deegan. Cars stay under. The top becomes ground, a park. Vents take the exhaust away. Other cities already did this (Klyde Warren in Dallas; Buffalo-style decks are that type, not our site). Trees clean around it. The cap locks the pollution under.</p>
+          <p>Thus, the idea we came up with is that: put a lid on the sunken Deegan. Cars stay under. The top becomes ground, a park. Vents take the exhaust away. Other cities already did this (Klyde Warren in Dallas). Trees clean around it. The cap locks the pollution under.</p>
           <p id="cost-line">Our measured stretch estimate is a lid from East 138th to East 149th (~12.9 acres). Public comps run about $20M to $90M per acre, so about $250M to $1.2B for this stretch. Those are estimates. Nobody has priced this exact span yet.</p>
           <p>We're still not engineers. Exact bay widths, vent stacks, and constructability details stay open. The corridor photo shows trucks, towers, thin edge with trees, so the detailing is real work. But the road is already down, so the lid goes up.</p>
           <p>Based on looking at the I-87 section that would be most ideal and fit our criteria, this ramp going up would be the easiest to build on becuase you can theoretically build a lid. What can happen: fumes from that ramp get reduced; light pollution stays lower if that stretch is more like a covered tunnel; and you separate the highway everyone is blasting through from the common neighborhood road people take home (E 135th / local streets vs I-87).</p>
@@ -743,12 +739,12 @@ h1,h2{
     const did = document.getElementById('did-perm-line');
     if(did && C.did){
       const ci = C.did.ci95_pct || [];
-      did.textContent = "Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is " + C.did.did_pct + ' percent, the two-sided permutation p is ' + Number(C.did.perm_p).toFixed(2) + ', and the bootstrap 95 percent interval is ' + Number(ci[0]).toFixed(2) + ' to ' + (ci[1] >= 0 ? '+' : '') + Number(ci[1]).toFixed(2) + ', so the flat read holds up under a harder test.';
+      did.textContent = "Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is " + C.did.did_pct + ' percent, the permutation p is ' + Number(C.did.perm_p).toFixed(2) + ', and the bootstrap 95 percent interval is ' + Number(ci[0]).toFixed(2) + ' to ' + (ci[1] >= 0 ? '+' : '') + Number(ci[1]).toFixed(2) + ', so it still straddles zero.';
     }
     const er = document.getElementById('e138-rank-line');
     if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
       const eq = C.e138.by_weights.equal;
-      er.textContent = 'Under equal weights the best half-coverage window on our corridor is ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile), ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + '. Still near the top for Bronx corridors on a measured post-fee air hit.';
+      er.textContent = 'Under equal weights the best half-coverage window on our corridor is ' + eq.rank_all.toLocaleString() + ' of ' + C.e138.n_windows.toLocaleString() + ' (' + eq.percentile + 'th percentile), ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' if you only count non-overlapping corridors. Burden says the same thing. Feasibility knocks it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + '. Still near the top for Bronx corridors on a measured post-fee air hit, and it sits on the Deegan +1.29 monitor.';
     }
     const rb = document.getElementById('rank-equal-body');
     if(rb && C.rankings && C.rankings.equal){
@@ -857,13 +853,6 @@ h1,h2{
     label:'Fraser: about 22% lower inside', dir:'down',
     say:"Fraser's paper: six official monitors inside the paid zone, about 22 percent less daily-max PM2.5 than a no-fee model, about 3.05 µg/m³. This is the 22 percent, and it is only inside the zone."
   }));
-  ((PUB.goldberg_did && PUB.goldberg_did.sites) || []).forEach(sd => {
-    const up = sd.pm_pct > 0;
-    airPts.push(pt(sd.lon, sd.lat, {
-      label:(up ? '+' : '') + sd.pm_pct.toFixed(1) + '% ' + sd.name, dir: up ? 'up' : 'down',
-      say:'Research Square preprint (Dec 2025), difference-in-differences at ' + sd.name + ': PM2.5 ' + (up ? 'up' : 'down') + ' about ' + Math.abs(sd.pm_pct).toFixed(1) + ' percent, p under 0.05.'
-    }));
-  });
   if(PUB.sbu){
     airPts.push(pt(PUB.sbu.peak_lon, PUB.sbu.peak_lat, {
       label:'+1.29 Deegan (community sensor)', dir:'up',
@@ -1054,14 +1043,14 @@ h1,h2{
     const cam = CAM[i] || CAM[0];
     goCam(cam);
     switch(i){
-      case 0: show(['crz-line','place','place-label']); setStoryScroll(false); break;
+      case 0: show(['crz-line']); setStoryScroll(false); break;
       case 1: show(['crz-line','gates','gates-label']); setStoryScroll(true); break;
       case 2: show(['crz-line','fac','fac-label']); setStoryScroll(false); break;
       case 3: show(['crz-fill','crz-line','air','air-label']); setStoryScroll(true, 'air'); break;
       case 4: show(['crz-line','traffic','traffic-label']); setStoryScroll(true); break;
       case 5: show(['ranktop','ranktop-label','choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
-      case 6: show(['site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
-      case 7: show(['bld','seg','trees','site','site-label']); setStoryScroll(false); break;
+      case 6: show(['place','place-label','site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
+      case 7: show(['place','place-label','bld','seg','trees','site','site-label']); setStoryScroll(false); break;
       case 8: show(['place','place-label','trees','cap','cap-label']); setStoryScroll(false); break;
       default: show(['crz-line']); setStoryScroll(false); break;
     }
