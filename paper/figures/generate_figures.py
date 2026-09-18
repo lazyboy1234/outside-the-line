@@ -346,27 +346,34 @@ def fig3_did(bt: dict) -> None:
     ax_pool.set_xticklabels(names)
     ax_pool.set_ylabel("Pooled DiD (pp)")
     ax_pool.set_title("B. Pooled post window", loc="left", fontsize=8.4, pad=6)
-    ax_pool.set_ylim(-4.6, 2.4)
+    # Keep 3-line stats clear of whisker caps (was colliding at y=1.55 vs hi CI ~1.6).
+    annot_gap = 0.48
+    ax_pool.set_ylim(
+        min(-4.85, cd_p["lo95_pct"] - annot_gap - 1.15),
+        max(3.15, bx_p["hi95_pct"] + annot_gap + 1.15),
+    )
     ax_pool.spines[["top", "right"]].set_visible(False)
     ax_pool.text(
         0,
-        1.55,
+        bx_p["hi95_pct"] + annot_gap,
         f"{bx_p['pct']:+.2f} pp\nCI [{bx_p['lo95_pct']:+.1f}, {bx_p['hi95_pct']:+.1f}]\n"
         f"wild p = {bx_p['p_wild_bootstrap']:.2f}",
         ha="center",
         va="bottom",
         fontsize=6.3,
         color=TEAL,
+        clip_on=False,
     )
     ax_pool.text(
         1,
-        -4.35,
+        cd_p["lo95_pct"] - annot_gap,
         f"{cd_p['pct']:+.2f} pp\nCI [{cd_p['lo95_pct']:+.1f}, {cd_p['hi95_pct']:+.1f}]\n"
         f"wild p = {cd_p['p_wild_bootstrap']:.2f}",
         ha="center",
-        va="bottom",
+        va="top",
         fontsize=6.3,
         color=CRIMSON,
+        clip_on=False,
     )
     save(fig, "fig3-did.svg")
 
