@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="t d">
+  <title id="t">Nine paid bridge and tunnel crossings</title>
+  <desc id="d">Nine crossings we can count. Three sit near the Bronx.</desc>
+  <rect width="360" height="220" fill="#fff"/>
+  <g fill="none" stroke="#111" stroke-width="1.5">
+    <path d="M40 150 H320"/>
+    <path d="M70 150 V88"/>
+    <path d="M110 150 V100"/>
+    <path d="M150 150 V72"/>
+    <path d="M190 150 V96"/>
+    <path d="M230 150 V84"/>
+    <path d="M270 150 V108"/>
+    <path d="M94 88 H126"/>
+    <path d="M174 72 H206"/>
+    <path d="M254 84 H286"/>
+  </g>
+  <circle cx="70" cy="88" r="4" fill="#111"/>
+  <circle cx="110" cy="100" r="4" fill="#111"/>
+  <circle cx="150" cy="72" r="4" fill="#9f2f2d"/>
+  <circle cx="190" cy="96" r="4" fill="#9f2f2d"/>
+  <circle cx="230" cy="84" r="4" fill="#9f2f2d"/>
+  <circle cx="270" cy="108" r="4" fill="#111"/>
+  <text x="180" y="186" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">Nine crossings. Red sits near the Bronx.</text>
+</svg>

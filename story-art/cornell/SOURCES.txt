@@ -1,0 +1,5 @@
+Barber, Thomas J. 2026. The New York City Congestion Charge: Air Quality, Traffic, and Crime. Master's thesis, Cornell University. File: Barber_cornell_0058O_12651.pdf (63 pp.).
+
+Pages rendered with pdftoppm -png -r 200, then cropped.
+
+This is Barber, not Fraser et al. npj Clean Air 2025. The 22% sentence on thesis p. 25 is Barber citing Fraser.

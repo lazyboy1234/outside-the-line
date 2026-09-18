@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1760" viewBox="0 0 2800 1760" role="img" aria-label="$15,510 vs $31,238. Heat 5/5.">
+  <title>$15,510 vs $31,238. Heat 5/5.</title>
+  <rect width="2800" height="1760" fill="#ffffff"/>
+
+  <text x="140" y="150" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#221d1a">$15,510&#160;vs&#160;$31,238</text>
+  <line x1="140" y1="190" x2="2660" y2="190" stroke="#bd7f1f" stroke-width="8"/>
+
+  <rect x="180" y="700" width="820" height="520" rx="12" fill="#a4122f" stroke="#221d1a" stroke-width="6"/>
+  <text x="590" y="920" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#ffffff">$15,510</text>
+  <text x="590" y="1020" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#ffffff">HERE</text>
+
+  <rect x="1100" y="360" width="820" height="860" rx="12" fill="#2c4a72" stroke="#221d1a" stroke-width="6"/>
+  <text x="1510" y="760" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#ffffff">$31,238</text>
+  <text x="1510" y="860" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#ffffff">CITY</text>
+
+  <rect x="2040" y="360" width="580" height="860" rx="28" fill="#ffffff" stroke="#a4122f" stroke-width="8"/>
+  <text x="2330" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#221d1a">HEAT</text>
+  <text x="2330" y="620" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="800" fill="#a4122f">5/5</text>
+  <rect x="2098" y="1020" width="80" height="80" rx="8" fill="#a4122f" stroke="#221d1a" stroke-width="4"/>
+  <rect x="2190" y="1020" width="80" height="80" rx="8" fill="#a4122f" stroke="#221d1a" stroke-width="4"/>
+  <rect x="2282" y="1020" width="80" height="80" rx="8" fill="#a4122f" stroke="#221d1a" stroke-width="4"/>
+  <rect x="2374" y="1020" width="80" height="80" rx="8" fill="#a4122f" stroke="#221d1a" stroke-width="4"/>
+  <rect x="2466" y="1020" width="80" height="80" rx="8" fill="#a4122f" stroke="#221d1a" stroke-width="4"/>
+</svg>

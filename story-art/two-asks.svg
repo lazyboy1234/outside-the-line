@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1760" viewBox="0 0 2800 1760" role="img" aria-label="Street now. Lid later.">
+  <title>Street now. Lid later.</title>
+  <rect width="2800" height="1760" fill="#ffffff"/>
+
+  <text x="140" y="150" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#221d1a">Street&#160;now.&#160;Lid&#160;later.</text>
+  <line x1="140" y1="190" x2="2660" y2="190" stroke="#bd7f1f" stroke-width="8"/>
+
+  <rect x="140" y="250" width="1220" height="1320" rx="28" fill="#ffffff" stroke="#416f4e" stroke-width="8"/>
+  <rect x="140" y="250" width="1220" height="150" rx="28" fill="#416f4e"/>
+  <rect x="140" y="340" width="1220" height="60" fill="#416f4e"/>
+  <text x="750" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="800" fill="#ffffff">STREET&#160;NOW</text>
+    <circle cx="420" cy="720" r="70" fill="#416f4e"/>
+    <rect x="410" y="780" width="20" height="90" fill="#6b4b30"/>
+    <circle cx="560" cy="720" r="58" fill="#416f4e"/>
+    <rect x="550" y="780" width="20" height="90" fill="#6b4b30"/>
+    <circle cx="690" cy="720" r="64" fill="#416f4e"/>
+    <rect x="680" y="780" width="20" height="90" fill="#6b4b30"/>
+  <rect x="280" y="870" width="940" height="90" fill="#c6b298"/>
+    <rect x="360" y="980" width="120" height="46" rx="10" fill="#d7e4d6" stroke="#416f4e" stroke-width="5"/>
+    <rect x="510" y="980" width="120" height="46" rx="10" fill="#d7e4d6" stroke="#416f4e" stroke-width="5"/>
+    <rect x="660" y="980" width="120" height="46" rx="10" fill="#d7e4d6" stroke="#416f4e" stroke-width="5"/>
+    <rect x="810" y="980" width="120" height="46" rx="10" fill="#d7e4d6" stroke="#416f4e" stroke-width="5"/>
+  <text x="750" y="1180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#221d1a">Trees.&#160;Curb.&#160;Rain&#160;gardens.</text>
+  <text x="750" y="1280" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="600" fill="#5b5145">NYC&#160;already&#160;pays&#160;for&#160;this.</text>
+  <text x="750" y="1440" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" fill="#416f4e">THIS&#160;YEAR</text>
+
+  <rect x="1440" y="250" width="1220" height="1320" rx="28" fill="#ffffff" stroke="#2c4a72" stroke-width="8"/>
+  <rect x="1440" y="250" width="1220" height="150" rx="28" fill="#2c4a72"/>
+  <rect x="1440" y="340" width="1220" height="60" fill="#2c4a72"/>
+  <text x="2050" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="800" fill="#ffffff">LID&#160;LATER</text>
+  <rect x="1620" y="560" width="860" height="220" rx="18" fill="#416f4e"/>
+  <text x="2050" y="690" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#ffffff">PARK&#160;ON&#160;TOP</text>
+  <rect x="1680" y="780" width="740" height="160" fill="#5b5145"/>
+  <rect x="1720" y="820" width="180" height="80" fill="#c6b298"/>
+  <rect x="2160" y="820" width="180" height="80" fill="#c6b298"/>
+  <text x="2050" y="1080" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#221d1a">Park&#160;over&#160;the&#160;highway</text>
+  <text x="2050" y="1180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="600" fill="#5b5145">Big.&#160;Slow.&#160;Not&#160;next&#160;year.</text>
+  <text x="2050" y="1440" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800" fill="#2c4a72">$250M&#160;to&#160;$1B+</text>
+
+</svg>

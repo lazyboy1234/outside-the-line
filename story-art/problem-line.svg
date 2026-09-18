@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1760" viewBox="0 0 2800 1760" role="img" aria-label="They charged here. Not here.">
+  <title>They charged here. Not here.</title>
+  <rect width="2800" height="1760" fill="#ffffff"/>
+
+  <text x="140" y="150" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#221d1a">They&#160;charged&#160;here.&#160;Not&#160;here.</text>
+  <line x1="140" y1="190" x2="2660" y2="190" stroke="#bd7f1f" stroke-width="8"/>
+
+  <rect x="160" y="250" width="2480" height="560" rx="28" fill="#ffffff" stroke="#a4122f" stroke-width="8" stroke-dasharray="22 16"/>
+  <text x="1400" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#221d1a">BRONX</text>
+  <text x="1400" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="600" fill="#5b5145">4&#160;miles&#160;north</text>
+  <text x="1400" y="680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="800" fill="#a4122f">NOT&#160;HERE</text>
+
+  <rect x="160" y="860" width="2480" height="130" rx="16" fill="#a4122f"/>
+  <text x="1400" y="950" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800" fill="#ffffff">60TH&#160;STREET</text>
+
+  <rect x="160" y="1040" width="2480" height="560" rx="28" fill="#f3d6d4" stroke="#a4122f" stroke-width="10"/>
+  <text x="1400" y="1190" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#221d1a">MANHATTAN</text>
+  <text x="1400" y="1280" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="600" fill="#5b5145">Paid&#160;zone</text>
+  <text x="1400" y="1470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="800" fill="#a4122f">THEY&#160;CHARGED&#160;HERE</text>
+
+</svg>

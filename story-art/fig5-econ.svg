@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="521.169344pt" height="242.014074pt" viewBox="0 0 521.169344 242.014074" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>fig5-econ.svg</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>fig5-econ.svg</dc:title>
+    <dc:date>2026-09-18T05:11:16.641572</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Outside the Line / generate_figures.py</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin:round;stroke-linecap:butt;letter-spacing:normal}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 242.014074 
+L 521.169344 242.014074 
+L 521.169344 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 54.897344 220.68 
+L 250.414585 220.68 
+L 250.414585 45.576 
+L 54.897344 45.576 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="text_1">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="84.815145" y="231.98498" transform="rotate(-0 84.815145 231.98498)" xml:space="preserve">Mott Haven</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="text_2">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="152.655964" y="231.98498" transform="rotate(-0 152.655964 231.98498)" xml:space="preserve">City average</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="text_3">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="220.496784" y="231.98498" transform="rotate(-0 220.496784 231.98498)" xml:space="preserve">Midtown CRZ</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="text_4">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="48.397344" y="224.979453" transform="rotate(-0 48.397344 224.979453)" xml:space="preserve">$0k</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="text_5">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="48.397344" y="180.080992" transform="rotate(-0 48.397344 180.080992)" xml:space="preserve">$20k</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="text_6">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="48.397344" y="135.18253" transform="rotate(-0 48.397344 135.18253)" xml:space="preserve">$40k</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="text_7">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="48.397344" y="90.284069" transform="rotate(-0 48.397344 90.284069)" xml:space="preserve">$60k</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="letter-spacing:normal; font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="18.020625" y="133.128" transform="rotate(-90 18.020625 133.128)" xml:space="preserve">Median income ($)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 63.784491 220.68 
+L 105.845799 220.68 
+L 105.845799 185.861243 
+L 63.784491 185.861243 
+z
+" clip-path="url(#p62183f78e6)" style="fill: #a4122f; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 131.62531 220.68 
+L 173.686618 220.68 
+L 173.686618 150.553093 
+L 131.62531 150.553093 
+z
+" clip-path="url(#p62183f78e6)" style="fill: #bd7f1f; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 199.46613 220.68 
+L 241.527438 220.68 
+L 241.527438 72.728345 
+L 199.46613 72.728345 
+z
+" clip-path="url(#p62183f78e6)" style="fill: #416f4e; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 54.897344 220.68 
+L 54.897344 45.576 
+" style="fill: none; stroke: #221d1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 54.897344 220.68 
+L 250.414585 220.68 
+" style="fill: none; stroke: #221d1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_9">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="84.815145" y="182.718351" transform="rotate(-0 84.815145 182.718351)" xml:space="preserve">$15,510</text>
+   </g>
+   <g id="text_10">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="152.655964" y="147.410201" transform="rotate(-0 152.655964 147.410201)" xml:space="preserve">$31,238</text>
+   </g>
+   <g id="text_11">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="220.496784" y="69.585452" transform="rotate(-0 220.496784 69.585452)" xml:space="preserve">$65,905</text>
+   </g>
+   <g id="text_12">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 8.4px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #221d1a" x="54.897344" y="39.576" transform="rotate(-0 54.897344 39.576)" xml:space="preserve">Median income</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_8">
+    <path d="M 312.980102 220.68 
+L 508.497344 220.68 
+L 508.497344 45.576 
+L 312.980102 45.576 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="text_13">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="342.897904" y="231.98498" transform="rotate(-0 342.897904 231.98498)" xml:space="preserve">Mott Haven</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="text_14">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="410.738723" y="231.98498" transform="rotate(-0 410.738723 231.98498)" xml:space="preserve">City average</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="text_15">
+      <text style="letter-spacing:normal; font-size: 6.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="478.579542" y="231.98498" transform="rotate(-0 478.579542 231.98498)" xml:space="preserve">Midtown CRZ</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_5">
+     <g id="text_16">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="306.480102" y="224.68415" transform="rotate(-0 306.480102 224.68415)" xml:space="preserve">0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="text_17">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="306.480102" y="176.04415" transform="rotate(-0 306.480102 176.04415)" xml:space="preserve">10</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="text_18">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="306.480102" y="127.40415" transform="rotate(-0 306.480102 127.40415)" xml:space="preserve">20</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="text_19">
+      <text style="letter-spacing:normal; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #221d1a" x="306.480102" y="78.76415" transform="rotate(-0 306.480102 78.76415)" xml:space="preserve">30</text>
+     </g>
+    </g>
+    <g id="text_20">
+     <text style="letter-spacing:normal; font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="287.720415" y="133.128" transform="rotate(-90 287.720415 133.128)" xml:space="preserve">Poverty rate (%)</text>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 321.86725 220.68 
+L 363.928558 220.68 
+L 363.928558 78.1648 
+L 321.86725 78.1648 
+z
+" clip-path="url(#p25b2457b4a)" style="fill: #a4122f; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 389.708069 220.68 
+L 431.769377 220.68 
+L 431.769377 121.84352 
+L 389.708069 121.84352 
+z
+" clip-path="url(#p25b2457b4a)" style="fill: #bd7f1f; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 457.548888 220.68 
+L 499.610196 220.68 
+L 499.610196 168.1488 
+L 457.548888 168.1488 
+z
+" clip-path="url(#p25b2457b4a)" style="fill: #416f4e; stroke: #221d1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 312.980102 220.68 
+L 312.980102 45.576 
+" style="fill: none; stroke: #221d1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 312.980102 220.68 
+L 508.497344 220.68 
+" style="fill: none; stroke: #221d1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_21">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="342.897904" y="75.2464" transform="rotate(-0 342.897904 75.2464)" xml:space="preserve">29.3%</text>
+   </g>
+   <g id="text_22">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="410.738723" y="118.92512" transform="rotate(-0 410.738723 118.92512)" xml:space="preserve">20.3%</text>
+   </g>
+   <g id="text_23">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #221d1a" x="478.579542" y="165.2304" transform="rotate(-0 478.579542 165.2304)" xml:space="preserve">10.8%</text>
+   </g>
+   <g id="text_24">
+    <text style="letter-spacing:normal; font-weight: 600; font-size: 8.4px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #221d1a" x="312.980102" y="39.576" transform="rotate(-0 312.980102 39.576)" xml:space="preserve">Poverty rate</text>
+   </g>
+  </g>
+  <g id="line2d_1">
+   <path d="M 20.625344 20.4048 
+L 512.529344 20.4048 
+" style="fill: none; stroke: #bd7f1f; stroke-width: 1.15"/>
+  </g>
+  <g id="text_25">
+   <text style="letter-spacing:normal; font-weight: 600; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #221d1a" x="20.625344" y="16.648301" transform="rotate(-0 20.625344 16.648301)" xml:space="preserve">Figure 5. Mott Haven income and poverty vs the city</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p62183f78e6">
+   <rect x="54.897344" y="45.576" width="195.517241" height="175.104"/>
+  </clipPath>
+  <clipPath id="p25b2457b4a">
+   <rect x="312.980102" y="45.576" width="195.517241" height="175.104"/>
+  </clipPath>
+ </defs>
+</svg>

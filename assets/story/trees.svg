@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="t d">
+  <title id="t">Sparse street trees on East 138th</title>
+  <desc id="d">A few trees along a long street. 81 living trees on 1.6 km.</desc>
+  <rect width="360" height="220" fill="#fff"/>
+  <line x1="24" y1="168" x2="336" y2="168" stroke="#111" stroke-width="2"/>
+  <g fill="#346538">
+    <circle cx="52" cy="118" r="16"/>
+    <circle cx="128" cy="122" r="13"/>
+    <circle cx="214" cy="116" r="15"/>
+    <circle cx="298" cy="120" r="12"/>
+  </g>
+  <g stroke="#111" stroke-width="2">
+    <line x1="52" y1="132" x2="52" y2="168"/>
+    <line x1="128" y1="134" x2="128" y2="168"/>
+    <line x1="214" y1="130" x2="214" y2="168"/>
+    <line x1="298" y1="132" x2="298" y2="168"/>
+  </g>
+  <text x="180" y="48" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" fill="#111">81</text>
+  <text x="180" y="72" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">living trees on 1.6 km</text>
+</svg>

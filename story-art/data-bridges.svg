@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1760" viewBox="0 0 2800 1760" role="img" aria-label="Bridges we counted">
+  <title>Bridges we counted</title>
+  <rect width="2800" height="1760" fill="#ffffff"/>
+
+  <text x="140" y="150" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#221d1a">Bridges&#160;we&#160;counted</text>
+  <line x1="140" y1="190" x2="2660" y2="190" stroke="#bd7f1f" stroke-width="8"/>
+    <rect x="140" y="250" width="780" height="1330" rx="28" fill="#ffffff" stroke="#221d1a" stroke-width="6"/>
+    <rect x="140" y="250" width="780" height="150" rx="28" fill="#a4122f"/>
+    <rect x="140" y="340" width="780" height="60" fill="#a4122f"/>
+    <text x="530" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#ffffff">BRONX&#160;&#160;·&#160;&#160;4</text>
+    <path d="M 220 570 L 220 528 C 220 492, 340 492, 340 528 L 340 570" fill="none" stroke="#a4122f" stroke-width="12" stroke-linecap="square"/><line x1="210" y1="570" x2="350" y2="570" stroke="#a4122f" stroke-width="10"/>
+    <text x="380" y="558" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Whitestone</text>
+    <path d="M 220 810 L 220 768 C 220 732, 340 732, 340 768 L 340 810" fill="none" stroke="#a4122f" stroke-width="12" stroke-linecap="square"/><line x1="210" y1="810" x2="350" y2="810" stroke="#a4122f" stroke-width="10"/>
+    <text x="380" y="798" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Henry&#160;Hudson</text>
+    <path d="M 220 1050 L 220 1008 C 220 972, 340 972, 340 1008 L 340 1050" fill="none" stroke="#a4122f" stroke-width="12" stroke-linecap="square"/><line x1="210" y1="1050" x2="350" y2="1050" stroke="#a4122f" stroke-width="10"/>
+    <text x="380" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">RFK&#160;Bronx</text>
+    <path d="M 220 1290 L 220 1248 C 220 1212, 340 1212, 340 1248 L 340 1290" fill="none" stroke="#a4122f" stroke-width="12" stroke-linecap="square"/><line x1="210" y1="1290" x2="350" y2="1290" stroke="#a4122f" stroke-width="10"/>
+    <text x="380" y="1278" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Throgs&#160;Neck</text>
+    <rect x="1010" y="250" width="780" height="1330" rx="28" fill="#ffffff" stroke="#221d1a" stroke-width="6"/>
+    <rect x="1010" y="250" width="780" height="150" rx="28" fill="#bd7f1f"/>
+    <rect x="1010" y="340" width="780" height="60" fill="#bd7f1f"/>
+    <text x="1400" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#ffffff">FAR&#160;&#160;·&#160;&#160;3</text>
+    <path d="M 1090 570 L 1090 528 C 1090 492, 1210 492, 1210 528 L 1210 570" fill="none" stroke="#bd7f1f" stroke-width="12" stroke-linecap="square"/><line x1="1080" y1="570" x2="1220" y2="570" stroke="#bd7f1f" stroke-width="10"/>
+    <text x="1250" y="558" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Cross&#160;Bay</text>
+    <path d="M 1090 810 L 1090 768 C 1090 732, 1210 732, 1210 768 L 1210 810" fill="none" stroke="#bd7f1f" stroke-width="12" stroke-linecap="square"/><line x1="1080" y1="810" x2="1220" y2="810" stroke="#bd7f1f" stroke-width="10"/>
+    <text x="1250" y="798" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Marine&#160;Parkway</text>
+    <path d="M 1090 1050 L 1090 1008 C 1090 972, 1210 972, 1210 1008 L 1210 1050" fill="none" stroke="#bd7f1f" stroke-width="12" stroke-linecap="square"/><line x1="1080" y1="1050" x2="1220" y2="1050" stroke="#bd7f1f" stroke-width="10"/>
+    <text x="1250" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Verrazzano</text>
+    <rect x="1880" y="250" width="780" height="1330" rx="28" fill="#ffffff" stroke="#221d1a" stroke-width="6"/>
+    <rect x="1880" y="250" width="780" height="150" rx="28" fill="#416f4e"/>
+    <rect x="1880" y="340" width="780" height="60" fill="#416f4e"/>
+    <text x="2270" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#ffffff">PAID&#160;TUNNELS&#160;&#160;·&#160;&#160;2</text>
+    <path d="M 1960 570 L 1960 528 C 1960 492, 2080 492, 2080 528 L 2080 570" fill="none" stroke="#416f4e" stroke-width="12" stroke-linecap="square"/><line x1="1950" y1="570" x2="2090" y2="570" stroke="#416f4e" stroke-width="10"/>
+    <text x="2120" y="558" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Hugh&#160;L.&#160;Carey</text>
+    <path d="M 1960 810 L 1960 768 C 1960 732, 2080 732, 2080 768 L 2080 810" fill="none" stroke="#416f4e" stroke-width="12" stroke-linecap="square"/><line x1="1950" y1="810" x2="2090" y2="810" stroke="#416f4e" stroke-width="10"/>
+    <text x="2120" y="798" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#221d1a">Queens&#160;Midtown</text>
+
+</svg>

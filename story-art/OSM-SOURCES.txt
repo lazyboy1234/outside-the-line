@@ -1,0 +1,6 @@
+OpenStreetMap raster tiles (https://tile.openstreetmap.org), © OpenStreetMap contributors, ODbL.
+Exported once for this page. See https://www.openstreetmap.org/copyright
+osm-cordon: 40.768, -73.965, z13 — 60th Street line; paid Manhattan south; Mott Haven north
+osm-mott-haven: 40.809, -73.922, z16 — Mott Haven / East 138th
+osm-findings: 40.810, -73.922, z15 — East 138th, Deegan, Mott Haven
+osm-deegan: 40.814, -73.928, z16 — Deegan 138th–149th, Bronx side

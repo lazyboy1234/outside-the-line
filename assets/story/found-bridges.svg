@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="t d">
+  <title id="t">Paid-zone tunnels dropped. Bronx bridges did not rise.</title>
+  <desc id="d">The test caught a drop at paid-zone tunnels in January 2025. Bronx bridges stayed flat.</desc>
+  <rect width="360" height="240" fill="#fff"/>
+  <line x1="40" y1="120" x2="320" y2="120" stroke="#eaeaea" stroke-width="1"/>
+  <path d="M40 88 L120 84 L160 132 L200 118 L240 124 L280 122 L320 120" fill="none" stroke="#111" stroke-width="2.2"/>
+  <path d="M40 126 L80 124 L120 128 L160 122 L200 124 L240 126 L280 123 L320 125" fill="none" stroke="#9f2f2d" stroke-width="2.2"/>
+  <line x1="160" y1="48" x2="160" y2="192" stroke="#eaeaea" stroke-width="1"/>
+  <text x="166" y="44" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#787774">toll starts</text>
+  <text x="40" y="216" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#111">tunnels into the paid zone</text>
+  <text x="40" y="232" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#9f2f2d">Bronx bridges</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg style="letter-spacing:normal" xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="t d">
+  <title id="t">Picked versus skipped files</title>
+  <desc id="d">We picked Bridges and Tunnels for the dump test and the fee file only to describe gates and night trucks. We skipped the fee file as before/after and DOT streets for the brief.</desc>
+  <rect width="1100" height="620" fill="#fff"/>
+  <text x="40" y="48" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#9f2f2d">PICKED</text>
+  <text x="580" y="48" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#5c574f">SKIPPED FOR THE TEST</text>
+
+  <rect x="40" y="72" width="500" height="150" fill="#111"/>
+  <text x="64" y="118" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="26" font-weight="700" fill="#fff">Bridges and Tunnels</text>
+  <text x="64" y="152" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#fff">ebfx-2m7v</text>
+  <text x="64" y="188" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#fff">Has a before. This is the dump test.</text>
+
+  <rect x="40" y="238" width="500" height="150" fill="#f3f1ec"/>
+  <text x="64" y="284" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="26" font-weight="700" fill="#111">Fee file, describe only</text>
+  <text x="64" y="318" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">t6yz-b64h</text>
+  <text x="64" y="354" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">Gates and night trucks. Not before/after.</text>
+
+  <rect x="40" y="404" width="500" height="180" fill="#f3f1ec"/>
+  <text x="64" y="450" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">Also on the table</text>
+  <text x="64" y="486" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="17" fill="#111">Buildings + 2015 trees, for the street.</text>
+  <text x="64" y="516" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="17" fill="#111">Air papers: Cornell, preprint, SBU, DOHMH.</text>
+  <text x="64" y="546" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="17" fill="#111">Money and heat: NFH, HVI.</text>
+
+  <rect x="580" y="72" width="480" height="230" fill="#fff" stroke="#9f2f2d" stroke-width="2"/>
+  <text x="604" y="122" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="26" font-weight="700" fill="#9f2f2d">Fee file as before/after</text>
+  <text x="604" y="164" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">t6yz-b64h starts on day one.</text>
+  <text x="604" y="198" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">There is no before in it.</text>
+  <text x="604" y="248" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">We did not use it that way.</text>
+
+  <rect x="580" y="318" width="480" height="266" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="604" y="368" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="26" font-weight="700" fill="#111">DOT street counts</text>
+  <text x="604" y="410" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">7ym2-wayt</text>
+  <text x="604" y="452" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">No South Bronx before and after.</text>
+  <text x="604" y="494" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="18" fill="#111">This file cannot answer the brief's streets.</text>
+</svg>

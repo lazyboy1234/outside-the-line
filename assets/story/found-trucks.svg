@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="t d">
+  <title id="t">Trucks at night versus cars</title>
+  <desc id="d">31.8 percent of multi-unit trucks run overnight. 19.7 percent of cars do. The file has no before period.</desc>
+  <rect width="360" height="240" fill="#fff"/>
+  <rect x="48" y="56" width="214" height="44" fill="#111"/>
+  <rect x="48" y="124" width="132" height="44" fill="#eaeaea"/>
+  <text x="274" y="84" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" fill="#111">31.8%</text>
+  <text x="192" y="152" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" fill="#111">19.7%</text>
+  <text x="48" y="48" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">trucks at night</text>
+  <text x="48" y="116" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">cars at night</text>
+</svg>

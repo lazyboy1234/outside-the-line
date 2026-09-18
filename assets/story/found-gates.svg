@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-labelledby="t d">
+  <title id="t">Twelve toll gates. Zero in the Bronx.</title>
+  <desc id="d">Twelve counting gates sit south of 60th Street. The Bronx has none.</desc>
+  <rect width="360" height="300" fill="#fff"/>
+  <text x="180" y="72" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="48" fill="#9f2f2d">0</text>
+  <text x="180" y="94" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" fill="#787774">gates in the Bronx</text>
+  <line x1="48" y1="128" x2="312" y2="128" stroke="#9f2f2d" stroke-width="2"/>
+  <text x="48" y="120" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#9f2f2d">60th Street</text>
+  <g fill="#111">
+    <circle cx="78" cy="188" r="5"/><circle cx="104" cy="174" r="5"/>
+    <circle cx="128" cy="196" r="5"/><circle cx="150" cy="168" r="5"/>
+    <circle cx="172" cy="190" r="5"/><circle cx="194" cy="176" r="5"/>
+    <circle cx="216" cy="198" r="5"/><circle cx="236" cy="170" r="5"/>
+    <circle cx="256" cy="186" r="5"/><circle cx="276" cy="200" r="5"/>
+    <circle cx="198" cy="216" r="5"/><circle cx="146" cy="212" r="5"/>
+  </g>
+  <text x="180" y="258" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" fill="#111">12</text>
+  <text x="180" y="280" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" fill="#787774">gates below the line</text>
+</svg>

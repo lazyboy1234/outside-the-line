@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outside the Line</title>
+<meta name="description" content="The paid line stops at 60th Street. Mott Haven sits four miles north.">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{
+  --ink:#111;
+  --mute:#5c574f;
+  --line:#9f2f2d;
+  --paper:#fff;
+  --rule:#111;
+  --ui:system-ui, sans-serif;
+}
+*{box-sizing:border-box;font-family:inherit;letter-spacing:normal}
+html,body{height:100%;margin:0;background:var(--paper);color:var(--ink);overflow:hidden}
+html,body,button,input,h1,h2,h3,p,li,figcaption,text{
+  font-family:var(--ui);
+  letter-spacing:normal;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:normal;
+}
+a{color:var(--mute);text-decoration:none}
+a:hover{color:var(--ink)}
+a:focus-visible, button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+button{font:inherit;color:inherit}
+
+.top{
+  flex:0 0 auto;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:.65rem 1rem;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+}
+.brand{
+  margin:0;
+  font-size:11px;
+  font-weight:600;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.nums{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.28rem;
+  flex:1;
+  flex-wrap:wrap;
+}
+.nums button{
+  appearance:none;
+  width:2rem;
+  height:2rem;
+  border:1.5px solid var(--ink);
+  background:var(--paper);
+  padding:0;
+  font-weight:600;
+  font-size:14px;
+  line-height:1;
+  cursor:pointer;
+}
+.nums button.is-on{
+  background:var(--ink);
+  color:var(--paper);
+}
+.nums button:hover:not(.is-on){background:#f3f1ec}
+#explorebtn{
+  border:1.5px solid var(--ink);
+  background:var(--paper);
+  padding:.55rem .9rem;
+  font-weight:600;
+  font-size:14px;
+  line-height:1;
+  cursor:pointer;
+  white-space:nowrap;
+}
+#explorebtn:hover{background:var(--ink);color:var(--paper)}
+
+.explorebar{
+  display:none;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 1rem;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+}
+.explore-on .explorebar{display:flex}
+.explore-on .top{display:none}
+.explore-on{overflow:hidden}
+#closeexplore{
+  border:1.5px solid var(--ink);
+  background:var(--paper);
+  padding:.55rem .9rem;
+  font-weight:600;
+  font-size:14px;
+  line-height:1;
+  cursor:pointer;
+}
+#closeexplore:hover{background:var(--ink);color:var(--paper)}
+.explorebar p{
+  margin:0;
+  color:var(--mute);
+  font-size:13px;
+}
+
+.stage{
+  flex:1;
+  min-height:0;
+  display:flex;
+}
+.pane{
+  flex:0 0 58%;
+  min-width:18rem;
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+  overflow:hidden;
+}
+.steps{
+  flex:1;
+  min-height:0;
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding:1rem 1.2rem .65rem;
+}
+.step{
+  display:none;
+}
+.step.is-on{display:block}
+.step[hidden]{display:none}
+.beat{
+  margin:0 0 .4rem;
+  color:var(--line);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:normal;
+  text-transform:uppercase;
+}
+.beat-sub{
+  font-weight:400;
+  text-transform:none;
+}
+.red-note{
+  color:var(--line);
+  font-weight:600;
+}
+h1,h2{
+  margin:0 0 .45rem;
+  font-weight:600;
+  font-size:clamp(1.15rem,2.2vw,1.55rem);
+  line-height:1.28;
+  text-wrap:balance;
+}
+.facts{
+  margin:0 0 .7rem;
+}
+.facts p,
+.lede{
+  margin:0 0 .65rem;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.5;
+  letter-spacing:normal;
+}
+.facts p:last-child,
+.lede:last-child{margin-bottom:0}
+.lede b,
+.facts b{font-weight:700}
+.dsets{margin:0}
+.dset{
+  margin:0 0 .7rem;
+  padding:0 0 .65rem;
+  border-bottom:1px solid #ddd;
+}
+.dset:last-child{margin:0;padding:0;border:0}
+.dset h3{
+  margin:0 0 .2rem;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:normal;
+}
+.dset h3 code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:13px;
+  font-weight:600;
+  color:var(--mute);
+}
+.dset p{
+  margin:0 0 .28rem;
+  font-size:14px;
+  line-height:1.45;
+  letter-spacing:normal;
+}
+.dset p:last-child{margin:0}
+.plate{
+  height:42vh;
+  min-height:220px;
+  margin:.45rem 0 .2rem;
+  position:relative;
+}
+.plate img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center top;
+  background:var(--paper);
+}
+.plate figcaption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  padding:.3rem 0 0;
+  background:var(--paper);
+  color:var(--mute);
+  font-size:12px;
+  line-height:1.35;
+}
+.plate.captioned img{height:calc(100% - 2rem)}
+.credit{
+  flex:0 0 auto;
+  margin:0;
+  padding:.55rem 1.2rem .65rem;
+  border-top:1px solid #ddd;
+  font-size:11px;
+  color:var(--mute);
+}
+.credit a{font-size:11px}
+.credit span{margin:0 .45rem}
+
+.rule{
+  flex:0 0 1px;
+  background:var(--rule);
+}
+
+#map{
+  flex:1 1 42%;
+  min-width:0;
+  min-height:0;
+  position:relative;
+}
+.map-legend{
+  position:absolute;
+  right:10px;
+  bottom:28px;
+  z-index:2;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  padding:.4rem .55rem .35rem;
+  font-size:11px;
+  line-height:1.35;
+}
+.map-legend[hidden]{display:none}
+.map-legend p{
+  margin:0 0 .28rem;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+}
+.map-legend p:last-child{margin:0}
+.map-legend i{
+  flex:0 0 10px;
+  width:10px;
+  height:10px;
+  border:1px solid var(--paper);
+  box-shadow:0 0 0 1px var(--ink);
+  border-radius:50%;
+}
+.explore-on .pane,
+.explore-on .rule{display:none}
+
+.maplibregl-ctrl-attrib{
+  font-weight:400;
+  font-size:10px;
+  line-height:1.3;
+  background:transparent;
+  color:var(--mute);
+}
+.maplibregl-ctrl-attrib a{color:var(--mute)}
+.maplibregl-ctrl-bottom-left,
+.maplibregl-ctrl-top-left,
+.maplibregl-ctrl-top-right{display:none}
+.explore-on .maplibregl-ctrl-top-right{display:block}
+.maplibregl-popup-content{
+  font-weight:400;
+  font-size:15px;
+  line-height:1.45;
+  color:var(--ink);
+  padding:10px 12px;
+  border:1px solid var(--ink);
+  border-radius:2px;
+  box-shadow:none;
+  max-width:17rem;
+}
+.maplibregl-popup-tip{border-top-color:var(--ink)}
+.maplibregl-popup-close-button{
+  font-size:18px;
+  line-height:18px;
+  padding:0 6px;
+  color:var(--ink);
+}
+.sit-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  line-height:1.35;
+  margin:.15rem 0 .55rem;
+}
+.sit-table caption{
+  caption-side:bottom;
+  text-align:left;
+  color:var(--mute);
+  font-size:12px;
+  padding-top:.35rem;
+}
+.sit-table th,.sit-table td{
+  border-bottom:1px solid #ddd;
+  text-align:left;
+  padding:.28rem .3rem;
+}
+.sit-table th{
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--mute);
+}
+.sit-table .is-canyon{color:var(--line);font-weight:600}
+
+@media (max-width:720px){
+  .brand{display:none}
+  .top{gap:.5rem;padding:.5rem .6rem}
+  .nums{gap:.3rem}
+  .nums button{width:1.9rem;height:1.9rem;font-size:13px}
+  #explorebtn{padding:.5rem .6rem;font-size:12px}
+  .stage{flex-direction:column}
+  .pane{
+    flex:0 0 58%;
+    min-width:0;
+    border-right:0;
+    border-bottom:1px solid var(--rule);
+  }
+  #map{flex:1 1 42%;min-height:14rem}
+  .steps{padding:.85rem .85rem .6rem}
+  h1,h2{font-size:1.15rem}
+  .facts p,
+  .lede,
+  .dset p{font-size:14px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <p class="brand">Outside the Line</p>
+  <nav class="nums" id="nums" aria-label="Steps">
+    <button type="button" data-step="0" class="is-on" aria-current="true">1</button>
+    <button type="button" data-step="1">2</button>
+    <button type="button" data-step="2">3</button>
+    <button type="button" data-step="3">4</button>
+    <button type="button" data-step="4">5</button>
+    <button type="button" data-step="5">6</button>
+    <button type="button" data-step="6">7</button>
+    <button type="button" data-step="7">8</button>
+    <button type="button" data-step="8">9</button>
+    <button type="button" data-step="9">10</button>
+  </nav>
+  <button type="button" id="explorebtn">Explore the map</button>
+</header>
+
+<div id="explorebar" class="explorebar">
+  <p>A tap on a dot gives one sentence.</p>
+  <button type="button" id="closeexplore">Close</button>
+</div>
+
+<div class="stage">
+  <aside class="pane" id="pane">
+    <div class="steps">
+      <article class="step is-on" data-step="0" aria-label="Context">
+        <p class="beat">Context<span class="beat-sub"> / introduction</span></p>
+        <div class="facts">
+          <p>For some context, congestion prices in downtown Manhattan are there because it is obviously a high-traffic area. Trains would logically cut car use by discouraging people who drive from taking a car, and getting them onto the MTA instead.</p>
+          <p>Now the issue is whether this fee is eliminating the pollution by actually encouraging more MTA use, or whether it is increasing car use on other pathways.</p>
+          <p>I would say that the fee does change driving inside the paid zone. Fraser's paper, found about 22 percent less fine dirt inside the zone during the first six months when they compared it against a model of the same months with no fee, and that 22 percent is Fraser's number. Barber's thesis found a 13 percent drop, from 8.70 down to 7.56, and that number lives in his Table A.8. On page 25 Barber quotes Fraser, writing that Fraser's paper found PM2.5 levels to have decreased by 22 percent, but he does not claim that 22 percent as his own. When we checked the Bronx bridges ourselves, we did not find a big extra pile of cars. Mott Haven was never inside the fee, so we would not say the dirt moved to the Bronx, but we would say the clean air stopped at 60th Street.</p>
+          <p>The reason we picked the Bronx, and the reason we had to use bridges, is that the paid zone stops at 60th Street and there are no fee gates north of it. The only vehicle counts that exist up there are on the <b>bridges</b>, so the Bronx crossings are the only place we can ask whether cars spilled. The gate file cannot see Mott Haven at all because no gate stands there.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero." width="927" height="588">
+        </figure>
+      </article>
+
+      <article class="step" data-step="1" hidden aria-label="What the fee file shows">
+        <p class="beat">The fee file</p>
+        <div class="facts">
+          <p id="fee-line">A car pays <b>$9</b> in the morning and <b>$2.25</b> at night, so more trucks go at night, because if you're a company you'd cut your trucking cost by running overnight, and that is exactly what the 2025 fee file shows. We cannot say the trucks "moved" to the night, though, because the file has no before to compare against.</p>
+          <p>Online there were a lot of files, and we used this fee file only to describe the gates and the night trucks. We picked Bridges and Tunnels for the spill test because that one has a before. The next step walks through every file we looked at, what it is, what we used it for, and why we picked it or skipped it.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig2-trucks.svg" alt="Overnight share of 2025 paid entries. Multi-unit trucks are higher than cars. Not a moved claim." width="1164" height="591">
+        </figure>
+      </article>
+
+      <article class="step" data-step="2" hidden aria-label="The datasets">
+        <p class="beat">The datasets</p>
+        <div class="dsets">
+          <article class="dset">
+            <h3>MTA fee entries <code>t6yz-b64h</code></h3>
+            <p>This is the congestion-pricing gate file, and it counts every vehicle that passes one of the paid-zone detectors. We used it to name the twelve gates and to compare how many trucks go through at night versus how many cars do. We only used it to describe things, because the file starts on the first day of the fee, so there is no before to compare against, and there are no Bronx gates in it at all. That means we could not use it as a before-and-after test.</p>
+          </article>
+          <article class="dset">
+            <h3>MTA Bridges and Tunnels <code>ebfx-2m7v</code></h3>
+            <p>This file has hourly counts on every MTA crossing, and it goes back years before the fee started. We used it for the spill test, where we compared the Bronx bridges this year against last year and set them against far bridges that should not have felt the fee. We picked this one because it is the only file with a before, and having a before is the only way to ask whether cars dumped north of 60th Street.</p>
+          </article>
+          <article class="dset">
+            <h3>DOT street counts <code>7ym2-wayt</code></h3>
+            <p>These are the city's machine counts on regular streets. We went looking for a South Bronx street that was counted both before and after the fee, and we did not find one. Since this file cannot tell us about the streets the brief is asking about, we did not use it as the spill test.</p>
+          </article>
+          <article class="dset">
+            <h3>Buildings <code>5zhs-2jue</code> + trees <code>uvpi-gqnh</code></h3>
+            <p>These two files are the building footprints with their roof heights and the 2015 street tree census. We used them twice. First we measured East 138th Street block by block, how tall the buildings are compared to how wide the street is and where the trees already stand. Then we ran the same H/W and canopy logic across about 99,357 streets citywide so the Mott Haven pick had to beat the rest of the city, not just feel right. This is our street measure, and it is not a traffic before-and-after.</p>
+          </article>
+          <article class="dset">
+            <h3>Street Centerline <code>inkn-q76z</code> + EHDP asthma</h3>
+            <p>The city's street centerline is every vehicular segment we scored on the Dell, and the Environment and Health Data Portal gives adult and child asthma ED rates by UHF42 neighborhood for 2023. We used those with NFH and HVI so a corridor's rank is not only about trees and highways.</p>
+          </article>
+          <article class="dset">
+            <h3>Fraser's paper</h3>
+            <p>This is a published air paper that covers the first six months of the fee. We used it for its main result, which is about 22 percent less daily-max fine dirt inside the paid zone compared to a model of the same months with no fee. We want to be clear that this 22 percent is Fraser's number for inside the zone, and it is not Barber's.</p>
+          </article>
+          <article class="dset">
+            <h3>Barber's thesis</h3>
+            <p>This is a later Cornell thesis on air, traffic, and crime after the fee. We used it for Barber's own result, which is a 13 percent drop from 8.70 to 7.56 in Table A.8. On page 25 he quotes Fraser's 22 percent, but he does not claim it as his own, so we kept the two numbers apart.</p>
+          </article>
+          <article class="dset">
+            <h3>Preprint / SBU / DOHMH</h3>
+            <p>These are three more air papers, not one dataset. We read each one to see what it said about dirt in the air after the fee. We kept them apart from each other and from Fraser and Barber, and we do not average them into one number, because they do not all say the same thing.</p>
+          </article>
+          <article class="dset">
+            <h3>NFH <code>r3dx-pew9</code> + HVI <code>4mhf-duep</code></h3>
+            <p>These two files are the city's neighborhood money and heat scores. We used them to pull income, poverty, and the heat score for Hunts Point, Longwood, and Melrose, and to set those next to the city as a whole. We picked them so the street ask sits on who actually lives there, not just on the highway.</p>
+          </article>
+        </div>
+        <figure class="plate">
+          <img src="story-art/cornell/table-a8-summary.png" alt="Barber Table A.8. PM2.5 8.70 to 7.56, minus 13.15 percent. Not Fraser's 22 percent." width="1366" height="422">
+        </figure>
+      </article>
+
+      <article class="step" data-step="3" hidden aria-label="Methodology">
+        <p class="beat">Methodology</p>
+        <div class="facts">
+          <p>We compared this year against last year on the four Bronx crossings, which are the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, and we set them against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway. If cars were dodging the fee by cutting through the Bronx, the Bronx line would climb above the far bridges after January 2025. It didn't. Pooled over 2025 the Bronx crossings grew 1.04 percentage points slower than the far bridges, with a 95 percent interval from −3.6 to +1.6 and a p-value of 0.49, so that is a flat line and not a spill.</p>
+          <p>Then we ran the exact same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, because those tunnels have to show a drop, and if they don't, the tool is broken. They did. The tunnels came in 2.29 points below the far bridges over 2025, with an interval from −3.4 to −1.2, and the first month of the fee was the biggest, at −9.18 points in January, then −7.9 in February and −8.0 in March, before it faded to about zero by the fall. That is what a fee doing its job looks like, and it is what the Bronx bridges do not show.</p>
+          <p id="did-perm-line">On the Dell lab machine we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is −0.15 percent, the two-sided permutation p is 0.77, and the bootstrap 95 percent interval is −1.10 to +0.80, so the flat read holds up under a harder test.</p>
+          <p>We kept the air studies apart instead of averaging them into one number, because they measure different things in different places with different monitors. Fraser's paper, found about 22 percent less fine dirt inside the zone compared to a no-fee model, while Barber's thesis found a 13 percent drop from 8.70 to 7.56 in his Table A.8, and on page 25 Barber quotes Fraser's 22 percent rather than claiming it.</p>
+          <p>Then we stopped arguing about one street on feel. We scored every vehicular street segment in the city's own Street Centerline file, about 99,357 of them across five boroughs, and chained them into 33,785 sliding windows of about 0.8 to 2.0 kilometers. Each window got eight dimensions, which are bridge and highway exposure, nearest published post-fee monitor signal, asthma ED rates, income and poverty, heat vulnerability, building H/W so we know where trees clear instead of trap, canopy gap from the tree census, and a Du Bois share for land next to a below-grade or elevated highway. We ranked those windows under three weight sets, equal, burden-heavy, and feasibility-heavy, and we let the list tell us where the street package belongs.</p>
+          <p>The stack we actually ran is open source Python on the Dell. <a href="https://geopandas.org">GeoPandas</a> held the streets, buildings, and neighborhood polygons in one table. <a href="https://shapely.readthedocs.io">Shapely</a> did the buffers and nearest-neighbor distances. <a href="https://networkx.org">NetworkX</a> chained the centerline segments into street trunks so we could slide the windows. NumPy, SciPy, and pandas did the percentile ranks and the DiD permutations. Matplotlib drew the rank chart and the heat map. We did not use <a href="https://github.com/gboeing/osmnx">OSMnx</a> for the citywide run, because the official CSCL layer is the street file the city maintains, but OSMnx is the highly starred library we would use next anytime we need OpenStreetMap networks instead of hand-rolled Overpass calls.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig3-did.svg" alt="Bronx bridges stay about flat while tunnels into the paid zone drop." width="1152" height="683">
+        </figure>
+      </article>
+
+      <article class="step" data-step="4" hidden aria-label="The air">
+        <p class="beat">The air</p>
+        <div class="facts">
+          <p class="red-note">For some context, the dirt everyone is measuring is PM2.5. It comes off tailpipes, brakes, and tires. The dots on the map are every monitor result we could find, colored by whether the air went down, went up, or did not move.</p>
+          <p>In Fraser's paper, Figure 1 shows the paid zone got about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That drop shrinks as you leave the zone. The 22 percent is Fraser's number for inside the fee line.</p>
+          <p>In Barber's thesis, Table A.8 shows downtown falling from 8.70 to 7.56, which is 13 percent. In the paper on page 25 he quotes Fraser's 22 percent, but he does not claim it as his own, and his placebo plot says to read his number carefully.</p>
+          <p>We looked at a preprint on six live monitors too. Queensboro got better, about −9 percent. Williamsburg, the Cross Bronx, and Broadway at 35th got worse. Only one of the six sites cleaned up.</p>
+          <p>South Bronx Unite put up 19 community sensors. Twelve to fourteen went up. The biggest jump was +1.29 µg/m³ at the Deegan by the Third Avenue Bridge, right next to East 138th.</p>
+          <p>The city health department ran official monitors for a year with the Van Wyck as a control. They found no fee-sized change they could call, and they note traffic is only about 14 percent of PM2.5 here.</p>
+          <p>We would say the honest answer is three answers, so we do not average them. Inside the zone the air got cleaner. Outside it depends on the monitor. In Mott Haven the nearest official monitor is on East 135th, and it was never one of Fraser's six, while the community sensors say the Deegan got a little worse. That is why the trees have to answer to the Deegan, not to the fee.</p>
+          <table class="sit-table">
+            <caption>Every air study we read, kept apart.</caption>
+            <thead>
+              <tr><th>Study</th><th>What it found</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Fraser's paper</td><td>About 22% lower inside the zone</td></tr>
+              <tr><td>Barber's thesis</td><td>13% lower downtown (Table A.8)</td></tr>
+              <tr><td>Preprint</td><td>1 of 6 sites down, 3 up</td></tr>
+              <tr><td>South Bronx Unite</td><td>+1.29 at the Deegan</td></tr>
+              <tr><td>City health dept</td><td>No clear fee change</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="plate captioned" style="height:52vh">
+          <img src="paper/refs/cornell-npj-fig1.png" alt="Fraser's paper, Figure 1. About 22 percent lower inside the paid zone." width="611" height="685">
+          <figcaption>Fraser's paper, Figure 1. The bottom panel is the 22 percent.</figcaption>
+        </figure>
+      </article>
+
+      <article class="step" data-step="5" hidden aria-label="What solutions were on the table">
+        <p class="beat">What solutions were on the table</p>
+        <div class="facts">
+          <p class="red-note">For some context, the brief told us not to default to trees everywhere, and it invited a lid or a boulevard over the Deegan. We priced what the city can do now against what it would take to actually lock the highway air away from East 138th.</p>
+          <p>The current solutions are the ones Parks and DEP already know how to buy. Street trees on the open blocks filter some fine dirt at the curb and cool the sidewalk, and a planted tree with care usually lands in about the $2,500 to $4,000 range, with Parks' own recent average near $3,110. On the one tall-narrow block where a full crown would trap exhaust, we would put plants on the walls instead, which is a one-block ask with the building owners. DEP rain gardens take stormwater and add ground cover, usually about $40,000 to $50,000 each to build, and DEP already has a multi-billion-dollar green infrastructure program that has to be spent, so the Bronx has a claim on that money. Those three can start now, and they help, but they do not shut the Deegan off.</p>
+          <p id="cost-line">The fourth option is physical. Trees and gardens clean around the pollution. A cap locks the pollution under the road. We got that idea by looking back at cities that already did it, places like Dallas's Klyde Warren Park, where they put a deck over a sunken freeway so the cars keep moving underneath and the top becomes ground again. In plain English it is like turning the Deegan into a short tunnel by putting a lid on top of the trench from East 138th to East 149th, about 12.9 acres, so the exhaust gets collected and pushed out through vents instead of rising straight into the sidewalk. Public comps for that kind of work run from about $20 million an acre up past $90 million an acre, so our estimate for this stretch is about $250 million to $1.2 billion, and nobody has priced this exact span yet.</p>
+          <p>The lid is later because the Deegan is a state road. It needs NYSDOT, a federal review, a city review, and ULURP if the top becomes a park, and that clock alone is years. So we would plant the Mott Haven grid now, and we would put the cap on the table now so the real fix has a start date.</p>
+          <table class="sit-table">
+            <caption>Four options, with estimate ranges.</caption>
+            <thead>
+              <tr><th>Option</th><th>Estimate</th><th>Our call</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Street trees</td><td id="est-trees">about $2,500 to $4,000 each</td><td>Now</td></tr>
+              <tr><td>Canyon wall plants</td><td>block-scale, with the owners</td><td>Now, block 10 only</td></tr>
+              <tr><td>Rain gardens</td><td id="est-gi">about $40,000 to $50,000 each</td><td>Now, with the trees</td></tr>
+              <tr><td>Deegan cap / lid</td><td id="est-lid">about $250M to $1.2B</td><td>Later, locks the pollution under the road</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig-solutions.svg" alt="Four options: trees, canyon walls, rain gardens, and a Deegan cap over the road." width="1100" height="560">
+        </figure>
+      </article>
+
+      <article class="step" data-step="6" hidden aria-label="Citywide rankings">
+        <p class="beat">Rankings</p>
+        <div class="facts">
+          <p>For some context, we did not want East 138th Street to win because we liked the story. We scored about 99,357 vehicular street segments from the city's own centerline file, chained them into 33,785 corridor windows, and ranked every window under three weight sets. Zoo roads, airport stubs, and unnamed service geometry got filtered out of the table below, because those are not places you plant a street package.</p>
+          <p id="e138-rank-line">East 138th holds. Under equal weights the best window that covers at least half of our design corridor ranks 22 out of 33,785, which is the 99.94th percentile, and it is third among non-overlapping corridors. Burden weights say the same thing. Feasibility weights drop it to thirteenth among non-overlapping corridors, which is still the top of the Bronx list that also sits on a measured post-fee air hit.</p>
+          <table class="sit-table">
+            <caption>Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.</caption>
+            <thead>
+              <tr><th>#</th><th>Street</th><th>Neighborhood</th><th>Score</th><th>Asthma ED</th><th>HVI</th><th>Monitor</th></tr>
+            </thead>
+            <tbody id="rank-equal-body"></tbody>
+          </table>
+          <p>Southern Blvd comes first on the cleaned list, then East 138th, then Boone Ave and the Mott Haven cross streets. Southern Blvd wins on income, heat, and highway adjacency, but it has no published post-fee monitor on the corridor, so we would not call it a fee-spill street. East 138th is the highest-ranked corridor that also sits on the South Bronx Unite Deegan peak of +1.29 µg/m³.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
+        </figure>
+      </article>
+
+      <article class="step" data-step="7" hidden aria-label="Our choices">
+        <p class="beat">Our choices</p>
+        <div class="facts">
+          <p>So I picked five moves from that list, and the order is the argument. The first move is a Mott Haven grid, not one street alone. East 138th stays the spine because it is the bridge landing and the Deegan exit and the worst community sensor, and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on the same scan with the same asthma and heat numbers, so we plant them as one package.</p>
+          <div id="choices-list" class="dsets"></div>
+          <p>The reason Midtown Broadway, the Queensboro landing, and the Van Wyck are not on this list is that the scan already put them where they belong. Queensboro got cleaner at about −9 percent in the preprint, Midtown is inside the fee, and Van Wyck is the city's own control. Williamsburg Bridge went up about +6.3 percent, but the surrounding community burden is much lower, so it loses once income, asthma, and heat are in the score.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/map-citywide-heat.png" alt="Citywide heat map of corridor scores across four boroughs, with East 138th outlined." width="1200" height="1200">
+        </figure>
+      </article>
+
+      <article class="step" data-step="8" hidden aria-label="Where the trees go">
+        <p class="beat">Where the trees go</p>
+        <div class="facts">
+          <p>For some context on why East 138th is still the street we measured block by block, the brief asked us to pick one specific place that our Part 1 map showed as underserved or newly burdened, and it named a bridge approach as one kind of place that counts. East 138th Street is where the Third Avenue Bridge lands in the Bronx, and it is also where the Major Deegan exit dumps into the neighborhood, so it is the one street in Mott Haven that takes both the bridge traffic and the highway traffic at the same time. The one dot on our air map that got worse after the fee is the South Bronx Unite sensor at the Deegan by the Third Avenue Bridge, at +1.29 µg/m³, and that sensor sits at the west end of this street. The city's own Mott Haven monitor is on East 135th, about 330 meters south, so this is also the most measured street in the neighborhood. It runs 1.6 kilometers straight through Hunts Point, Longwood, and Melrose, and it is about 40 meters wide from building face to building face with a median H/W of 0.38, which means it is open enough for trees to actually work on nine of ten blocks. The citywide scan put this street in the top three non-overlapping corridors under equal and burden weights, so the block table below is how we plant the spine of the Mott Haven grid.</p>
+          <table class="sit-table" id="tree-pick-table">
+            <caption>Ten scored 120 m blocks on East 138th, by score. Gap is living trees minus the street's own mean of 7 per block.</caption>
+            <thead>
+              <tr><th>Block</th><th>H/W</th><th>Living trees</th><th>Gap vs 7</th><th>Score</th><th>Pick</th></tr>
+            </thead>
+            <tbody id="tree-pick-body"></tbody>
+          </table>
+          <p>We tested whether the trees on East 138th are spread evenly across the blocks, and they are not, with a chi-square of 58.86 and a p-value of 2.2e-9. Because the trees are clustered, we plant the open blocks that sit under the street's own average, which are blocks 4, 3, 9, 5, 12, and 11. The one block at an H/W of 0.58 gets plants on the walls plus spaced trees instead of a full row. The blocks on the map follow the real street centerline from OpenStreetMap, so they sit on the road and not through the buildings.</p>
+          <p>The reason this is the Bronx and not somewhere easier is that this is the community most at risk, and that is exactly why it should be first in line. Adults here go to the emergency room for asthma at 193.5 per 10,000 against 66.4 citywide, the heat score is 5 out of 5, the poverty rate is 29.3 percent, and the one place the community sensors found the air getting worse after the fee is the Deegan, which is the west end of this street. Those are neighborhood numbers, so they tell us this street deserves the work first, but they can't pick one block over another, and that is what the chi-square is for.</p>
+          <p>Better design matters more than more trees, and the brief said so. The street already has 81 living trees and 30 of them are honeylocust, which is the right call, because honeylocust, Kentucky coffeetree, and zelkova are open-crowned and salt-tolerant, so exhaust can rise through them and road salt won't kill them. We would keep to those and stay away from London plane and other dense crowns, because on this street a closed roof of leaves would hold the highway air at breathing height instead of clearing it. The rain gardens are not there for the air, they are there for the ground, so we would build them as tree-pit rain gardens, one structure that takes the stormwater and grows the tree, instead of two separate holes in the sidewalk. Planning-grade i-Tree numbers say the whole corridor program removes about 10.6 pounds of PM2.5 a year and catches about 7.2 million gallons of stormwater, and that PM2.5 number does not cancel a +1.29 µg/m³ highway, which is why the lid stays in the plan.</p>
+          <p>Fraser's paper, is the 22 percent inside the paid zone, and Barber's 13 percent in Table A.8 is his downtown average, so neither one is a tree number and we did not use them here.</p>
+        </div>
+      </article>
+
+      <article class="step" data-step="9" hidden aria-label="What we would build">
+        <p class="beat">What we would build</p>
+        <div class="facts">
+          <p>We would build this in two horizons, and the order is the argument. The first horizon is the Mott Haven grid, and it starts now. East 138th gets six open blocks under the street's own tree average with honeylocust, coffeetree, or zelkova in tree-pit rain gardens, block 10 gets plants on the walls with spaced trees, and East 141st, East 132nd, East 135th, and Exterior Street get the same open-crown package. The whole thing runs through NYC Parks and DEP programs that already have money in them, so nobody has to invent a budget. Southern Blvd and the Cross Bronx frontage on Park, Jerome, and Boone are the next tranche, and Bruckner with Westchester is the medium-term truck corridor, with green medians instead of quiet sidewalk planting alone.</p>
+          <p>The second horizon is the Deegan lid, and this is the part that actually fixes the air instead of filtering it. The Major Deegan is Interstate 87, and from East 138th up to East 149th it runs below the grade of the neighborhood, in a trench between Exterior Street and the Grand Concourse. A lid means you deck over that trench, so the highway keeps running underneath and the top becomes ground, about 12.9 acres of it by our measurement, which is a park two and a half times the size of Dallas's Klyde Warren. The exhaust that now rises straight into East 138th at breathing height gets collected in the covered section and pushed out through vent stacks, away from the sidewalk, which is why we say the lid removes the source and the trees only clean up after it. Public comps run from about $20 million an acre up past $90 million an acre, so our estimate for this stretch is about $250 million to $1.2 billion, and nobody has priced this exact span yet.</p>
+          <p>The lid is later because of who owns what. I-87 is a state road, so it is NYSDOT's, and a lid with federal money needs an FHWA NEPA review with 45 to 60 days of public comment on a draft EIS, a city CEQR review with its own 30-day comment window, and ULURP if the top becomes mapped parkland, which runs 60 days at the Community Board, 30 at the Borough President, 60 at City Planning, and 50 at the City Council. The closest live cousin is the BQE Central rebuild, which has been years of study before any steel. So the street package goes first because the city can start it this year, and the lid goes on the table now so the clock starts, because a clock that starts in 2026 finishes a lot sooner than one that starts in 2030.</p>
+          <p>The brief built the whole competition around one W.E.B. Du Bois passage from 1950, where he looks out a high window in a New York of the future and sees flower gardens, then vegetables, shrubs, and orchards, then forests, and beyond the forests the sea, and he says the city did not look like New York. The brief reads that as a claim about land, and we would say that reading is right. You cannot get the forest and then the sea inside a city until something first stops needing that ground at street level. Downtown, the fee did that, and the Queens Midtown and Carey tunnels show it at −9 percent in the first month. In Mott Haven nothing was taken off the ground, because the fee stopped at 60th Street and the highway kept running. So Du Bois's window in the Bronx is the lid. The trees are what you plant while you wait for it, and they are worth planting, but the forest he saw needs the highway to stop needing the trench first.</p>
+          <p class="red-note">We bet our solution was in the Bronx, and the citywide ranking put East 138th in the top three non-overlapping corridors, so that bet held.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig4-canyon.svg" alt="East 138th Street: nine blocks can take trees, one tall-narrow block needs walls." width="1367" height="521">
+        </figure>
+      </article>
+    </div>
+    <p class="credit">
+      <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a>
+    </p>
+  </aside>
+  <div class="rule" aria-hidden="true"></div>
+  <div id="map" role="img" aria-label="OpenStreetMap of New York with project data on top">
+    <div id="maplegend" class="map-legend" hidden>
+      <p><i style="background:#2a8a4a"></i> Tunnels</p>
+      <p><i style="background:#9f2f2d"></i> Bridges</p>
+      <p><i style="background:#111111"></i> Fee gates</p>
+    </div>
+    <div id="airlegend" class="map-legend" hidden>
+      <p><i style="background:#2a8a4a"></i> Air went down</p>
+      <p><i style="background:#9f2f2d"></i> Air went up</p>
+      <p><i style="background:#5c574f"></i> No change to call</p>
+      <p><i style="background:#111111"></i> Official monitor near our street</p>
+    </div>
+    <div id="sitelegend" class="map-legend" hidden>
+      <p><i style="background:#2a8a4a"></i> Plant</p>
+      <p><i style="background:#9f2f2d"></i> Walls + spaced trees</p>
+      <p><i style="background:#5c574f"></i> Already full</p>
+    </div>
+    <div id="ranklegend" class="map-legend" hidden>
+      <p><i style="background:#9f2f2d"></i> Our choices</p>
+      <p><i style="background:#2a8a4a"></i> East 138th spine</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="data/bundle.js"></script>
+<script>
+(function(){
+  const D = window.OTL;
+  if(!D){
+    document.body.insertAdjacentHTML('afterbegin', '<p style="padding:1rem">The map data did not load.</p>');
+    return;
+  }
+
+  function usd(n){
+    const whole = Math.abs(n - Math.round(n)) < 1e-9;
+    return '$' + Number(n).toLocaleString('en-US', whole
+      ? {maximumFractionDigits:0}
+      : {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+  function usdShort(n){
+    if(n >= 1e9){
+      const b = Math.round((n/1e9)*100)/100;
+      return '$' + b + ' billion';
+    }
+    return '$' + Math.round(n/1e6) + ' million';
+  }
+  (function fillCost(){
+    const C = D.policy_cost;
+    if(!C) return;
+    const p = C.cbdtp && C.cbdtp.phase1_ezpass_usd;
+    const fee = document.getElementById('fee-line');
+    if(fee && p){
+      fee.innerHTML = 'A car pays <b>' + usd(p.car_peak) + '</b> in the morning and <b>' + usd(p.car_overnight) + '</b> at night. More trucks go at night because a company can cut trucking cost by running overnight. That is what the 2025 fee file shows. We cannot say they "moved" because the file has no before.';
+    }
+    // Keep the solutions narrative in #cost-line. Table cells stay as estimate ranges.
+    const treeCell = document.getElementById('est-trees');
+    const giCell = document.getElementById('est-gi');
+    const lidCell = document.getElementById('est-lid');
+    if(treeCell) treeCell.textContent = 'about $2,500 to $4,000 each';
+    if(giCell) giCell.textContent = 'about $40,000 to $50,000 each';
+    if(lidCell) lidCell.textContent = 'about $250M to $1.2B';
+  })();
+  (function fillTreeSiting(){
+    const T = D.tree_siting;
+    const tb = document.getElementById('tree-siting-body');
+    if(!T || !tb || !T.segments) return;
+    const rows = T.segments.slice().sort((a,b) => a.i - b.i);
+    tb.innerHTML = rows.map(s => {
+      const cls = s.canyon ? ' class="is-canyon"' : '';
+      return '<tr'+cls+'><td>'+s.i+'</td><td>'+Number(s.hw).toFixed(2)+'</td><td>'+Number(s.trees_per_100m).toFixed(1)+'</td><td>'+s.call+'</td></tr>';
+    }).join('');
+  })();
+  function pickWord(action){
+    if(action === 'plant') return 'plant';
+    if(action === 'canyon_walls') return 'walls + spaced';
+    return 'already full';
+  }
+  function pickColor(action){
+    if(action === 'plant') return '#2a8a4a';
+    if(action === 'canyon_walls') return '#9f2f2d';
+    return '#5c574f';
+  }
+  (function fillTreePick(){
+    const T = D.tree_siting;
+    const tb = document.getElementById('tree-pick-body');
+    if(!T || !tb || !T.segments) return;
+    const exp = (T.tests && T.tests.tree_clustering_chisquare && T.tests.tree_clustering_chisquare.expected_per_segment) || 7;
+    const rows = T.segments.slice().sort((a,b) => a.rank - b.rank);
+    tb.innerHTML = rows.map(s => {
+      const cls = s.canyon ? ' class="is-canyon"' : '';
+      const gap = s.n_trees - exp;
+      const gapTxt = (gap > 0 ? '+' : '') + Math.round(gap);
+      return '<tr'+cls+'><td>'+s.i+'</td><td>'+Number(s.hw).toFixed(2)+'</td><td>'+s.n_trees+'</td><td>'+gapTxt+'</td><td>'+Number(s.plant_score).toFixed(2)+'</td><td>'+pickWord(s.action)+'</td></tr>';
+    }).join('');
+  })();
+
+  (function fillCitywide(){
+    const C = D.citywide;
+    if(!C) return;
+    const did = document.getElementById('did-perm-line');
+    if(did && C.did){
+      const ci = C.did.ci95_pct || [];
+      did.textContent = 'On the Dell lab machine we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is ' + C.did.did_pct + ' percent, the two-sided permutation p is ' + Number(C.did.perm_p).toFixed(2) + ', and the bootstrap 95 percent interval is ' + Number(ci[0]).toFixed(2) + ' to ' + (ci[1] >= 0 ? '+' : '') + Number(ci[1]).toFixed(2) + ', so the flat read holds up under a harder test.';
+    }
+    const er = document.getElementById('e138-rank-line');
+    if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
+      const eq = C.e138.by_weights.equal;
+      const bur = C.e138.by_weights.burden;
+      er.textContent = 'East 138th holds. Under equal weights the best window that covers at least half of our design corridor ranks ' + eq.rank_all.toLocaleString() + ' out of ' + C.e138.n_windows.toLocaleString() + ', which is the ' + eq.percentile + 'th percentile, and it is ' + (eq.rank_nonoverlap === 3 ? 'third' : ('#' + eq.rank_nonoverlap)) + ' among non-overlapping corridors. Burden weights put it at rank ' + bur.rank_all.toLocaleString() + ' and non-overlap #' + bur.rank_nonoverlap + '. Feasibility weights drop it to non-overlap #' + C.e138.by_weights.feasibility.rank_nonoverlap + ', which is still near the top of the Bronx list that also sits on a measured post-fee air hit.';
+    }
+    const rb = document.getElementById('rank-equal-body');
+    if(rb && C.rankings && C.rankings.equal){
+      rb.innerHTML = C.rankings.equal.map(r => {
+        const mon = r.monitor ? r.monitor : '—';
+        const ash = r.asthma_adult == null ? '—' : Number(r.asthma_adult).toFixed(1);
+        const hvi = r.hvi == null ? '—' : Number(r.hvi).toFixed(0);
+        const uhf = (r.uhf || '').replace('Hunts Point - Mott Haven', 'Mott Haven').replace('High Bridge - Morrisania', 'High Bridge').replace('Crotona - Tremont', 'Crotona').replace('Fordham - Bronx Park', 'Fordham');
+        return '<tr><td>'+r.rank+'</td><td>'+r.street+'</td><td>'+uhf+'</td><td>'+Number(r.total).toFixed(3)+'</td><td>'+ash+'</td><td>'+hvi+'</td><td>'+mon+'</td></tr>';
+      }).join('');
+    }
+    const cl = document.getElementById('choices-list');
+    if(cl && C.choices){
+      cl.innerHTML = C.choices.map(c => {
+        return '<article class="dset"><h3>'+c.name+' <code>'+c.when+'</code></h3><p>'+c.why+' '+c.action+' The streets are '+c.streets.join(', ')+'.</p></article>';
+      }).join('');
+    }
+  })();
+
+  const CRIMSON = '#9f2f2d';
+  const TEAL = '#2f6f5e';
+  const GREEN = '#2a8a4a';
+  const INK = '#111111';
+  const MUTE = '#5c574f';
+  const GOLD = '#b8860b';
+  const PAPER = '#ffffff';
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const fc = feats => ({type:'FeatureCollection', features:feats});
+  const pt = (lon, lat, props) => ({type:'Feature', geometry:{type:'Point', coordinates:[lon, lat]}, properties:props||{}});
+  const MH = D.geo.mott_haven_center;
+  const crzRing = D.geo.crz_polygon;
+  const crzMid = crzRing.reduce((a,p)=>[a[0]+p[0], a[1]+p[1]], [0,0]).map(v => v/crzRing.length);
+
+  function shortBT(name){
+    if(name.indexOf('Kennedy') >= 0 && name.indexOf('Bronx') >= 0) return 'RFK';
+    if(name.indexOf('Kennedy') >= 0) return 'RFK';
+    if(name.indexOf('Whitestone') >= 0) return 'Whitestone';
+    if(name.indexOf('Throgs') >= 0) return 'Throgs Neck';
+    if(name.indexOf('Henry Hudson') >= 0) return 'Henry Hudson';
+    if(name.indexOf('Verrazzano') >= 0) return 'Verrazzano';
+    if(name.indexOf('Cross Bay') >= 0) return 'Cross Bay';
+    if(name.indexOf('Marine') >= 0) return 'Marine Parkway';
+    if(name.indexOf('Queens Midtown') >= 0) return 'Queens Midtown';
+    if(name.indexOf('Carey') >= 0) return 'Carey Tunnel';
+    return name;
+  }
+
+  function sayBT(f){
+    const name = f.facility;
+    if(f.group === 'cordon'){
+      if(name.indexOf('Carey') >= 0) return 'The Carey Tunnel goes into the paid zone, and traffic here dropped.';
+      return 'The Queens Midtown Tunnel goes into the paid zone, and traffic here dropped.';
+    }
+    if(name.indexOf('Whitestone') >= 0) return "The Whitestone Bridge didn't show a big rise.";
+    if(name.indexOf('Throgs') >= 0) return 'The Throgs Neck Bridge stayed about flat.';
+    if(name.indexOf('Henry Hudson') >= 0) return 'The Henry Hudson Bridge stayed about flat.';
+    if(name.indexOf('Kennedy') >= 0 && name.indexOf('Manhattan') >= 0){
+      return 'The Manhattan side of the RFK Bridge sits north of the paid line.';
+    }
+    if(name.indexOf('Kennedy') >= 0) return "The Bronx side of the RFK Bridge didn't jump after the fee.";
+    if(name.indexOf('Verrazzano') >= 0) return "The Verrazzano is a far check, and it didn't jump.";
+    if(name.indexOf('Cross Bay') >= 0) return 'Cross Bay is a far check we use to compare.';
+    if(name.indexOf('Marine') >= 0) return 'Marine Parkway is a far check we use to compare.';
+    return 'This is an MTA bridge or tunnel.';
+  }
+
+  function sayGate(g){
+    const name = g.name;
+    if(name === 'East 60th St' || name === 'West 60th St'){
+      return name + ' sits on the north line of the paid zone.';
+    }
+    if(name.indexOf('FDR') >= 0) return 'This gate sits where the FDR meets the north line.';
+    if(name.indexOf('West Side') >= 0) return 'This gate sits where the West Side Highway meets the north line.';
+    if(name.indexOf('Lincoln') >= 0 || name.indexOf('Holland') >= 0){
+      return name + ' charges cars that come in from New Jersey.';
+    }
+    if(name.indexOf('Queens Midtown') >= 0 || name.indexOf('Queensboro') >= 0){
+      return name + ' charges cars that come in from Queens.';
+    }
+    if(name.indexOf('Williamsburg') >= 0 || name.indexOf('Manhattan Bridge') >= 0 || name.indexOf('Brooklyn') >= 0 || name.indexOf('Carey') >= 0){
+      return name + ' charges cars that come in from Brooklyn.';
+    }
+    return name + ' is one of the twelve fee gates. None of them sit in the Bronx.';
+  }
+
+  const crzFC = fc([{type:'Feature', geometry:{type:'Polygon', coordinates:[crzRing]}, properties:{}}]);
+  const capFC = fc([{type:'Feature', geometry:{type:'Polygon', coordinates:[D.geo.deegan_cap]}, properties:{h:9}}]);
+  const gatesFC = fc(D.crz.gates.map(g => pt(g.lon, g.lat, {
+    name:g.name,
+    label:g.name.replace(' at 60th St','').replace('Hugh L. Carey','Carey'),
+    say:sayGate(g)
+  })));
+  const facFC = fc(D.bt.facilities.map(f => pt(f.lon, f.lat, {
+    name:f.facility,
+    group:f.group,
+    label:shortBT(f.facility),
+    say:sayBT(f)
+  })));
+  const aqFC = fc([
+    pt(crzMid[0], crzMid[1], {label:'Fraser: 22% inside', kind:'cornell'})
+  ]);
+  const PUB = D.published || {};
+  const airPts = [];
+  airPts.push(pt(crzMid[0], crzMid[1], {
+    label:'Fraser: about 22% lower inside', dir:'down',
+    say:'Fraser's paper: six official monitors inside the paid zone, about 22 percent less daily-max PM2.5 than a no-fee model, about 3.05 µg/m³. This is the 22 percent, and it is only inside the zone.'
+  }));
+  ((PUB.goldberg_did && PUB.goldberg_did.sites) || []).forEach(sd => {
+    const up = sd.pm_pct > 0;
+    airPts.push(pt(sd.lon, sd.lat, {
+      label:(up ? '+' : '') + sd.pm_pct.toFixed(1) + '% ' + sd.name, dir: up ? 'up' : 'down',
+      say:'Research Square preprint (Dec 2025), difference-in-differences at ' + sd.name + ': PM2.5 ' + (up ? 'up' : 'down') + ' about ' + Math.abs(sd.pm_pct).toFixed(1) + ' percent, p under 0.05.'
+    }));
+  });
+  if(PUB.sbu){
+    airPts.push(pt(PUB.sbu.peak_lon, PUB.sbu.peak_lat, {
+      label:'+1.29 Deegan (community sensor)', dir:'up',
+      say:'South Bronx Unite with Columbia, Brown, and CU Boulder (2026): 19 community sensors, 2024 vs 2025. Twelve to fourteen went up. The biggest jump was +1.29 µg/m³ here at the Major Deegan by the Third Avenue Bridge.'
+    }));
+  }
+  if(PUB.dohmh){
+    airPts.push(pt(PUB.dohmh.control_lon, PUB.dohmh.control_lat, {
+      label:'Van Wyck, city control', dir:'flat',
+      say:'NYC DOHMH used the Van Wyck Expressway as the control the fee should not have touched. Over one year they found no statistically significant change they could pin on the fee, inside the zone or on the highway corridors.'
+    }));
+  }
+  const nearMon = D.tree_siting && D.tree_siting.fraser_22pct && D.tree_siting.fraser_22pct.nearest_official_monitor;
+  if(nearMon){
+    airPts.push(pt(nearMon.lon, nearMon.lat, {
+      label:'NYCCAS Mott Haven, E 135th', dir:'ref', anchor:'right',
+      say:'The nearest official monitor to East 138th sits on East 135th, about 330 meters south. It was not one of Fraser\'s six zone monitors, so the 22 percent was never measured here.'
+    }));
+  }
+  const airFC = fc(airPts);
+  const sbuFC = fc([pt(D.published.sbu.peak_lon, D.published.sbu.peak_lat, {
+    label:'+1.29 at the Deegan',
+    name:D.published.sbu.peak_site
+  })]);
+  const placeFC = fc([
+    pt(MH[0], MH[1], {label:'Mott Haven', kind:'mh'})
+  ]);
+  const econFC = fc([
+    pt(MH[0], MH[1], {label:'$15,510 · 29.3%', kind:'site'})
+  ]);
+  const commFC = fc([
+    pt(MH[0], MH[1], {label:'193.5 vs 66.4 · heat 5/5', kind:'asthma'})
+  ]);
+  // Real street geometry from OSM, so the blocks sit on East 138th instead of cutting through buildings.
+  const E138 = (D.e138 && D.e138.segments) || {};
+  function segPath(s){ const g = E138[String(s.i)]; return (g && g.path && g.path.length > 1) ? g.path : [s.from, s.to]; }
+  function segMid(s){ const g = E138[String(s.i)]; return (g && g.mid) ? g.mid : s.mid; }
+  const segFC = fc(D.canyon.segments.map(s => ({
+    type:'Feature',
+    geometry:{type:'LineString', coordinates:segPath(s)},
+    properties:{hw:s.hw, trap:s.trap_risk?1:0}
+  })));
+  const treeFC = fc((D.canyon.tree_points||[]).map(t => pt(t.lon, t.lat, {trap:t.in_trap?1:0})));
+  const siteSegs = (D.tree_siting && D.tree_siting.segments) || [];
+  function saySite(s){
+    const gap = s.n_trees - 7;
+    const gapTxt = gap === 0 ? 'right at the street mean' : (gap < 0 ? Math.abs(gap) + ' under the street mean' : gap + ' over the street mean');
+    const treeTxt = s.n_trees + ' living tree' + (s.n_trees === 1 ? '' : 's');
+    if(s.action === 'plant') return 'Block ' + s.i + ': ' + treeTxt + ', ' + gapTxt + '. Open top. Plant.';
+    if(s.action === 'canyon_walls') return 'Block ' + s.i + ': H/W ' + s.hw + ', ' + treeTxt + '. Walls plus spaced trees, not a closed roof.';
+    return 'Block ' + s.i + ': ' + treeTxt + ', ' + gapTxt + '. Already full.';
+  }
+  const siteFC = fc(siteSegs.map(s => ({
+    type:'Feature',
+    geometry:{type:'LineString', coordinates:segPath(s)},
+    properties:{i:s.i, action:s.action, color:pickColor(s.action), say:saySite(s)}
+  })));
+  const siteMidFC = fc(siteSegs.map(s => { const m = segMid(s); return pt(m[0], m[1], {i:String(s.i), color:pickColor(s.action)}); }));
+
+  const CW = D.citywide || {};
+  const choiceFC = fc((CW.choices || []).map(c => pt(c.center[0], c.center[1], {
+    label: c.name,
+    when: c.when,
+    spine: c.id === 'mott_haven_grid' ? 1 : 0,
+    say: c.name + ' (' + c.when + '). ' + c.why
+  })));
+  const rankTopFC = fc(((CW.rankings && CW.rankings.equal) || []).slice(0, 8).map(r => pt(r.lon, r.lat, {
+    label: r.street,
+    say: r.street + ' in ' + (r.uhf || r.borough) + ', equal-weight score ' + Number(r.total).toFixed(3) + (r.monitor ? (', monitor ' + r.monitor) : ', no published post-fee monitor on the corridor') + '.'
+  })));
+
+  function pointKind(name){
+    if(/tunnel/i.test(name)) return 'tunnel';
+    if(/bridge/i.test(name)) return 'bridge';
+    return 'gate';
+  }
+  const seenXY = new Set();
+  const trafficFeats = [];
+  function addTraffic(lon, lat, name, label, say){
+    const key = lon.toFixed(3) + ',' + lat.toFixed(3);
+    if(seenXY.has(key)) return;
+    seenXY.add(key);
+    trafficFeats.push(pt(lon, lat, {name, label, say, kind:pointKind(name)}));
+  }
+  D.bt.facilities.forEach(f => addTraffic(f.lon, f.lat, f.facility, shortBT(f.facility), sayBT(f)));
+  D.crz.gates.forEach(g => addTraffic(
+    g.lon, g.lat, g.name,
+    g.name.replace(' at 60th St','').replace('Hugh L. Carey','Carey'),
+    sayGate(g)
+  ));
+  const trafficFC = fc(trafficFeats);
+
+  const map = new maplibregl.Map({
+    container:'map',
+    style:'https://tiles.openfreemap.org/styles/liberty',
+    center:[-73.97, 40.76],
+    zoom:10.8,
+    pitch:0,
+    attributionControl:{compact:true},
+    interactive:true,
+    scrollZoom:true,
+    dragPan:true
+  });
+  window.map = map;
+  map.scrollZoom.disable();
+  map.dragRotate.disable();
+  map.touchZoomRotate.disable();
+  map.doubleClickZoom.disable();
+
+  const nav = new maplibregl.NavigationControl({showCompass:false});
+  const popup = new maplibregl.Popup({offset:14, closeButton:true, closeOnClick:true, maxWidth:'17rem'});
+
+  const ALL = [
+    'crz-fill','crz-line','gates','gates-label','fac','fac-label',
+    'traffic','traffic-label',
+    'aq','aq-label','sbu','sbu-label','place','place-label',
+    'air','air-label',
+    'econ','econ-label','comm','comm-label',
+    'bld','seg','trees','cap','cap-label',
+    'site','site-label',
+    'choices','choices-label','ranktop','ranktop-label'
+  ];
+  const legend = document.getElementById('maplegend');
+  const siteLegend = document.getElementById('sitelegend');
+  const airLegend = document.getElementById('airlegend');
+  const rankLegend = document.getElementById('ranklegend');
+
+  function setStoryScroll(on, lg){
+    if(on || exploring) map.scrollZoom.enable();
+    else map.scrollZoom.disable();
+    const which = on ? (lg || 'traffic') : null;
+    if(legend) legend.hidden = which !== 'traffic';
+    if(siteLegend) siteLegend.hidden = which !== 'site';
+    if(airLegend) airLegend.hidden = which !== 'air';
+    if(rankLegend) rankLegend.hidden = which !== 'rank';
+  }
+
+  const CAM = [
+    {center:[-73.955, 40.785], zoom:11.1, pitch:0, bearing:0},
+    {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
+    {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
+    {center:[-73.91, 40.82], zoom:10.6, pitch:0, bearing:0},
+    {center:[-73.895, 40.772], zoom:10.55, pitch:0, bearing:0},
+    {center:[-73.9265, 40.809], zoom:13.4, pitch:0, bearing:0},
+    {center:[-73.90, 40.84], zoom:11.2, pitch:0, bearing:0},
+    {center:[-73.91, 40.83], zoom:11.5, pitch:0, bearing:0},
+    {center:[-73.9242, 40.8092], zoom:14.6, pitch:0, bearing:0},
+    {center:[-73.925, 40.8105], zoom:15.15, pitch:52, bearing:-24}
+  ];
+
+  let ready = false;
+  let current = -1;
+  let exploring = false;
+
+  function show(ids){
+    if(!ready) return;
+    ALL.forEach(id => {
+      if(map.getLayer(id)){
+        map.setLayoutProperty(id, 'visibility', ids.includes(id) ? 'visible' : 'none');
+      }
+    });
+  }
+
+  function goCam(cam){
+    if(REDUCED) map.jumpTo(cam);
+    else map.flyTo({...cam, duration:1400, essential:true});
+  }
+
+  function markStep(i){
+    document.querySelectorAll('.step').forEach(el => {
+      const on = +el.dataset.step === i;
+      el.classList.toggle('is-on', on);
+      el.hidden = !on;
+    });
+    document.querySelectorAll('#nums button').forEach(btn => {
+      const on = +btn.dataset.step === i;
+      btn.classList.toggle('is-on', on);
+      if(on) btn.setAttribute('aria-current', 'true');
+      else btn.removeAttribute('aria-current');
+    });
+  }
+
+  function applyStep(i, force){
+    if(exploring && !force) return;
+    if(ready && i === current && !force) return;
+    current = i;
+    markStep(i);
+    if(!ready) return;
+    const cam = CAM[i] || CAM[0];
+    goCam(cam);
+    switch(i){
+      case 0: show(['crz-line','place','place-label']); setStoryScroll(false); break;
+      case 1: show(['crz-line','gates','gates-label']); setStoryScroll(true); break;
+      case 2: show(['crz-line','traffic','traffic-label']); setStoryScroll(true); break;
+      case 3: show(['crz-line','fac','fac-label']); setStoryScroll(false); break;
+      case 4: show(['crz-fill','crz-line','air','air-label']); setStoryScroll(true, 'air'); break;
+      case 5: show(['place','place-label','trees','cap','cap-label']); setStoryScroll(false); break;
+      case 6: show(['ranktop','ranktop-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
+      case 7: show(['choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
+      case 8: show(['site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
+      case 9: show(['bld','seg','trees','cap','cap-label']); setStoryScroll(false); break;
+      default: show(['crz-line']); setStoryScroll(false); break;
+    }
+  }
+
+  function halo(){
+    return {'text-color':INK, 'text-halo-color':PAPER, 'text-halo-width':1.6};
+  }
+
+  function openPopup(lngLat, text){
+    popup.setLngLat(lngLat).setText(text).addTo(map);
+  }
+
+  function bindClicks(layer){
+    map.on('click', layer, e => {
+      if(!e.features || !e.features[0]) return;
+      const say = e.features[0].properties.say;
+      if(!say) return;
+      openPopup(e.lngLat, say);
+    });
+    map.on('mouseenter', layer, () => { map.getCanvas().style.cursor = 'pointer'; });
+    map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
+  }
+
+  function setExplore(on){
+    exploring = on;
+    document.body.classList.toggle('explore-on', on);
+    document.getElementById('explorebtn').setAttribute('aria-expanded', on ? 'true' : 'false');
+    if(popup.isOpen()) popup.remove();
+    if(on){
+      map.stop();
+      map.scrollZoom.enable();
+      map.doubleClickZoom.enable();
+      map.touchZoomRotate.enable();
+      map.touchZoomRotate.disableRotation();
+      if(legend) legend.hidden = true;
+      if(siteLegend) siteLegend.hidden = true;
+      if(airLegend) airLegend.hidden = true;
+      if(rankLegend) rankLegend.hidden = true;
+      if(!map.hasControl(nav)) map.addControl(nav, 'top-right');
+      show(['crz-fill','crz-line','gates','fac','fac-label']);
+      const bounds = new maplibregl.LngLatBounds();
+      D.bt.facilities.forEach(f => bounds.extend([f.lon, f.lat]));
+      D.crz.gates.forEach(g => bounds.extend([g.lon, g.lat]));
+      map.resize();
+      map.fitBounds(bounds, {padding:{top:72, bottom:72, left:72, right:96}, duration:REDUCED?0:800, essential:true, maxZoom:9.7});
+      document.getElementById('closeexplore').focus();
+    }else{
+      map.scrollZoom.disable();
+      map.doubleClickZoom.disable();
+      map.touchZoomRotate.disable();
+      if(map.hasControl(nav)) map.removeControl(nav);
+      const keep = current < 0 ? 0 : current;
+      current = -1;
+      map.resize();
+      applyStep(keep, true);
+      document.getElementById('explorebtn').focus();
+    }
+  }
+
+  map.on('load', function(){
+    map.addSource('crz', {type:'geojson', data:crzFC});
+    map.addLayer({id:'crz-fill', type:'fill', source:'crz', paint:{'fill-color':CRIMSON, 'fill-opacity':0.16}, layout:{visibility:'none'}});
+    map.addLayer({id:'crz-line', type:'line', source:'crz', paint:{'line-color':CRIMSON, 'line-width':2.6}, layout:{visibility:'none'}});
+
+    map.addSource('gates', {type:'geojson', data:gatesFC});
+    map.addLayer({id:'gates', type:'circle', source:'gates', paint:{
+      'circle-radius':6, 'circle-color':CRIMSON, 'circle-stroke-color':PAPER, 'circle-stroke-width':1.6
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'gates-label', type:'symbol', source:'gates', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':11, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0], 'text-optional':true
+    }, paint:halo()});
+
+    map.addSource('fac', {type:'geojson', data:facFC});
+    map.addLayer({id:'fac', type:'circle', source:'fac', paint:{
+      'circle-radius':8,
+      'circle-color':['match',['get','group'], 'bronx', CRIMSON, 'cordon', TEAL, 'control', MUTE, GOLD],
+      'circle-stroke-color':PAPER, 'circle-stroke-width':1.6
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'fac-label', type:'symbol', source:'fac', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':12, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0], 'text-optional':true
+    }, paint:halo()});
+
+    map.addSource('traffic', {type:'geojson', data:trafficFC});
+    map.addLayer({id:'traffic', type:'circle', source:'traffic', paint:{
+      'circle-radius':['match',['get','kind'], 'tunnel', 8, 'bridge', 7, 6],
+      'circle-color':['match',['get','kind'], 'tunnel', GREEN, 'bridge', CRIMSON, INK],
+      'circle-stroke-color':PAPER, 'circle-stroke-width':1.6
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'traffic-label', type:'symbol', source:'traffic', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':11, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0], 'text-optional':true
+    }, paint:halo()});
+
+    map.addSource('aq', {type:'geojson', data:aqFC});
+    map.addLayer({id:'aq', type:'circle', source:'aq', paint:{
+      'circle-radius':8, 'circle-color':TEAL, 'circle-stroke-color':PAPER, 'circle-stroke-width':1.4
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'aq-label', type:'symbol', source:'aq', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':12, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0]
+    }, paint:halo()});
+
+    map.addSource('air', {type:'geojson', data:airFC});
+    map.addLayer({id:'air', type:'circle', source:'air', paint:{
+      'circle-radius':['match',['get','dir'], 'ref', 7, 9],
+      'circle-color':['match',['get','dir'], 'down', GREEN, 'up', CRIMSON, 'flat', MUTE, INK],
+      'circle-stroke-color':PAPER, 'circle-stroke-width':1.8
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'air-label', type:'symbol', source:'air', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':11.5, 'text-font':['Noto Sans Bold'],
+      'text-anchor':['coalesce',['get','anchor'],'left'],
+      'text-offset':['case',['==',['get','anchor'],'right'],['literal',[-1.1,0]],['literal',[1.1,0]]],
+      'text-optional':true, 'text-allow-overlap':false
+    }, paint:halo()});
+
+    map.addSource('sbu', {type:'geojson', data:sbuFC});
+    map.addLayer({id:'sbu', type:'circle', source:'sbu', paint:{
+      'circle-radius':11, 'circle-color':CRIMSON, 'circle-stroke-color':PAPER, 'circle-stroke-width':2
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'sbu-label', type:'symbol', source:'sbu', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':13, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1.1,0]
+    }, paint:{'text-color':CRIMSON, 'text-halo-color':PAPER, 'text-halo-width':1.8}});
+
+    map.addSource('place', {type:'geojson', data:placeFC});
+    map.addLayer({id:'place', type:'circle', source:'place', paint:{
+      'circle-radius':8, 'circle-color':CRIMSON, 'circle-stroke-color':PAPER, 'circle-stroke-width':1.6
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'place-label', type:'symbol', source:'place', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':12, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0]
+    }, paint:halo()});
+
+    map.addSource('econ', {type:'geojson', data:econFC});
+    map.addLayer({id:'econ', type:'circle', source:'econ', paint:{
+      'circle-radius':16, 'circle-color':CRIMSON, 'circle-opacity':0.9, 'circle-stroke-color':PAPER, 'circle-stroke-width':2
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'econ-label', type:'symbol', source:'econ', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':13, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1.2,0]
+    }, paint:halo()});
+
+    map.addSource('comm', {type:'geojson', data:commFC});
+    map.addLayer({id:'comm', type:'circle', source:'comm', paint:{
+      'circle-radius':14, 'circle-color':CRIMSON, 'circle-stroke-color':PAPER, 'circle-stroke-width':2
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'comm-label', type:'symbol', source:'comm', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':13, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1.2,0]
+    }, paint:halo()});
+
+    if(D.buildings){
+      map.addSource('bld', {type:'geojson', data:D.buildings});
+      map.addLayer({id:'bld', type:'fill-extrusion', source:'bld', paint:{
+        'fill-extrusion-height':['get','h_m'],
+        'fill-extrusion-base':0,
+        'fill-extrusion-opacity':0.82,
+        'fill-extrusion-color':['case', ['get','fronts_138'], CRIMSON, '#8a8074']
+      }, layout:{visibility:'none'}});
+    }
+
+    map.addSource('seg', {type:'geojson', data:segFC});
+    map.addLayer({id:'seg', type:'line', source:'seg', paint:{
+      'line-width':['case', ['==',['get','trap'],1], 14, 8],
+      'line-color':['case', ['==',['get','trap'],1], CRIMSON, TEAL],
+      'line-opacity':0.95
+    }, layout:{visibility:'none', 'line-cap':'round'}});
+
+    map.addSource('trees', {type:'geojson', data:treeFC});
+    map.addLayer({id:'trees', type:'circle', source:'trees', paint:{
+      'circle-radius':4, 'circle-color':TEAL, 'circle-stroke-color':PAPER, 'circle-stroke-width':1
+    }, layout:{visibility:'none'}});
+
+    map.addSource('cap', {type:'geojson', data:capFC});
+    map.addLayer({id:'cap', type:'fill-extrusion', source:'cap', paint:{
+      'fill-extrusion-height':['get','h'],
+      'fill-extrusion-color':TEAL,
+      'fill-extrusion-opacity':0.78
+    }, layout:{visibility:'none'}});
+    map.addSource('cap-pt', {type:'geojson', data:fc([pt(D.geo.deegan_cap[0][0], D.geo.deegan_cap[0][1], {})])});
+    map.addLayer({id:'cap-label', type:'symbol', source:'cap-pt', layout:{
+      visibility:'none',
+      'text-field':'lid later · 12.9 acres',
+      'text-size':12,
+      'text-font':['Noto Sans Bold']
+    }, paint:{'text-color':PAPER, 'text-halo-color':TEAL, 'text-halo-width':1.6}});
+
+    map.addSource('site', {type:'geojson', data:siteFC});
+    map.addLayer({id:'site', type:'line', source:'site', paint:{
+      'line-width':11,
+      'line-color':['get','color'],
+      'line-opacity':0.95
+    }, layout:{visibility:'none', 'line-cap':'butt'}});
+    map.addSource('site-mid', {type:'geojson', data:siteMidFC});
+    map.addLayer({id:'site-label', type:'symbol', source:'site-mid', layout:{
+      visibility:'none', 'text-field':['get','i'], 'text-size':11, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'bottom', 'text-offset':[0,-0.9], 'text-allow-overlap':true
+    }, paint:halo()});
+
+    map.addSource('choices', {type:'geojson', data:choiceFC});
+    map.addLayer({id:'choices', type:'circle', source:'choices', paint:{
+      'circle-radius':['case',['==',['get','spine'],1], 11, 8],
+      'circle-color':['case',['==',['get','spine'],1], GREEN, CRIMSON],
+      'circle-stroke-color':PAPER, 'circle-stroke-width':1.8
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'choices-label', type:'symbol', source:'choices', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':12, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1.1,0], 'text-optional':true
+    }, paint:halo()});
+
+    map.addSource('ranktop', {type:'geojson', data:rankTopFC});
+    map.addLayer({id:'ranktop', type:'circle', source:'ranktop', paint:{
+      'circle-radius':7, 'circle-color':CRIMSON, 'circle-stroke-color':PAPER, 'circle-stroke-width':1.5
+    }, layout:{visibility:'none'}});
+    map.addLayer({id:'ranktop-label', type:'symbol', source:'ranktop', layout:{
+      visibility:'none', 'text-field':['get','label'], 'text-size':11, 'text-font':['Noto Sans Bold'],
+      'text-anchor':'left', 'text-offset':[1,0], 'text-optional':true
+    }, paint:halo()});
+
+    bindClicks('fac');
+    bindClicks('gates');
+    bindClicks('traffic');
+    bindClicks('site');
+    bindClicks('air');
+    bindClicks('choices');
+    bindClicks('ranktop');
+    try{ map.setLight({anchor:'viewport', position:[1.4, 210, 40], color:'#fff6e8', intensity:0.4}); }catch(e){}
+
+    ready = true;
+    map.resize();
+    const start = current < 0 ? 0 : current;
+    current = -1;
+    applyStep(start, true);
+  });
+
+  document.getElementById('nums').addEventListener('click', e => {
+    const btn = e.target.closest('button[data-step]');
+    if(!btn) return;
+    applyStep(+btn.dataset.step, true);
+  });
+
+  document.getElementById('explorebtn').addEventListener('click', () => setExplore(true));
+  document.getElementById('closeexplore').addEventListener('click', () => setExplore(false));
+  window.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && exploring){
+      setExplore(false);
+      return;
+    }
+    if(exploring) return;
+    const n = parseInt(e.key, 10);
+    if(n >= 1 && n <= 9) applyStep(n - 1, true);
+    if(e.key === '0') applyStep(9, true);
+  });
+  window.addEventListener('resize', () => map.resize());
+})();
+</script>
+</body>
+</html>

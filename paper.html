@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outside the Line: congestion pricing, measurement, and a two-horizon design for Mott Haven</title>
+<meta name="description" content="Research paper for the Macaulay Honors College Datathon 2026. Congestion pricing never reached the South Bronx. We measure East 138th Street and argue for a fundable street package now.">
+<link rel="preload" href="assets/fonts/source-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";src:url(assets/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(assets/fonts/source-serif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(assets/fonts/source-serif-600.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  --cream:#f3ead6;
+  --stock:#fbf4e6;
+  --plate:#fffaf0;
+  --board:#e4d6bc;
+  --ink:#231c16;
+  --ink-soft:#3c3228;
+  --gray:#5c5146;
+  --rule:#c9b496;
+  --crimson:#9f1230;
+  --crimson-deep:#6f0c22;
+  --teal:#2f6b58;
+  --teal-lt:#d7ebe3;
+  --gold:#b07a16;
+  --gold-lt:#f4e4b8;
+  --caveat:#8a5a12;
+  --serif:"Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --sans:"Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23g)' opacity='.055'/></svg>");
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  background-image:var(--grain);
+  color:var(--ink);
+  font:400 17.5px/1.62 var(--serif);
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--crimson); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{color:var(--crimson-deep)}
+a:focus-visible{outline:2px solid var(--crimson); outline-offset:3px}
+
+.site-nav{
+  position:sticky; top:0; z-index:8;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:10px 4vw;
+  background:color-mix(in srgb, var(--ink) 94%, black);
+  color:var(--stock);
+  font:700 11px/1 var(--sans);
+  letter-spacing:.16em; text-transform:uppercase;
+}
+.site-nav a{color:var(--gold-lt); text-decoration:none}
+.site-nav a:hover{color:var(--stock)}
+.site-nav .now{color:#f0d9a4}
+
+.page{
+  width:min(980px, 94vw);
+  margin:0 auto;
+  padding:36px 0 96px;
+}
+
+.journal-bar{
+  display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+  font:600 11.5px/1.35 var(--sans);
+  letter-spacing:.12em; text-transform:uppercase;
+  color:var(--crimson);
+  border-bottom:3px solid var(--crimson);
+  padding-bottom:10px;
+  margin-bottom:28px;
+}
+.journal-bar span{color:var(--gray); letter-spacing:.08em}
+
+header.mast{
+  position:relative;
+  padding:8px 0 28px;
+}
+header.mast::after{
+  content:"";
+  display:block;
+  height:1px;
+  background:var(--rule);
+  margin-top:28px;
+}
+.kicker{
+  font:700 12px/1.2 var(--sans);
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--crimson);
+  margin:0 0 14px;
+}
+h1.title{
+  font:600 clamp(34px, 5.4vw, 54px)/1.05 var(--serif);
+  letter-spacing:-.018em;
+  margin:0 0 18px;
+  max-width:22ch;
+}
+.subtitle{
+  font:400 20px/1.4 var(--serif);
+  color:var(--ink-soft);
+  max-width:46ch;
+  margin:0 0 22px;
+}
+.byline{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 28px;
+  font:400 15px/1.45 var(--serif);
+  margin:0 0 8px;
+}
+.byline b{font-weight:600}
+.affil{
+  font:500 13px/1.45 var(--sans);
+  color:var(--gray);
+  margin:10px 0 0;
+}
+
+.abstract{
+  display:grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap:18px 28px;
+  background:var(--stock);
+  background-image:var(--grain);
+  border:1px solid var(--board);
+  box-shadow:0 18px 40px -28px rgba(35,28,22,.45);
+  padding:26px 28px 22px;
+  margin:8px 0 32px;
+}
+.abstract h2{
+  margin:0;
+  font:700 12px/1.2 var(--sans);
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--crimson);
+  border-top:3px solid var(--crimson);
+  padding-top:8px;
+}
+.abstract p{margin:0; font-size:15.5px; line-height:1.55; hyphens:auto}
+.keywords{margin:18px 0 0; font:500 13.5px/1.45 var(--sans); color:var(--gray)}
+.keywords b{color:var(--ink); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:11px}
+
+.toc{
+  display:flex; flex-wrap:wrap; gap:8px 18px;
+  font:600 12px/1 var(--sans);
+  letter-spacing:.04em;
+  margin:0 0 36px;
+  padding:0;
+  list-style:none;
+}
+.toc a{color:var(--ink-soft); text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:2px}
+.toc a:hover{color:var(--crimson); border-color:var(--crimson)}
+
+main h2{
+  font:600 clamp(26px, 2.6vw, 32px)/1.15 var(--serif);
+  margin:48px 0 14px;
+  padding-top:16px;
+  border-top:3px solid var(--crimson);
+  color:var(--crimson-deep);
+}
+main h3{
+  font:600 20px/1.25 var(--serif);
+  margin:28px 0 10px;
+  color:var(--ink);
+}
+main h4{
+  font:700 12.5px/1.3 var(--sans);
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--teal);
+  margin:22px 0 8px;
+}
+p{margin:0 0 13px}
+.lede p:first-of-type::first-letter{
+  float:left;
+  font:600 4.15rem/0.78 var(--serif);
+  color:var(--crimson);
+  padding:8px 10px 0 0;
+}
+.callout{
+  border-left:4px solid var(--teal);
+  background:var(--teal-lt);
+  padding:12px 16px;
+  margin:18px 0;
+  font-size:16px;
+}
+.callout.caveat{
+  border-left-color:var(--gold);
+  background:var(--gold-lt);
+}
+.callout strong{color:var(--teal)}
+.callout.caveat strong{color:var(--caveat)}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font:400 13.5px/1.4 var(--sans);
+  margin:16px 0 6px;
+  background:var(--plate);
+}
+th, td{padding:7px 8px; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top}
+th{font:700 11px/1.2 var(--sans); letter-spacing:.08em; text-transform:uppercase; color:var(--crimson); background:color-mix(in srgb, var(--board) 55%, var(--plate))}
+td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
+caption, .table-note{
+  caption-side:bottom;
+  text-align:left;
+  font:400 12.5px/1.45 var(--sans);
+  color:var(--gray);
+  padding:8px 0 0;
+}
+.table-note{margin:0 0 20px}
+
+figure.plate{
+  margin:28px 0 8px;
+  padding:14px 14px 10px;
+  background:var(--plate);
+  border:1px solid var(--board);
+  box-shadow:0 16px 34px -26px rgba(35,28,22,.5);
+  break-inside:avoid;
+}
+figure.plate img, figure.plate object, figure.plate svg{
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--stock);
+}
+figcaption{
+  margin:10px 2px 2px;
+  font:400 13.5px/1.45 var(--serif);
+  color:var(--ink-soft);
+}
+figcaption .fn{
+  font:700 12px/1.2 var(--sans);
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--crimson);
+  display:block;
+  margin-bottom:4px;
+}
+figcaption .src{
+  display:block;
+  margin-top:6px;
+  font:400 12px/1.4 var(--sans);
+  color:var(--gray);
+}
+figure.missing{display:none}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.refs ol{padding-left:1.35em}
+.refs li{margin:0 0 10px; font-size:15px; line-height:1.45; padding-left:.2em}
+.refs a{overflow-wrap:anywhere}
+
+footer.colophon{
+  margin-top:48px;
+  padding-top:16px;
+  border-top:1px solid var(--rule);
+  font:400 13px/1.5 var(--sans);
+  color:var(--gray);
+}
+
+@media (max-width:760px){
+  .abstract, .byline, .grid-2{grid-template-columns:1fr}
+  .abstract h2{border-top:0; border-bottom:3px solid var(--crimson); padding:0 0 8px}
+  .lede p:first-of-type::first-letter{font-size:3.2rem}
+  body{font-size:16.5px}
+}
+
+@media print{
+  .site-nav{display:none}
+  body{background:#fff; color:#111; font-size:11pt; line-height:1.45}
+  .page{width:auto; margin:0; padding:0}
+  .abstract, figure.plate, table{box-shadow:none; break-inside:avoid}
+  a{color:#111; text-decoration:none}
+  a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8.5pt; color:#444}
+  main h2{border-top-color:#9f1230}
+  header.mast::after, .journal-bar{border-color:#9f1230}
+}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html">Story</a>
+  <span class="now">Research paper</span>
+  <a href="https://lazyboy1234.github.io/outside-the-line/">Live</a>
+</nav>
+
+<div class="page">
+<div class="journal-bar">
+  <b>Macaulay Honors College Datathon 2026</b>
+  <span>Reimagining NYC · Best Urban Design</span>
+</div>
+
+<header class="mast">
+  <p class="kicker">A short research paper</p>
+  <h1 class="title">Outside the Line</h1>
+  <p class="subtitle">Congestion pricing cleaned the air inside a cordon at 60th Street. Mott Haven sat outside that line. We measured the street that the policy never reached.</p>
+  <div class="byline">
+    <div><b>Cody Wong</b><br>Macaulay Honors College<br>The City University of New York</div>
+    <div><b>Daniel Postelnik</b><br>Macaulay Honors College<br>The City University of New York</div>
+  </div>
+  <p class="affil">Correspondence: CODY.WONG96@login.cuny.edu, DANIEL.POSTELNIK61@login.cuny.edu. Code and derived tables: <a href="https://github.com/lazyboy1234/outside-the-line">github.com/lazyboy1234/outside-the-line</a>. Interactive map: <a href="index.html">index.html</a>.</p>
+</header>
+
+<section class="abstract" id="abstract">
+  <h2>Abstract</h2>
+  <div>
+    <p>New York City began congestion pricing on 5 January 2025, charging most vehicles that enter Manhattan at or below 60th Street. This paper asks whether that policy eliminated air pollution, moved it, or simply never arrived in the South Bronx. Using MTA Congestion Relief Zone entries (t6yz-b64h), we show that the cordon has twelve detection gates in seven regions and none in the Bronx. The file starts on the first tolled day, so we treat it as descriptive only. In 2025, multi-unit trucks take 31.8 percent of their entries overnight, against 19.7 percent for cars. We do not interpret that gap as trucks having moved. A difference-in-differences event study on Bridges and Tunnels crossings (ebfx-2m7v) finds a pooled post-toll effect of −1.04 percent (95 percent CI −3.63 to +1.61) at Bronx-adjacent facilities versus far controls. The same specification recovers −2.29 percent at cordon-crossing tunnels. NYC DOT automated counts (7ym2-wayt) never bracket the prompt’s South Bronx streets on both sides of the toll start. Four published air studies are transcribed separately and are not averaged. On East 138th Street we measure facade-to-facade geometry: nine of ten 120 m segments sit below a 0.5 height-to-width ratio, and one sits above it. PUMA 3710 (Hunts Point, Longwood and Melrose) has median income $15,510, poverty 29.3 percent, Neighborhood Financial Health Bottom (rank 51 of 55), and Heat Vulnerability Index 5 of 5. We recommend a Parks, DOT, and DEP street package that the city can fund now, and we keep a Major Deegan lid of roughly $250 million to $1 billion plus as a long horizon, not next year’s Parks contract.</p>
+    <p class="keywords"><b>Keywords</b> congestion pricing · South Bronx · Mott Haven · difference-in-differences · street canyon · urban design</p>
+  </div>
+</section>
+
+<ol class="toc">
+  <li><a href="#s1">1. Introduction</a></li>
+  <li><a href="#s2">2. Data and methods</a></li>
+  <li><a href="#s3">3. Results</a></li>
+  <li><a href="#s4">4. Design implication</a></li>
+  <li><a href="#s5">5. Discussion</a></li>
+  <li><a href="#refs">References</a></li>
+</ol>
+
+<main>
+<section id="s1" class="lede">
+<h2>1. Introduction and context</h2>
+<p>The paid zone begins at 60th Street. On 5 January 2025 the Metropolitan Transportation Authority started charging most vehicles that entered local Manhattan streets at or below that line. Drivers who stayed on the FDR Drive or the West Side Highway did not pay, and the agency counts those free entries separately. The official story is about cleaner air and lighter traffic inside the cordon. The datathon prompt asked a harder question about the South Bronx: did congestion pricing eliminate pollution, or did it move pollution.</p>
+<p>Mott Haven sits about four miles north of that line. East 138th Street runs along the Major Deegan Expressway (I-87) through a neighborhood that already carries one of the city’s highest asthma burdens. The Congestion Relief Zone file names seven detection regions. The Bronx is not one of them. A driver on the Deegan at 138th Street crosses nothing, is charged nothing, and is counted by nothing in that dataset.</p>
+<p>We take that geography as the finding, not as a footnote. The popular claim is that the toll pushed trucks and cars off Manhattan and into the South Bronx. We tested the traffic half of that claim on the MTA’s own crossing data and did not find an increase at Bronx-adjacent bridges. The method sees a real drop at the tunnels that feed the paid zone, so the Bronx null is not an empty instrument. City DOT street counts cannot close the remaining gap, because the prompt’s South Bronx corridors were never counted on both sides of the toll start. Published air studies, kept apart rather than averaged, find improvement inside the zone and a mixed-to-adverse field outside it. Nowhere in the Bronx do those four studies report a measured improvement.</p>
+<p>That is a third answer to eliminate versus move. In the South Bronx the policy never arrived. There was nothing to eliminate and nothing to move. Relief was cordon-shaped. The work that follows is therefore measurement plus design: we fit East 138th Street block by block, we size a street package that Parks, DOT, and DEP already know how to fund, and we leave a Deegan park lid on the table as the honest long ask.</p>
+</section>
+
+<section id="s2">
+<h2>2. Data and methods</h2>
+<p>Every number in this paper comes from a primary SODA pull reduced in our pipeline, or from a published result that we transcribed with a citation. We computed no air-quality effect of our own. Derived tables live in <code>data/derived/</code>. Sources and coverage windows are listed in <code>data/SOURCES.md</code>.</p>
+
+<h3>2.1 Primary datasets</h3>
+<p><b>MTA Congestion Relief Zone Vehicle Entries</b> (NY State Open Data <code>t6yz-b64h</code>) is a 10-minute file of detection group, region, vehicle class, and time period. Our pull runs from 5 January 2025 through 5 September 2026. Calendar 2025 supplies headline entry totals, the twelve-gate inventory, hour-of-day profiles, and the overnight-share comparison by class. This file begins on the first tolled day. It contains no pre-toll observations. Any before-and-after test computed inside it compares tolled days to other tolled days. We use it descriptively only.</p>
+<p><b>MTA Bridges and Tunnels Hourly Crossings</b> (<code>ebfx-2m7v</code>) is the causal file. We build a monthly facility panel from 2023 onward, with annual totals back to 2019. The outcome is the year-over-year change in the log of monthly vehicles. Differencing year over year removes each facility’s own seasonal pattern. Coefficients then read as percentage-point differences in year-over-year growth, treated minus control.</p>
+<p><b>NYC DOT Automated Traffic Volume Counts</b> (<code>7ym2-wayt</code>) is the street-level test. Each row is a 15-minute vehicle count at a segment and direction. These are rotating short-duration studies, not a continuous panel. We reduce each site-period to a median complete-weekday 24-hour volume and pair sites to themselves on segment identifier and direction. The South Bronx sample that design produces is empty. That emptiness is reported as a result.</p>
+<p><b>Building footprints</b> (OTI <code>5zhs-2jue</code>) and the <b>2015 Street Tree Census</b> (<code>uvpi-gqnh</code>) supply canyon geometry and the corridor tree inventory inside a Mott Haven bounding box. We fit a 1,618 m centerline to 83 street-tree positions on East 138th Street, project footprints onto that axis, and cut the corridor into 120 m segments.</p>
+<p><b>Neighborhood Financial Health</b> (<code>r3dx-pew9</code>, year published 2020) and the <b>Heat Vulnerability Index</b> (<code>4mhf-duep</code>) supply the equity overlay. Site geography is PUMA 3710 (Hunts Point, Longwood and Melrose; Bronx Community Districts 1 and 2) and ZCTAs 10451, 10454, 10455, and 10459. Census Reporter and the ACS API without a key were blocked. We do not depend on them.</p>
+
+<h3>2.2 Difference-in-differences</h3>
+<p>The specification uses facility fixed effects, month fixed effects, and treated-by-relative-month interactions indexed to January 2025, with December 2024 omitted as the reference. The window is January 2024 through December 2025. Bronx-adjacent treated crossings are the Robert F. Kennedy Bridge Bronx approach, the Bronx-Whitestone Bridge, the Throgs Neck Bridge, and the Henry Hudson Bridge. Controls are three crossings far from the cordon with no plausible toll-avoidance route through it: the Verrazzano-Narrows Bridge, the Cross Bay Bridge, and the Marine Parkway Bridge. That comparison uses 168 facility-months across 7 clusters.</p>
+<p>A null is only interesting if the method can see an effect. We therefore run the identical specification on the two cordon-crossing tunnels, the Queens Midtown and the Hugh L. Carey, against the same three far controls (120 facility-months, 5 clusters). Standard errors are CR1 cluster-robust by facility. Because the cluster count is small, the pooled p-value comes from an exact wild cluster bootstrap with Rademacher weights. With G clusters that bootstrap has a floor of 1/2^(G−1), which is 0.016 for the Bronx comparison and 0.062 for the cordon comparison. We report the floor.</p>
+
+<h3>2.3 Street geometry and planning rates</h3>
+<p>Facade-to-facade width is the sum of median north-side and south-side offsets in the 6-to-30 m fronting band (116 buildings). Height comes from the modeled <code>height_roof</code> attribute, not a surveyed parapet. Segments with fewer than three fronting footprints are dropped, which is why ten of fourteen possible 120 m bins are reported. The design threshold is a height-to-width ratio of 0.5, the point at which a closed canopy begins trapping pollutants at breathing height.</p>
+<p>i-Tree figures are planning-grade multipliers, not a field Eco run and not a dispersion model. PM2.5 uses 0.24 g/m²/yr, the New York City value in Nowak, Hirabayashi, Bodine and Hoehn (2013). NO2 uses 0.70 g/m²/yr, a conterminous-US urban average from Nowak et al. (2014). The O3 rate of 1.20 g/m²/yr could not be traced to a published source and sits below published urban figures, so the NO2 and O3 removal estimates understate removal. About 10.6 lb/yr of PM2.5 across the corridor does not erase a +1.29 µg/m³ ambient rise at the Major Deegan sensor.</p>
+
+<h3>2.4 Air studies, transcribed and not averaged</h3>
+<p>We transcribe four published air results into <code>data/derived/published.json</code> and keep them separate. They measure different things over different windows with different designs. Averaging them would invent a number that no study estimated. The MTA Open Data team warned that air quality is not an MTA-provided correlation and that weather and wind-direction controls are required. That modeling is present in the work we cite and absent from ours, so we cite rather than assert.</p>
+
+<div class="callout caveat">
+  <strong>Honest limits, stated before the results.</strong> Neither <code>t6yz-b64h</code> nor <code>ebfx-2m7v</code> observes the Major Deegan, the Bruckner, the Cross Bronx, or local Mott Haven streets. The Bronx DiD speaks to tolled crossings, not to free roads. The CRZ overnight gap has no pre-period. DOT coverage on the prompt’s streets is an empty pre/post panel. PUMA income is coarser than the East 138th design strip.
+</div>
+</section>
+
+<section id="s3">
+<h2>3. Results</h2>
+
+<h3>3.1 Twelve gates, seven regions, zero Bronx</h3>
+<p>In calendar 2025 the Congestion Relief Zone recorded 178,203,234 paid entries and 23,461,361 excluded-roadway entries. Those entries arrive through exactly twelve detection gates grouped into seven regions: Brooklyn, East 60th St, FDR Drive, New Jersey, Queens, West 60th St, and West Side Highway. The Bronx region list is empty. East 60th Street is the largest single gate (44,990,691 entries), followed by the FDR Drive gate at 60th Street (30,746,213 paid entries plus 17,684,944 excluded-roadway entries).</p>
+<p>A driver entering Manhattan below 60th Street from the north crosses one of the 60th Street gates or the FDR and West Side Highway gates. A driver on the Major Deegan at 138th Street does not appear in this file at all. Figure 1 plots the gates. The missing borough is the result.</p>
+
+<figure class="plate" id="fig1">
+  <img src="paper/figures/fig1-gates.svg" alt="Bar chart of twelve Congestion Relief Zone gates by 2025 entries, with seven named regions and no Bronx gate.">
+  <figcaption>
+    <span class="fn">Figure 1. Congestion Relief Zone gates and regions, calendar 2025</span>
+    Paid CRZ entries by detection gate. Twelve gates, seven regions, zero Bronx. Excluded-roadway volumes at the FDR, West Side Highway, Brooklyn Bridge, and Hugh L. Carey Tunnel are not added into the paid bars.
+    <span class="src">Source: MTA Congestion Relief Zone Vehicle Entries, data.ny.gov t6yz-b64h. Window 2025-01-05 through 2025-12-31 for headline totals. n = 12 gates. File has no pre-toll period.</span>
+  </figcaption>
+</figure>
+
+<figure class="plate" id="plate-gantry">
+  <img src="paper/refs/crz-gantry-9th-ave.jpg" alt="Congestion pricing cameras over Ninth Avenue in Manhattan.">
+  <figcaption>
+    <span class="fn">Plate A. The line, from the street</span>
+    Detection cameras on Ninth Avenue, Manhattan, 2023. The cordon is a set of gantries at about 60th Street, not a borough-wide air program.
+    <span class="src">Source: Jim.henderson, Wikimedia Commons, File:Congestion pricing cameras 9th Av 2023 jeh.jpg, CC BY-SA 4.0.</span>
+  </figcaption>
+</figure>
+
+<figure class="plate" id="plate-sign">
+  <img src="paper/refs/crz-dot-sign.svg" alt="NYC DOT congestion pricing regulatory sign artwork.">
+  <figcaption>
+    <span class="fn">Plate B. Official sign face</span>
+    NYC Department of Transportation congestion-pricing regulatory sign (SI-1816M), vectorized from public designations.
+    <span class="src">Source: NYC DOT design; vectorization on Wikimedia Commons, File:NYCDOT SI-1816M.svg, public domain.</span>
+  </figcaption>
+</figure>
+
+<h3>3.2 Trucks overnight more than cars (cross-sectional)</h3>
+<p>Multi-unit trucks take 31.8 percent of their entries overnight. Cars take 19.7 percent. The 12.1-point gap lines up with a schedule whose overnight rate is a fraction of the peak rate. Hour-of-day profiles show the shape: multi-unit truck share peaks in the 5 a.m. and 6 a.m. hours and holds an elevated floor through the small hours, while car share collapses overnight. With tens of millions of rows the chi-square p-value is approximately zero for any difference at all. Cramér’s V is 0.0185. The share gap is the result. The p-value is not.</p>
+<div class="callout caveat">
+  <strong>We do not say trucks moved.</strong> The CRZ file has no before. The comparison is cross-sectional by class inside a already-tolled year. A 12-point overnight gap is consistent with the price schedule. It is not a pre/post shift.
+</div>
+
+<figure class="plate" id="fig2">
+  <img src="paper/figures/fig2-trucks.svg" alt="Overnight entry shares for cars versus multi-unit trucks, and hour-of-day profiles.">
+  <figcaption>
+    <span class="fn">Figure 2. Overnight share by vehicle class, 2025</span>
+    Overnight share of CRZ entries for cars, pickups and vans (19.7 percent) versus multi-unit trucks (31.8 percent). Companion hour-of-day profiles, if drawn, use class totals from the same file rather than a pre-toll baseline.
+    <span class="src">Source: t6yz-b64h class totals over the pulled file. Chi-square on the cars-versus-multi-unit contingency table; Cramér’s V = 0.0185. Descriptive only.</span>
+  </figcaption>
+</figure>
+
+<h3>3.3 Bronx bridges: a null, with a working positive control</h3>
+<p>Raw 2024-to-2025 changes at Bronx-adjacent facilities are small: RFK Bronx +0.13 percent, Bronx-Whitestone +1.62 percent, Throgs Neck +0.14 percent, Henry Hudson +0.28 percent. Each of those changes is smaller than the change at Marine Parkway, a control bridge in southern Queens with no relationship to the cordon. Systemwide volume rose 0.17 percent.</p>
+
+<table>
+  <caption>Table 1. Bridges and Tunnels calendar-year volumes, 2024 versus 2025</caption>
+  <thead>
+    <tr><th>Facility</th><th>Group</th><th class="num">2024</th><th class="num">2025</th><th class="num">Change</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>RFK Bridge Bronx</td><td>Bronx-adjacent</td><td class="num">52,506,343</td><td class="num">52,574,751</td><td class="num">+0.13%</td></tr>
+    <tr><td>Bronx-Whitestone</td><td>Bronx-adjacent</td><td class="num">49,893,667</td><td class="num">50,700,608</td><td class="num">+1.62%</td></tr>
+    <tr><td>Throgs Neck</td><td>Bronx-adjacent</td><td class="num">45,182,230</td><td class="num">45,245,619</td><td class="num">+0.14%</td></tr>
+    <tr><td>Henry Hudson</td><td>Bronx-adjacent</td><td class="num">25,243,179</td><td class="num">25,313,379</td><td class="num">+0.28%</td></tr>
+    <tr><td>Queens Midtown Tunnel</td><td>Cordon-crossing</td><td class="num">30,433,062</td><td class="num">30,024,381</td><td class="num">−1.34%</td></tr>
+    <tr><td>Hugh L. Carey Tunnel</td><td>Cordon-crossing</td><td class="num">22,626,078</td><td class="num">21,981,320</td><td class="num">−2.85%</td></tr>
+    <tr><td>Verrazzano-Narrows</td><td>Far control</td><td class="num">81,000,607</td><td class="num">81,160,067</td><td class="num">+0.20%</td></tr>
+    <tr><td>Cross Bay</td><td>Far control</td><td class="num">7,774,075</td><td class="num">7,823,341</td><td class="num">+0.63%</td></tr>
+    <tr><td>Marine Parkway</td><td>Far control</td><td class="num">7,994,115</td><td class="num">8,113,733</td><td class="num">+1.50%</td></tr>
+    <tr><td>System total</td><td></td><td class="num">339,772,310</td><td class="num">340,352,556</td><td class="num">+0.17%</td></tr>
+  </tbody>
+</table>
+<p class="table-note">Source: ebfx-2m7v, reduced in <code>data/derived/bt.json</code>. RFK Manhattan (+1.73 percent) is uptown, not in the Bronx treated set.</p>
+
+<p>The pooled difference-in-differences estimate for Bronx-adjacent crossings versus far controls is −1.04 percent, 95 percent CI [−3.63, +1.61], wild cluster bootstrap p = 0.49 (t = −0.78, 168 facility-months, 7 clusters, 128 bootstrap draws). Mean absolute pre-period coefficient is 1.24 percent, which is the noise floor of the design. The post-period mean is −1.29 percent. The treated-minus-control gap does not open upward after January 2025. The only individually significant post-toll months are February 2025 at −5.20 percent and April 2025 at −4.53 percent, both negative, and both within the range of month-level swings already present before the toll.</p>
+<p>The same specification on cordon-crossing tunnels versus the same controls gives −2.29 percent, 95 percent CI [−3.39, −1.18], p = 0.0625 (t = −4.03, 120 facility-months, 5 clusters). January 2025 is −9.18 percent, CI [−11.33, −6.98]. The pooled p-value is exactly the bootstrap floor for five clusters. The method detects a real shift where the policy bit. The Bronx series does not open the other way.</p>
+
+<figure class="plate" id="fig3">
+  <img src="paper/figures/fig3-did.svg" alt="Facility percent changes and difference-in-differences event study for Bronx-adjacent crossings versus cordon tunnels.">
+  <figcaption>
+    <span class="fn">Figure 3. Facility percent change and DiD event study</span>
+    Calendar 2024-to-2025 percent change by facility, grouped as Bronx-adjacent, cordon-crossing, and far control, and/or monthly treated-minus-control event-study coefficients with 95 percent intervals. December 2024 is the omitted month. A vertical marker at January 2025 is the toll start.
+    <span class="src">Source: ebfx-2m7v monthly panel. Bronx comparison: 168 facility-months, 7 clusters. Cordon comparison: 120 facility-months, 5 clusters. Outcome is YoY change in log monthly vehicles.</span>
+  </figcaption>
+</figure>
+
+<div class="callout">
+  <strong>Read the null as a finding, not as proof of silence on free roads.</strong> The interval [−3.63, +1.61] rules out a large increase at tolled Bronx-adjacent crossings. It does not prove that nothing happened on the Deegan, the Bruckner, or local streets.
+</div>
+
+<h3>3.4 The DOT coverage hole</h3>
+<p>Tolled crossings are not surface streets. We went to <code>7ym2-wayt</code> because that is the source that could, in principle, observe the Major Deegan or Bruckner Boulevard. After requiring a complete 24-hour day, weekdays only, and the same segment and direction on both sides, the Bronx yields two pairs and zero that bracket 5 January 2025. Citywide the file yields 28 usable pairs, 13 of which bracket the toll start. The South Bronx sample is empty, so no Wilcoxon test was run on it.</p>
+<p>The corridors exist in the archive. They were just never counted on both sides. East 138th Street has counts in 2015 and 2016 only. The Major Deegan has pre-toll counts on two segments and a post-toll count on a third. Pairing by street name would compare different roadway segments. Pelham Parkway segment 9008825 is a duplicated record with flipped direction labels. Bruckner Boulevard segment 9014571 has a genuine 2018-versus-2025 repeat whose only complete 2018 days are a Saturday and a Sunday. Both would have produced a confident false finding. We discarded them.</p>
+<p>NYC DOT’s street-level counts neither support nor refute diversion into the South Bronx. Instrumenting those corridors is cheaper than anything in Part 2, and it is the precondition for ever evaluating it.</p>
+
+<h3>3.5 Four air studies, kept apart</h3>
+<p><b>Cornell, npj Clean Air.</b> Fraser et al. estimate a 22 percent reduction in daily-maximum PM2.5 inside the Congestion Relief Zone relative to a modeled no-toll counterfactual over the first six months, equal to −3.05 µg/m³ against a 13.8 µg/m³ baseline, with −1.07 µg/m³ across the five boroughs and −0.70 µg/m³ metro-wide, alongside an 11 percent traffic reduction. This is a daily-max result inside the zone. It is not a citywide annual-mean statement.</p>
+<p><b>Research Square difference-in-differences preprint.</b> Across six real-time NYCCAS sites, only Queensboro Bridge shows a statistically significant PM2.5 decrease (−9.08 percent). Other reported coefficients go the other way: Williamsburg Bridge +6.30 percent, Cross Bronx Expressway +3.74 percent, Broadway at West 35th Street +2.46 percent. NO2 is reported down 23 percent in Manhattan with increases up to 33 percent in the eastern boroughs. Six sites at α = 0.05 give a family-wise error rate near 26 percent. The single significant decrease may not survive a Benjamini-Hochberg correction.</p>
+<p><b>South Bronx Unite with Columbia, Brown, and CU Boulder.</b> Across 19 community PM2.5 sensors comparing 2024 to 2025, between 12 and 14 sensors show increases, with a mean change of +0.22 µg/m³ and a peak of +1.29 µg/m³ at the Major Deegan and Third Avenue Bridge. That peak sits next to our design site. The comparison is year-over-year, not a controlled congestion-pricing effect. We cite it as a measurement of what the air did.</p>
+<p><b>NYC DOHMH.</b> Using integrated NYCCAS monitors over one year with the Van Wyck Expressway as a non-affected control, the health department finds no statistically significant congestion-pricing-attributable change at either the CRZ or environmental-justice highway corridors. Traffic accounts for roughly 14 percent of NYC PM2.5 and 20 percent of NOx, which bounds how much any traffic policy can accomplish.</p>
+<p>Inside the cordon, two of four studies find improvement and one finds none. Outside the cordon the field is mixed to adverse. At no Bronx monitoring location does any of these four studies report a measured improvement. We are not claiming the Bronx is fine. We are claiming there is no evidence of a traffic-volume increase at Bronx crossings and no evidence of air-quality improvement there either.</p>
+
+<h3>3.6 Asthma, money, and heat on the same map</h3>
+<p>Hunts Point and Mott Haven adult asthma emergency department visits run 193.5 per 10,000 residents against 66.4 citywide. For children aged 5 to 17 the rate is 266.2 per 10,000 against 143.7 citywide. PM2.5-attributable child asthma emergency visits are 147 per 100,000 against 62 citywide. Vegetative cover was 18 percent in 2017, against a citywide tree canopy of 23.4 percent in 2021.</p>
+<p>PUMA 3710 has median income $15,510 against a citywide PUMA average of about $31,238, and a poverty rate of 29.3 percent against about 20.3 percent citywide. It ranks 51 of 55 on Overall Neighborhood Financial Health with a Bottom score band, and last (55) on Jobs and Income. It is the second-lowest income PUMA in the city. The four site ZCTAs all score 5 of 5 on the Heat Vulnerability Index. Inside the cordon, Manhattan PUMA 3807 (Chelsea / Clinton / Midtown) reads $65,905 median income and 10.8 percent poverty.</p>
+
+<figure class="plate" id="fig5">
+  <img src="paper/figures/fig5-econ.svg" alt="Economics contrast of PUMA 3710 against citywide averages and a CRZ-core Manhattan PUMA.">
+  <figcaption>
+    <span class="fn">Figure 5. Economics contrast, PUMA 3710 versus the city and CRZ Manhattan</span>
+    Median income, poverty rate, Neighborhood Financial Health band, and Heat Vulnerability Index for the Mott Haven design geography against citywide PUMA averages and Manhattan PUMA 3807.
+    <span class="src">Source: NYC Open Data r3dx-pew9 (NFH, year_published 2020) and 4mhf-duep (HVI). n = 55 PUMAs for ranks. Site ZCTAs 10451, 10454, 10455, 10459. Reduced in economics.json.</span>
+  </figcaption>
+</figure>
+
+<p>The neighborhood with roughly three times the citywide adult asthma emergency rate, Bottom financial health, and maximum heat vulnerability is also the neighborhood with zero detection gates and zero measured air-quality improvement. It is also the neighborhood whose streets were never measured on both sides of the policy.</p>
+
+<h3>3.7 East 138th Street: nine segments versus one</h3>
+<p>The corridor is not one street. Facade-to-facade width is about 40.3 m. Median roof height in the fronting band is 50.3 ft. The corridor median height-to-width ratio is 0.38. Cut into ten 120 m segments, the ratios run from 0.08 at the eastern end to 0.58. Nine of the ten sit below 0.5. Exactly one sits above it, a 120 m stretch about three-quarters of the way east, where median roof height rises to 58.7 ft and the street narrows to 30.6 m. The next-highest segment reads 0.46.</p>
+<p>On nine blocks a dense canopy helps the air at street level. On the tenth the same canopy would make it worse. The 2015 census records 81 living trees on the corridor band, about 5.0 per 100 m, median trunk diameter 8 inches. Only two of those trees fall inside the trapping segment. The single London planetree on the band is not one of them. The Bronx already has trees. The innovative part is the typology, not the invention of greenery.</p>
+
+<figure class="plate" id="fig4">
+  <img src="paper/figures/fig4-canyon.svg" alt="Height-to-width ratio by 120 meter segment along East 138th Street, with one segment above 0.5.">
+  <figcaption>
+    <span class="fn">Figure 4. Canyon height-to-width ratio by segment, East 138th Street</span>
+    Ten 120 m segments with at least three fronting buildings. The dashed line is the 0.5 trapping threshold. Nine segments sit below it. One segment, centered near 40.8073° N, 73.9186° W, sits at 0.58.
+    <span class="src">Source: OTI Building Footprints 5zhs-2jue (height_roof) and 2015 Street Tree Census uvpi-gqnh. Centerline fit n = 83 trees; 116 fronting buildings; corridor length 1,618 m.</span>
+  </figcaption>
+</figure>
+
+<div class="grid-2">
+<figure class="plate" id="plate-deegan-a">
+  <img src="paper/refs/deegan-from-e138th-south.jpg" alt="Looking south along the Major Deegan Expressway from the East 138th Street overpass.">
+  <figcaption>
+    <span class="fn">Plate C. The Deegan from East 138th, south</span>
+    Interstate 87 at the design corridor, 30 May 2024.
+    <span class="src">Source: Famartin, Wikimedia Commons, CC BY-SA 4.0. View south from the East 138th Street overpass, Mott Haven.</span>
+  </figcaption>
+</figure>
+<figure class="plate" id="plate-deegan-b">
+  <img src="paper/refs/deegan-from-e138th-jeh.jpg" alt="Major Deegan Expressway from the East 138th Street overpass.">
+  <figcaption>
+    <span class="fn">Plate D. The same overpass, earlier frame</span>
+    The highway that a lid would cover sits one story below the sidewalk we can plant this year.
+    <span class="src">Source: Jim.henderson, Wikimedia Commons, File:Major Deegan Expressway from 138th Street overpass jeh.jpg, public domain.</span>
+  </figcaption>
+</figure>
+</div>
+</section>
+
+<section id="s4">
+<h2>4. Design implication: two horizons</h2>
+<p>The street changes block by block, so the design changes block by block. We did not decide what East 138th needed and then look for data that agreed. We measured the cross-section, found that it changes along its length, and let the intervention change with it.</p>
+
+<h3>4.1 Near term: a fundable Parks, DOT, and DEP package</h3>
+<p>Nine of ten segments get open-crown street trees at continuous spacing: honeylocust, Kentucky coffeetree, and Japanese zelkova, all salt-tolerant on a truck route. The one segment above 0.5 gets vegetated facades and widely spaced open-crown trees, with no canopy closure and no London planetree. The 0.46 segment is a transition. The ground plane, independent of the canyon constraint, takes 36 bioswales and 8 acres of green roof on the large-footprint buildings that line the street.</p>
+<p>The corridor program is about 180 open-crown trees, 40,000 ft² of green wall, 8 acres of green roof, and 36 rain gardens. Modeled removals are about 10.6 lb/yr PM2.5, 31.0 lb/yr NO2, 53.2 lb/yr O3, and about 7.2 million gallons per year of stormwater. Street-level PM2.5 reduction in the planted segments is expected in an 8 to 15 percent literature range, not a point estimate from a dispersion model, and that range applies on the one tall-narrow block’s wall-and-spacing treatment as a local breathing-height effect, not as a corridor-wide cleanup.</p>
+<p>This is a neighborhood capital job under programs New York City already runs: Parks and DOT for street trees and curb work, DEP Green Infrastructure for rain gardens, and building-side permits for green walls on the one tall-narrow block. Bottom NFH, maximum HVI, high asthma, and a location outside the cordon are why that package is the equity-correct near-term ask, not a decorative green gesture.</p>
+
+<div class="callout caveat">
+  <strong>Pounds are not the Deegan.</strong> About 11 lb/yr of PM2.5 removed across the whole corridor does not offset a +1.29 µg/m³ ambient rise at the Major Deegan sensor. Vegetation is a breathing-height intervention. The source is a highway carrying diesel traffic a block away. Sidewalk planting is not a highway fix.
+</div>
+
+<h3>4.2 Long horizon: a Deegan lid, with cost and law attached</h3>
+<p>Capping the Major Deegan between roughly 138th and 149th Streets adds about 12.9 acres of deck park. The same multipliers price about 25 lb/yr of additional PM2.5 removal, and that figure badly understates the lid, because a lid encloses the source and lifts the emission plane off sidewalks and windows. I-87 here sits under NYSDOT and needs FHWA environmental review under NEPA, plus city CEQR. If land use or park boundaries change, ULURP runs Community Board to Borough President to City Planning Commission to City Council. The closest live process cousin is NYC DOT’s BQE Central work: years of study before steel.</p>
+<p>Order-of-magnitude cost from other U.S. highway lids runs about $20 million to $90 million plus per acre. On 12.9 acres that is roughly $250 million to $1 billion plus. That is not a Parks tree contract. We will not sell the lid as year-one equity delivery or as next year’s Parks season. Funding would mix federal, state, city capital, and possibly private partners. The street package is what fits existing city programs now. The lid is the horizon once the region funds source removal.</p>
+</section>
+
+<section id="s5">
+<h2>5. Discussion and limits</h2>
+<p>The prompt offered two stories. We found a third. Congestion pricing did measurable work inside a line drawn at 60th Street. The South Bronx was never inside that line. A DiD that can see a January drop at the paid-zone tunnels does not see a post-toll increase at Bronx-adjacent crossings. Community sensors still recorded worse air at the Deegan. Those two facts can sit next to each other without being forced into a single diversion headline.</p>
+<p>The largest geographic limit is the one the MTA Open Data team named, and it generalizes. The congestion-pricing datasets do not observe the South Bronx roadways in the prompt. DOT’s rotating counts do not either, not as a pre/post panel. A community cannot easily demonstrate what a policy did to it if nobody was measuring there beforehand. Our central claim is therefore about the boundary, not about a measured surface-street volume change.</p>
+<p>Other limits follow from the files. The CRZ overnight result is cross-sectional. The Bronx interval includes small effects. Published air studies disagree by design and must not be averaged. i-Tree pounds are planning rates. PUMA 3710 is larger than East 138th Street. The 2015 tree census is a baseline, not a current inventory. The Deegan lid cost band is an order-of-magnitude reading of other U.S. decks, not an engineer’s estimate for I-87.</p>
+<p>What we do not claim is as important as what we do. We do not claim congestion pricing diverted traffic into the South Bronx. We do not claim the South Bronx is unaffected. We do not claim a causal air-quality effect of our own. We do not claim the green corridor offsets highway emissions. We do not claim the lid is next year’s Parks contract.</p>
+<p>Du Bois, writing in 1950, imagined looking out a New York window in 2150 and seeing gardens, then orchards, then forest. The passage is a claim about land. You cannot put a forest inside a city until something first stops needing that ground at street level. Congestion pricing reduced the amount of Manhattan that has to be surrendered to moving cars. The relief was cordon-shaped. Fund the street that measurement designed. Keep the Deegan lid on the table as the source fix. The deck is the second half of a sentence whose first half was written at 60th Street.</p>
+</section>
+
+<section id="refs" class="refs">
+<h2>References</h2>
+<ol>
+  <li>Fraser, M. P., et al. “Estimated air quality and health benefits of the New York City congestion pricing program.” <i>npj Clean Air</i> 1, 39 (2025). <a href="https://www.nature.com/articles/s44407-025-00037-2">https://www.nature.com/articles/s44407-025-00037-2</a></li>
+  <li>“Variable Short-Term Air Quality Impacts of NYC Congestion Pricing.” Research Square preprint (December 2025). <a href="https://doi.org/10.21203/rs.3.rs-8158429/v1">https://doi.org/10.21203/rs.3.rs-8158429/v1</a></li>
+  <li>South Bronx Unite, with Columbia University, Brown University, and CU Boulder. “South Bronx study shows slight increase in air pollution post-congestion pricing” (2026). <a href="https://www.southbronxunite.org/press-and-media/slight-increase-in-air-pollution-post-congestion-pricing">https://www.southbronxunite.org/press-and-media/slight-increase-in-air-pollution-post-congestion-pricing</a></li>
+  <li>New York City Department of Health and Mental Hygiene. Congestion Pricing Air Quality Report. <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/congestion-pricing-report/">https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/congestion-pricing-report/</a></li>
+  <li>New York City Environment and Health Data Portal. Hunts Point–Mott Haven neighborhood report, Asthma and the Environment. <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/neighborhood-reports/hunts_point_mott_haven/asthma_and_the_environment/">Neighborhood report</a></li>
+  <li>Metropolitan Transportation Authority. Congestion Relief Zone Vehicle Entries Beginning 2025. NY State Open Data t6yz-b64h. <a href="https://data.ny.gov/Transportation/MTA-Congestion-Relief-Zone-Vehicle-Entries-Beginnin/t6yz-b64h">data.ny.gov/t6yz-b64h</a></li>
+  <li>Metropolitan Transportation Authority. Bridges and Tunnels Hourly Crossings. NY State Open Data ebfx-2m7v. <a href="https://data.ny.gov/Transportation/MTA-Bridges-and-Tunnels-Hourly-Crossings-Beginning-/ebfx-2m7v">data.ny.gov/ebfx-2m7v</a></li>
+  <li>New York City Department of Transportation. Automated Traffic Volume Counts. NYC Open Data 7ym2-wayt. <a href="https://data.cityofnewyork.us/Transportation/Automated-Traffic-Volume-Counts/7ym2-wayt">data.cityofnewyork.us/7ym2-wayt</a></li>
+  <li>New York City Office of Technology and Innovation. Building Footprints. NYC Open Data 5zhs-2jue. <a href="https://data.cityofnewyork.us/City-Government/Building-Footprints/5zhs-2jue">data.cityofnewyork.us/5zhs-2jue</a></li>
+  <li>New York City Department of Parks and Recreation. 2015 Street Tree Census. NYC Open Data uvpi-gqnh. <a href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">data.cityofnewyork.us/uvpi-gqnh</a></li>
+  <li>New York City Neighborhood Financial Health Digital Mapping and Data Tool. NYC Open Data r3dx-pew9 (year_published 2020). <a href="https://data.cityofnewyork.us/Business/Neighborhood-Financial-Health-Digital-Mapping-and-/r3dx-pew9">data.cityofnewyork.us/r3dx-pew9</a></li>
+  <li>New York City Department of Health and Mental Hygiene. Heat Vulnerability Index by ZCTA. NYC Open Data 4mhf-duep. <a href="https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-HVI-/4mhf-duep">data.cityofnewyork.us/4mhf-duep</a></li>
+  <li>Nowak, D. J., Hirabayashi, S., Bodine, A., and Hoehn, R. “Modeled PM2.5 removal by trees in ten U.S. cities and associated health effects.” <i>Environmental Pollution</i> 178 (2013): 395–402. <a href="https://doi.org/10.1016/j.envpol.2013.03.050">https://doi.org/10.1016/j.envpol.2013.03.050</a></li>
+  <li>Nowak, D. J., Hirabayashi, S., Bodine, A., and Greenfield, E. “Tree and forest effects on air quality and human health in the United States.” <i>Environmental Pollution</i> 193 (2014): 119–129.</li>
+  <li>Metropolitan Transportation Authority. “ICYMI: Less Traffic, Better Transit.” First-anniversary press release. <a href="https://www.mta.info/press-release/icymi-less-traffic-better-transit-its-first-anniversary-governor-hochul-celebrates">mta.info press release</a></li>
+  <li>Cornell Urban Horticulture Institute. Urban tree species selection guidance. <a href="http://www.hort.cornell.edu/uhi/">http://www.hort.cornell.edu/uhi/</a></li>
+  <li>Du Bois, W. E. B. “The Negro and the Warsaw Ghetto.” <i>Jewish Life</i> (1950). Quoted for the 2150 New York window, not as a traffic citation.</li>
+  <li>New York City Charter §§197-c and 197-d (ULURP). FHWA NEPA procedures and CEQR Technical Manual, as process references for a state-owned interstate lid.</li>
+</ol>
+</section>
+
+<footer class="colophon">
+  <p>Figures 1–5 are journal plates generated from <code>data/derived/*.json</code> and stored at <code>paper/figures/</code>. Reference photographs are stored at <code>paper/refs/</code> with licenses in <code>paper/refs/SOURCES.txt</code> when that file is present. Missing plates are hidden rather than shown as broken images. Interactive version: <a href="index.html">index.html</a>. This page is written to stand alone from <code>file://</code> and from GitHub Pages at <a href="https://lazyboy1234.github.io/outside-the-line/paper.html">lazyboy1234.github.io/outside-the-line/paper.html</a>.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  function hide(el) {
+    var fig = el.closest("figure");
+    if (fig) fig.classList.add("missing");
+  }
+  document.querySelectorAll("figure img").forEach(function (img) {
+    img.addEventListener("error", function () { hide(img); });
+    if (img.complete && img.naturalWidth === 0) hide(img);
+  });
+})();
+</script>
+</body>
+</html>

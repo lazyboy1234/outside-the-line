@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="t d">
+  <title id="t">Air inside the line got cleaner. Mott Haven did not.</title>
+  <desc id="d">A published study found cleaner air inside the paid zone. Community sensors in Mott Haven did not show that cleanup.</desc>
+  <rect width="360" height="220" fill="#fff"/>
+  <rect x="36" y="64" width="132" height="100" fill="#edf3ec"/>
+  <rect x="192" y="64" width="132" height="100" fill="#fdebec"/>
+  <text x="102" y="112" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" fill="#346538">down</text>
+  <text x="258" y="112" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" fill="#9f2f2d">not</text>
+  <text x="102" y="140" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#346538">inside the line</text>
+  <text x="258" y="140" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#9f2f2d">in Mott Haven</text>
+</svg>

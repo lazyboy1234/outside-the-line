@@ -1,0 +1,8 @@
+# Six public Wikimedia Commons photos for the visual story. 1280px thumbs, not full originals.
+filename	commons / source	what it is	license / attribution
+mott-haven-street.jpg	https://commons.wikimedia.org/wiki/File:East_139th_Street.jpg	East 139th Street facing east, Mott Haven, South Bronx	CC BY-SA 3.0; Amolina196 (talk)
+nyc-street-trees.jpg	https://commons.wikimedia.org/wiki/File:Trees_on_East_Village_street.JPG	Street trees on an East Village sidewalk, Manhattan	CC BY-SA 4.0; Loreleilee33
+deegan-elevated.jpg	https://commons.wikimedia.org/wiki/File:Major_Deegan_Expressway_from_138th_Street_overpass_jeh.jpg	Major Deegan Expressway (I-87) from the East 138th Street overpass, Bronx	Public domain; Jim.henderson at English Wikipedia
+manhattan-60th-skyline.jpg	https://commons.wikimedia.org/wiki/File:New_York_11_-_28_-_Columbus_Circle_from_the_Time_Warner_Centre_(6598351025).jpg	Columbus Circle / 59th–60th Street, Midtown Manhattan skyline from Time Warner Center	CC BY 2.0; McKay Savage from London, UK
+nyc-traffic.jpg	https://commons.wikimedia.org/wiki/File:A_FRUSTRATED_DRIVER_SITS_THROUGH_A_TRAFFIC_JAM_IN_HERALD_SQUARE_-_NARA_-_548275.jpg	Traffic jam in Herald Square, Midtown Manhattan (NARA / EPA)	Public domain; Erik Calonius
+mott-haven-park.jpg	https://commons.wikimedia.org/wiki/File:St._Mary%27s_Park,_June_16_2024,_Mott_Haven,_Bronx,_New_York_City_01.jpg	St. Mary's Park, Mott Haven, South Bronx, June 2024	CC BY-SA 4.0; Deans Charbal

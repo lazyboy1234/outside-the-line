@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 520" role="img" aria-labelledby="t d">
+  <title id="t">The paid line at 60th Street and Mott Haven to the north</title>
+  <desc id="d">Manhattan below 60th Street is the paid zone. Mott Haven sits four miles north, outside the line.</desc>
+  <rect width="360" height="520" fill="#fff"/>
+  <path d="M168 28c18-6 42-4 58 14 14 16 18 38 16 62l-8 88c28 18 46 42 52 78 4 26-2 54-22 72l-18 14c8 22 6 48-8 66-18 24-52 34-86 28-22-4-40-16-52-34-8-12-18-18-32-16-20 4-34-12-36-32-2-18 8-34 22-42-10-20-8-46 4-64 10-16 8-36-2-50-12-18-8-44 8-58 22-20 56-22 104-26z" fill="#f3f2ef"/>
+  <line x1="78" y1="292" x2="282" y2="292" stroke="#9f2f2d" stroke-width="2.5"/>
+  <circle cx="214" cy="118" r="5" fill="#111"/>
+  <text x="226" y="114" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#111">Mott Haven</text>
+  <text x="226" y="130" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#787774">4 miles north</text>
+  <text x="78" y="280" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#9f2f2d">60th Street</text>
+  <text x="180" y="348" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">Paid here</text>
+  <text x="180" y="198" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#787774">Not here</text>
+</svg>

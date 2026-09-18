@@ -1,0 +1,33 @@
+<svg style="letter-spacing:normal" xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="t d">
+  <title id="t">Solutions that were on the table</title>
+  <desc id="d">Trees about $3110, rain gardens about $44600, canyon walls on one block, and a Deegan lid from $258 million to $1.16 billion.</desc>
+  <rect width="1100" height="560" fill="#fff"/>
+
+  <rect x="24" y="24" width="250" height="512" fill="#f3f1ec"/>
+  <text x="149" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">Trees everywhere</text>
+  <text x="149" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">Brief said don't</text>
+  <text x="149" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">default to this</text>
+  <text x="149" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="28" font-weight="700" fill="#9f2f2d">$3,110</text>
+  <text x="149" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per street tree</text>
+
+  <rect x="290" y="24" width="250" height="512" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="415" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">Canyon walls</text>
+  <text x="415" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">Plants on the one</text>
+  <text x="415" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">tall-narrow block</text>
+  <text x="415" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="28" font-weight="700" fill="#111">1 block</text>
+  <text x="415" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">not the whole street</text>
+
+  <rect x="556" y="24" width="250" height="512" fill="#f3f1ec"/>
+  <text x="681" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">DEP rain gardens</text>
+  <text x="681" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">City already</text>
+  <text x="681" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">builds these</text>
+  <text x="681" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="28" font-weight="700" fill="#9f2f2d">$44,600</text>
+  <text x="681" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per garden</text>
+
+  <rect x="822" y="24" width="254" height="512" fill="#111"/>
+  <text x="949" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#fff">Deegan lid</text>
+  <text x="949" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">Brief invited a lid</text>
+  <text x="949" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">or boulevard</text>
+  <text x="949" y="408" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#fff">$258M</text>
+  <text x="949" y="444" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">to $1.16B</text>
+</svg>
