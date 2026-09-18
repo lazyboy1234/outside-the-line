@@ -1,0 +1,726 @@
+{
+ "method": {
+  "title": "Citywide corridor scan",
+  "ran_on": "Dell ablesBeast, 40 cores, ~40 s for 99,357 segments, ~3.5 min to chain and rank",
+  "n_segments": 99357,
+  "n_windows": 33785,
+  "window_km": {
+   "target": 1.6,
+   "min": 0.8,
+   "max": 2.0
+  },
+  "normalization": "percentile rank across all windows (ties averaged), oriented so 1 = strongest case; dubois is a length share",
+  "weights": {
+   "equal": {
+    "exposure": 0.125,
+    "monitor": 0.125,
+    "health": 0.125,
+    "econ": 0.125,
+    "heat": 0.125,
+    "hw": 0.125,
+    "canopy_gap": 0.125,
+    "dubois": 0.125
+   },
+   "burden": {
+    "exposure": 0.15,
+    "monitor": 0.1,
+    "health": 0.15,
+    "econ": 0.15,
+    "heat": 0.15,
+    "hw": 0.12,
+    "canopy_gap": 0.12,
+    "dubois": 0.06
+   },
+   "feasibility": {
+    "hw": 0.2,
+    "canopy_gap": 0.2,
+    "exposure": 0.2,
+    "monitor": 0.08,
+    "health": 0.08,
+    "econ": 0.08,
+    "heat": 0.08,
+    "dubois": 0.08
+   }
+  },
+  "datasets": [
+   {
+    "id": "inkn-q76z",
+    "name": "NYC Street Centerline (CSCL)",
+    "use": "candidate streets and highway/ramp exposure"
+   },
+   {
+    "id": "5zhs-2jue",
+    "name": "Building Footprints",
+    "use": "facade H/W from roof heights"
+   },
+   {
+    "id": "uvpi-gqnh",
+    "name": "2015 Street Tree Census",
+    "use": "living trees per 100 m"
+   },
+   {
+    "id": "4mhf-duep",
+    "name": "Heat Vulnerability Index",
+    "use": "ZCTA heat score"
+   },
+   {
+    "id": "r3dx-pew9",
+    "name": "Neighborhood Financial Health",
+    "use": "PUMA income, poverty, rank"
+   },
+   {
+    "id": "EHDP 2380/2379/2048",
+    "name": "Asthma ED visits",
+    "use": "UHF42 adult and child rates, 2023"
+   },
+   {
+    "id": "published.json",
+    "name": "Post-fee air monitors",
+    "use": "distance-decayed signed change within 1.5 km"
+   },
+   {
+    "id": "ebfx-2m7v",
+    "name": "MTA Bridges and Tunnels",
+    "use": "DiD spill test with permutations"
+   }
+  ],
+  "dimensions": [
+   "exposure to bridge / ramp / highway",
+   "nearest published monitor signal",
+   "asthma ED rates",
+   "income / poverty / NFH rank",
+   "HVI",
+   "H/W tree feasibility",
+   "canopy gap",
+   "Du Bois share (below-grade or elevated highway within 400 m)"
+  ]
+ },
+ "libraries": [
+  {
+   "name": "GeoPandas",
+   "why": "street segments, buildings, and polygon joins in one table",
+   "url": "https://geopandas.org"
+  },
+  {
+   "name": "Shapely + pyogrio",
+   "why": "buffers, nearest, WKT, and fast parquet/geo reads",
+   "url": "https://shapely.readthedocs.io"
+  },
+  {
+   "name": "NetworkX",
+   "why": "chain CSCL segments into street trunks and slide 0.8 to 2 km windows",
+   "url": "https://networkx.org"
+  },
+  {
+   "name": "NumPy / SciPy / pandas",
+   "why": "percentile ranks, DiD, 10k block bootstraps, exact facility permutations",
+   "url": "https://numpy.org"
+  },
+  {
+   "name": "matplotlib",
+   "why": "rank chart and citywide heat map",
+   "url": "https://matplotlib.org"
+  },
+  {
+   "name": "OSMnx (next)",
+   "why": "we did not use it for the citywide run because CSCL is the official street layer; OSMnx is the high-star library we would use to replace hand-rolled Overpass for OSM networks and building pulls",
+   "url": "https://github.com/gboeing/osmnx"
+  }
+ ],
+ "e138": {
+  "design_length_km": 2.561,
+  "n_windows": 33785,
+  "by_weights": {
+   "equal": {
+    "rank_all": 22,
+    "percentile": 99.94,
+    "rank_nonoverlap": 3,
+    "n_nonoverlap": 4163,
+    "bronx_rank": 22,
+    "n_bronx": 3981,
+    "total": 0.8973,
+    "uhf": "High Bridge - Morrisania"
+   },
+   "burden": {
+    "rank_all": 21,
+    "percentile": 99.94,
+    "rank_nonoverlap": 3,
+    "n_nonoverlap": 4158,
+    "bronx_rank": 21,
+    "n_bronx": 3981,
+    "total": 0.8966,
+    "uhf": "High Bridge - Morrisania"
+   },
+   "feasibility": {
+    "rank_all": 82,
+    "percentile": 99.76,
+    "rank_nonoverlap": 13,
+    "n_nonoverlap": 4156,
+    "bronx_rank": 60,
+    "n_bronx": 3981,
+    "total": 0.853,
+    "uhf": "High Bridge - Morrisania"
+   }
+  }
+ },
+ "rankings": {
+  "equal": [
+   {
+    "rank": 1,
+    "borough": "Bronx",
+    "street": "SOUTHERN BLVD",
+    "total": 0.931,
+    "uhf": "Fordham - Bronx Park",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 132.3,
+    "hvi": 5.0,
+    "trees_per_100m": 2.7531,
+    "share_tree_effective": null,
+    "share_dubois": 1.0,
+    "lon": -73.882227,
+    "lat": 40.866237,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 2,
+    "borough": "Bronx",
+    "street": "E 138 ST",
+    "total": 0.912,
+    "uhf": "High Bridge - Morrisania",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 15732.7163,
+    "asthma_adult": 184.3965,
+    "hvi": 5.0,
+    "trees_per_100m": 1.6202,
+    "share_tree_effective": 0.8589,
+    "share_dubois": 1.0,
+    "lon": -73.928138,
+    "lat": 40.811835,
+    "e138_overlap": 0.362
+   },
+   {
+    "rank": 3,
+    "borough": "Bronx",
+    "street": "BOONE AVE",
+    "total": 0.904,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 3.5213,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.884288,
+    "lat": 40.834401,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 4,
+    "borough": "Bronx",
+    "street": "E 141 ST",
+    "total": 0.896,
+    "uhf": "Hunts Point - Mott Haven",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 15510.0,
+    "asthma_adult": 193.5,
+    "hvi": 5.0,
+    "trees_per_100m": 2.7625,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.908938,
+    "lat": 40.805754,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 5,
+    "borough": "Bronx",
+    "street": "PARK AVE",
+    "total": 0.892,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": "Cross Bronx Expwy",
+    "nfh_tier": "Bottom",
+    "median_income": 14741.3457,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 1.965,
+    "share_tree_effective": 1.0,
+    "share_dubois": 0.8251,
+    "lon": -73.900122,
+    "lat": 40.846222,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 6,
+    "borough": "Bronx",
+    "street": "E 132 ST",
+    "total": 0.878,
+    "uhf": "Hunts Point - Mott Haven",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 15510.0,
+    "asthma_adult": 193.5,
+    "hvi": 5.0,
+    "trees_per_100m": 0.1191,
+    "share_tree_effective": 0.9016,
+    "share_dubois": 1.0,
+    "lon": -73.918535,
+    "lat": 40.802192,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 7,
+    "borough": "Bronx",
+    "street": "EXTERIOR ST",
+    "total": 0.871,
+    "uhf": "High Bridge - Morrisania",
+    "puma": "Concourse, Highbridge & Mount Eden",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 16505.3761,
+    "asthma_adult": 179.0,
+    "hvi": 5.0,
+    "trees_per_100m": 0.7943,
+    "share_tree_effective": 0.4608,
+    "share_dubois": 1.0,
+    "lon": -73.930999,
+    "lat": 40.818035,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 8,
+    "borough": "Bronx",
+    "street": "JEROME AVE",
+    "total": 0.866,
+    "uhf": "Crotona - Tremont",
+    "puma": "Morris Heights, Fordham South & Mount Hope",
+    "monitor": "Cross Bronx Expwy",
+    "nfh_tier": "Bottom",
+    "median_income": 15883.4639,
+    "asthma_adult": 173.7663,
+    "hvi": 5.0,
+    "trees_per_100m": 2.1196,
+    "share_tree_effective": 0.9663,
+    "share_dubois": 0.4991,
+    "lon": -73.91229,
+    "lat": 40.847672,
+    "e138_overlap": 0.0
+   }
+  ],
+  "burden": [
+   {
+    "rank": 1,
+    "borough": "Bronx",
+    "street": "SOUTHERN BLVD",
+    "total": 0.925,
+    "uhf": "Fordham - Bronx Park",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 132.3,
+    "hvi": 5.0,
+    "trees_per_100m": 2.7531,
+    "share_tree_effective": null,
+    "share_dubois": 1.0,
+    "lon": -73.882227,
+    "lat": 40.866237,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 2,
+    "borough": "Bronx",
+    "street": "E 138 ST",
+    "total": 0.912,
+    "uhf": "High Bridge - Morrisania",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 15732.7163,
+    "asthma_adult": 184.3965,
+    "hvi": 5.0,
+    "trees_per_100m": 1.6202,
+    "share_tree_effective": 0.8589,
+    "share_dubois": 1.0,
+    "lon": -73.928138,
+    "lat": 40.811835,
+    "e138_overlap": 0.362
+   },
+   {
+    "rank": 3,
+    "borough": "Bronx",
+    "street": "BOONE AVE",
+    "total": 0.905,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 3.5213,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.884288,
+    "lat": 40.834401,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 4,
+    "borough": "Bronx",
+    "street": "PARK AVE",
+    "total": 0.901,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": "Cross Bronx Expwy",
+    "nfh_tier": "Bottom",
+    "median_income": 14741.3457,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 1.965,
+    "share_tree_effective": 1.0,
+    "share_dubois": 0.8251,
+    "lon": -73.900122,
+    "lat": 40.846222,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 5,
+    "borough": "Bronx",
+    "street": "JEROME AVE",
+    "total": 0.896,
+    "uhf": "Crotona - Tremont",
+    "puma": "Morris Heights, Fordham South & Mount Hope",
+    "monitor": "Cross Bronx Expwy",
+    "nfh_tier": "Bottom",
+    "median_income": 15883.4639,
+    "asthma_adult": 173.7663,
+    "hvi": 5.0,
+    "trees_per_100m": 2.1196,
+    "share_tree_effective": 0.9663,
+    "share_dubois": 0.4991,
+    "lon": -73.91229,
+    "lat": 40.847672,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 6,
+    "borough": "Bronx",
+    "street": "E 141 ST",
+    "total": 0.894,
+    "uhf": "Hunts Point - Mott Haven",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 15510.0,
+    "asthma_adult": 193.5,
+    "hvi": 5.0,
+    "trees_per_100m": 2.7625,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.908938,
+    "lat": 40.805754,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 7,
+    "borough": "Bronx",
+    "street": "E 132 ST",
+    "total": 0.884,
+    "uhf": "Hunts Point - Mott Haven",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 15510.0,
+    "asthma_adult": 193.5,
+    "hvi": 5.0,
+    "trees_per_100m": 0.1191,
+    "share_tree_effective": 0.9016,
+    "share_dubois": 1.0,
+    "lon": -73.918535,
+    "lat": 40.802192,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 8,
+    "borough": "Bronx",
+    "street": "EXTERIOR ST",
+    "total": 0.879,
+    "uhf": "High Bridge - Morrisania",
+    "puma": "Concourse, Highbridge & Mount Eden",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 16505.3761,
+    "asthma_adult": 179.0,
+    "hvi": 5.0,
+    "trees_per_100m": 0.7943,
+    "share_tree_effective": 0.4608,
+    "share_dubois": 1.0,
+    "lon": -73.930999,
+    "lat": 40.818035,
+    "e138_overlap": 0.0
+   }
+  ],
+  "feasibility": [
+   {
+    "rank": 1,
+    "borough": "Bronx",
+    "street": "SOUTHERN BLVD",
+    "total": 0.904,
+    "uhf": "Fordham - Bronx Park",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 132.3,
+    "hvi": 5.0,
+    "trees_per_100m": 2.7531,
+    "share_tree_effective": null,
+    "share_dubois": 1.0,
+    "lon": -73.882227,
+    "lat": 40.866237,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 2,
+    "borough": "Queens",
+    "street": "148 ST",
+    "total": 0.892,
+    "uhf": "",
+    "puma": "Queens Village, Cambria Heights & Rosedale",
+    "monitor": null,
+    "nfh_tier": "Middle",
+    "median_income": 32961.0,
+    "asthma_adult": null,
+    "hvi": null,
+    "trees_per_100m": 0.0,
+    "share_tree_effective": null,
+    "share_dubois": 1.0,
+    "lon": -73.792737,
+    "lat": 40.657725,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 3,
+    "borough": "Bronx",
+    "street": "PARK AVE",
+    "total": 0.884,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": "Cross Bronx Expwy",
+    "nfh_tier": "Bottom",
+    "median_income": 14741.3457,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 1.965,
+    "share_tree_effective": 1.0,
+    "share_dubois": 0.8251,
+    "lon": -73.900122,
+    "lat": 40.846222,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 4,
+    "borough": "Bronx",
+    "street": "WESTCHESTER AVE",
+    "total": 0.876,
+    "uhf": "Pelham - Throgs Neck",
+    "puma": "Castle Hill, Clason Point & Parkchester",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 20300.0,
+    "asthma_adult": 100.0,
+    "hvi": 4.0,
+    "trees_per_100m": 1.622,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.869367,
+    "lat": 40.831017,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 5,
+    "borough": "Bronx",
+    "street": "E 138 ST",
+    "total": 0.872,
+    "uhf": "High Bridge - Morrisania",
+    "puma": "Hunts Point, Longwood & Melrose",
+    "monitor": "Major Deegan / Third Ave Bridge",
+    "nfh_tier": "Bottom",
+    "median_income": 15732.7163,
+    "asthma_adult": 184.3965,
+    "hvi": 5.0,
+    "trees_per_100m": 1.6202,
+    "share_tree_effective": 0.8589,
+    "share_dubois": 1.0,
+    "lon": -73.928138,
+    "lat": 40.811835,
+    "e138_overlap": 0.362
+   },
+   {
+    "rank": 6,
+    "borough": "Bronx",
+    "street": "PELHAM PKWY",
+    "total": 0.871,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 20578.478,
+    "asthma_adult": 129.2493,
+    "hvi": 4.6237,
+    "trees_per_100m": 0.0,
+    "share_tree_effective": null,
+    "share_dubois": 0.4872,
+    "lon": -73.866475,
+    "lat": 40.857029,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 7,
+    "borough": "Queens",
+    "street": "MALCOLM X PROMENADE",
+    "total": 0.867,
+    "uhf": "West Queens",
+    "puma": "Elmhurst & South Corona",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 23633.2804,
+    "asthma_adult": 30.4,
+    "hvi": 4.0,
+    "trees_per_100m": 0.0,
+    "share_tree_effective": null,
+    "share_dubois": 1.0,
+    "lon": -73.846839,
+    "lat": 40.761456,
+    "e138_overlap": 0.0
+   },
+   {
+    "rank": 8,
+    "borough": "Bronx",
+    "street": "BOONE AVE",
+    "total": 0.865,
+    "uhf": "Crotona - Tremont",
+    "puma": "Belmont, Crotona Park East & East Tremont",
+    "monitor": null,
+    "nfh_tier": "Bottom",
+    "median_income": 14213.0,
+    "asthma_adult": 171.0,
+    "hvi": 5.0,
+    "trees_per_100m": 3.5213,
+    "share_tree_effective": 1.0,
+    "share_dubois": 1.0,
+    "lon": -73.884288,
+    "lat": 40.834401,
+    "e138_overlap": 0.0
+   }
+  ]
+ },
+ "did": {
+  "did_pct": -0.146,
+  "perm_p": 0.7714285714285715,
+  "ci95_pct": [
+   -1.102,
+   0.802
+  ],
+  "jackknife_range_pct": [
+   -0.444,
+   0.225
+  ]
+ },
+ "choices": [
+  {
+   "id": "mott_haven_grid",
+   "name": "Mott Haven grid",
+   "when": "now",
+   "streets": [
+    "E 138 ST",
+    "E 141 ST",
+    "E 132 ST",
+    "E 135 ST",
+    "EXTERIOR ST"
+   ],
+   "center": [
+    -73.9245,
+    40.8095
+   ],
+   "why": "Highest-ranked corridor cluster that also sits on the measured Deegan +1.29 air hit, HVI 5, and adult asthma around 186 to 193.5 per 10,000.",
+   "action": "Street trees, tree-pit rain gardens, and wall plants on the canyon block, through Parks and DEP programs that already exist."
+  },
+  {
+   "id": "southern_blvd",
+   "name": "Southern Blvd",
+   "when": "next tranche",
+   "streets": [
+    "SOUTHERN BLVD"
+   ],
+   "center": [
+    -73.8822,
+    40.8662
+   ],
+   "why": "Top street after zoo and airport junk is filtered out. Lowest income in the top set, HVI 5, Du Bois flag on because of the nearby highway, but no published post-fee monitor on the corridor.",
+   "action": "Same street package, framed as heat and equity work, not as a fee-spill fix."
+  },
+  {
+   "id": "cross_bronx_frontage",
+   "name": "Cross Bronx frontage",
+   "when": "next tranche",
+   "streets": [
+    "PARK AVE",
+    "JEROME AVE",
+    "BOONE AVE"
+   ],
+   "center": [
+    -73.9028,
+    40.8502
+   ],
+   "why": "Crotona-Tremont, asthma around 171, HVI 5, Park Ave and Jerome already pick up the Cross Bronx Expwy monitor signal.",
+   "action": "Trees and curb work on the service-road frontage, not a quiet residential planting."
+  },
+  {
+   "id": "bruckner_westchester",
+   "name": "Bruckner Blvd and Westchester Ave",
+   "when": "medium term",
+   "streets": [
+    "BRUCKNER BLVD",
+    "WESTCHESTER AVE"
+   ],
+   "center": [
+    -73.89,
+    40.816
+   ],
+   "why": "Hunts Point-Mott Haven truck corridors, asthma 193.5, HVI 5, still tree-feasible.",
+   "action": "Truck calming plus green median, not only sidewalk trees."
+  },
+  {
+   "id": "deegan_lid",
+   "name": "Deegan lid",
+   "when": "long horizon",
+   "streets": [
+    "MAJOR DEEGAN EXPRESSWAY"
+   ],
+   "center": [
+    -73.9295,
+    40.816
+   ],
+   "why": "Almost every top Bronx corridor has Du Bois share 1 because the Deegan or Cross Bronx sits next to it. The only place a lid is a real project is the Deegan trench from East 138th to East 149th.",
+   "action": "Deck the trench, start NYSDOT / FHWA / CEQR / ULURP now, plant the street package while the clock runs."
+  }
+ ],
+ "figures": {
+  "rank": "story-art/fig-citywide-rank.svg",
+  "map": "story-art/map-citywide-heat.png"
+ },
+ "docs": "docs/CITYWIDE-SCAN.md"
+}

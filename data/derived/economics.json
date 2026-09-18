@@ -1,0 +1,87 @@
+{
+  "cite": "NYC Neighborhood Financial Health Digital Mapping and Data Tool (r3dx-pew9), year_published 2020. https://data.cityofnewyork.us/Business/Neighborhood-Financial-Health-Digital-Mapping-and-/r3dx-pew9",
+  "grain": "PUMA",
+  "site_puma": {
+    "puma": "3710",
+    "neighborhoods": "Hunts Point, Longwood & Melrose",
+    "cd": "BX Community Districts 1 & 2",
+    "median_income": 15510,
+    "poverty_rate": 0.293,
+    "nfh_overall_rank": 51,
+    "nfh_overall_score_rank": "Bottom",
+    "jobs_income_rank": 55,
+    "jobs_income_index": 0.0,
+    "perc_hispanic": 0.682,
+    "perc_black": 0.282
+  },
+  "citywide": {
+    "puma_count": 55,
+    "median_income_avg": 31238,
+    "poverty_rate_avg": 0.2032,
+    "site_income_rank_asc": 2
+  },
+  "crz_contrast": {
+    "puma": "3807",
+    "neighborhoods": "Chelsea, Clinton & Midtown Business District",
+    "median_income": 65905,
+    "poverty_rate": 0.108,
+    "nfh_overall_rank": 1,
+    "nfh_overall_score_rank": "Top"
+  },
+  "hvi": {
+    "cite": "NYC Heat Vulnerability Index by ZCTA (4mhf-duep). https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-HVI-/4mhf-duep",
+    "zctas": [
+      "10451",
+      "10454",
+      "10455",
+      "10459"
+    ],
+    "score": 5,
+    "scale_max": 5
+  },
+  "policy": {
+    "near_term_programs": [
+      "NYC Parks street trees",
+      "DOT curb/streetscape",
+      "DEP Green Infrastructure"
+    ],
+    "long_horizon": "Deegan lid: NYSDOT/FHWA NEPA, CEQR, likely ULURP; ~$250M\u2013$1B+",
+    "why_it_matters": "Bottom NFH + max HVI + asthma burden outside CRZ \u2192 fund street package now; lid is horizon"
+  },
+  "manhattan_top_contrast": {
+    "puma": "3810",
+    "neighborhoods": "Battery Park City, Greenwich Village & Soho",
+    "median_income": 79181,
+    "poverty_rate": 0.088
+  },
+  "cdbg": {
+    "cite": "NYC Community Development Block Grant (CDBG) Eligibility by Census Tract (qmcw-ur37). https://data.cityofnewyork.us/City-Government/Community-Development-Block-Grant-CDBG-Eligibility-/qmcw-ur37",
+    "sample_tracts": [
+      {
+        "boroct": "2003700",
+        "eligibility": "CD Eligible",
+        "lomod_pct": 100.0,
+        "totalpop": 220
+      },
+      {
+        "boroct": "2005100",
+        "eligibility": "CD Eligible",
+        "lomod_pct": 99.31,
+        "totalpop": 5825
+      },
+      {
+        "boroct": "2002701",
+        "eligibility": "CD Eligible",
+        "lomod_pct": 96.63,
+        "totalpop": 2670
+      },
+      {
+        "boroct": "2004100",
+        "eligibility": "CD Eligible",
+        "lomod_pct": 94.06,
+        "totalpop": 5810
+      }
+    ],
+    "fact": "4 Mott Haven / Melrose census tracts near the design site are CD Eligible, with low-moderate income share from 94.1% to 100.0%."
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "as_of": "2026-09-18",
+  "note": "Facts only from the cited public URLs. No I-87 lid cost estimate exists. The 12.9-acre Deegan span is this project's measured land, not a NYSDOT acreage.",
+  "cbdtp": {
+    "name": "Central Business District Tolling Program",
+    "also_called": "Congestion Relief Zone",
+    "law": "MTA Reform and Traffic Mobility Act, Part ZZZ of Chapter 59 of the Laws of 2019",
+    "statute": "N.Y. Vehicle and Traffic Law Article 44-C, sections 1701-1706",
+    "who_runs_it": "Triborough Bridge and Tunnel Authority (MTA Bridges and Tunnels)",
+    "start_date": "2025-01-05",
+    "start_time": "00:00:01",
+    "zone": "Manhattan south of and including 60th Street",
+    "excluded_roads": [
+      "FDR Drive",
+      "NY Route 9A / West Side Highway",
+      "Battery Park Underpass",
+      "surface roadway portion of the Hugh L. Carey Tunnel connecting to West Street"
+    ],
+    "who_pays": "Vehicles entering or remaining in the zone. Stay-only travel on the excluded roads is not tolled. Exit from an excluded road onto a local street in the zone is tolled.",
+    "passenger_and_motorcycle": "Charged once per day. Statute bars more than one daily toll on passenger vehicles registered under VTL 401(6).",
+    "trucks_and_buses": "Charged on every entry.",
+    "peak": "5 a.m. to 9 p.m. weekdays; 9 a.m. to 9 p.m. weekends",
+    "overnight_rule": "75 percent less than the matching peak rate. No crossing credits overnight.",
+    "phase1_ezpass_usd": {
+      "years": "2025-2027",
+      "car_peak": 9.00,
+      "car_overnight": 2.25,
+      "small_truck_peak": 14.40,
+      "small_truck_overnight": 3.60,
+      "large_truck_peak": 21.60,
+      "large_truck_overnight": 5.40
+    },
+    "urls": [
+      "https://www.nysenate.gov/legislation/laws/VAT/1704",
+      "https://www.nysenate.gov/legislation/laws/VAT/1704-A",
+      "https://www.nysenate.gov/legislation/laws/VAT/T8A44-C",
+      "https://www.mta.info/press-release/new-york-joins-world-cities-launch-of-first-nation-program-deliver-cleaner-air-less",
+      "https://www.mta.info/fares-tolls/tolls/congestion-relief-zone/about",
+      "https://www.mta.info/document/131571",
+      "https://portal.311.nyc.gov/article/?kanumber=KA-03612"
+    ]
+  },
+  "street_trees": {
+    "fy25_citywide_avg_usd": 3110,
+    "fy25_source": "NYC Parks Commissioner Susan Donoghue to City Council Parks Committee, 2025-03-20",
+    "fy24_avg_usd": 3300,
+    "fy24_source": "Parks figure reported by Forest for All NYC",
+    "contractor_care_years": 2,
+    "fy26_tree_fund_in_lieu_usd": {
+      "bronx": 2800,
+      "brooklyn": 2800,
+      "manhattan": 3900,
+      "queens": 2600,
+      "staten_island": 2400
+    },
+    "urls": [
+      "https://citymeetings.nyc/meetings/new-york-city-council/2025-03-20-0100-pm-committee-on-parks-and-recreation/chapter/discussion-on-street-tree-planting-costs-and-allocation/",
+      "https://forestforall.nyc/costs-city-plant-tree-why/",
+      "https://www.nycgovparks.org/pagefiles/212/Tree-Fund-Application-FY26-Costs__693c9303421dc.pdf",
+      "https://www.nycgovparks.org/services/forestry/faq"
+    ]
+  },
+  "green_infrastructure": {
+    "program": "NYC DEP Green Infrastructure Program",
+    "citywide_commitment_usd": 3500000000,
+    "still_accurate": true,
+    "encumber_by": "2040-12",
+    "expend_by": "2045-12",
+    "cso_cut_target_mgy_by_2040": 1670,
+    "encumbered_by_2025-12_usd": 1400000000,
+    "assets_tracked": "17000+",
+    "managed_acres": "3000+",
+    "neighborhood_jobs": [
+      {
+        "place": "Sunnyside, Maspeth, Ridgewood, Queens",
+        "what": "about 300 curbside rain gardens",
+        "cost_usd": 7300000,
+        "year": 2017,
+        "url": "https://www.nyc.gov/html/dep/html/press_releases/17-085pr.shtml"
+      },
+      {
+        "place": "Flushing, Queens",
+        "what": "about 115 rain gardens",
+        "cost_usd": 2600000,
+        "year": 2017,
+        "url": "https://www.nyc.gov/html/dep/html/press_releases/17-072pr.shtml"
+      },
+      {
+        "place": "Bushwick, Brooklyn",
+        "what": "19 bioswales",
+        "cost_usd": 335000,
+        "year": 2013,
+        "url": "https://www.nyc.gov/html/dep/html/press_releases/13-065pr.shtml"
+      }
+    ],
+    "ddc_avg_rain_garden_build_usd": 44600,
+    "ddc_avg_note": "NYC Comptroller audit of 545 DDC rain gardens under guarantee in FY2020-2021",
+    "urls": [
+      "https://www.nyc.gov/site/dep/water/green-infrastructure.page",
+      "https://www.nyc.gov/assets/dep/downloads/pdf/water/stormwater/green-infrastructure/gi-annual-report-2025.pdf",
+      "https://www.nyc.gov/assets/dep/downloads/pdf/water/stormwater/green-infrastructure/gi-annual-report-presentation.pdf",
+      "https://comptroller.nyc.gov/reports/audit-report-on-the-department-of-design-and-constructions-oversight-of-maintenance-of-rain-gardens-during-the-guarantee-periods/"
+    ]
+  },
+  "highway_lid": {
+    "klyde_warren": {
+      "place": "Dallas, over Woodall Rodgers Freeway",
+      "acres_reported": [5.2, 5.4],
+      "cost_usd_reported": [110000000, 112000000],
+      "about_per_acre_usd": 21000000,
+      "urls": [
+        "https://www.klydewarrenpark.org/our-story",
+        "https://www.landscapeperformance.org/case-study-briefs/klyde-warren-park",
+        "https://www.fhwa.dot.gov/ipd/project_profiles/tx_klyde_warren_park.aspx"
+      ]
+    },
+    "other_us_comps_usd_per_acre": [
+      {
+        "what": "Completed lid parks average, Seattle inventory",
+        "usd_per_acre": 13200000,
+        "url": "https://www.theurbanist.org/lidding-i-5-in-downtown-seattle-cost-estimates-and-three-case-studies/"
+      },
+      {
+        "what": "Conservative new downtown Seattle lid range",
+        "usd_per_acre_low": 20000000,
+        "usd_per_acre_high": 25000000,
+        "url": "https://www.theurbanist.org/lidding-i-5-in-downtown-seattle-cost-estimates-and-three-case-studies/"
+      },
+      {
+        "what": "Seattle CH2MHill 2009 study, 1.5 acres I-5",
+        "usd_per_acre": 70000000,
+        "url": "https://www.theurbanist.org/lidding-i-5-in-downtown-seattle-cost-estimates-and-three-case-studies/"
+      },
+      {
+        "what": "Seattle LMN 2013 Convention Center lid studies",
+        "usd_per_acre_low": 52000000,
+        "usd_per_acre_high": 102000000,
+        "url": "https://www.theurbanist.org/lidding-i-5-in-downtown-seattle-cost-estimates-and-three-case-studies/"
+      }
+    ],
+    "project_span_acres": 12.9,
+    "project_span_note": "This project's measured I-87 / Major Deegan span, about East 138th to East 149th. Not a published NYSDOT acreage.",
+    "implied_at_20m_per_acre_usd": 258000000,
+    "implied_at_90m_per_acre_usd": 1161000000,
+    "band_note": "The $20M to $90M+ per acre band is an order-of-magnitude reading of those public comps. 12.9 x $20M = $258M. 12.9 x $90M = $1.161B. No engineer has priced I-87.",
+    "owner": "I-87 here is NYSDOT. A federally funded lid needs FHWA NEPA. City actions also need CEQR. Land-use or park-map changes need ULURP.",
+    "no_public_i87_lid_clock": true
+  },
+  "process_days": {
+    "ulurp_standard": {
+      "community_board_days": 60,
+      "borough_president_days": 30,
+      "city_planning_commission_days": 60,
+      "city_council_days": 50,
+      "mayor_disapprove_days": 5,
+      "council_override_days": 10,
+      "law": "NYC Charter sections 197-c and 197-d",
+      "urls": [
+        "https://codelibrary.amlegal.com/codes/newyorkcity/latest/NYCcharter/0-0-0-834",
+        "https://codelibrary.amlegal.com/codes/newyorkcity/latest/NYCcharter/0-0-0-6746"
+      ]
+    },
+    "fhwa_nepa": {
+      "ea_public_days": 30,
+      "ea_hearing_advance_days": 15,
+      "draft_eis_comment_days_low": 45,
+      "draft_eis_comment_days_high": 60,
+      "draft_eis_hearing_advance_days": 15,
+      "rule": "23 CFR 771.119 and 771.123",
+      "urls": [
+        "https://www.ecfr.gov/current/title-23/chapter-I/subchapter-H/part-771/section-771.119",
+        "https://www.law.cornell.edu/cfr/text/23/771.123"
+      ]
+    },
+    "ceqr": {
+      "draft_scope_after_positive_declaration_days": 15,
+      "scoping_notice_days_low": 30,
+      "scoping_notice_days_high": 45,
+      "scope_comments_after_meeting_days": 10,
+      "final_scope_after_meeting_days": 30,
+      "deis_comment_days": 30,
+      "deis_comments_after_hearing_days": 10,
+      "deis_hearing_after_filing_days_low": 15,
+      "deis_hearing_after_filing_days_high": 60,
+      "urls": [
+        "https://www.nyc.gov/assets/oec/technical-manual/01_Procedures_and_Documentation_2025.pdf",
+        "https://codelibrary.amlegal.com/codes/newyorkcity/latest/NYCrules/0-0-0-89485",
+        "https://www.nyc.gov/assets/oec/43%20RCNY-Chapter%206.pdf"
+      ]
+    }
+  },
+  "truck_rules": {
+    "cbdtp": "Trucks pay on every zone entry. Overnight E-ZPass in 2025-2027 is $3.60 for small single-unit trucks and $5.40 for large multi-unit trucks, 75 percent under peak.",
+    "nyc_truck_routes": "34 RCNY 4-13. A truck is two axles and six tires, or three or more axles. Through trucks stay on through truck routes. Local trucks use local truck routes and leave them only for the most direct last-mile trip.",
+    "night_parking": "34 RCNY 4-08(k)(6). No commercial-vehicle parking on a residential street from 9 p.m. to 5 a.m., with stated business and utility exceptions.",
+    "street_storage": "34 RCNY 4-08(k)(5). No commercial vehicle parked more than three hours where parking is otherwise allowed.",
+    "urls": [
+      "https://www.mta.info/fares-tolls/tolls/congestion-relief-zone/about",
+      "https://www.nyc.gov/html/dot/html/motorist/truckrouting.shtml",
+      "https://codelibrary.amlegal.com/codes/newyorkcity/latest/NYCrules/0-0-0-118704",
+      "https://codelibrary.amlegal.com/codes/newyorkcity/latest/NYCrules/0-0-0-63770",
+      "https://www.nyc.gov/html/dot/html/motorist/parktruck.shtml"
+    ]
+  }
+}

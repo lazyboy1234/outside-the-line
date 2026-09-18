@@ -1218,10 +1218,7 @@ L 474.2784 416.466
    </g>
   </g>
   <g id="line2d_22">
-   <path d="M 8.64 30.1572 
-L 669.1968 30.1572 
-" style="fill: none; stroke: #bd7f1f; stroke-width: 1.15"/>
-  </g>
+     </g>
   <g id="text_38">
    <text style="letter-spacing:normal; font-weight: 600; font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #221d1a" x="8.64" y="16.647656" transform="rotate(-0 8.64 16.647656)" xml:space="preserve">Citywide corridor scan: top 15 street windows, equal weights</text>
   </g>

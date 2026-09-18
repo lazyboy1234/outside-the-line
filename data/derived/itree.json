@@ -1,0 +1,47 @@
+{
+ "grade": "planning-grade, i-Tree Eco style multipliers; not a field survey",
+ "program": {
+  "open_crown_trees": 180,
+  "green_wall_ft2": 40000,
+  "green_roof_acres": 8,
+  "bioswales": 36,
+  "species_tall_segments": "green walls + honeylocust (Gleditsia triacanthos inermis), open crown, no canopy closure",
+  "species_shallow_segments": "honeylocust, Kentucky coffeetree, zelkova; no London plane or dense-crown species in H/W>0.5 segments",
+  "salt_tolerance": "honeylocust, coffeetree, zelkova rated salt-tolerant (Cornell Urban Horticulture Institute)"
+ },
+ "canopy_m2": {
+  "trees": 6927,
+  "green_wall": 3716,
+  "green_roof": 32375
+ },
+ "removed_lb_per_yr": {
+  "pm25": 10.6,
+  "no2": 31.0,
+  "o3": 53.2
+ },
+ "stormwater_gal_per_yr": 7195826,
+ "street_level_pm25_reduction_pct_range": [
+  8,
+  15
+ ],
+ "deegan_cap": {
+  "acres": 12.9,
+  "extra_pm25_lb_per_yr": 25.0,
+  "note": "The cap also removes the source at grade; the removal figure understates its effect."
+ },
+ "honesty": "About 11 lb/yr of PM2.5 removed across the corridor does not offset a +1.29 ug/m3 ambient rise at the Deegan sensor. Vegetation is a breathing-height intervention; the source is the highway.",
+ "multipliers": {
+  "pm25_g_m2_yr": 0.24,
+  "no2_g_m2_yr": 0.7,
+  "o3_g_m2_yr": 1.2,
+  "wall_eff": 0.5,
+  "roof_eff": 0.35,
+  "rain_m_yr": 1.27
+ },
+ "hw_context": {
+  "median": 0.38,
+  "tall": 0.43,
+  "segments_over_0_5": 1,
+  "segments_total": 10
+ }
+}

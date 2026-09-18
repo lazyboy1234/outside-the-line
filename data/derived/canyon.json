@@ -1,0 +1,780 @@
+{
+ "street": "East 138th Street, Mott Haven",
+ "centerline_fit": {
+  "n_trees_used": 83,
+  "from": [
+   -73.931232,
+   40.81331
+  ],
+  "to": [
+   -73.915005,
+   40.805538
+  ],
+  "length_m": 1618.0
+ },
+ "buildings_in_box": 1714,
+ "buildings_within_45m": 220,
+ "buildings_fronting_30m": 116,
+ "roof_height_ft": {
+  "p50": 50.3,
+  "p75": 57.4
+ },
+ "facade_to_facade_m": 40.3,
+ "facade_to_facade_ft": 132.1,
+ "hw_median": 0.38,
+ "hw_tall_p75": 0.43,
+ "threshold": 0.5,
+ "segments": [
+  {
+   "i": 2,
+   "from": [
+    -73.928825,
+    40.812157
+   ],
+   "to": [
+    -73.927622,
+    40.811581
+   ],
+   "n_buildings": 4,
+   "h_median_ft": 19.3,
+   "width_m": 40.4,
+   "hw": 0.15,
+   "trap_risk": false
+  },
+  {
+   "i": 3,
+   "from": [
+    -73.927622,
+    40.811581
+   ],
+   "to": [
+    -73.926418,
+    40.811004
+   ],
+   "n_buildings": 5,
+   "h_median_ft": 41.4,
+   "width_m": 41.7,
+   "hw": 0.3,
+   "trap_risk": false
+  },
+  {
+   "i": 4,
+   "from": [
+    -73.926418,
+    40.811004
+   ],
+   "to": [
+    -73.925214,
+    40.810428
+   ],
+   "n_buildings": 8,
+   "h_median_ft": 49.0,
+   "width_m": 40.7,
+   "hw": 0.37,
+   "trap_risk": false
+  },
+  {
+   "i": 5,
+   "from": [
+    -73.925214,
+    40.810428
+   ],
+   "to": [
+    -73.924011,
+    40.809851
+   ],
+   "n_buildings": 10,
+   "h_median_ft": 53.8,
+   "width_m": 46.0,
+   "hw": 0.36,
+   "trap_risk": false
+  },
+  {
+   "i": 7,
+   "from": [
+    -73.922807,
+    40.809275
+   ],
+   "to": [
+    -73.921604,
+    40.808699
+   ],
+   "n_buildings": 5,
+   "h_median_ft": 55.1,
+   "width_m": 48.6,
+   "hw": 0.35,
+   "trap_risk": false
+  },
+  {
+   "i": 8,
+   "from": [
+    -73.921604,
+    40.808699
+   ],
+   "to": [
+    -73.9204,
+    40.808122
+   ],
+   "n_buildings": 23,
+   "h_median_ft": 42.8,
+   "width_m": 34.4,
+   "hw": 0.38,
+   "trap_risk": false
+  },
+  {
+   "i": 9,
+   "from": [
+    -73.9204,
+    40.808122
+   ],
+   "to": [
+    -73.919197,
+    40.807546
+   ],
+   "n_buildings": 23,
+   "h_median_ft": 48.8,
+   "width_m": 32.4,
+   "hw": 0.46,
+   "trap_risk": false
+  },
+  {
+   "i": 10,
+   "from": [
+    -73.919197,
+    40.807546
+   ],
+   "to": [
+    -73.917993,
+    40.806969
+   ],
+   "n_buildings": 21,
+   "h_median_ft": 58.7,
+   "width_m": 30.6,
+   "hw": 0.58,
+   "trap_risk": true
+  },
+  {
+   "i": 11,
+   "from": [
+    -73.917993,
+    40.806969
+   ],
+   "to": [
+    -73.91679,
+    40.806393
+   ],
+   "n_buildings": 11,
+   "h_median_ft": 26.6,
+   "width_m": 33.3,
+   "hw": 0.24,
+   "trap_risk": false
+  },
+  {
+   "i": 12,
+   "from": [
+    -73.91679,
+    40.806393
+   ],
+   "to": [
+    -73.915586,
+    40.805817
+   ],
+   "n_buildings": 3,
+   "h_median_ft": 10.8,
+   "width_m": 40.0,
+   "hw": 0.08,
+   "trap_risk": false
+  }
+ ],
+ "segments_over_threshold": 1,
+ "segments_total": 10,
+ "trees_alive_in_box": 1779,
+ "trees_on_band": 81,
+ "trees_per_100m_street": 5.0,
+ "species_on_band": {
+  "honeylocust": 30,
+  "American linden": 7,
+  "English oak": 5,
+  "American elm": 5,
+  "Sophora": 5,
+  "littleleaf linden": 4,
+  "Japanese zelkova": 4,
+  "pin oak": 4
+ },
+ "london_plane_on_band": 1,
+ "london_plane_in_trap_segments": 0,
+ "median_dbh_in": 8.0,
+ "tree_points": [
+  {
+   "lon": -73.928818,
+   "lat": 40.812113,
+   "spc": "English oak",
+   "dbh": 2,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928762,
+   "lat": 40.812072,
+   "spc": "English oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928221,
+   "lat": 40.811911,
+   "spc": "English oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.92887,
+   "lat": 40.812152,
+   "spc": "English oak",
+   "dbh": 2,
+   "in_trap": false
+  },
+  {
+   "lon": -73.929208,
+   "lat": 40.812404,
+   "spc": "pin oak",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.927851,
+   "lat": 40.811855,
+   "spc": "littleleaf linden",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928607,
+   "lat": 40.812199,
+   "spc": "pin oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928156,
+   "lat": 40.811862,
+   "spc": "English oak",
+   "dbh": 2,
+   "in_trap": false
+  },
+  {
+   "lon": -73.927914,
+   "lat": 40.811807,
+   "spc": "littleleaf linden",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928796,
+   "lat": 40.811894,
+   "spc": "Japanese zelkova",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928873,
+   "lat": 40.811835,
+   "spc": "Japanese zelkova",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.927824,
+   "lat": 40.812024,
+   "spc": "Siberian elm",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.92793,
+   "lat": 40.811693,
+   "spc": "pin oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.927894,
+   "lat": 40.811971,
+   "spc": "Siberian elm",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928292,
+   "lat": 40.811965,
+   "spc": "swamp white oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928435,
+   "lat": 40.81183,
+   "spc": "northern red oak",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.928382,
+   "lat": 40.811789,
+   "spc": "northern red oak",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.93066,
+   "lat": 40.813234,
+   "spc": "eastern redbud",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.926485,
+   "lat": 40.811341,
+   "spc": "American elm",
+   "dbh": 24,
+   "in_trap": false
+  },
+  {
+   "lon": -73.926588,
+   "lat": 40.811281,
+   "spc": "American elm",
+   "dbh": 16,
+   "in_trap": false
+  },
+  {
+   "lon": -73.926723,
+   "lat": 40.811203,
+   "spc": "American elm",
+   "dbh": 18,
+   "in_trap": false
+  },
+  {
+   "lon": -73.926806,
+   "lat": 40.811154,
+   "spc": "American elm",
+   "dbh": 23,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921233,
+   "lat": 40.808313,
+   "spc": "London planetree",
+   "dbh": 13,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921939,
+   "lat": 40.808612,
+   "spc": "American linden",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922284,
+   "lat": 40.808758,
+   "spc": "honeylocust",
+   "dbh": 12,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922216,
+   "lat": 40.808729,
+   "spc": "honeylocust",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921565,
+   "lat": 40.808627,
+   "spc": "honeylocust",
+   "dbh": 12,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922476,
+   "lat": 40.808839,
+   "spc": "American linden",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921745,
+   "lat": 40.80853,
+   "spc": "American linden",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921398,
+   "lat": 40.808383,
+   "spc": "American linden",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920984,
+   "lat": 40.808381,
+   "spc": "honeylocust",
+   "dbh": 10,
+   "in_trap": false
+  },
+  {
+   "lon": -73.92056,
+   "lat": 40.808201,
+   "spc": "honeylocust",
+   "dbh": 14,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921542,
+   "lat": 40.808444,
+   "spc": "honeylocust",
+   "dbh": 13,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921103,
+   "lat": 40.808259,
+   "spc": "honeylocust",
+   "dbh": 16,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920973,
+   "lat": 40.808204,
+   "spc": "honeylocust",
+   "dbh": 8,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921177,
+   "lat": 40.808463,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921478,
+   "lat": 40.80859,
+   "spc": "honeylocust",
+   "dbh": 10,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921433,
+   "lat": 40.808571,
+   "spc": "honeylocust",
+   "dbh": 8,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921305,
+   "lat": 40.808517,
+   "spc": "honeylocust",
+   "dbh": 9,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921113,
+   "lat": 40.808435,
+   "spc": "honeylocust",
+   "dbh": 12,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920676,
+   "lat": 40.808251,
+   "spc": "honeylocust",
+   "dbh": 15,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921368,
+   "lat": 40.808543,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920919,
+   "lat": 40.808354,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920791,
+   "lat": 40.808299,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920855,
+   "lat": 40.808326,
+   "spc": "honeylocust",
+   "dbh": 13,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922604,
+   "lat": 40.809299,
+   "spc": "Sophora",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.929921,
+   "lat": 40.81278,
+   "spc": "eastern redbud",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922315,
+   "lat": 40.808944,
+   "spc": "northern red oak",
+   "dbh": 8,
+   "in_trap": false
+  },
+  {
+   "lon": -73.9218,
+   "lat": 40.808726,
+   "spc": "honeylocust",
+   "dbh": 13,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922543,
+   "lat": 40.80904,
+   "spc": "honeylocust",
+   "dbh": 14,
+   "in_trap": false
+  },
+  {
+   "lon": -73.92168,
+   "lat": 40.808675,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920248,
+   "lat": 40.807732,
+   "spc": "Chinese elm",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922094,
+   "lat": 40.80885,
+   "spc": "Sophora",
+   "dbh": 8,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920501,
+   "lat": 40.808004,
+   "spc": "littleleaf linden",
+   "dbh": 8,
+   "in_trap": false
+  },
+  {
+   "lon": -73.922188,
+   "lat": 40.80889,
+   "spc": "Sophora",
+   "dbh": 7,
+   "in_trap": false
+  },
+  {
+   "lon": -73.921241,
+   "lat": 40.80849,
+   "spc": "honeylocust",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.91794,
+   "lat": 40.806924,
+   "spc": "pin oak",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.920113,
+   "lat": 40.807691,
+   "spc": "Japanese zelkova",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.918117,
+   "lat": 40.806999,
+   "spc": "Japanese zelkova",
+   "dbh": 4,
+   "in_trap": true
+  },
+  {
+   "lon": -73.917422,
+   "lat": 40.807036,
+   "spc": "honeylocust",
+   "dbh": 13,
+   "in_trap": false
+  },
+  {
+   "lon": -73.9182,
+   "lat": 40.807033,
+   "spc": "honeylocust",
+   "dbh": 10,
+   "in_trap": true
+  },
+  {
+   "lon": -73.920593,
+   "lat": 40.808043,
+   "spc": "littleleaf linden",
+   "dbh": 9,
+   "in_trap": false
+  },
+  {
+   "lon": -73.924827,
+   "lat": 40.810294,
+   "spc": "American linden",
+   "dbh": 7,
+   "in_trap": false
+  },
+  {
+   "lon": -73.924664,
+   "lat": 40.810516,
+   "spc": "American linden",
+   "dbh": 10,
+   "in_trap": false
+  },
+  {
+   "lon": -73.924704,
+   "lat": 40.810461,
+   "spc": "American linden",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.917673,
+   "lat": 40.806989,
+   "spc": "Sophora",
+   "dbh": 18,
+   "in_trap": false
+  },
+  {
+   "lon": -73.917791,
+   "lat": 40.807039,
+   "spc": "common hackberry",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.924889,
+   "lat": 40.81021,
+   "spc": "Sophora",
+   "dbh": 11,
+   "in_trap": false
+  },
+  {
+   "lon": -73.914927,
+   "lat": 40.805824,
+   "spc": "honeylocust",
+   "dbh": 12,
+   "in_trap": false
+  },
+  {
+   "lon": -73.91519,
+   "lat": 40.805935,
+   "spc": "honeylocust",
+   "dbh": 12,
+   "in_trap": false
+  },
+  {
+   "lon": -73.91551,
+   "lat": 40.80607,
+   "spc": "honeylocust",
+   "dbh": 16,
+   "in_trap": false
+  },
+  {
+   "lon": -73.91507,
+   "lat": 40.805884,
+   "spc": "honeylocust",
+   "dbh": 16,
+   "in_trap": false
+  },
+  {
+   "lon": -73.915308,
+   "lat": 40.805984,
+   "spc": "honeylocust",
+   "dbh": 15,
+   "in_trap": false
+  },
+  {
+   "lon": -73.915638,
+   "lat": 40.806124,
+   "spc": "honeylocust",
+   "dbh": 14,
+   "in_trap": false
+  },
+  {
+   "lon": -73.916081,
+   "lat": 40.806311,
+   "spc": "green ash",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.9159,
+   "lat": 40.806234,
+   "spc": "green ash",
+   "dbh": 5,
+   "in_trap": false
+  },
+  {
+   "lon": -73.929592,
+   "lat": 40.812373,
+   "spc": "hardy rubber tree",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.929512,
+   "lat": 40.812407,
+   "spc": "hardy rubber tree",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.929772,
+   "lat": 40.812297,
+   "spc": "hardy rubber tree",
+   "dbh": 6,
+   "in_trap": false
+  },
+  {
+   "lon": -73.916954,
+   "lat": 40.806502,
+   "spc": "American elm",
+   "dbh": 4,
+   "in_trap": false
+  },
+  {
+   "lon": -73.916822,
+   "lat": 40.806446,
+   "spc": "cherry",
+   "dbh": 5,
+   "in_trap": false
+  }
+ ],
+ "sources": [
+  "OTI Building Footprints 5zhs-2jue (height_roof)",
+  "2015 Street Tree Census uvpi-gqnh"
+ ]
+}

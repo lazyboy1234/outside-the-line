@@ -1,0 +1,106 @@
+{
+ "n_segments": 99357,
+ "by_borough": {
+  "Queens": 37878,
+  "Brooklyn": 23465,
+  "Staten Island": 14729,
+  "Bronx": 13988,
+  "Manhattan": 9297
+ },
+ "non_null": {
+  "width_facade_m": 78257,
+  "width_cscl_m": 97802,
+  "width_m": 98513,
+  "h_mean_m": 86812,
+  "hw": 86518,
+  "trees_per_100m": 99357,
+  "monitor_signal": 6740,
+  "hvi": 98181,
+  "nfh_rank": 99329,
+  "asthma_adult_ed_ageadj_per10k": 98177
+ },
+ "width_source": {
+  "facade_to_facade": 78257,
+  "cscl_street_width": 20256,
+  "none": 844
+ },
+ "tree_effective_share": 0.8292262881712475,
+ "dubois_share": 0.2598709703392816,
+ "asthma_time_periods": {
+  "adult_1199": "2023",
+  "child5_17_1196": "2023",
+  "under5_460": "2023"
+ },
+ "constants": {
+  "buf_height_m": 25.0,
+  "buf_facade_m": 60.0,
+  "buf_tree_m": 15.0,
+  "decay_m": 300.0,
+  "monitor_radius_m": 1500.0,
+  "dubois_m": 400.0,
+  "hw_threshold": 0.5
+ },
+ "n_footprints": 1082301,
+ "n_living_trees": 652173,
+ "n_highway_segments": 4127,
+ "n_ramp_segments": 3570,
+ "n_offgrade_highway_segments": 2424,
+ "monitors": [
+  {
+   "monitor": "Queensboro Bridge",
+   "study": "Research Square DiD preprint (Dec 2025)",
+   "change": -9.08,
+   "unit": "% PM2.5",
+   "lon": -73.956,
+   "lat": 40.756,
+   "direction": -1
+  },
+  {
+   "monitor": "Williamsburg Bridge",
+   "study": "Research Square DiD preprint (Dec 2025)",
+   "change": 6.3,
+   "unit": "% PM2.5",
+   "lon": -73.976,
+   "lat": 40.713,
+   "direction": 1
+  },
+  {
+   "monitor": "Cross Bronx Expwy",
+   "study": "Research Square DiD preprint (Dec 2025)",
+   "change": 3.74,
+   "unit": "% PM2.5",
+   "lon": -73.91,
+   "lat": 40.843,
+   "direction": 1
+  },
+  {
+   "monitor": "Broadway / W 35th",
+   "study": "Research Square DiD preprint (Dec 2025)",
+   "change": 2.46,
+   "unit": "% PM2.5",
+   "lon": -73.988,
+   "lat": 40.75,
+   "direction": 1
+  },
+  {
+   "monitor": "Major Deegan / Third Ave Bridge",
+   "study": "South Bronx Unite / Columbia / Brown / CU Boulder (2026)",
+   "change": 1.29,
+   "unit": "ug/m3 PM2.5",
+   "lon": -73.931,
+   "lat": 40.8072,
+   "direction": 1
+  },
+  {
+   "monitor": "Van Wyck Expwy",
+   "study": "NYC DOHMH Congestion Pricing Air Quality Report",
+   "change": 0.0,
+   "unit": "no significant change (DOHMH)",
+   "lon": -73.81,
+   "lat": 40.72,
+   "direction": 0
+  }
+ ],
+ "seconds": 39.8,
+ "procs": 36
+}

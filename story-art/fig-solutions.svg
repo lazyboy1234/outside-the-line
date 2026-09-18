@@ -2,25 +2,22 @@
   <title id="t">Solutions that were on the table</title>
   <desc id="d">Trees about $2,500 to $4,000, rain gardens about $40k to $50k, and a Deegan lid about $250 million to $1.2 billion.</desc>
   <rect width="1100" height="560" fill="#fff"/>
-
-  <rect x="24" y="24" width="340" height="512" fill="#f3f1ec"/>
-  <text x="194" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">Trees everywhere</text>
-  <text x="194" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">Brief said don't</text>
-  <text x="194" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">default to this</text>
-  <text x="194" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#9f2f2d">$2,500-$4,000</text>
-  <text x="194" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per street tree</text>
-
-  <rect x="380" y="24" width="340" height="512" fill="#f3f1ec"/>
-  <text x="550" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">DEP rain gardens</text>
-  <text x="550" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">City already</text>
-  <text x="550" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">builds these</text>
-  <text x="550" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#9f2f2d">$40k-$50k</text>
-  <text x="550" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per garden</text>
-
-  <rect x="736" y="24" width="340" height="512" fill="#111"/>
-  <text x="906" y="160" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#fff">Deegan lid</text>
-  <text x="906" y="200" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">Brief invited a lid</text>
-  <text x="906" y="224" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">or boulevard</text>
-  <text x="906" y="420" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#fff">$250M-$1.2B</text>
-  <text x="906" y="452" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="normal" font-size="15" fill="#c8c4bc">for this stretch</text>
+  <rect x="40" y="24" width="320" height="512" fill="#f3f1ec"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">Trees everywhere</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">Brief said don't</text>
+  <text x="200" y="244" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">default to this</text>
+  <text x="200" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#9f2f2d">$2,500-$4,000</text>
+  <text x="200" y="452" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per street tree</text>
+  <rect x="390" y="24" width="320" height="512" fill="#f3f1ec"/>
+  <text x="550" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#111">DEP rain gardens</text>
+  <text x="550" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">City already</text>
+  <text x="550" y="244" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#5c574f">builds these</text>
+  <text x="550" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#9f2f2d">$40k-$50k</text>
+  <text x="550" y="452" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="15" fill="#5c574f">per garden</text>
+  <rect x="740" y="24" width="320" height="512" fill="#111"/>
+  <text x="900" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="22" font-weight="700" fill="#fff">Deegan lid</text>
+  <text x="900" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">Brief invited a lid</text>
+  <text x="900" y="244" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="16" fill="#fff">or boulevard</text>
+  <text x="900" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="24" font-weight="700" fill="#fff">$250M-$1.2B</text>
+  <text x="900" y="452" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" letter-spacing="normal" font-size="15" fill="#c8c4bc">for this stretch</text>
 </svg>

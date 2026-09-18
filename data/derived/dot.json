@@ -1,0 +1,2347 @@
+{
+ "dataset": "7ym2-wayt",
+ "dataset_name": "NYC DOT Automated Traffic Volume Counts",
+ "soda_url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json",
+ "verified_on": "2026-09-16",
+ "toll_start": "2025-01-05",
+ "coverage": {
+  "years_present": [
+   2000,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "first_year": 2000,
+  "last_year": 2026,
+  "bin_minutes": 15,
+  "bin_minute_values": [
+   0,
+   10,
+   15,
+   20,
+   30,
+   40,
+   45,
+   50
+  ],
+  "rows_by_year": {
+   "2000": 1904,
+   "2006": 664,
+   "2007": 8130,
+   "2008": 32482,
+   "2009": 122851,
+   "2010": 132016,
+   "2011": 120249,
+   "2012": 128222,
+   "2013": 128762,
+   "2014": 130754,
+   "2015": 124428,
+   "2016": 129617,
+   "2017": 123901,
+   "2018": 98961,
+   "2019": 115730,
+   "2020": 40224,
+   "2021": 85810,
+   "2022": 78652,
+   "2023": 85106,
+   "2024": 95203,
+   "2025": 82368,
+   "2026": 9120
+  },
+  "distinct_segments_by_year": {
+   "2000": 2,
+   "2006": 2,
+   "2007": 13,
+   "2008": 49,
+   "2009": 396,
+   "2010": 340,
+   "2011": 319,
+   "2012": 349,
+   "2013": 330,
+   "2014": 272,
+   "2015": 314,
+   "2016": 332,
+   "2017": 280,
+   "2018": 203,
+   "2019": 189,
+   "2020": 51,
+   "2021": 154,
+   "2022": 99,
+   "2023": 127,
+   "2024": 104,
+   "2025": 101,
+   "2026": 13
+  },
+  "post_toll_coverage_exists": true,
+  "boro_year_2023_plus": [
+   {
+    "boro": "Bronx",
+    "year": 2023,
+    "bins": 14297,
+    "segments": 24,
+    "requests": 3
+   },
+   {
+    "boro": "Bronx",
+    "year": 2024,
+    "bins": 11919,
+    "segments": 12,
+    "requests": 7
+   },
+   {
+    "boro": "Bronx",
+    "year": 2025,
+    "bins": 13728,
+    "segments": 16,
+    "requests": 9
+   },
+   {
+    "boro": "Bronx",
+    "year": 2026,
+    "bins": 5376,
+    "segments": 4,
+    "requests": 2
+   },
+   {
+    "boro": "Brooklyn",
+    "year": 2023,
+    "bins": 33486,
+    "segments": 43,
+    "requests": 12
+   },
+   {
+    "boro": "Brooklyn",
+    "year": 2024,
+    "bins": 33663,
+    "segments": 40,
+    "requests": 15
+   },
+   {
+    "boro": "Brooklyn",
+    "year": 2025,
+    "bins": 31296,
+    "segments": 37,
+    "requests": 22
+   },
+   {
+    "boro": "Brooklyn",
+    "year": 2026,
+    "bins": 2688,
+    "segments": 4,
+    "requests": 2
+   },
+   {
+    "boro": "Manhattan",
+    "year": 2023,
+    "bins": 16374,
+    "segments": 27,
+    "requests": 7
+   },
+   {
+    "boro": "Manhattan",
+    "year": 2024,
+    "bins": 21772,
+    "segments": 24,
+    "requests": 10
+   },
+   {
+    "boro": "Manhattan",
+    "year": 2025,
+    "bins": 18048,
+    "segments": 28,
+    "requests": 9
+   },
+   {
+    "boro": "Manhattan",
+    "year": 2026,
+    "bins": 672,
+    "segments": 1,
+    "requests": 1
+   },
+   {
+    "boro": "Queens",
+    "year": 2023,
+    "bins": 17681,
+    "segments": 27,
+    "requests": 8
+   },
+   {
+    "boro": "Queens",
+    "year": 2024,
+    "bins": 27465,
+    "segments": 26,
+    "requests": 14
+   },
+   {
+    "boro": "Queens",
+    "year": 2025,
+    "bins": 15264,
+    "segments": 17,
+    "requests": 9
+   },
+   {
+    "boro": "Queens",
+    "year": 2026,
+    "bins": 384,
+    "segments": 4,
+    "requests": 1
+   },
+   {
+    "boro": "Staten Island",
+    "year": 2023,
+    "bins": 3268,
+    "segments": 6,
+    "requests": 4
+   },
+   {
+    "boro": "Staten Island",
+    "year": 2024,
+    "bins": 384,
+    "segments": 2,
+    "requests": 2
+   },
+   {
+    "boro": "Staten Island",
+    "year": 2025,
+    "bins": 4032,
+    "segments": 3,
+    "requests": 2
+   }
+  ],
+  "note": "Coverage exists on both sides of 2025-01-05 in the aggregate, but it is made of rotating short-duration studies: in 2024 and 2025 the whole city carries roughly 100 distinct counted segments per year, and the Bronx carries 12 and 16. Aggregate coverage is not panel coverage."
+ },
+ "unit_of_analysis": "One median complete-weekday 24-hour volume per (segment, direction, period). n is the number of sites, never the number of 15-minute or hourly rows.",
+ "filters": {
+  "complete_day": "96 fifteen-minute bins with all 24 hours present",
+  "weekday_only": "Mon-Fri, so weekend studies are never compared against weekday studies",
+  "pair_key": "(segmentid, direction), holding lane count and geometry fixed",
+  "days_total": 4683,
+  "days_complete_weekday": 2513
+ },
+ "locations": {
+  "bronx_distinct_segments_all_years": 497,
+  "bronx_distinct_segments_2024": 12,
+  "bronx_distinct_segments_2025": 16,
+  "control_boro_pair_candidate_segments": 18
+ },
+ "pairing": {
+  "n_pairs_all_nyc": 28,
+  "n_pairs_bronx": 2,
+  "n_pairs_control_boros": 11,
+  "n_pairs_bracketing_toll_start_all_nyc": 13,
+  "n_pairs_bracketing_toll_start_bronx": 0,
+  "n_pairs_bracketing_toll_start_control_boros": 2,
+  "bracket_definition": "pre-period count in 2023 or later",
+  "bronx_pairs": [
+   {
+    "boro": "Bronx",
+    "segmentid": "87111",
+    "direction": "EB",
+    "street": "WATERS PLACE",
+    "from": "Marconi Street",
+    "to": "Eastchester Road",
+    "pre_years": [
+     2013
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2013,
+    "gap_years": 12,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 9226.0,
+    "post_median_daily": 8168.0,
+    "log_ratio": -0.1218,
+    "change_pct": -11.47,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Bronx",
+    "segmentid": "87111",
+    "direction": "WB",
+    "street": "WATERS PLACE",
+    "from": "Marconi Street",
+    "to": "Eastchester Road",
+    "pre_years": [
+     2013
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2013,
+    "gap_years": 12,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 12572.0,
+    "post_median_daily": 9434.0,
+    "log_ratio": -0.28715,
+    "change_pct": -24.96,
+    "brackets_toll_start": false
+   }
+  ],
+  "all_pairs": [
+   {
+    "boro": "Bronx",
+    "segmentid": "87111",
+    "direction": "EB",
+    "street": "WATERS PLACE",
+    "from": "Marconi Street",
+    "to": "Eastchester Road",
+    "pre_years": [
+     2013
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2013,
+    "gap_years": 12,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 9226.0,
+    "post_median_daily": 8168.0,
+    "log_ratio": -0.1218,
+    "change_pct": -11.47,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Bronx",
+    "segmentid": "87111",
+    "direction": "WB",
+    "street": "WATERS PLACE",
+    "from": "Marconi Street",
+    "to": "Eastchester Road",
+    "pre_years": [
+     2013
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2013,
+    "gap_years": 12,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 12572.0,
+    "post_median_daily": 9434.0,
+    "log_ratio": -0.28715,
+    "change_pct": -24.96,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "142655",
+    "direction": "NB",
+    "street": "BROOKLYN QUEENS EXPRESSWAY",
+    "from": "Joralemon Street",
+    "to": "Dead end",
+    "pre_years": [
+     2019
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2019,
+    "gap_years": 6,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 76080.0,
+    "post_median_daily": 63163.0,
+    "log_ratio": -0.18607,
+    "change_pct": -16.98,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "142657",
+    "direction": "SB",
+    "street": "BROOKLYN QUEENS EXPRESSWAY",
+    "from": "Joralemon Street",
+    "to": "Dead end",
+    "pre_years": [
+     2019
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2019,
+    "gap_years": 6,
+    "n_pre_days": 4,
+    "n_post_days": 5,
+    "pre_median_daily": 74415.0,
+    "post_median_daily": 67643.0,
+    "log_ratio": -0.09541,
+    "change_pct": -9.1,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "157930",
+    "direction": "NB",
+    "street": "MC GUINNESS BOULEVARD",
+    "from": "Green Street",
+    "to": "Freeman Street",
+    "pre_years": [
+     2018
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2018,
+    "gap_years": 7,
+    "n_pre_days": 1,
+    "n_post_days": 4,
+    "pre_median_daily": 13743.0,
+    "post_median_daily": 16398.5,
+    "log_ratio": 0.17666,
+    "change_pct": 19.32,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "158232",
+    "direction": "SB",
+    "street": "MC GUINNESS BOULEVARD",
+    "from": "Freeman Street",
+    "to": "Green Street",
+    "pre_years": [
+     2018
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2018,
+    "gap_years": 7,
+    "n_pre_days": 5,
+    "n_post_days": 4,
+    "pre_median_daily": 17126.0,
+    "post_median_daily": 14056.5,
+    "log_ratio": -0.19751,
+    "change_pct": -17.92,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "23924",
+    "direction": "WB",
+    "street": "OLD FULTON ST",
+    "from": "FRONT ST",
+    "to": "HICKS ST",
+    "pre_years": [
+     2011
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2011,
+    "gap_years": 14,
+    "n_pre_days": 3,
+    "n_post_days": 4,
+    "pre_median_daily": 4268.0,
+    "post_median_daily": 4998.5,
+    "log_ratio": 0.15799,
+    "change_pct": 17.12,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "50963",
+    "direction": "WB",
+    "street": "SUTTER AVENUE",
+    "from": "South Conduit Avenue",
+    "to": "Dead end",
+    "pre_years": [
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 5,
+    "n_post_days": 10,
+    "pre_median_daily": 5526.0,
+    "post_median_daily": 5083.5,
+    "log_ratio": -0.08346,
+    "change_pct": -8.01,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Brooklyn",
+    "segmentid": "43798",
+    "direction": "WB",
+    "street": "W/B Macdonough St @ Thomas S Boyland St",
+    "from": "HOPKINSON AV",
+    "to": "BROADWAY",
+    "pre_years": [
+     2009
+    ],
+    "post_years": [
+     2026
+    ],
+    "pre_last_year": 2009,
+    "gap_years": 17,
+    "n_pre_days": 5,
+    "n_post_days": 5,
+    "pre_median_daily": 1666.0,
+    "post_median_daily": 2159.0,
+    "log_ratio": 0.25922,
+    "change_pct": 29.59,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "9009491",
+    "direction": "NB",
+    "street": "12 AVENUE",
+    "from": "Dead End",
+    "to": "Dead end",
+    "pre_years": [
+     2018,
+     2022
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2022,
+    "gap_years": 3,
+    "n_pre_days": 13,
+    "n_post_days": 1,
+    "pre_median_daily": 48852.0,
+    "post_median_daily": 50248.0,
+    "log_ratio": 0.02818,
+    "change_pct": 2.86,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "140064",
+    "direction": "EB",
+    "street": "ALEXANDER HAMILTON BRIDGE",
+    "from": "Dead End",
+    "to": "Harlem River Shoreline",
+    "pre_years": [
+     2022,
+     2023
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2023,
+    "gap_years": 2,
+    "n_pre_days": 6,
+    "n_post_days": 3,
+    "pre_median_daily": 67137.5,
+    "post_median_daily": 83949.0,
+    "log_ratio": 0.22347,
+    "change_pct": 25.04,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "140062",
+    "direction": "WB",
+    "street": "ALEXANDER HAMILTON BRIDGE",
+    "from": "Dead End",
+    "to": "Harlem River Shoreline",
+    "pre_years": [
+     2022,
+     2023
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2023,
+    "gap_years": 2,
+    "n_pre_days": 4,
+    "n_post_days": 3,
+    "pre_median_daily": 63230.0,
+    "post_median_daily": 64431.0,
+    "log_ratio": 0.01882,
+    "change_pct": 1.9,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "9014212",
+    "direction": "SB",
+    "street": "BROOKLYN BRIDGE",
+    "from": "Dead End",
+    "to": "East River Shoreline",
+    "pre_years": [
+     2022
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2022,
+    "gap_years": 3,
+    "n_pre_days": 3,
+    "n_post_days": 3,
+    "pre_median_daily": 56957.0,
+    "post_median_daily": 55393.0,
+    "log_ratio": -0.02784,
+    "change_pct": -2.75,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "36369",
+    "direction": "NB",
+    "street": "EAST 58 STREET",
+    "from": "Ed Koch Queensboro Bridge Appr",
+    "to": "2 Avenue",
+    "pre_years": [
+     2023
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2023,
+    "gap_years": 2,
+    "n_pre_days": 1,
+    "n_post_days": 2,
+    "pre_median_daily": 22410.0,
+    "post_median_daily": 2287.0,
+    "log_ratio": -2.28227,
+    "change_pct": -89.79,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "36369",
+    "direction": "SB",
+    "street": "EAST 58 STREET",
+    "from": "Ed Koch Queensboro Bridge Appr",
+    "to": "2 Avenue",
+    "pre_years": [
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 3,
+    "n_post_days": 3,
+    "pre_median_daily": 3591.0,
+    "post_median_daily": 2278.0,
+    "log_ratio": -0.45513,
+    "change_pct": -36.56,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "159016",
+    "direction": "EB",
+    "street": "EAST HOUSTON STREET",
+    "from": "Broadway",
+    "to": "Crosby Street",
+    "pre_years": [
+     2018
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2018,
+    "gap_years": 7,
+    "n_pre_days": 7,
+    "n_post_days": 2,
+    "pre_median_daily": 17964.0,
+    "post_median_daily": 14781.5,
+    "log_ratio": -0.19499,
+    "change_pct": -17.72,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "140031",
+    "direction": "WB",
+    "street": "ED KOCH QUEENSBORO BRIDGE",
+    "from": "Ed Koch Queensboro Bridge Exit",
+    "to": "Dead end",
+    "pre_years": [
+     2023
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2023,
+    "gap_years": 2,
+    "n_pre_days": 1,
+    "n_post_days": 1,
+    "pre_median_daily": 14626.0,
+    "post_median_daily": 10796.0,
+    "log_ratio": -0.30363,
+    "change_pct": -26.19,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "165609",
+    "direction": "EB",
+    "street": "ED KOCH QUEENSBORO BRIDGE APPR",
+    "from": "2 Avenue",
+    "to": "Dead end",
+    "pre_years": [
+     2022
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2022,
+    "gap_years": 3,
+    "n_pre_days": 3,
+    "n_post_days": 1,
+    "pre_median_daily": 37945.0,
+    "post_median_daily": 30939.0,
+    "log_ratio": -0.20412,
+    "change_pct": -18.46,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "72887",
+    "direction": "EB",
+    "street": "UNIVERSITY HEIGHTS BRG",
+    "from": "UNIVERSITY HEIGHTS BRIDGE APPR",
+    "to": "UNIVERSITY HEIGHTS BR",
+    "pre_years": [
+     2012,
+     2013,
+     2020,
+     2022,
+     2023,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 53,
+    "n_post_days": 9,
+    "pre_median_daily": 16845.0,
+    "post_median_daily": 15604.0,
+    "log_ratio": -0.07653,
+    "change_pct": -7.37,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "72887",
+    "direction": "WB",
+    "street": "UNIVERSITY HEIGHTS BRIDGE",
+    "from": "Harlem River Shoreline",
+    "to": "Harlem River Shoreline",
+    "pre_years": [
+     2021,
+     2022,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 21,
+    "n_post_days": 9,
+    "pre_median_daily": 19989.0,
+    "post_median_daily": 21429.0,
+    "log_ratio": 0.06956,
+    "change_pct": 7.2,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "34332",
+    "direction": "NB",
+    "street": "WEST END AV",
+    "from": "W 60 ST",
+    "to": "W 61 ST",
+    "pre_years": [
+     2012,
+     2021,
+     2022,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 30,
+    "n_post_days": 10,
+    "pre_median_daily": 6796.5,
+    "post_median_daily": 5698.5,
+    "log_ratio": -0.1762,
+    "change_pct": -16.16,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "34332",
+    "direction": "SB",
+    "street": "WEST END AVENUE",
+    "from": "West 60 Street",
+    "to": "West 61 Street",
+    "pre_years": [
+     2020,
+     2021,
+     2022,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 28,
+    "n_post_days": 9,
+    "pre_median_daily": 9015.0,
+    "post_median_daily": 10960.0,
+    "log_ratio": 0.19536,
+    "change_pct": 21.58,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "252708",
+    "direction": "EB",
+    "street": "WILLIAMSBURG BR APPROACH",
+    "from": "Dead End",
+    "to": "Dead end",
+    "pre_years": [
+     2023,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 6,
+    "n_post_days": 3,
+    "pre_median_daily": 46640.0,
+    "post_median_daily": 43496.0,
+    "log_ratio": -0.06979,
+    "change_pct": -6.74,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Manhattan",
+    "segmentid": "252704",
+    "direction": "WB",
+    "street": "WILLIAMSBURG BR APPROACH",
+    "from": "Dead end",
+    "to": "Dead End",
+    "pre_years": [
+     2023,
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 5,
+    "n_post_days": 3,
+    "pre_median_daily": 41740.0,
+    "post_median_daily": 40554.0,
+    "log_ratio": -0.02883,
+    "change_pct": -2.84,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Queens",
+    "segmentid": "107410",
+    "direction": "NB",
+    "street": "PARK DR E",
+    "from": "69 RD",
+    "to": "VAN WYCK EXWY NB EXIT 11/72 AV",
+    "pre_years": [
+     2014
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2014,
+    "gap_years": 11,
+    "n_pre_days": 3,
+    "n_post_days": 10,
+    "pre_median_daily": 6410.0,
+    "post_median_daily": 4667.5,
+    "log_ratio": -0.31724,
+    "change_pct": -27.18,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Queens",
+    "segmentid": "196368",
+    "direction": "EB",
+    "street": "SUTTER AVENUE",
+    "from": "Dead End",
+    "to": "North Conduit Avenue",
+    "pre_years": [
+     2024
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2024,
+    "gap_years": 1,
+    "n_pre_days": 5,
+    "n_post_days": 10,
+    "pre_median_daily": 7924.0,
+    "post_median_daily": 7533.0,
+    "log_ratio": -0.0506,
+    "change_pct": -4.93,
+    "brackets_toll_start": true
+   },
+   {
+    "boro": "Staten Island",
+    "segmentid": "155310",
+    "direction": "SB",
+    "street": "FRESH KILLS BR",
+    "from": "FRESH KILLS BRG",
+    "to": "RICHMOND AV",
+    "pre_years": [
+     2012,
+     2021
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2021,
+    "gap_years": 4,
+    "n_pre_days": 10,
+    "n_post_days": 10,
+    "pre_median_daily": 24923.0,
+    "post_median_daily": 25390.0,
+    "log_ratio": 0.01856,
+    "change_pct": 1.87,
+    "brackets_toll_start": false
+   },
+   {
+    "boro": "Staten Island",
+    "segmentid": "149198",
+    "direction": "NB",
+    "street": "FRESH KILLS BRIDGE",
+    "from": "Richmond Avenue",
+    "to": "Dead end",
+    "pre_years": [
+     2018,
+     2021,
+     2022
+    ],
+    "post_years": [
+     2025
+    ],
+    "pre_last_year": 2022,
+    "gap_years": 3,
+    "n_pre_days": 29,
+    "n_post_days": 10,
+    "pre_median_daily": 28508.0,
+    "post_median_daily": 29310.0,
+    "log_ratio": 0.02774,
+    "change_pct": 2.81,
+    "brackets_toll_start": false
+   }
+  ]
+ },
+ "south_bronx": {
+  "roadways_from_prompt": [
+   {
+    "street": "3 AVENUE BRIDGE",
+    "segments": [
+     "144019",
+     "144024"
+    ],
+    "years_counted": [
+     2017,
+     2018,
+     2023
+    ],
+    "pre_toll_years": [
+     2017,
+     2018,
+     2023
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 15,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "BRUCKNER BLVD SR APPROACH TO HUNTS POINT AVE",
+    "segments": [
+     "186008"
+    ],
+    "years_counted": [
+     2011
+    ],
+    "pre_toll_years": [
+     2011
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "BRUCKNER BOULEVARD",
+    "segments": [
+     "121341",
+     "175598",
+     "184222",
+     "190429",
+     "70148",
+     "77748",
+     "77851",
+     "77855",
+     "9014571"
+    ],
+    "years_counted": [
+     2012,
+     2015,
+     2016,
+     2018,
+     2025
+    ],
+    "pre_toll_years": [
+     2012,
+     2015,
+     2016,
+     2018
+    ],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 19,
+    "n_usable_post_days": 3,
+    "has_any_pre_and_post_count": true,
+    "has_usable_pair": false
+   },
+   {
+    "street": "BRUCKNER EXPRESSWAY",
+    "segments": [
+     "9012002",
+     "9012004"
+    ],
+    "years_counted": [
+     2014
+    ],
+    "pre_toll_years": [
+     2014
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 10,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "BURR AVE APPR WESTCHESTER AVE/BRUCKNER BLVD",
+    "segments": [
+     "117044"
+    ],
+    "years_counted": [
+     2011
+    ],
+    "pre_toll_years": [
+     2011
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "CROSS BRONX EP SB EN JEROME AV",
+    "segments": [
+     "72189"
+    ],
+    "years_counted": [
+     2015
+    ],
+    "pre_toll_years": [
+     2015
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 10,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "CROSS BRONX EXPRESSWAY",
+    "segments": [
+     "154829",
+     "154912",
+     "9012249",
+     "9012251"
+    ],
+    "years_counted": [
+     2014,
+     2023
+    ],
+    "pre_toll_years": [
+     2014,
+     2023
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 14,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "CROSS BRONX EXPRESSWAY SR NORTH",
+    "segments": [
+     "79134"
+    ],
+    "years_counted": [
+     2023
+    ],
+    "pre_toll_years": [
+     2023
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 5,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "CROSS BRONX EXPWY ET 2 A WB",
+    "segments": [
+     "186378"
+    ],
+    "years_counted": [
+     2015
+    ],
+    "pre_toll_years": [
+     2015
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 15,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "CROSS BRONX EXWY",
+    "segments": [
+     "140783"
+    ],
+    "years_counted": [
+     2013
+    ],
+    "pre_toll_years": [
+     2013
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 12,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "DEEGAN EXWY SR",
+    "segments": [
+     "194239"
+    ],
+    "years_counted": [
+     2013
+    ],
+    "pre_toll_years": [
+     2013
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 15,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "E/B BRUCKNER EXPWY MAIN @ BRONX RIVR AVE",
+    "segments": [
+     "135226"
+    ],
+    "years_counted": [
+     2010
+    ],
+    "pre_toll_years": [
+     2010
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 132 STREET",
+    "segments": [
+     "111532"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 5,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 134 STREET",
+    "segments": [
+     "69577"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 9,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 135 STREET",
+    "segments": [
+     "9004563"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 4,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 138 STREET",
+    "segments": [
+     "231604",
+     "253490",
+     "69628",
+     "70153"
+    ],
+    "years_counted": [
+     2015,
+     2016
+    ],
+    "pre_toll_years": [
+     2015,
+     2016
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 6,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 140 STREET",
+    "segments": [
+     "70493"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 5,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 141 STREET",
+    "segments": [
+     "70496"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 5,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 142 STREET",
+    "segments": [
+     "70168"
+    ],
+    "years_counted": [
+     2017
+    ],
+    "pre_toll_years": [
+     2017
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 3,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EAST 149 STREET",
+    "segments": [
+     "251526",
+     "70542"
+    ],
+    "years_counted": [
+     2016,
+     2024
+    ],
+    "pre_toll_years": [
+     2016,
+     2024
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 6,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "EXTERIOR STREET",
+    "segments": [
+     "185961"
+    ],
+    "years_counted": [
+     2016
+    ],
+    "pre_toll_years": [
+     2016
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 2,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "HUNTS POINT AVE APPROACH TO BRUCKNER BLVD SB",
+    "segments": [
+     "175676"
+    ],
+    "years_counted": [
+     2011
+    ],
+    "pre_toll_years": [
+     2011
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "HUNTS PT AVE APPROACH TO BRUCKNER BLVD SB",
+    "segments": [
+     "77629"
+    ],
+    "years_counted": [
+     2011
+    ],
+    "pre_toll_years": [
+     2011
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "LINCOLN AVENUE",
+    "segments": [
+     "69574"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 10,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "LOCUST AVENUE",
+    "segments": [
+     "77174"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 10,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXPRESSWAY",
+    "segments": [
+     "135152",
+     "139020",
+     "140178"
+    ],
+    "years_counted": [
+     2015,
+     2017,
+     2018,
+     2025
+    ],
+    "pre_toll_years": [
+     2015,
+     2017,
+     2018
+    ],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 16,
+    "n_usable_post_days": 4,
+    "has_any_pre_and_post_count": true,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXPRESSWAY SR",
+    "segments": [
+     "81341"
+    ],
+    "years_counted": [
+     2018
+    ],
+    "pre_toll_years": [
+     2018
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 5,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXPWY ET 11 NB",
+    "segments": [
+     "81193"
+    ],
+    "years_counted": [
+     2021
+    ],
+    "pre_toll_years": [
+     2021
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXPWY ET 3 NB",
+    "segments": [
+     "134678",
+     "261800"
+    ],
+    "years_counted": [
+     2014,
+     2016
+    ],
+    "pre_toll_years": [
+     2014,
+     2016
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 6,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXPWY ET 3 SB",
+    "segments": [
+     "173408"
+    ],
+    "years_counted": [
+     2016
+    ],
+    "pre_toll_years": [
+     2016
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MAJOR DEEGAN EXWY",
+    "segments": [
+     "140178"
+    ],
+    "years_counted": [
+     2013
+    ],
+    "pre_toll_years": [
+     2013
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "MDE NB ENTRANCE WILLIS AVENUE BR",
+    "segments": [
+     "276694"
+    ],
+    "years_counted": [
+     2025
+    ],
+    "pre_toll_years": [],
+    "post_toll_years": [
+     2025
+    ],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 5,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "N/B MAJOR DEEGAN EXPWY @ CITY LINE",
+    "segments": [
+     "135187"
+    ],
+    "years_counted": [
+     2008
+    ],
+    "pre_toll_years": [
+     2008
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "N/B PELHAM BRIDGE @  BRUCKNER EXPWY",
+    "segments": [
+     "158424"
+    ],
+    "years_counted": [
+     2008
+    ],
+    "pre_toll_years": [
+     2008
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "NB EXTERIOR ST RIGHT SLIP RAMP TO BROADWAY",
+    "segments": [
+     "113549"
+    ],
+    "years_counted": [
+     2012
+    ],
+    "pre_toll_years": [
+     2012
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "S/B BRUCKNER BLVD RAMP TO 3 AVE BRIDGE",
+    "segments": [
+     "154641"
+    ],
+    "years_counted": [
+     2010
+    ],
+    "pre_toll_years": [
+     2010
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "S/B PELHAM BRIDGE @  BRUCKNER EXPWY",
+    "segments": [
+     "141811"
+    ],
+    "years_counted": [
+     2008
+    ],
+    "pre_toll_years": [
+     2008
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "SHERIDAN AV",
+    "segments": [
+     "71729"
+    ],
+    "years_counted": [
+     2012
+    ],
+    "pre_toll_years": [
+     2012
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "SHERIDAN EXPRESSWAY",
+    "segments": [
+     "140297"
+    ],
+    "years_counted": [
+     2023
+    ],
+    "pre_toll_years": [
+     2023
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 2,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "SHERIDAN EXWY",
+    "segments": [
+     "140289",
+     "140290"
+    ],
+    "years_counted": [
+     2013
+    ],
+    "pre_toll_years": [
+     2013
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 0,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   },
+   {
+    "street": "SOUTHERN BOULEVARD",
+    "segments": [
+     "78760",
+     "79166"
+    ],
+    "years_counted": [
+     2018,
+     2026
+    ],
+    "pre_toll_years": [
+     2018
+    ],
+    "post_toll_years": [
+     2026
+    ],
+    "n_usable_pre_days": 6,
+    "n_usable_post_days": 10,
+    "has_any_pre_and_post_count": true,
+    "has_usable_pair": false
+   },
+   {
+    "street": "W/B BRUCKNER EXPWY MAIN @ EDGEWATER ROAD",
+    "segments": [
+     "154947"
+    ],
+    "years_counted": [
+     2010
+    ],
+    "pre_toll_years": [
+     2010
+    ],
+    "post_toll_years": [],
+    "n_usable_pre_days": 1,
+    "n_usable_post_days": 0,
+    "has_any_pre_and_post_count": false,
+    "has_usable_pair": false
+   }
+  ],
+  "n_segments_pre_toll": 53,
+  "n_segments_post_toll": 11,
+  "segments_with_any_pre_and_post_count": [
+   "9014571"
+  ],
+  "segments_with_usable_pair": [],
+  "usable_pair_note": "Bruckner Boulevard segment 9014571 EB is the one named South Bronx roadway counted both before (2018) and after (2025) tolling at the same segment and direction, and it still yields no usable pair: its only complete 2018 days are a Saturday and a Sunday against Tuesday-Thursday in 2025. Comparing them would read a weekend-versus-weekday gap as a traffic change.",
+  "same_street_different_segment_trap": "Several corridors look paired at street-name level but are not. Major Deegan Expressway has pre-toll counts on segments 135152 NB (2015) and 140178 SB (2015/2017/2018) and its post-toll count on segment 139020 NB, three different places on the highway. Southern Boulevard pairs 78760 (2018) against 79166 (2026). Pairing by street name would compare different roadway segments with different lane counts and volumes, which is why every pair here is keyed on (segmentid, direction) instead.",
+  "post_toll_baseline": [
+   {
+    "segmentid": "139020",
+    "direction": "NB",
+    "street": "MAJOR DEEGAN EXPRESSWAY",
+    "n_complete_weekdays": 4,
+    "median_daily_volume": 47965,
+    "first_day": "2025-10-31",
+    "last_day": "2025-11-07",
+    "hour_share": [
+     0.02866,
+     0.01544,
+     0.01158,
+     0.00973,
+     0.01314,
+     0.02333,
+     0.04223,
+     0.05676,
+     0.05447,
+     0.04953,
+     0.04629,
+     0.04772,
+     0.04894,
+     0.05374,
+     0.05413,
+     0.05155,
+     0.05279,
+     0.05031,
+     0.05136,
+     0.0516,
+     0.05445,
+     0.05051,
+     0.04136,
+     0.04039
+    ]
+   },
+   {
+    "segmentid": "111532",
+    "direction": "EB",
+    "street": "EAST 132 STREET",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 26734,
+    "first_day": "2025-12-08",
+    "last_day": "2025-12-12",
+    "hour_share": [
+     0.03629,
+     0.02345,
+     0.01638,
+     0.01392,
+     0.01704,
+     0.02631,
+     0.04065,
+     0.04909,
+     0.04765,
+     0.03798,
+     0.03759,
+     0.03913,
+     0.04184,
+     0.04556,
+     0.05266,
+     0.05973,
+     0.06388,
+     0.06377,
+     0.05954,
+     0.05147,
+     0.04843,
+     0.04495,
+     0.04074,
+     0.04196
+    ]
+   },
+   {
+    "segmentid": "276694",
+    "direction": "NB",
+    "street": "MDE NB ENTRANCE WILLIS AVENUE BR",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 25845,
+    "first_day": "2025-12-08",
+    "last_day": "2025-12-12",
+    "hour_share": [
+     0.03962,
+     0.02436,
+     0.01626,
+     0.01294,
+     0.01579,
+     0.02644,
+     0.04813,
+     0.05145,
+     0.04761,
+     0.0444,
+     0.04296,
+     0.03884,
+     0.04254,
+     0.04408,
+     0.04432,
+     0.04184,
+     0.04272,
+     0.04422,
+     0.04946,
+     0.05317,
+     0.05825,
+     0.06282,
+     0.05446,
+     0.05334
+    ]
+   },
+   {
+    "segmentid": "9004563",
+    "direction": "WB",
+    "street": "EAST 135 STREET",
+    "n_complete_weekdays": 4,
+    "median_daily_volume": 19374,
+    "first_day": "2025-04-01",
+    "last_day": "2025-04-04",
+    "hour_share": [
+     0.02267,
+     0.01657,
+     0.01127,
+     0.01369,
+     0.02733,
+     0.04234,
+     0.05524,
+     0.05837,
+     0.04906,
+     0.04453,
+     0.04258,
+     0.0422,
+     0.04521,
+     0.04442,
+     0.0467,
+     0.05144,
+     0.0545,
+     0.0586,
+     0.0534,
+     0.05116,
+     0.0462,
+     0.04375,
+     0.04372,
+     0.03506
+    ]
+   },
+   {
+    "segmentid": "9014571",
+    "direction": "EB",
+    "street": "BRUCKNER BOULEVARD",
+    "n_complete_weekdays": 3,
+    "median_daily_volume": 8483,
+    "first_day": "2025-03-11",
+    "last_day": "2025-03-13",
+    "hour_share": [
+     0.00826,
+     0.00501,
+     0.00385,
+     0.00337,
+     0.00669,
+     0.01118,
+     0.02361,
+     0.03448,
+     0.05123,
+     0.03772,
+     0.05131,
+     0.05893,
+     0.0552,
+     0.05496,
+     0.07885,
+     0.09597,
+     0.10042,
+     0.10295,
+     0.09212,
+     0.04758,
+     0.02638,
+     0.02044,
+     0.01632,
+     0.01315
+    ]
+   },
+   {
+    "segmentid": "79166",
+    "direction": "SB",
+    "street": "SOUTHERN BOULEVARD",
+    "n_complete_weekdays": 10,
+    "median_daily_volume": 8327,
+    "first_day": "2026-01-20",
+    "last_day": "2026-02-02",
+    "hour_share": [
+     0.01274,
+     0.00816,
+     0.0064,
+     0.00537,
+     0.00692,
+     0.01456,
+     0.04839,
+     0.09362,
+     0.08039,
+     0.06345,
+     0.04955,
+     0.04595,
+     0.04629,
+     0.04994,
+     0.05761,
+     0.06456,
+     0.06975,
+     0.07196,
+     0.05997,
+     0.04271,
+     0.03171,
+     0.02661,
+     0.0231,
+     0.02029
+    ]
+   },
+   {
+    "segmentid": "69574",
+    "direction": "SB",
+    "street": "LINCOLN AVENUE",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 3216,
+    "first_day": "2025-03-31",
+    "last_day": "2025-04-04",
+    "hour_share": [
+     0.01585,
+     0.0114,
+     0.01433,
+     0.01067,
+     0.01841,
+     0.03761,
+     0.05675,
+     0.08041,
+     0.05682,
+     0.04871,
+     0.04462,
+     0.04621,
+     0.04511,
+     0.05133,
+     0.052,
+     0.05377,
+     0.05864,
+     0.05767,
+     0.05279,
+     0.04663,
+     0.04383,
+     0.03981,
+     0.032,
+     0.02463
+    ]
+   },
+   {
+    "segmentid": "70493",
+    "direction": "EB",
+    "street": "EAST 140 STREET",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 2856,
+    "first_day": "2025-05-12",
+    "last_day": "2025-05-16",
+    "hour_share": [
+     0.01103,
+     0.00764,
+     0.00983,
+     0.01478,
+     0.01803,
+     0.04173,
+     0.06521,
+     0.07037,
+     0.0727,
+     0.06909,
+     0.0657,
+     0.06358,
+     0.05891,
+     0.06506,
+     0.06818,
+     0.06832,
+     0.05573,
+     0.03911,
+     0.03069,
+     0.02893,
+     0.0232,
+     0.02107,
+     0.0174,
+     0.01372
+    ]
+   },
+   {
+    "segmentid": "69574",
+    "direction": "NB",
+    "street": "LINCOLN AVENUE",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 2598,
+    "first_day": "2025-03-31",
+    "last_day": "2025-04-04",
+    "hour_share": [
+     0.02183,
+     0.01357,
+     0.01084,
+     0.00766,
+     0.00743,
+     0.01008,
+     0.02555,
+     0.06133,
+     0.05716,
+     0.05291,
+     0.05087,
+     0.04549,
+     0.05049,
+     0.05269,
+     0.05496,
+     0.06254,
+     0.0777,
+     0.07854,
+     0.0586,
+     0.05193,
+     0.04586,
+     0.03866,
+     0.03495,
+     0.02835
+    ]
+   },
+   {
+    "segmentid": "70496",
+    "direction": "WB",
+    "street": "EAST 141 STREET",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 2436,
+    "first_day": "2025-05-12",
+    "last_day": "2025-05-16",
+    "hour_share": [
+     0.007,
+     0.00442,
+     0.0045,
+     0.00642,
+     0.01075,
+     0.02068,
+     0.03777,
+     0.05427,
+     0.05611,
+     0.05236,
+     0.0506,
+     0.05002,
+     0.05244,
+     0.06511,
+     0.07045,
+     0.08429,
+     0.10063,
+     0.09554,
+     0.07478,
+     0.0376,
+     0.01776,
+     0.01626,
+     0.01801,
+     0.01226
+    ]
+   },
+   {
+    "segmentid": "69577",
+    "direction": "EB",
+    "street": "EAST 134 STREET",
+    "n_complete_weekdays": 9,
+    "median_daily_volume": 808,
+    "first_day": "2025-04-01",
+    "last_day": "2025-04-11",
+    "hour_share": [
+     0.01788,
+     0.01178,
+     0.00781,
+     0.00675,
+     0.00583,
+     0.009,
+     0.0339,
+     0.06303,
+     0.06276,
+     0.05389,
+     0.04807,
+     0.04979,
+     0.05456,
+     0.05628,
+     0.05456,
+     0.05959,
+     0.0678,
+     0.06634,
+     0.06528,
+     0.0535,
+     0.05111,
+     0.03906,
+     0.03483,
+     0.02662
+    ]
+   },
+   {
+    "segmentid": "77174",
+    "direction": "SB",
+    "street": "LOCUST AVENUE",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 430,
+    "first_day": "2025-05-12",
+    "last_day": "2025-05-16",
+    "hour_share": [
+     0.01685,
+     0.0117,
+     0.01965,
+     0.02293,
+     0.03088,
+     0.05335,
+     0.07113,
+     0.05662,
+     0.06364,
+     0.06738,
+     0.06177,
+     0.0716,
+     0.06458,
+     0.05943,
+     0.04913,
+     0.05756,
+     0.04586,
+     0.04024,
+     0.02527,
+     0.02948,
+     0.02527,
+     0.02761,
+     0.0117,
+     0.01638
+    ]
+   },
+   {
+    "segmentid": "77174",
+    "direction": "NB",
+    "street": "LOCUST AVENUE",
+    "n_complete_weekdays": 5,
+    "median_daily_volume": 287,
+    "first_day": "2025-05-12",
+    "last_day": "2025-05-16",
+    "hour_share": [
+     0.01149,
+     0.00947,
+     0.00879,
+     0.02434,
+     0.02705,
+     0.03178,
+     0.05544,
+     0.05139,
+     0.04395,
+     0.04057,
+     0.03584,
+     0.04395,
+     0.04733,
+     0.06829,
+     0.06558,
+     0.07032,
+     0.1048,
+     0.12576,
+     0.05274,
+     0.02975,
+     0.01217,
+     0.0169,
+     0.01352,
+     0.00879
+    ]
+   }
+  ],
+  "baseline_note": "Median complete-weekday 24-hour volume at each South Bronx location counted after tolling began, with its hour-of-day share. These are post-period levels only. They establish no change, because no matching pre-period count exists at any of these locations."
+ },
+ "primary_test": {
+  "label": "South Bronx / Bronx paired sites bracketing 2025-01-05",
+  "n_sites": 0,
+  "why_this_test": "Wilcoxon signed-rank on per-site log volume ratios is the right test for a small number of paired locations: it needs no normality assumption and pairs each site to itself so lane count and geometry cancel. It is not run because the sample is empty.",
+  "min_attainable_two_sided_p": 1.0,
+  "sites": [],
+  "ran": false,
+  "reason_not_run": "no sites have a usable pre- and post-2025-01-05 count"
+ },
+ "bronx_descriptive": {
+  "label": "Bronx paired sites at any pre-period year (descriptive, not causal)",
+  "n_sites": 2,
+  "why_this_test": "Reported for completeness. These pairs straddle the pandemic and a decade of trend, so they cannot attribute change to congestion pricing.",
+  "min_attainable_two_sided_p": 0.5,
+  "sites": [
+   "WATERS PLACE EB (Bronx)",
+   "WATERS PLACE WB (Bronx)"
+  ],
+  "ran": true,
+  "median_change_pct": -18.49,
+  "hodges_lehmann_pct": -18.49,
+  "hl_ci95_pct": null,
+  "bootstrap_median_ci95_pct": [
+   -24.96,
+   -11.47
+  ],
+  "rank_biserial_r": -1.0,
+  "n_sites_up": 0,
+  "n_sites_down": 2,
+  "wilcoxon": null,
+  "reason_no_p_value": "n=2 pairs. A two-sided signed-rank test cannot return p<=0.500 at this n, so no p-value is reportable; n>=6 is the minimum for 0.05. Only the descriptive change is given.",
+  "reason_no_hl_ci": "n=2 is below the minimum for a distribution-free 95% signed-rank interval (n>=6); the bootstrap interval shown reflects between-site spread only."
+ },
+ "feasibility_demonstration": {
+  "label": "All NYC paired sites bracketing 2025-01-05 (feasibility demonstration)",
+  "n_sites": 13,
+  "why_this_test": "Same paired design, applied citywide, to show the method is sound and the Bronx null is a coverage gap rather than a method failure. This is not a causal estimate of congestion pricing: it is dominated by Manhattan sites that are themselves inside or adjacent to the zone, and there is no untreated control group.",
+  "min_attainable_two_sided_p": 0.00024,
+  "sites": [
+   "SUTTER AVENUE WB (Brooklyn)",
+   "ALEXANDER HAMILTON BRIDGE EB (Manhattan)",
+   "ALEXANDER HAMILTON BRIDGE WB (Manhattan)",
+   "EAST 58 STREET NB (Manhattan)",
+   "EAST 58 STREET SB (Manhattan)",
+   "ED KOCH QUEENSBORO BRIDGE WB (Manhattan)",
+   "UNIVERSITY HEIGHTS BRG EB (Manhattan)",
+   "UNIVERSITY HEIGHTS BRIDGE WB (Manhattan)",
+   "WEST END AV NB (Manhattan)",
+   "WEST END AVENUE SB (Manhattan)",
+   "WILLIAMSBURG BR APPROACH EB (Manhattan)",
+   "WILLIAMSBURG BR APPROACH WB (Manhattan)",
+   "SUTTER AVENUE EB (Queens)"
+  ],
+  "ran": true,
+  "median_change_pct": -6.74,
+  "hodges_lehmann_pct": -7.05,
+  "hl_ci95_pct": [
+   -23.61,
+   5.75
+  ],
+  "bootstrap_median_ci95_pct": [
+   -16.15,
+   1.9
+  ],
+  "rank_biserial_r": -0.4725,
+  "n_sites_up": 4,
+  "n_sites_down": 9,
+  "wilcoxon": {
+   "statistic": 24.0,
+   "p_value": 0.14648,
+   "method": "exact"
+  }
+ },
+ "mann_whitney_not_run": "A Bronx-versus-control comparison of per-site changes (Mann-Whitney U) needs per-site changes on both sides. The Bronx supplies zero sites bracketing the toll start, so the Bronx sample is empty and the test is undefined.",
+ "did_not_run": "A difference-in-differences like the B&T one in bt.json needs a repeated panel. These are rotating short-duration studies with ~100 counted segments citywide per year and almost no location repeated across the toll date, so no panel exists.",
+ "data_quality_flags": {
+  "duplicated_studies_across_years": [
+   {
+    "segmentid": "9008825",
+    "requestid": "38599",
+    "boro": "Bronx",
+    "street": "PELHAM PARKWAY",
+    "years": [
+     2024,
+     2025
+    ],
+    "directions": [
+     "EB",
+     "WB"
+    ],
+    "identical_daily_volumes": [
+     14166,
+     17742,
+     18309,
+     18720,
+     19237,
+     20043,
+     20423
+    ],
+    "n_days": 7
+   }
+  ],
+  "why_it_matters": "This is the trap in this dataset. Segment 9008825 (Pelham Parkway) is the only Bronx segment that appears in both 2024 and 2025, so a naive pairing would treat it as the one available before/after site. It is the same study filed twice: identical daily volumes under request 38599, labelled EB in 2024 and WB in 2025. Pairing it would have produced a fabricated 0.0% change at the only Bronx location, or a spurious change if the directions were compared."
+ },
+ "alternative_source_checked": {
+  "dataset": "96ay-ea4r",
+  "soda_url": "https://data.cityofnewyork.us/resource/96ay-ea4r.json",
+  "name": "NYC DOT Vehicle Classification Counts (2011-2025)",
+  "years_present": [
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "segments_2024": 117,
+  "segments_2025_plus": 308,
+  "segment_overlap_2024_2025": 0,
+  "verdict": "Rejected as an alternative: zero segmentid overlap between 2024 and 2025 anywhere in the city, so it supports no paired pre/post design either. It also carries no borough column.",
+  "btm5_ppia": "Traffic Volume Counts (Historical), btm5-ppia, ends 2021-05-09 and has no post-congestion-pricing coverage at all."
+ },
+ "limitations": [
+  "DOT Automated Traffic Volume Counts are short-duration ATR studies that rotate locations year to year. They are a sample of places, not a continuous time series.",
+  "Zero South Bronx locations have a usable count on both sides of 2025-01-05, so this source cannot test diversion onto the roadways the prompt names. No amount of statistical technique fixes a missing pre-period.",
+  "The only Bronx locations with any pre/post pair are on Waters Place in the northeast Bronx, 12 years apart, which is neither the study area nor an interpretable interval.",
+  "Bruckner Boulevard has a 2018 and a 2025 count at the same segment and direction, but its only complete 2018 days are a Saturday and a Sunday against Tuesday-Thursday in 2025, so the pair is not comparable and is excluded.",
+  "The citywide feasibility figure has no untreated control group and is dominated by Manhattan sites inside or adjacent to the zone. It is descriptive, not causal.",
+  "Counts are volumes only. This dataset carries no vehicle classification, so it cannot speak to the truck share that drives South Bronx air-quality concern.",
+  "One apparent Bronx pre/post repeat is a duplicated record, not a real repeat count."
+ ],
+ "read": "This establishes nothing about whether traffic was diverted onto South Bronx streets, because NYC DOT never counted the same South Bronx roadway, in the same direction, both shortly before and shortly after congestion pricing began: of the 16 Bronx segments counted in 2025, none has a comparable pre-2025 count, and the only two Bronx locations with any pre/post pair at all sit on Waters Place in the northeast Bronx with a twelve-year gap. What it does establish is that the street-level source the datathon brief points to cannot support a diversion claim in either direction, which means the project's Bronx null still rests on the MTA Bridges and Tunnels difference-in-differences, and any statement about surface streets in Mott Haven is untested here rather than confirmed or refuted. Nothing in these counts contradicts the 'no relief, not diversion' reading, and nothing in them independently supports it either."
+}

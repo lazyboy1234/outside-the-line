@@ -1,0 +1,5 @@
+gantry.jpg	paper/refs/crz-gantry-9th-ave.jpg	CC BY-SA 4.0 Jim.henderson	https://commons.wikimedia.org/wiki/File:Congestion_pricing_cameras_9th_Av_2023_jeh.jpg
+deegan.jpg	paper/refs/deegan-from-e138th-south.jpg	CC BY-SA 4.0 Famartin	https://commons.wikimedia.org/wiki/File:2024-05-30_11_36_20_View_south_along_Interstate_87_(Major_Deegan_Expressway)_from_the_overpass_for_East_138th_Street_in_the_Bronx,_New_York_City,_New_York.jpg
+bronx.jpg	paper/refs/nara-lower-bronx-aerial.jpg	Public domain, U.S. National Archives	https://commons.wikimedia.org/wiki/File:AERIAL_VIEW_OF_LOWER_BRONX_-_NARA_-_548424.jpg
+sign.jpg	paper/refs/crz-street-sign.jpg	CC BY-SA 4.0	https://commons.wikimedia.org/wiki/File:NYC_CRZ_Sign.jpg
+SVGs	drawn for this page from locked HANDOFF facts

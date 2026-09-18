@@ -1,0 +1,2833 @@
+{
+ "dataset": "ebfx-2m7v",
+ "facilities": [
+  {
+   "facility": "Robert F. Kennedy Bridge Bronx",
+   "lon": -73.923,
+   "lat": 40.796,
+   "group": "bronx",
+   "y2024": 52506343,
+   "y2025": 52574751,
+   "pct": 0.13,
+   "y2019": 51961243
+  },
+  {
+   "facility": "Bronx - Whitestone Bridge",
+   "lon": -73.832,
+   "lat": 40.801,
+   "group": "bronx",
+   "y2024": 49893667,
+   "y2025": 50700608,
+   "pct": 1.62,
+   "y2019": 49764376
+  },
+  {
+   "facility": "Throgs Neck Bridge",
+   "lon": -73.793,
+   "lat": 40.801,
+   "group": "bronx",
+   "y2024": 45182230,
+   "y2025": 45245619,
+   "pct": 0.14,
+   "y2019": 44450593
+  },
+  {
+   "facility": "Henry Hudson Bridge",
+   "lon": -73.922,
+   "lat": 40.877,
+   "group": "bronx",
+   "y2024": 25243179,
+   "y2025": 25313379,
+   "pct": 0.28,
+   "y2019": 26181130
+  },
+  {
+   "facility": "Robert F. Kennedy Bridge Manhattan",
+   "lon": -73.931,
+   "lat": 40.78,
+   "group": "uptown",
+   "y2024": 17118954,
+   "y2025": 17415357,
+   "pct": 1.73,
+   "y2019": 15384643
+  },
+  {
+   "facility": "Queens Midtown Tunnel",
+   "lon": -73.972,
+   "lat": 40.744,
+   "group": "cordon",
+   "y2024": 30433062,
+   "y2025": 30024381,
+   "pct": -1.34,
+   "y2019": 30526056
+  },
+  {
+   "facility": "Hugh L. Carey Tunnel",
+   "lon": -74.015,
+   "lat": 40.702,
+   "group": "cordon",
+   "y2024": 22626078,
+   "y2025": 21981320,
+   "pct": -2.85,
+   "y2019": 19630398
+  },
+  {
+   "facility": "Verrazzano - Narrows Bridge",
+   "lon": -74.0445,
+   "lat": 40.6065,
+   "group": "control",
+   "y2024": 81000607,
+   "y2025": 81160067,
+   "pct": 0.2,
+   "y2019": 38273409
+  },
+  {
+   "facility": "Cross Bay Bridge",
+   "lon": -73.821,
+   "lat": 40.596,
+   "group": "control",
+   "y2024": 7774075,
+   "y2025": 7823341,
+   "pct": 0.63,
+   "y2019": 8651520
+  },
+  {
+   "facility": "Marine Parkway Bridge",
+   "lon": -73.885,
+   "lat": 40.573,
+   "group": "control",
+   "y2024": 7994115,
+   "y2025": 8113733,
+   "pct": 1.5,
+   "y2019": 8314532
+  }
+ ],
+ "system_2024": 339772310,
+ "system_2025": 340352556,
+ "system_pct": 0.17,
+ "monthly_index": {
+  "Bronx - Whitestone Bridge": [
+   {
+    "month": "2023-01",
+    "index": 95.14,
+    "vehicles": 3955925
+   },
+   {
+    "month": "2023-02",
+    "index": 87.28,
+    "vehicles": 3628837
+   },
+   {
+    "month": "2023-03",
+    "index": 100.88,
+    "vehicles": 4194372
+   },
+   {
+    "month": "2023-04",
+    "index": 99.49,
+    "vehicles": 4136656
+   },
+   {
+    "month": "2023-05",
+    "index": 105.44,
+    "vehicles": 4384006
+   },
+   {
+    "month": "2023-06",
+    "index": 104.33,
+    "vehicles": 4337982
+   },
+   {
+    "month": "2023-07",
+    "index": 107.51,
+    "vehicles": 4470059
+   },
+   {
+    "month": "2023-08",
+    "index": 109.01,
+    "vehicles": 4532557
+   },
+   {
+    "month": "2023-09",
+    "index": 100.88,
+    "vehicles": 4194281
+   },
+   {
+    "month": "2023-10",
+    "index": 103.41,
+    "vehicles": 4299767
+   },
+   {
+    "month": "2023-11",
+    "index": 99.32,
+    "vehicles": 4129600
+   },
+   {
+    "month": "2023-12",
+    "index": 98.38,
+    "vehicles": 4090654
+   },
+   {
+    "month": "2024-01",
+    "index": 90.14,
+    "vehicles": 3747875
+   },
+   {
+    "month": "2024-02",
+    "index": 88.68,
+    "vehicles": 3687034
+   },
+   {
+    "month": "2024-03",
+    "index": 99.84,
+    "vehicles": 4151120
+   },
+   {
+    "month": "2024-04",
+    "index": 98.83,
+    "vehicles": 4109154
+   },
+   {
+    "month": "2024-05",
+    "index": 103.34,
+    "vehicles": 4296677
+   },
+   {
+    "month": "2024-06",
+    "index": 103.82,
+    "vehicles": 4316456
+   },
+   {
+    "month": "2024-07",
+    "index": 106.13,
+    "vehicles": 4412543
+   },
+   {
+    "month": "2024-08",
+    "index": 107.92,
+    "vehicles": 4487206
+   },
+   {
+    "month": "2024-09",
+    "index": 101.26,
+    "vehicles": 4210276
+   },
+   {
+    "month": "2024-10",
+    "index": 105.3,
+    "vehicles": 4378281
+   },
+   {
+    "month": "2024-11",
+    "index": 97.04,
+    "vehicles": 4034621
+   },
+   {
+    "month": "2024-12",
+    "index": 97.71,
+    "vehicles": 4062424
+   },
+   {
+    "month": "2025-01",
+    "index": 91.09,
+    "vehicles": 3787360
+   },
+   {
+    "month": "2025-02",
+    "index": 83.87,
+    "vehicles": 3487317
+   },
+   {
+    "month": "2025-03",
+    "index": 99.13,
+    "vehicles": 4121798
+   },
+   {
+    "month": "2025-04",
+    "index": 100.36,
+    "vehicles": 4172965
+   },
+   {
+    "month": "2025-05",
+    "index": 107.28,
+    "vehicles": 4460628
+   },
+   {
+    "month": "2025-06",
+    "index": 107.69,
+    "vehicles": 4477520
+   },
+   {
+    "month": "2025-07",
+    "index": 111.02,
+    "vehicles": 4615850
+   },
+   {
+    "month": "2025-08",
+    "index": 112.99,
+    "vehicles": 4697980
+   },
+   {
+    "month": "2025-09",
+    "index": 103.16,
+    "vehicles": 4289356
+   },
+   {
+    "month": "2025-10",
+    "index": 103.92,
+    "vehicles": 4320684
+   },
+   {
+    "month": "2025-11",
+    "index": 100.81,
+    "vehicles": 4191544
+   },
+   {
+    "month": "2025-12",
+    "index": 98.07,
+    "vehicles": 4077606
+   },
+   {
+    "month": "2026-01",
+    "index": 88.39,
+    "vehicles": 3675046
+   },
+   {
+    "month": "2026-02",
+    "index": 80.63,
+    "vehicles": 3352474
+   },
+   {
+    "month": "2026-03",
+    "index": 99.96,
+    "vehicles": 4156329
+   },
+   {
+    "month": "2026-04",
+    "index": 101.22,
+    "vehicles": 4208504
+   },
+   {
+    "month": "2026-05",
+    "index": 107.23,
+    "vehicles": 4458411
+   },
+   {
+    "month": "2026-06",
+    "index": 106.7,
+    "vehicles": 4436391
+   },
+   {
+    "month": "2026-07",
+    "index": 106.68,
+    "vehicles": 4435691
+   },
+   {
+    "month": "2026-08",
+    "index": 107.75,
+    "vehicles": 4480169
+   }
+  ],
+  "Cross Bay Bridge": [
+   {
+    "month": "2023-01",
+    "index": 91.94,
+    "vehicles": 595627
+   },
+   {
+    "month": "2023-02",
+    "index": 82.83,
+    "vehicles": 536608
+   },
+   {
+    "month": "2023-03",
+    "index": 99.53,
+    "vehicles": 644800
+   },
+   {
+    "month": "2023-04",
+    "index": 93.71,
+    "vehicles": 607087
+   },
+   {
+    "month": "2023-05",
+    "index": 109.67,
+    "vehicles": 710488
+   },
+   {
+    "month": "2023-06",
+    "index": 108.85,
+    "vehicles": 705167
+   },
+   {
+    "month": "2023-07",
+    "index": 119.65,
+    "vehicles": 775153
+   },
+   {
+    "month": "2023-08",
+    "index": 109.57,
+    "vehicles": 709856
+   },
+   {
+    "month": "2023-09",
+    "index": 100.45,
+    "vehicles": 650736
+   },
+   {
+    "month": "2023-10",
+    "index": 99.99,
+    "vehicles": 647766
+   },
+   {
+    "month": "2023-11",
+    "index": 92.62,
+    "vehicles": 600012
+   },
+   {
+    "month": "2023-12",
+    "index": 92.74,
+    "vehicles": 600793
+   },
+   {
+    "month": "2024-01",
+    "index": 88.82,
+    "vehicles": 575388
+   },
+   {
+    "month": "2024-02",
+    "index": 85.16,
+    "vehicles": 551703
+   },
+   {
+    "month": "2024-03",
+    "index": 96.12,
+    "vehicles": 622716
+   },
+   {
+    "month": "2024-04",
+    "index": 93.29,
+    "vehicles": 604362
+   },
+   {
+    "month": "2024-05",
+    "index": 107.52,
+    "vehicles": 696526
+   },
+   {
+    "month": "2024-06",
+    "index": 116.54,
+    "vehicles": 755004
+   },
+   {
+    "month": "2024-07",
+    "index": 115.63,
+    "vehicles": 749086
+   },
+   {
+    "month": "2024-08",
+    "index": 109.08,
+    "vehicles": 706653
+   },
+   {
+    "month": "2024-09",
+    "index": 101.4,
+    "vehicles": 656911
+   },
+   {
+    "month": "2024-10",
+    "index": 101.42,
+    "vehicles": 657062
+   },
+   {
+    "month": "2024-11",
+    "index": 92.01,
+    "vehicles": 596084
+   },
+   {
+    "month": "2024-12",
+    "index": 93.01,
+    "vehicles": 602580
+   },
+   {
+    "month": "2025-01",
+    "index": 92.4,
+    "vehicles": 598599
+   },
+   {
+    "month": "2025-02",
+    "index": 85.96,
+    "vehicles": 556894
+   },
+   {
+    "month": "2025-03",
+    "index": 101.72,
+    "vehicles": 658989
+   },
+   {
+    "month": "2025-04",
+    "index": 99.94,
+    "vehicles": 647469
+   },
+   {
+    "month": "2025-05",
+    "index": 106.81,
+    "vehicles": 691988
+   },
+   {
+    "month": "2025-06",
+    "index": 113.64,
+    "vehicles": 736191
+   },
+   {
+    "month": "2025-07",
+    "index": 117.97,
+    "vehicles": 764258
+   },
+   {
+    "month": "2025-08",
+    "index": 111.68,
+    "vehicles": 723501
+   },
+   {
+    "month": "2025-09",
+    "index": 99.1,
+    "vehicles": 641985
+   },
+   {
+    "month": "2025-10",
+    "index": 97.92,
+    "vehicles": 634359
+   },
+   {
+    "month": "2025-11",
+    "index": 89.49,
+    "vehicles": 579737
+   },
+   {
+    "month": "2025-12",
+    "index": 90.97,
+    "vehicles": 589371
+   },
+   {
+    "month": "2026-01",
+    "index": 83.32,
+    "vehicles": 539751
+   },
+   {
+    "month": "2026-02",
+    "index": 74.6,
+    "vehicles": 483274
+   },
+   {
+    "month": "2026-03",
+    "index": 94.88,
+    "vehicles": 614676
+   },
+   {
+    "month": "2026-04",
+    "index": 93.31,
+    "vehicles": 604514
+   },
+   {
+    "month": "2026-05",
+    "index": 102.22,
+    "vehicles": 662226
+   },
+   {
+    "month": "2026-06",
+    "index": 111.55,
+    "vehicles": 722655
+   },
+   {
+    "month": "2026-07",
+    "index": 113.44,
+    "vehicles": 734909
+   },
+   {
+    "month": "2026-08",
+    "index": 108.93,
+    "vehicles": 705663
+   }
+  ],
+  "Henry Hudson Bridge": [
+   {
+    "month": "2023-01",
+    "index": 90.25,
+    "vehicles": 1898517
+   },
+   {
+    "month": "2023-02",
+    "index": 84.82,
+    "vehicles": 1784254
+   },
+   {
+    "month": "2023-03",
+    "index": 100.88,
+    "vehicles": 2122012
+   },
+   {
+    "month": "2023-04",
+    "index": 100.43,
+    "vehicles": 2112619
+   },
+   {
+    "month": "2023-05",
+    "index": 111.17,
+    "vehicles": 2338503
+   },
+   {
+    "month": "2023-06",
+    "index": 107.03,
+    "vehicles": 2251566
+   },
+   {
+    "month": "2023-07",
+    "index": 100.12,
+    "vehicles": 2106143
+   },
+   {
+    "month": "2023-08",
+    "index": 102.73,
+    "vehicles": 2161092
+   },
+   {
+    "month": "2023-09",
+    "index": 98.06,
+    "vehicles": 2062885
+   },
+   {
+    "month": "2023-10",
+    "index": 106.6,
+    "vehicles": 2242503
+   },
+   {
+    "month": "2023-11",
+    "index": 101.95,
+    "vehicles": 2144535
+   },
+   {
+    "month": "2023-12",
+    "index": 97.81,
+    "vehicles": 2057460
+   },
+   {
+    "month": "2024-01",
+    "index": 84.34,
+    "vehicles": 1774240
+   },
+   {
+    "month": "2024-02",
+    "index": 88.28,
+    "vehicles": 1856979
+   },
+   {
+    "month": "2024-03",
+    "index": 100.28,
+    "vehicles": 2109414
+   },
+   {
+    "month": "2024-04",
+    "index": 102.5,
+    "vehicles": 2156252
+   },
+   {
+    "month": "2024-05",
+    "index": 109.31,
+    "vehicles": 2299429
+   },
+   {
+    "month": "2024-06",
+    "index": 104.83,
+    "vehicles": 2205171
+   },
+   {
+    "month": "2024-07",
+    "index": 99.22,
+    "vehicles": 2087241
+   },
+   {
+    "month": "2024-08",
+    "index": 100.56,
+    "vehicles": 2115307
+   },
+   {
+    "month": "2024-09",
+    "index": 103.48,
+    "vehicles": 2176852
+   },
+   {
+    "month": "2024-10",
+    "index": 108.79,
+    "vehicles": 2288404
+   },
+   {
+    "month": "2024-11",
+    "index": 99.81,
+    "vehicles": 2099641
+   },
+   {
+    "month": "2024-12",
+    "index": 98.6,
+    "vehicles": 2074249
+   },
+   {
+    "month": "2025-01",
+    "index": 85.74,
+    "vehicles": 1803527
+   },
+   {
+    "month": "2025-02",
+    "index": 80.65,
+    "vehicles": 1696486
+   },
+   {
+    "month": "2025-03",
+    "index": 98.66,
+    "vehicles": 2075498
+   },
+   {
+    "month": "2025-04",
+    "index": 101.69,
+    "vehicles": 2139110
+   },
+   {
+    "month": "2025-05",
+    "index": 110.27,
+    "vehicles": 2319572
+   },
+   {
+    "month": "2025-06",
+    "index": 105.57,
+    "vehicles": 2220859
+   },
+   {
+    "month": "2025-07",
+    "index": 103.05,
+    "vehicles": 2167775
+   },
+   {
+    "month": "2025-08",
+    "index": 105.24,
+    "vehicles": 2213881
+   },
+   {
+    "month": "2025-09",
+    "index": 105.33,
+    "vehicles": 2215710
+   },
+   {
+    "month": "2025-10",
+    "index": 107.94,
+    "vehicles": 2270620
+   },
+   {
+    "month": "2025-11",
+    "index": 101.3,
+    "vehicles": 2130930
+   },
+   {
+    "month": "2025-12",
+    "index": 97.9,
+    "vehicles": 2059411
+   },
+   {
+    "month": "2026-01",
+    "index": 83.92,
+    "vehicles": 1765406
+   },
+   {
+    "month": "2026-02",
+    "index": 77.14,
+    "vehicles": 1622810
+   },
+   {
+    "month": "2026-03",
+    "index": 98.38,
+    "vehicles": 2069434
+   },
+   {
+    "month": "2026-04",
+    "index": 100.72,
+    "vehicles": 2118769
+   },
+   {
+    "month": "2026-05",
+    "index": 109.11,
+    "vehicles": 2295146
+   },
+   {
+    "month": "2026-06",
+    "index": 107.58,
+    "vehicles": 2263156
+   },
+   {
+    "month": "2026-07",
+    "index": 101.67,
+    "vehicles": 2138714
+   },
+   {
+    "month": "2026-08",
+    "index": 102.16,
+    "vehicles": 2148999
+   }
+  ],
+  "Hugh L. Carey Tunnel": [
+   {
+    "month": "2023-01",
+    "index": 93.24,
+    "vehicles": 1758078
+   },
+   {
+    "month": "2023-02",
+    "index": 88.87,
+    "vehicles": 1675622
+   },
+   {
+    "month": "2023-03",
+    "index": 103.72,
+    "vehicles": 1955677
+   },
+   {
+    "month": "2023-04",
+    "index": 97.94,
+    "vehicles": 1846586
+   },
+   {
+    "month": "2023-05",
+    "index": 105.38,
+    "vehicles": 1986983
+   },
+   {
+    "month": "2023-06",
+    "index": 103.95,
+    "vehicles": 1959924
+   },
+   {
+    "month": "2023-07",
+    "index": 98.64,
+    "vehicles": 1859815
+   },
+   {
+    "month": "2023-08",
+    "index": 104.18,
+    "vehicles": 1964228
+   },
+   {
+    "month": "2023-09",
+    "index": 101.04,
+    "vehicles": 1905058
+   },
+   {
+    "month": "2023-10",
+    "index": 108.24,
+    "vehicles": 2040849
+   },
+   {
+    "month": "2023-11",
+    "index": 101.02,
+    "vehicles": 1904831
+   },
+   {
+    "month": "2023-12",
+    "index": 101.6,
+    "vehicles": 1915685
+   },
+   {
+    "month": "2024-01",
+    "index": 92.9,
+    "vehicles": 1751681
+   },
+   {
+    "month": "2024-02",
+    "index": 91.97,
+    "vehicles": 1734099
+   },
+   {
+    "month": "2024-03",
+    "index": 103.64,
+    "vehicles": 1954194
+   },
+   {
+    "month": "2024-04",
+    "index": 98.21,
+    "vehicles": 1851839
+   },
+   {
+    "month": "2024-05",
+    "index": 107.44,
+    "vehicles": 2025715
+   },
+   {
+    "month": "2024-06",
+    "index": 101.1,
+    "vehicles": 1906169
+   },
+   {
+    "month": "2024-07",
+    "index": 98.07,
+    "vehicles": 1849057
+   },
+   {
+    "month": "2024-08",
+    "index": 99.31,
+    "vehicles": 1872457
+   },
+   {
+    "month": "2024-09",
+    "index": 101.26,
+    "vehicles": 1909338
+   },
+   {
+    "month": "2024-10",
+    "index": 104.86,
+    "vehicles": 1977099
+   },
+   {
+    "month": "2024-11",
+    "index": 98.61,
+    "vehicles": 1859379
+   },
+   {
+    "month": "2024-12",
+    "index": 102.63,
+    "vehicles": 1935051
+   },
+   {
+    "month": "2025-01",
+    "index": 86.6,
+    "vehicles": 1632891
+   },
+   {
+    "month": "2025-02",
+    "index": 83.82,
+    "vehicles": 1580357
+   },
+   {
+    "month": "2025-03",
+    "index": 98.35,
+    "vehicles": 1854318
+   },
+   {
+    "month": "2025-04",
+    "index": 95.52,
+    "vehicles": 1801103
+   },
+   {
+    "month": "2025-05",
+    "index": 102.48,
+    "vehicles": 1932344
+   },
+   {
+    "month": "2025-06",
+    "index": 98.03,
+    "vehicles": 1848370
+   },
+   {
+    "month": "2025-07",
+    "index": 98.62,
+    "vehicles": 1859513
+   },
+   {
+    "month": "2025-08",
+    "index": 100.79,
+    "vehicles": 1900452
+   },
+   {
+    "month": "2025-09",
+    "index": 99.89,
+    "vehicles": 1883471
+   },
+   {
+    "month": "2025-10",
+    "index": 103.15,
+    "vehicles": 1944875
+   },
+   {
+    "month": "2025-11",
+    "index": 99.48,
+    "vehicles": 1875752
+   },
+   {
+    "month": "2025-12",
+    "index": 99.06,
+    "vehicles": 1867874
+   },
+   {
+    "month": "2026-01",
+    "index": 85.25,
+    "vehicles": 1607442
+   },
+   {
+    "month": "2026-02",
+    "index": 79.01,
+    "vehicles": 1489700
+   },
+   {
+    "month": "2026-03",
+    "index": 98.59,
+    "vehicles": 1858949
+   },
+   {
+    "month": "2026-04",
+    "index": 95.21,
+    "vehicles": 1795268
+   },
+   {
+    "month": "2026-05",
+    "index": 99.56,
+    "vehicles": 1877188
+   },
+   {
+    "month": "2026-06",
+    "index": 98.47,
+    "vehicles": 1856727
+   },
+   {
+    "month": "2026-07",
+    "index": 95.19,
+    "vehicles": 1794786
+   },
+   {
+    "month": "2026-08",
+    "index": 91.07,
+    "vehicles": 1717039
+   }
+  ],
+  "Marine Parkway Bridge": [
+   {
+    "month": "2023-01",
+    "index": 86.36,
+    "vehicles": 575297
+   },
+   {
+    "month": "2023-02",
+    "index": 77.85,
+    "vehicles": 518594
+   },
+   {
+    "month": "2023-03",
+    "index": 94.14,
+    "vehicles": 627136
+   },
+   {
+    "month": "2023-04",
+    "index": 88.17,
+    "vehicles": 587376
+   },
+   {
+    "month": "2023-05",
+    "index": 108.69,
+    "vehicles": 724055
+   },
+   {
+    "month": "2023-06",
+    "index": 111.26,
+    "vehicles": 741208
+   },
+   {
+    "month": "2023-07",
+    "index": 125.27,
+    "vehicles": 834529
+   },
+   {
+    "month": "2023-08",
+    "index": 118.23,
+    "vehicles": 787601
+   },
+   {
+    "month": "2023-09",
+    "index": 101.18,
+    "vehicles": 674036
+   },
+   {
+    "month": "2023-10",
+    "index": 98.13,
+    "vehicles": 653695
+   },
+   {
+    "month": "2023-11",
+    "index": 91.92,
+    "vehicles": 612373
+   },
+   {
+    "month": "2023-12",
+    "index": 91.91,
+    "vehicles": 612292
+   },
+   {
+    "month": "2024-01",
+    "index": 84.47,
+    "vehicles": 562688
+   },
+   {
+    "month": "2024-02",
+    "index": 78.82,
+    "vehicles": 525048
+   },
+   {
+    "month": "2024-03",
+    "index": 92.9,
+    "vehicles": 618887
+   },
+   {
+    "month": "2024-04",
+    "index": 89.84,
+    "vehicles": 598519
+   },
+   {
+    "month": "2024-05",
+    "index": 107.71,
+    "vehicles": 717510
+   },
+   {
+    "month": "2024-06",
+    "index": 119.24,
+    "vehicles": 794380
+   },
+   {
+    "month": "2024-07",
+    "index": 122.57,
+    "vehicles": 816515
+   },
+   {
+    "month": "2024-08",
+    "index": 116.26,
+    "vehicles": 774494
+   },
+   {
+    "month": "2024-09",
+    "index": 103.71,
+    "vehicles": 690873
+   },
+   {
+    "month": "2024-10",
+    "index": 99.3,
+    "vehicles": 661508
+   },
+   {
+    "month": "2024-11",
+    "index": 92.65,
+    "vehicles": 617191
+   },
+   {
+    "month": "2024-12",
+    "index": 92.54,
+    "vehicles": 616502
+   },
+   {
+    "month": "2025-01",
+    "index": 86.45,
+    "vehicles": 575896
+   },
+   {
+    "month": "2025-02",
+    "index": 78.21,
+    "vehicles": 520994
+   },
+   {
+    "month": "2025-03",
+    "index": 94.54,
+    "vehicles": 629796
+   },
+   {
+    "month": "2025-04",
+    "index": 94.8,
+    "vehicles": 631505
+   },
+   {
+    "month": "2025-05",
+    "index": 108.27,
+    "vehicles": 721256
+   },
+   {
+    "month": "2025-06",
+    "index": 117.62,
+    "vehicles": 783572
+   },
+   {
+    "month": "2025-07",
+    "index": 128.85,
+    "vehicles": 858381
+   },
+   {
+    "month": "2025-08",
+    "index": 123.74,
+    "vehicles": 824307
+   },
+   {
+    "month": "2025-09",
+    "index": 102.03,
+    "vehicles": 679697
+   },
+   {
+    "month": "2025-10",
+    "index": 97.57,
+    "vehicles": 650010
+   },
+   {
+    "month": "2025-11",
+    "index": 92.97,
+    "vehicles": 619364
+   },
+   {
+    "month": "2025-12",
+    "index": 92.91,
+    "vehicles": 618955
+   },
+   {
+    "month": "2026-01",
+    "index": 82.05,
+    "vehicles": 546565
+   },
+   {
+    "month": "2026-02",
+    "index": 73.38,
+    "vehicles": 488849
+   },
+   {
+    "month": "2026-03",
+    "index": 94.64,
+    "vehicles": 630490
+   },
+   {
+    "month": "2026-04",
+    "index": 91.89,
+    "vehicles": 612169
+   },
+   {
+    "month": "2026-05",
+    "index": 104.19,
+    "vehicles": 694073
+   },
+   {
+    "month": "2026-06",
+    "index": 120.23,
+    "vehicles": 800924
+   },
+   {
+    "month": "2026-07",
+    "index": 122.52,
+    "vehicles": 816207
+   },
+   {
+    "month": "2026-08",
+    "index": 120.01,
+    "vehicles": 799495
+   }
+  ],
+  "Queens Midtown Tunnel": [
+   {
+    "month": "2023-01",
+    "index": 92.6,
+    "vehicles": 2348528
+   },
+   {
+    "month": "2023-02",
+    "index": 87.94,
+    "vehicles": 2230356
+   },
+   {
+    "month": "2023-03",
+    "index": 102.17,
+    "vehicles": 2591236
+   },
+   {
+    "month": "2023-04",
+    "index": 99.01,
+    "vehicles": 2511063
+   },
+   {
+    "month": "2023-05",
+    "index": 105.17,
+    "vehicles": 2667287
+   },
+   {
+    "month": "2023-06",
+    "index": 103.29,
+    "vehicles": 2619406
+   },
+   {
+    "month": "2023-07",
+    "index": 101.26,
+    "vehicles": 2568026
+   },
+   {
+    "month": "2023-08",
+    "index": 103.95,
+    "vehicles": 2636298
+   },
+   {
+    "month": "2023-09",
+    "index": 101.26,
+    "vehicles": 2568045
+   },
+   {
+    "month": "2023-10",
+    "index": 107.91,
+    "vehicles": 2736702
+   },
+   {
+    "month": "2023-11",
+    "index": 99.92,
+    "vehicles": 2534048
+   },
+   {
+    "month": "2023-12",
+    "index": 98.3,
+    "vehicles": 2492856
+   },
+   {
+    "month": "2024-01",
+    "index": 91.95,
+    "vehicles": 2331876
+   },
+   {
+    "month": "2024-02",
+    "index": 91.66,
+    "vehicles": 2324496
+   },
+   {
+    "month": "2024-03",
+    "index": 101.66,
+    "vehicles": 2578278
+   },
+   {
+    "month": "2024-04",
+    "index": 99.31,
+    "vehicles": 2518541
+   },
+   {
+    "month": "2024-05",
+    "index": 106.59,
+    "vehicles": 2703144
+   },
+   {
+    "month": "2024-06",
+    "index": 103.08,
+    "vehicles": 2614085
+   },
+   {
+    "month": "2024-07",
+    "index": 100.15,
+    "vehicles": 2539793
+   },
+   {
+    "month": "2024-08",
+    "index": 100.94,
+    "vehicles": 2559922
+   },
+   {
+    "month": "2024-09",
+    "index": 100.37,
+    "vehicles": 2545459
+   },
+   {
+    "month": "2024-10",
+    "index": 106.72,
+    "vehicles": 2706598
+   },
+   {
+    "month": "2024-11",
+    "index": 98.36,
+    "vehicles": 2494419
+   },
+   {
+    "month": "2024-12",
+    "index": 99.23,
+    "vehicles": 2516451
+   },
+   {
+    "month": "2025-01",
+    "index": 86.05,
+    "vehicles": 2182384
+   },
+   {
+    "month": "2025-02",
+    "index": 82.97,
+    "vehicles": 2104183
+   },
+   {
+    "month": "2025-03",
+    "index": 96.35,
+    "vehicles": 2443446
+   },
+   {
+    "month": "2025-04",
+    "index": 98.37,
+    "vehicles": 2494689
+   },
+   {
+    "month": "2025-05",
+    "index": 106.5,
+    "vehicles": 2700885
+   },
+   {
+    "month": "2025-06",
+    "index": 102.26,
+    "vehicles": 2593525
+   },
+   {
+    "month": "2025-07",
+    "index": 102.2,
+    "vehicles": 2591892
+   },
+   {
+    "month": "2025-08",
+    "index": 104.08,
+    "vehicles": 2639504
+   },
+   {
+    "month": "2025-09",
+    "index": 103.73,
+    "vehicles": 2630605
+   },
+   {
+    "month": "2025-10",
+    "index": 106.18,
+    "vehicles": 2692753
+   },
+   {
+    "month": "2025-11",
+    "index": 98.83,
+    "vehicles": 2506434
+   },
+   {
+    "month": "2025-12",
+    "index": 96.37,
+    "vehicles": 2444081
+   },
+   {
+    "month": "2026-01",
+    "index": 87.08,
+    "vehicles": 2208339
+   },
+   {
+    "month": "2026-02",
+    "index": 79.53,
+    "vehicles": 2016940
+   },
+   {
+    "month": "2026-03",
+    "index": 97.61,
+    "vehicles": 2475590
+   },
+   {
+    "month": "2026-04",
+    "index": 94.66,
+    "vehicles": 2400735
+   },
+   {
+    "month": "2026-05",
+    "index": 101.13,
+    "vehicles": 2564621
+   },
+   {
+    "month": "2026-06",
+    "index": 98.55,
+    "vehicles": 2499234
+   },
+   {
+    "month": "2026-07",
+    "index": 99.29,
+    "vehicles": 2518073
+   },
+   {
+    "month": "2026-08",
+    "index": 98.14,
+    "vehicles": 2488818
+   }
+  ],
+  "Robert F. Kennedy Bridge Bronx": [
+   {
+    "month": "2023-01",
+    "index": 89.99,
+    "vehicles": 3937363
+   },
+   {
+    "month": "2023-02",
+    "index": 83.68,
+    "vehicles": 3661539
+   },
+   {
+    "month": "2023-03",
+    "index": 98.5,
+    "vehicles": 4309881
+   },
+   {
+    "month": "2023-04",
+    "index": 96.76,
+    "vehicles": 4233680
+   },
+   {
+    "month": "2023-05",
+    "index": 105.99,
+    "vehicles": 4637602
+   },
+   {
+    "month": "2023-06",
+    "index": 103.07,
+    "vehicles": 4509783
+   },
+   {
+    "month": "2023-07",
+    "index": 102.29,
+    "vehicles": 4475763
+   },
+   {
+    "month": "2023-08",
+    "index": 104.84,
+    "vehicles": 4587243
+   },
+   {
+    "month": "2023-09",
+    "index": 98.33,
+    "vehicles": 4302540
+   },
+   {
+    "month": "2023-10",
+    "index": 102.59,
+    "vehicles": 4488718
+   },
+   {
+    "month": "2023-11",
+    "index": 98.7,
+    "vehicles": 4318478
+   },
+   {
+    "month": "2023-12",
+    "index": 98.07,
+    "vehicles": 4291216
+   },
+   {
+    "month": "2024-01",
+    "index": 91.55,
+    "vehicles": 4005767
+   },
+   {
+    "month": "2024-02",
+    "index": 89.56,
+    "vehicles": 3918674
+   },
+   {
+    "month": "2024-03",
+    "index": 99.44,
+    "vehicles": 4351102
+   },
+   {
+    "month": "2024-04",
+    "index": 98.42,
+    "vehicles": 4306212
+   },
+   {
+    "month": "2024-05",
+    "index": 105.35,
+    "vehicles": 4609422
+   },
+   {
+    "month": "2024-06",
+    "index": 104.23,
+    "vehicles": 4560809
+   },
+   {
+    "month": "2024-07",
+    "index": 103.11,
+    "vehicles": 4511733
+   },
+   {
+    "month": "2024-08",
+    "index": 104.92,
+    "vehicles": 4590742
+   },
+   {
+    "month": "2024-09",
+    "index": 101.3,
+    "vehicles": 4432469
+   },
+   {
+    "month": "2024-10",
+    "index": 104.15,
+    "vehicles": 4557003
+   },
+   {
+    "month": "2024-11",
+    "index": 98.13,
+    "vehicles": 4293586
+   },
+   {
+    "month": "2024-12",
+    "index": 99.85,
+    "vehicles": 4368824
+   },
+   {
+    "month": "2025-01",
+    "index": 92.69,
+    "vehicles": 4055799
+   },
+   {
+    "month": "2025-02",
+    "index": 85.28,
+    "vehicles": 3731359
+   },
+   {
+    "month": "2025-03",
+    "index": 101.13,
+    "vehicles": 4425019
+   },
+   {
+    "month": "2025-04",
+    "index": 100.78,
+    "vehicles": 4409773
+   },
+   {
+    "month": "2025-05",
+    "index": 105.86,
+    "vehicles": 4631776
+   },
+   {
+    "month": "2025-06",
+    "index": 102.78,
+    "vehicles": 4497216
+   },
+   {
+    "month": "2025-07",
+    "index": 104.86,
+    "vehicles": 4588104
+   },
+   {
+    "month": "2025-08",
+    "index": 106.99,
+    "vehicles": 4681506
+   },
+   {
+    "month": "2025-09",
+    "index": 101.65,
+    "vehicles": 4447663
+   },
+   {
+    "month": "2025-10",
+    "index": 103.23,
+    "vehicles": 4516796
+   },
+   {
+    "month": "2025-11",
+    "index": 98.51,
+    "vehicles": 4310246
+   },
+   {
+    "month": "2025-12",
+    "index": 97.81,
+    "vehicles": 4279494
+   },
+   {
+    "month": "2026-01",
+    "index": 88.33,
+    "vehicles": 3865070
+   },
+   {
+    "month": "2026-02",
+    "index": 81.65,
+    "vehicles": 3572562
+   },
+   {
+    "month": "2026-03",
+    "index": 100.91,
+    "vehicles": 4415372
+   },
+   {
+    "month": "2026-04",
+    "index": 98.08,
+    "vehicles": 4291718
+   },
+   {
+    "month": "2026-05",
+    "index": 103.48,
+    "vehicles": 4527705
+   },
+   {
+    "month": "2026-06",
+    "index": 103.72,
+    "vehicles": 4538451
+   },
+   {
+    "month": "2026-07",
+    "index": 104.95,
+    "vehicles": 4592223
+   },
+   {
+    "month": "2026-08",
+    "index": 105.1,
+    "vehicles": 4598597
+   }
+  ],
+  "Robert F. Kennedy Bridge Manhattan": [
+   {
+    "month": "2023-01",
+    "index": 87.35,
+    "vehicles": 1246155
+   },
+   {
+    "month": "2023-02",
+    "index": 82.33,
+    "vehicles": 1174526
+   },
+   {
+    "month": "2023-03",
+    "index": 96.64,
+    "vehicles": 1378706
+   },
+   {
+    "month": "2023-04",
+    "index": 95.27,
+    "vehicles": 1359078
+   },
+   {
+    "month": "2023-05",
+    "index": 105.05,
+    "vehicles": 1498580
+   },
+   {
+    "month": "2023-06",
+    "index": 102.3,
+    "vehicles": 1459432
+   },
+   {
+    "month": "2023-07",
+    "index": 99.66,
+    "vehicles": 1421771
+   },
+   {
+    "month": "2023-08",
+    "index": 102.04,
+    "vehicles": 1455701
+   },
+   {
+    "month": "2023-09",
+    "index": 96.63,
+    "vehicles": 1378516
+   },
+   {
+    "month": "2023-10",
+    "index": 102.6,
+    "vehicles": 1463723
+   },
+   {
+    "month": "2023-11",
+    "index": 96.96,
+    "vehicles": 1383250
+   },
+   {
+    "month": "2023-12",
+    "index": 96.91,
+    "vehicles": 1382524
+   },
+   {
+    "month": "2024-01",
+    "index": 87.27,
+    "vehicles": 1244913
+   },
+   {
+    "month": "2024-02",
+    "index": 88.67,
+    "vehicles": 1264896
+   },
+   {
+    "month": "2024-03",
+    "index": 100.98,
+    "vehicles": 1440542
+   },
+   {
+    "month": "2024-04",
+    "index": 99.85,
+    "vehicles": 1424384
+   },
+   {
+    "month": "2024-05",
+    "index": 108.18,
+    "vehicles": 1543249
+   },
+   {
+    "month": "2024-06",
+    "index": 104.89,
+    "vehicles": 1496392
+   },
+   {
+    "month": "2024-07",
+    "index": 104.79,
+    "vehicles": 1494969
+   },
+   {
+    "month": "2024-08",
+    "index": 104.81,
+    "vehicles": 1495139
+   },
+   {
+    "month": "2024-09",
+    "index": 100.7,
+    "vehicles": 1436616
+   },
+   {
+    "month": "2024-10",
+    "index": 104.18,
+    "vehicles": 1486143
+   },
+   {
+    "month": "2024-11",
+    "index": 96.58,
+    "vehicles": 1377775
+   },
+   {
+    "month": "2024-12",
+    "index": 99.11,
+    "vehicles": 1413936
+   },
+   {
+    "month": "2025-01",
+    "index": 92.15,
+    "vehicles": 1314523
+   },
+   {
+    "month": "2025-02",
+    "index": 87.38,
+    "vehicles": 1246553
+   },
+   {
+    "month": "2025-03",
+    "index": 104.91,
+    "vehicles": 1496642
+   },
+   {
+    "month": "2025-04",
+    "index": 103.69,
+    "vehicles": 1479245
+   },
+   {
+    "month": "2025-05",
+    "index": 110.68,
+    "vehicles": 1578966
+   },
+   {
+    "month": "2025-06",
+    "index": 106.62,
+    "vehicles": 1521073
+   },
+   {
+    "month": "2025-07",
+    "index": 105.66,
+    "vehicles": 1507286
+   },
+   {
+    "month": "2025-08",
+    "index": 104.06,
+    "vehicles": 1484507
+   },
+   {
+    "month": "2025-09",
+    "index": 102.94,
+    "vehicles": 1468508
+   },
+   {
+    "month": "2025-10",
+    "index": 105.32,
+    "vehicles": 1502462
+   },
+   {
+    "month": "2025-11",
+    "index": 98.35,
+    "vehicles": 1403104
+   },
+   {
+    "month": "2025-12",
+    "index": 99.01,
+    "vehicles": 1412488
+   },
+   {
+    "month": "2026-01",
+    "index": 88.21,
+    "vehicles": 1258344
+   },
+   {
+    "month": "2026-02",
+    "index": 80.91,
+    "vehicles": 1154193
+   },
+   {
+    "month": "2026-03",
+    "index": 99.29,
+    "vehicles": 1416453
+   },
+   {
+    "month": "2026-04",
+    "index": 99.86,
+    "vehicles": 1424516
+   },
+   {
+    "month": "2026-05",
+    "index": 107.99,
+    "vehicles": 1540563
+   },
+   {
+    "month": "2026-06",
+    "index": 105.95,
+    "vehicles": 1511415
+   },
+   {
+    "month": "2026-07",
+    "index": 106.57,
+    "vehicles": 1520307
+   },
+   {
+    "month": "2026-08",
+    "index": 107.46,
+    "vehicles": 1533026
+   }
+  ],
+  "Throgs Neck Bridge": [
+   {
+    "month": "2023-01",
+    "index": 86.13,
+    "vehicles": 3243062
+   },
+   {
+    "month": "2023-02",
+    "index": 80.59,
+    "vehicles": 3034267
+   },
+   {
+    "month": "2023-03",
+    "index": 92.89,
+    "vehicles": 3497554
+   },
+   {
+    "month": "2023-04",
+    "index": 94.85,
+    "vehicles": 3571205
+   },
+   {
+    "month": "2023-05",
+    "index": 103.2,
+    "vehicles": 3885833
+   },
+   {
+    "month": "2023-06",
+    "index": 102.7,
+    "vehicles": 3866881
+   },
+   {
+    "month": "2023-07",
+    "index": 104.86,
+    "vehicles": 3948153
+   },
+   {
+    "month": "2023-08",
+    "index": 104.64,
+    "vehicles": 3939932
+   },
+   {
+    "month": "2023-09",
+    "index": 96.25,
+    "vehicles": 3624057
+   },
+   {
+    "month": "2023-10",
+    "index": 99.5,
+    "vehicles": 3746539
+   },
+   {
+    "month": "2023-11",
+    "index": 96.22,
+    "vehicles": 3622701
+   },
+   {
+    "month": "2023-12",
+    "index": 95.52,
+    "vehicles": 3596538
+   },
+   {
+    "month": "2024-01",
+    "index": 88.33,
+    "vehicles": 3325608
+   },
+   {
+    "month": "2024-02",
+    "index": 86.99,
+    "vehicles": 3275419
+   },
+   {
+    "month": "2024-03",
+    "index": 98.18,
+    "vehicles": 3696593
+   },
+   {
+    "month": "2024-04",
+    "index": 96.48,
+    "vehicles": 3632726
+   },
+   {
+    "month": "2024-05",
+    "index": 104.68,
+    "vehicles": 3941416
+   },
+   {
+    "month": "2024-06",
+    "index": 105.04,
+    "vehicles": 3954789
+   },
+   {
+    "month": "2024-07",
+    "index": 106.91,
+    "vehicles": 4025461
+   },
+   {
+    "month": "2024-08",
+    "index": 107.29,
+    "vehicles": 4039734
+   },
+   {
+    "month": "2024-09",
+    "index": 101.86,
+    "vehicles": 3835097
+   },
+   {
+    "month": "2024-10",
+    "index": 104.45,
+    "vehicles": 3932608
+   },
+   {
+    "month": "2024-11",
+    "index": 98.81,
+    "vehicles": 3720460
+   },
+   {
+    "month": "2024-12",
+    "index": 100.99,
+    "vehicles": 3802319
+   },
+   {
+    "month": "2025-01",
+    "index": 91.27,
+    "vehicles": 3436445
+   },
+   {
+    "month": "2025-02",
+    "index": 83.74,
+    "vehicles": 3152875
+   },
+   {
+    "month": "2025-03",
+    "index": 99.97,
+    "vehicles": 3763976
+   },
+   {
+    "month": "2025-04",
+    "index": 99.0,
+    "vehicles": 3727417
+   },
+   {
+    "month": "2025-05",
+    "index": 106.99,
+    "vehicles": 4028552
+   },
+   {
+    "month": "2025-06",
+    "index": 103.33,
+    "vehicles": 3890408
+   },
+   {
+    "month": "2025-07",
+    "index": 107.19,
+    "vehicles": 4035818
+   },
+   {
+    "month": "2025-08",
+    "index": 109.25,
+    "vehicles": 4113463
+   },
+   {
+    "month": "2025-09",
+    "index": 101.44,
+    "vehicles": 3819317
+   },
+   {
+    "month": "2025-10",
+    "index": 104.1,
+    "vehicles": 3919394
+   },
+   {
+    "month": "2025-11",
+    "index": 98.44,
+    "vehicles": 3706628
+   },
+   {
+    "month": "2025-12",
+    "index": 96.98,
+    "vehicles": 3651326
+   },
+   {
+    "month": "2026-01",
+    "index": 85.61,
+    "vehicles": 3223309
+   },
+   {
+    "month": "2026-02",
+    "index": 79.15,
+    "vehicles": 2980332
+   },
+   {
+    "month": "2026-03",
+    "index": 98.88,
+    "vehicles": 3723143
+   },
+   {
+    "month": "2026-04",
+    "index": 99.61,
+    "vehicles": 3750451
+   },
+   {
+    "month": "2026-05",
+    "index": 105.92,
+    "vehicles": 3988016
+   },
+   {
+    "month": "2026-06",
+    "index": 105.61,
+    "vehicles": 3976515
+   },
+   {
+    "month": "2026-07",
+    "index": 107.29,
+    "vehicles": 4039483
+   },
+   {
+    "month": "2026-08",
+    "index": 110.75,
+    "vehicles": 4169758
+   }
+  ],
+  "Verrazzano - Narrows Bridge": [
+   {
+    "month": "2023-01",
+    "index": 94.26,
+    "vehicles": 6362382
+   },
+   {
+    "month": "2023-02",
+    "index": 86.61,
+    "vehicles": 5846393
+   },
+   {
+    "month": "2023-03",
+    "index": 100.01,
+    "vehicles": 6750813
+   },
+   {
+    "month": "2023-04",
+    "index": 97.9,
+    "vehicles": 6607964
+   },
+   {
+    "month": "2023-05",
+    "index": 105.01,
+    "vehicles": 7088210
+   },
+   {
+    "month": "2023-06",
+    "index": 104.85,
+    "vehicles": 7077113
+   },
+   {
+    "month": "2023-07",
+    "index": 104.19,
+    "vehicles": 7032783
+   },
+   {
+    "month": "2023-08",
+    "index": 104.98,
+    "vehicles": 7086072
+   },
+   {
+    "month": "2023-09",
+    "index": 97.81,
+    "vehicles": 6602525
+   },
+   {
+    "month": "2023-10",
+    "index": 101.85,
+    "vehicles": 6874603
+   },
+   {
+    "month": "2023-11",
+    "index": 97.8,
+    "vehicles": 6601810
+   },
+   {
+    "month": "2023-12",
+    "index": 101.2,
+    "vehicles": 6830771
+   },
+   {
+    "month": "2024-01",
+    "index": 92.38,
+    "vehicles": 6235764
+   },
+   {
+    "month": "2024-02",
+    "index": 90.3,
+    "vehicles": 6095128
+   },
+   {
+    "month": "2024-03",
+    "index": 99.78,
+    "vehicles": 6734944
+   },
+   {
+    "month": "2024-04",
+    "index": 97.52,
+    "vehicles": 6582949
+   },
+   {
+    "month": "2024-05",
+    "index": 104.46,
+    "vehicles": 7051379
+   },
+   {
+    "month": "2024-06",
+    "index": 104.17,
+    "vehicles": 7031853
+   },
+   {
+    "month": "2024-07",
+    "index": 103.75,
+    "vehicles": 7002889
+   },
+   {
+    "month": "2024-08",
+    "index": 104.42,
+    "vehicles": 7048701
+   },
+   {
+    "month": "2024-09",
+    "index": 100.35,
+    "vehicles": 6773969
+   },
+   {
+    "month": "2024-10",
+    "index": 102.22,
+    "vehicles": 6900107
+   },
+   {
+    "month": "2024-11",
+    "index": 97.91,
+    "vehicles": 6609227
+   },
+   {
+    "month": "2024-12",
+    "index": 102.72,
+    "vehicles": 6933697
+   },
+   {
+    "month": "2025-01",
+    "index": 93.97,
+    "vehicles": 6343023
+   },
+   {
+    "month": "2025-02",
+    "index": 86.09,
+    "vehicles": 5811229
+   },
+   {
+    "month": "2025-03",
+    "index": 100.94,
+    "vehicles": 6813796
+   },
+   {
+    "month": "2025-04",
+    "index": 100.28,
+    "vehicles": 6768975
+   },
+   {
+    "month": "2025-05",
+    "index": 105.18,
+    "vehicles": 7100002
+   },
+   {
+    "month": "2025-06",
+    "index": 103.72,
+    "vehicles": 7000901
+   },
+   {
+    "month": "2025-07",
+    "index": 105.13,
+    "vehicles": 7096627
+   },
+   {
+    "month": "2025-08",
+    "index": 105.73,
+    "vehicles": 7136781
+   },
+   {
+    "month": "2025-09",
+    "index": 100.7,
+    "vehicles": 6797390
+   },
+   {
+    "month": "2025-10",
+    "index": 102.32,
+    "vehicles": 6906871
+   },
+   {
+    "month": "2025-11",
+    "index": 98.13,
+    "vehicles": 6623828
+   },
+   {
+    "month": "2025-12",
+    "index": 100.16,
+    "vehicles": 6760644
+   },
+   {
+    "month": "2026-01",
+    "index": 89.76,
+    "vehicles": 6058676
+   },
+   {
+    "month": "2026-02",
+    "index": 81.12,
+    "vehicles": 5475889
+   },
+   {
+    "month": "2026-03",
+    "index": 100.92,
+    "vehicles": 6812248
+   },
+   {
+    "month": "2026-04",
+    "index": 98.48,
+    "vehicles": 6647726
+   },
+   {
+    "month": "2026-05",
+    "index": 104.27,
+    "vehicles": 7038360
+   },
+   {
+    "month": "2026-06",
+    "index": 105.3,
+    "vehicles": 7107824
+   },
+   {
+    "month": "2026-07",
+    "index": 103.99,
+    "vehicles": 7019275
+   },
+   {
+    "month": "2026-08",
+    "index": 104.81,
+    "vehicles": 7074617
+   }
+  ]
+ },
+ "did": {
+  "bronx": {
+   "label": "Bronx-adjacent crossings vs far controls",
+   "treated_group": "bronx",
+   "treated": [
+    "Bronx - Whitestone Bridge",
+    "Henry Hudson Bridge",
+    "Robert F. Kennedy Bridge Bronx",
+    "Throgs Neck Bridge"
+   ],
+   "control": [
+    "Cross Bay Bridge",
+    "Marine Parkway Bridge",
+    "Verrazzano - Narrows Bridge"
+   ],
+   "n_obs": 168,
+   "n_clusters": 7,
+   "spec": "year-over-year change in log(monthly vehicles) ~ facility FE + month FE + treated x month-relative-to-Jan-2025 (Dec 2024 omitted); window 2024-01..2025-12",
+   "outcome_note": "YoY log change removes each facility's own seasonal pattern; coefficients read as percentage-point differences in year-over-year growth, treated minus control.",
+   "se": "CR1 cluster-robust by facility. Exact wild cluster bootstrap (Rademacher, 2^G draws) gives the pooled p-value; with G=7 its floor is 0.016.",
+   "event_study": [
+    {
+     "rel_month": -12,
+     "month": "2024-01",
+     "coef": -0.0047,
+     "se": 0.0179,
+     "pct": -0.47,
+     "lo95_pct": -3.9,
+     "hi95_pct": 3.09
+    },
+    {
+     "rel_month": -11,
+     "month": "2024-02",
+     "coef": 0.0124,
+     "se": 0.0104,
+     "pct": 1.24,
+     "lo95_pct": -0.79,
+     "hi95_pct": 3.32
+    },
+    {
+     "rel_month": -10,
+     "month": "2024-03",
+     "coef": 0.0185,
+     "se": 0.0076,
+     "pct": 1.87,
+     "lo95_pct": 0.36,
+     "hi95_pct": 3.4
+    },
+    {
+     "rel_month": -9,
+     "month": "2024-04",
+     "coef": -0.002,
+     "se": 0.0157,
+     "pct": -0.2,
+     "lo95_pct": -3.21,
+     "hi95_pct": 2.91
+    },
+    {
+     "rel_month": -8,
+     "month": "2024-05",
+     "coef": -0.0063,
+     "se": 0.0069,
+     "pct": -0.62,
+     "lo95_pct": -1.96,
+     "hi95_pct": 0.73
+    },
+    {
+     "rel_month": -7,
+     "month": "2024-06",
+     "coef": -0.0522,
+     "se": 0.0317,
+     "pct": -5.08,
+     "lo95_pct": -10.8,
+     "hi95_pct": 1.0
+    },
+    {
+     "rel_month": -6,
+     "month": "2024-07",
+     "coef": 0.011,
+     "se": 0.0094,
+     "pct": 1.11,
+     "lo95_pct": -0.73,
+     "hi95_pct": 2.98
+    },
+    {
+     "rel_month": -5,
+     "month": "2024-08",
+     "coef": -0.003,
+     "se": 0.0089,
+     "pct": -0.3,
+     "lo95_pct": -2.03,
+     "hi95_pct": 1.46
+    },
+    {
+     "rel_month": -4,
+     "month": "2024-09",
+     "coef": 0.0056,
+     "se": 0.0116,
+     "pct": 0.56,
+     "lo95_pct": -1.69,
+     "hi95_pct": 2.87
+    },
+    {
+     "rel_month": -3,
+     "month": "2024-10",
+     "coef": 0.0051,
+     "se": 0.0109,
+     "pct": 0.51,
+     "lo95_pct": -1.62,
+     "hi95_pct": 2.69
+    },
+    {
+     "rel_month": -2,
+     "month": "2024-11",
+     "coef": -0.0171,
+     "se": 0.0058,
+     "pct": -1.7,
+     "lo95_pct": -2.81,
+     "hi95_pct": -0.58
+    },
+    {
+     "rel_month": -1,
+     "month": "2024-12",
+     "coef": 0.0,
+     "se": 0.0,
+     "pct": 0.0,
+     "lo95_pct": 0.0,
+     "hi95_pct": 0.0,
+     "omitted": true
+    },
+    {
+     "rel_month": 0,
+     "month": "2025-01",
+     "coef": -0.019,
+     "se": 0.0145,
+     "pct": -1.88,
+     "lo95_pct": -4.64,
+     "hi95_pct": 0.95
+    },
+    {
+     "rel_month": 1,
+     "month": "2025-02",
+     "coef": -0.0534,
+     "se": 0.0254,
+     "pct": -5.2,
+     "lo95_pct": -9.8,
+     "hi95_pct": -0.36
+    },
+    {
+     "rel_month": 2,
+     "month": "2025-03",
+     "coef": -0.0361,
+     "se": 0.0209,
+     "pct": -3.55,
+     "lo95_pct": -7.43,
+     "hi95_pct": 0.5
+    },
+    {
+     "rel_month": 3,
+     "month": "2025-04",
+     "coef": -0.0463,
+     "se": 0.021,
+     "pct": -4.53,
+     "lo95_pct": -8.38,
+     "hi95_pct": -0.51
+    },
+    {
+     "rel_month": 4,
+     "month": "2025-05",
+     "coef": 0.0059,
+     "se": 0.0188,
+     "pct": 0.6,
+     "lo95_pct": -3.05,
+     "hi95_pct": 4.37
+    },
+    {
+     "rel_month": 5,
+     "month": "2025-06",
+     "coef": 0.0073,
+     "se": 0.0277,
+     "pct": 0.74,
+     "lo95_pct": -4.59,
+     "hi95_pct": 6.36
+    },
+    {
+     "rel_month": 6,
+     "month": "2025-07",
+     "coef": -0.0127,
+     "se": 0.0291,
+     "pct": -1.26,
+     "lo95_pct": -6.74,
+     "hi95_pct": 4.54
+    },
+    {
+     "rel_month": 7,
+     "month": "2025-08",
+     "coef": -0.0109,
+     "se": 0.0289,
+     "pct": -1.09,
+     "lo95_pct": -6.54,
+     "hi95_pct": 4.68
+    },
+    {
+     "rel_month": 8,
+     "month": "2025-09",
+     "coef": 0.0104,
+     "se": 0.0215,
+     "pct": 1.05,
+     "lo95_pct": -3.12,
+     "hi95_pct": 5.39
+    },
+    {
+     "rel_month": 9,
+     "month": "2025-10",
+     "coef": -0.0015,
+     "se": 0.0149,
+     "pct": -0.15,
+     "lo95_pct": -3.02,
+     "hi95_pct": 2.81
+    },
+    {
+     "rel_month": 10,
+     "month": "2025-11",
+     "coef": 0.0102,
+     "se": 0.026,
+     "pct": 1.03,
+     "lo95_pct": -3.99,
+     "hi95_pct": 6.3
+    },
+    {
+     "rel_month": 11,
+     "month": "2025-12",
+     "coef": -0.0121,
+     "se": 0.0281,
+     "pct": -1.2,
+     "lo95_pct": -6.51,
+     "hi95_pct": 4.4
+    }
+   ],
+   "pooled_did": {
+    "coef": -0.0105,
+    "se": 0.0135,
+    "pct": -1.04,
+    "lo95_pct": -3.63,
+    "hi95_pct": 1.61,
+    "t": -0.78,
+    "p_wild_bootstrap": 0.4922,
+    "bootstrap_draws": 128
+   },
+   "pre_period_mean_abs_pct": 1.24,
+   "post_period_mean_pct": -1.29
+  },
+  "cordon": {
+   "label": "Cordon-crossing tunnels vs far controls (positive check)",
+   "treated_group": "cordon",
+   "treated": [
+    "Hugh L. Carey Tunnel",
+    "Queens Midtown Tunnel"
+   ],
+   "control": [
+    "Cross Bay Bridge",
+    "Marine Parkway Bridge",
+    "Verrazzano - Narrows Bridge"
+   ],
+   "n_obs": 120,
+   "n_clusters": 5,
+   "spec": "year-over-year change in log(monthly vehicles) ~ facility FE + month FE + treated x month-relative-to-Jan-2025 (Dec 2024 omitted); window 2024-01..2025-12",
+   "outcome_note": "YoY log change removes each facility's own seasonal pattern; coefficients read as percentage-point differences in year-over-year growth, treated minus control.",
+   "se": "CR1 cluster-robust by facility. Exact wild cluster bootstrap (Rademacher, 2^G draws) gives the pooled p-value; with G=5 its floor is 0.062.",
+   "event_study": [
+    {
+     "rel_month": -12,
+     "month": "2024-01",
+     "coef": 0.0188,
+     "se": 0.0034,
+     "pct": 1.89,
+     "lo95_pct": 1.22,
+     "hi95_pct": 2.57
+    },
+    {
+     "rel_month": -11,
+     "month": "2024-02",
+     "coef": 0.0091,
+     "se": 0.009,
+     "pct": 0.91,
+     "lo95_pct": -0.86,
+     "hi95_pct": 2.72
+    },
+    {
+     "rel_month": -10,
+     "month": "2024-03",
+     "coef": 0.0124,
+     "se": 0.0079,
+     "pct": 1.25,
+     "lo95_pct": -0.31,
+     "hi95_pct": 2.84
+    },
+    {
+     "rel_month": -9,
+     "month": "2024-04",
+     "coef": -0.0021,
+     "se": 0.0108,
+     "pct": -0.21,
+     "lo95_pct": -2.29,
+     "hi95_pct": 1.92
+    },
+    {
+     "rel_month": -8,
+     "month": "2024-05",
+     "coef": 0.0262,
+     "se": 0.0037,
+     "pct": 2.66,
+     "lo95_pct": 1.92,
+     "hi95_pct": 3.4
+    },
+    {
+     "rel_month": -7,
+     "month": "2024-06",
+     "coef": -0.0601,
+     "se": 0.0367,
+     "pct": -5.83,
+     "lo95_pct": -12.38,
+     "hi95_pct": 1.2
+    },
+    {
+     "rel_month": -6,
+     "month": "2024-07",
+     "coef": 0.0102,
+     "se": 0.0067,
+     "pct": 1.02,
+     "lo95_pct": -0.29,
+     "hi95_pct": 2.35
+    },
+    {
+     "rel_month": -5,
+     "month": "2024-08",
+     "coef": -0.0312,
+     "se": 0.0115,
+     "pct": -3.08,
+     "lo95_pct": -5.24,
+     "hi95_pct": -0.86
+    },
+    {
+     "rel_month": -4,
+     "month": "2024-09",
+     "coef": -0.0247,
+     "se": 0.0067,
+     "pct": -2.44,
+     "lo95_pct": -3.72,
+     "hi95_pct": -1.15
+    },
+    {
+     "rel_month": -3,
+     "month": "2024-10",
+     "coef": -0.0328,
+     "se": 0.0137,
+     "pct": -3.23,
+     "lo95_pct": -5.79,
+     "hi95_pct": -0.6
+    },
+    {
+     "rel_month": -2,
+     "month": "2024-11",
+     "coef": -0.0222,
+     "se": 0.0071,
+     "pct": -2.2,
+     "lo95_pct": -3.54,
+     "hi95_pct": -0.84
+    },
+    {
+     "rel_month": -1,
+     "month": "2024-12",
+     "coef": 0.0,
+     "se": 0.0,
+     "pct": 0.0,
+     "lo95_pct": 0.0,
+     "hi95_pct": 0.0,
+     "omitted": true
+    },
+    {
+     "rel_month": 0,
+     "month": "2025-01",
+     "coef": -0.0963,
+     "se": 0.0122,
+     "pct": -9.18,
+     "lo95_pct": -11.33,
+     "hi95_pct": -6.98
+    },
+    {
+     "rel_month": 1,
+     "month": "2025-02",
+     "coef": -0.0823,
+     "se": 0.0247,
+     "pct": -7.9,
+     "lo95_pct": -12.26,
+     "hi95_pct": -3.33
+    },
+    {
+     "rel_month": 2,
+     "month": "2025-03",
+     "coef": -0.0831,
+     "se": 0.0206,
+     "pct": -7.98,
+     "lo95_pct": -11.61,
+     "hi95_pct": -4.2
+    },
+    {
+     "rel_month": 3,
+     "month": "2025-04",
+     "coef": -0.0703,
+     "se": 0.021,
+     "pct": -6.79,
+     "lo95_pct": -10.55,
+     "hi95_pct": -2.87
+    },
+    {
+     "rel_month": 4,
+     "month": "2025-05",
+     "coef": -0.0273,
+     "se": 0.0246,
+     "pct": -2.7,
+     "lo95_pct": -7.27,
+     "hi95_pct": 2.1
+    },
+    {
+     "rel_month": 5,
+     "month": "2025-06",
+     "coef": -0.0064,
+     "se": 0.0127,
+     "pct": -0.64,
+     "lo95_pct": -3.07,
+     "hi95_pct": 1.86
+    },
+    {
+     "rel_month": 6,
+     "month": "2025-07",
+     "coef": -0.0163,
+     "se": 0.0175,
+     "pct": -1.62,
+     "lo95_pct": -4.93,
+     "hi95_pct": 1.81
+    },
+    {
+     "rel_month": 7,
+     "month": "2025-08",
+     "coef": -0.0115,
+     "se": 0.0219,
+     "pct": -1.15,
+     "lo95_pct": -5.31,
+     "hi95_pct": 3.2
+    },
+    {
+     "rel_month": 8,
+     "month": "2025-09",
+     "coef": 0.0201,
+     "se": 0.0251,
+     "pct": 2.03,
+     "lo95_pct": -2.86,
+     "hi95_pct": 7.17
+    },
+    {
+     "rel_month": 9,
+     "month": "2025-10",
+     "coef": 0.005,
+     "se": 0.0104,
+     "pct": 0.5,
+     "lo95_pct": -1.53,
+     "hi95_pct": 2.57
+    },
+    {
+     "rel_month": 10,
+     "month": "2025-11",
+     "coef": 0.0127,
+     "se": 0.0098,
+     "pct": 1.27,
+     "lo95_pct": -0.65,
+     "hi95_pct": 3.24
+    },
+    {
+     "rel_month": 11,
+     "month": "2025-12",
+     "coef": -0.0192,
+     "se": 0.0135,
+     "pct": -1.91,
+     "lo95_pct": -4.46,
+     "hi95_pct": 0.72
+    }
+   ],
+   "pooled_did": {
+    "coef": -0.0232,
+    "se": 0.0058,
+    "pct": -2.29,
+    "lo95_pct": -3.39,
+    "hi95_pct": -1.18,
+    "t": -4.03,
+    "p_wild_bootstrap": 0.0625,
+    "bootstrap_draws": 32
+   },
+   "pre_period_mean_abs_pct": 2.25,
+   "post_period_mean_pct": -3.01
+  }
+ },
+ "read": "If toll avoidance were pushing traffic through the Bronx, the treated-minus-control gap would open after Jan 2025. The cordon tunnels show the method detects a real shift; the Bronx series does not open."
+}

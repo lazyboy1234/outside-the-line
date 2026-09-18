@@ -227,10 +227,7 @@ L 508.497344 220.68
    </g>
   </g>
   <g id="line2d_1">
-   <path d="M 20.625344 20.4048 
-L 512.529344 20.4048 
-" style="fill: none; stroke: #bd7f1f; stroke-width: 1.15"/>
-  </g>
+     </g>
   <g id="text_25">
    <text style="letter-spacing:normal; font-weight: 600; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #221d1a" x="20.625344" y="16.648301" transform="rotate(-0 20.625344 16.648301)" xml:space="preserve">Figure 5. Mott Haven income and poverty vs the city</text>
   </g>

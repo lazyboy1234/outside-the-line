@@ -1,0 +1,22 @@
+filename	url	what it is	license/attribution
+cbdtp-mta-sign.jpg	https://commons.wikimedia.org/wiki/File:CBDTP_Sign.jpg	MTA CBDTP / congestion-pricing street sign (Flickr MTAPhotos)	CC BY 2.0; MTAPhotos / Metropolitan Transportation Authority
+cornell-npj-fig1.png	https://www.nature.com/articles/s44407-025-00037-2	npj Clean Air landing og:image / Fig. 1 (Fraser et al. 2025, NYC cordon PM2.5)	CC BY 4.0; Fraser, Park, Lu, et al.; Springer Nature / npj Clean Air
+crz-dot-sign.svg	https://commons.wikimedia.org/wiki/File:NYCDOT_SI-1816M.svg	NYC DOT congestion-pricing regulatory sign artwork (SI-1816M)	Public domain; design NYC DOT; vectorization Bigguy637
+crz-gantry-9th-ave.jpg	https://commons.wikimedia.org/wiki/File:Congestion_pricing_cameras_9th_Av_2023_jeh.jpg	CRZ gantry cameras on Ninth Avenue at the 60th Street cordon	CC BY-SA 4.0; Jim.henderson
+crz-street-sign.jpg	https://commons.wikimedia.org/wiki/File:NYC_CRZ_Sign.jpg	NYC Congestion Relief Zone street sign	CC BY-SA 4.0; Wikimedia Commons (derivative of MTAPhotos CBDTP sign)
+deegan-expressway-map.png	https://commons.wikimedia.org/wiki/File:Major_Deegan_Expressway_Map.svg	Public map of the Major Deegan Expressway (I-87)	CC BY-SA 3.0; Chinissai
+deegan-from-e138th-jeh.jpg	https://commons.wikimedia.org/wiki/File:Major_Deegan_Expressway_from_138th_Street_overpass_jeh.jpg	Major Deegan Expressway from the East 138th Street overpass, Mott Haven	Public domain; Jim.henderson
+deegan-from-e138th-south.jpg	https://commons.wikimedia.org/wiki/File:2024-05-30_11_36_20_View_south_along_Interstate_87_(Major_Deegan_Expressway)_from_the_overpass_for_East_138th_Street_in_the_Bronx,_New_York_City,_New_York.jpg	I-87 Major Deegan looking south from East 138th Street, Mott Haven (2024)	CC BY-SA 4.0; Famartin
+e138th-coned-truck.jpg	https://commons.wikimedia.org/wiki/File:2024-05-30_11_27_34_Consolidated_Edison_(ConEd)_truck_along_East_138th_Street_in_the_Bronx,_New_York_City,_New_York.jpg	East 138th Street, Mott Haven, May 2024	CC BY-SA 4.0; Famartin
+eh-asthma-tertile-example.png	https://a816-dohbesp.nyc.gov/IndicatorPublic/neighborhood-reports/hunts_point_mott_haven/asthma_and_the_environment/	NYC EH Data Portal tertile-legend graphic from the asthma neighborhood report	NYC DOHMH Environment & Health Data Portal; public city information, cite portal
+eh-hunts-point-mott-haven-asthma.jpg	https://a816-dohbesp.nyc.gov/IndicatorPublic/neighborhood-reports/hunts_point_mott_haven/asthma_and_the_environment/	NYC EH Data Portal Hunts Point–Mott Haven asthma report graphic	NYC DOHMH Environment & Health Data Portal; public city information, cite portal
+hvi-nyc-datawrapper.png	https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/hvi/	Official HVI map graphic from the NYC Heat Vulnerability Index page (dataset 4mhf-duep)	NYC DOHMH; Datawrapper export published on the HVI portal; public city information
+mott-haven-walknyc-map.jpg	https://commons.wikimedia.org/wiki/File:138th_Street-Grand_Concourse_Map_@_NW_Station_Entrances.jpg	WalkNYC Mott Haven vicinity map kiosk at 138th Street–Grand Concourse	CC BY-SA 4.0; DanTD
+nara-lower-bronx-aerial.jpg	https://commons.wikimedia.org/wiki/File:AERIAL_VIEW_OF_LOWER_BRONX_-_NARA_-_548424.jpg	Historic NARA aerial of the lower Bronx	Public domain; U.S. National Archives; Chester Higgins, Jr.
+sbu-press-air-pollution.jpeg	https://www.southbronxunite.org/press-and-media/slight-increase-in-air-pollution-post-congestion-pricing	South Bronx Unite press plate for post-congestion-pricing air study	© South Bronx Unite / Spectrum NY1 press image as published; all rights reserved; cite landing page
+south-bronx-greenway-planning-map.jpg	https://commons.wikimedia.org/wiki/File:South_Bronx_Greenway_Planning_Map.jpg	South Bronx Greenway planning map covering Mott Haven / Port Morris	CC BY-SA 2.0; Majora Carter
+
+# Failed / skipped
+# mta-crz-map — https://www.mta.info/map/36226 — HTTP 403
+# osm-mott-haven.png / osm-manhattan-60th.png — static OSM host DNS fail
+# Open Data r3dx-pew9 catalog page — no previewImageId or page graphic (NFH)

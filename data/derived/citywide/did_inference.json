@@ -1,0 +1,221 @@
+{
+ "dataset": "ebfx-2m7v (MTA Bridges & Tunnels hourly crossings) via analysis/fetch_data.py -> data/raw/bt_daily.json",
+ "outcome": "log(daily vehicles) per facility x direction",
+ "design": "2x2 DiD, same Jan 5..Dec 31 window, 2024 (pre) vs 2025 (post); treated = Bronx-adjacent MTA crossings, control = Verrazzano, Cross Bay, Marine Parkway",
+ "days_per_facility": {
+  "Bronx - Whitestone Bridge": 723,
+  "Cross Bay Bridge": 723,
+  "Henry Hudson Bridge": 723,
+  "Hugh L. Carey Tunnel": 723,
+  "Marine Parkway Bridge": 723,
+  "Queens Midtown Tunnel": 723,
+  "Robert F. Kennedy Bridge Bronx": 723,
+  "Robert F. Kennedy Bridge Manhattan": 723,
+  "Throgs Neck Bridge": 723,
+  "Verrazzano - Narrows Bridge": 723
+ },
+ "n_permutations_requested": 100000,
+ "n_bootstraps": 10000,
+ "bronx": {
+  "label": "Bronx-adjacent crossings vs far controls",
+  "treated": [
+   "Bronx - Whitestone Bridge",
+   "Henry Hudson Bridge",
+   "Robert F. Kennedy Bridge Bronx",
+   "Throgs Neck Bridge"
+  ],
+  "control": [
+   "Cross Bay Bridge",
+   "Marine Parkway Bridge",
+   "Verrazzano - Narrows Bridge"
+  ],
+  "n_facilities": 7,
+  "n_crossings": 14,
+  "n_obs_crossing_days": 10122,
+  "window": {
+   "pre": "2024-01-05..2024-12-31",
+   "post": "2025-01-05..2025-12-31"
+  },
+  "point_estimate": {
+   "did_log": -0.0014602781155765854,
+   "did_pct": -0.146,
+   "did_pct_row_weighted": -0.146,
+   "read": "Facility-mean contrast of 2025-minus-2024 change in log daily vehicles, treated minus control."
+  },
+  "permutation_facility_labels": {
+   "n_assignments": 35,
+   "exact": true,
+   "p_two_sided": 0.7714285714285715,
+   "p_one_sided_increase": 0.6285714285714286,
+   "p_floor": 0.02857142857142857,
+   "null_sd_pct": 0.45672499201396516
+  },
+  "permutation_crossing_labels": {
+   "n_units": 14,
+   "k_treated": 8,
+   "n_assignments": 3003,
+   "exact": true,
+   "p_two_sided": 0.8931068931068931,
+   "p_one_sided_increase": 0.5534465534465535,
+   "p_floor": 0.000333000333000333,
+   "null_sd_pct": 1.031975994699213
+  },
+  "block_bootstrap_week": {
+   "n_boot": 10000,
+   "block": "ISO week-of-year (both years of a sampled week kept together)",
+   "n_blocks": 52,
+   "se_log": 0.004891614203918416,
+   "ci95_log": [
+    -0.011086015010942862,
+    0.007988175936612716
+   ],
+   "ci95_pct": [
+    -1.102,
+    0.802
+   ]
+  },
+  "jackknife_leave_one_facility_out": {
+   "estimates": [
+    {
+     "dropped": "Bronx - Whitestone Bridge",
+     "did_log": -0.004330328374902474,
+     "did_pct": -0.432
+    },
+    {
+     "dropped": "Cross Bay Bridge",
+     "did_log": -0.002184749526073837,
+     "did_pct": -0.218
+    },
+    {
+     "dropped": "Henry Hudson Bridge",
+     "did_log": 0.00021243977522840927,
+     "did_pct": 0.021
+    },
+    {
+     "dropped": "Marine Parkway Bridge",
+     "did_log": 0.002252222855765318,
+     "did_pct": 0.225
+    },
+    {
+     "dropped": "Robert F. Kennedy Bridge Bronx",
+     "did_log": -0.001684578561372163,
+     "did_pct": -0.168
+    },
+    {
+     "dropped": "Throgs Neck Bridge",
+     "did_log": -3.864530126011269e-05,
+     "did_pct": -0.004
+    },
+    {
+     "dropped": "Verrazzano - Narrows Bridge",
+     "did_log": -0.004448307676421237,
+     "did_pct": -0.444
+    }
+   ],
+   "range_pct": [
+    -0.444,
+    0.225
+   ]
+  },
+  "seconds": 0.4
+ },
+ "cordon_positive_control": {
+  "label": "Cordon tunnels vs far controls (positive control)",
+  "treated": [
+   "Hugh L. Carey Tunnel",
+   "Queens Midtown Tunnel"
+  ],
+  "control": [
+   "Cross Bay Bridge",
+   "Marine Parkway Bridge",
+   "Verrazzano - Narrows Bridge"
+  ],
+  "n_facilities": 5,
+  "n_crossings": 10,
+  "n_obs_crossing_days": 7230,
+  "window": {
+   "pre": "2024-01-05..2024-12-31",
+   "post": "2025-01-05..2025-12-31"
+  },
+  "point_estimate": {
+   "did_log": -0.029246714560883902,
+   "did_pct": -2.882,
+   "did_pct_row_weighted": -2.882,
+   "read": "Facility-mean contrast of 2025-minus-2024 change in log daily vehicles, treated minus control."
+  },
+  "permutation_facility_labels": {
+   "n_assignments": 10,
+   "exact": true,
+   "p_two_sided": 0.1,
+   "p_one_sided_increase": 1.0,
+   "p_floor": 0.1,
+   "null_sd_pct": 1.6005792645815995
+  },
+  "permutation_crossing_labels": {
+   "n_units": 10,
+   "k_treated": 4,
+   "n_assignments": 210,
+   "exact": true,
+   "p_two_sided": 0.004761904761904762,
+   "p_one_sided_increase": 1.0,
+   "p_floor": 0.004761904761904762,
+   "null_sd_pct": 1.103559810131708
+  },
+  "block_bootstrap_week": {
+   "n_boot": 10000,
+   "block": "ISO week-of-year (both years of a sampled week kept together)",
+   "n_blocks": 52,
+   "se_log": 0.007038859504238948,
+   "ci95_log": [
+    -0.043140383134259344,
+    -0.015611913108544597
+   ],
+   "ci95_pct": [
+    -4.222,
+    -1.549
+   ]
+  },
+  "jackknife_leave_one_facility_out": {
+   "estimates": [
+    {
+     "dropped": "Cross Bay Bridge",
+     "did_log": -0.029971185971381153,
+     "did_pct": -2.953
+    },
+    {
+     "dropped": "Hugh L. Carey Tunnel",
+     "did_log": -0.021820337094048625,
+     "did_pct": -2.158
+    },
+    {
+     "dropped": "Marine Parkway Bridge",
+     "did_log": -0.025534213589542,
+     "did_pct": -2.521
+    },
+    {
+     "dropped": "Queens Midtown Tunnel",
+     "did_log": -0.03667309202771918,
+     "did_pct": -3.601
+    },
+    {
+     "dropped": "Verrazzano - Narrows Bridge",
+     "did_log": -0.032234744121728554,
+     "did_pct": -3.172
+    }
+   ],
+   "range_pct": [
+    -3.601,
+    -2.158
+   ]
+  },
+  "seconds": 0.2
+ },
+ "honest_limits": [
+  "Seven facilities in the Bronx sample means only 35 distinct treated/control relabelings; the facility-level permutation p cannot go below 1/35 = 0.029.",
+  "Crossing-level relabeling (14 units, 3003 assignments) treats the two directions of one bridge as separate units, which understates dependence; read it as a secondary check.",
+  "The block bootstrap resamples weeks, so it covers day-to-day noise and within-week correlation, not a facility-level shock.",
+  "This is tolled MTA crossings only. Free Harlem River bridges are not in this file."
+ ],
+ "seconds_total": 0.7,
+ "procs": 36
+}
