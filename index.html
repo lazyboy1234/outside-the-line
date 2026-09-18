@@ -399,13 +399,12 @@ h1,h2{
     <button type="button" data-step="6">7</button>
     <button type="button" data-step="7">8</button>
     <button type="button" data-step="8">9</button>
-    <button type="button" data-step="9">10</button>
   </nav>
   <button type="button" id="explorebtn">Explore the map</button>
 </header>
 
 <div id="explorebar" class="explorebar">
-  <p>A tap on a dot gives one sentence.</p>
+  <p>Tap a dot and you get one sentence.</p>
   <button type="button" id="closeexplore">Close</button>
 </div>
 
@@ -415,10 +414,10 @@ h1,h2{
       <article class="step is-on" data-step="0" aria-label="Context">
         <p class="beat">Context<span class="beat-sub"> / introduction</span></p>
         <div class="facts">
-          <p>For some context, congestion prices in downtown Manhattan are there because it is obviously a high-traffic area. Trains would logically cut car use by discouraging people who drive from taking a car, and getting them onto the MTA instead.</p>
+          <p>For some context, congestion prices in downtown Manhattan are there becuase it is obviously a high-traffic area. Trains would logically cut car use by discouraging people who drive from taking a car, and getting them onto the MTA instead.</p>
           <p>Now the issue is whether this fee is eliminating the pollution by actually encouraging more MTA use, or whether it is increasing car use on other pathways.</p>
           <p class="red-note">We look north of 60th Street, where the fee never started.</p>
-          <p>The reason we picked the Bronx, and the reason we had to use bridges, is that the paid zone stops at 60th Street and there are no fee gates north of it. The only vehicle counts that exist up there are on the <b>bridges</b>, so the Bronx crossings are the only place we can ask whether cars spilled. The gate file cannot see Mott Haven at all because no gate stands there.</p>
+          <p>The reason we picked the Bronx, and the reason we had to use bridges, is that the paid zone stops at 60th Street and there are no fee gates north of it. The only vehicle counts that exist up there are on the <b>bridges</b>, so the Bronx crossings are the only place we can ask whether cars spilled. The gate file cannot see Mott Haven at all becuase no gate stands there.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero." width="927" height="588">
@@ -428,8 +427,8 @@ h1,h2{
       <article class="step" data-step="1" hidden aria-label="What the fee file shows">
         <p class="beat">The fee file</p>
         <div class="facts">
-          <p id="fee-line">A car pays <b>$9</b> in the morning and <b>$2.25</b> at night, so more trucks go at night, because if you're a company you'd cut your trucking cost by running overnight, and that is exactly what the 2025 fee file shows. We cannot say the trucks "moved" to the night, though, because the file has no before to compare against.</p>
-          <p>Online there were a lot of files, and we used this fee file only to describe the gates and the night trucks. We picked Bridges and Tunnels for the spill test because that one has a before.</p>
+          <p id="fee-line">A car pays <b>$9</b> in the morning and <b>$2.25</b> at night, so more trucks go at night, becuase if you're a company you'd cut your trucking cost by running overnight, and that is exactly what the 2025 fee file shows. We cannot say the trucks "moved" to the night, though, becuase the file has no before to compare against.</p>
+          <p>Online there were a lot of files, and we used this fee file only to describe the gates and the night trucks. We picked Bridges and Tunnels for the spill test becuase that one has a before.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig2-trucks.svg" alt="Overnight share of 2025 paid entries. Multi-unit trucks are higher than cars. Not a moved claim." width="1164" height="591">
@@ -439,9 +438,9 @@ h1,h2{
       <article class="step" data-step="2" hidden aria-label="Did cars spill?">
         <p class="beat">Did cars spill?</p>
         <div class="facts">
-          <p>We compared this year against last year on the four Bronx crossings, which are the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, and we set them against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway. If cars were dodging the fee by cutting through the Bronx, the Bronx line would climb above the far bridges after January 2025. It didn't. Pooled over 2025 the Bronx crossings grew 1.04 percentage points slower than the far bridges, with a 95 percent interval from −3.6 to +1.6 and a p-value of 0.49, so that is a flat line and not a spill.</p>
-          <p>Then we ran the exact same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, because those tunnels have to show a drop, and if they don't, the tool is broken. They did. The tunnels came in 2.29 points below the far bridges over 2025, with an interval from −3.4 to −1.2, and the first month of the fee was the biggest, at −9.18 points in January, then −7.9 in February and −8.0 in March, before it faded to about zero by the fall. That is what a fee doing its job looks like, and it is what the Bronx bridges do not show.</p>
-          <p id="did-perm-line">Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is −0.15 percent, the two-sided permutation p is 0.77, and the bootstrap 95 percent interval is −1.10 to +0.80, so the flat read holds up under a harder test.</p>
+          <p>We compared this year against last year on the four Bronx crossings, which are the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, and we set them against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway. If cars were dodging the fee by cutting through the Bronx, the Bronx line would climb above the far bridges after January 2025. It didn't. Pooled over 2025 the Bronx crossings grew 1.04 percentage points slower than the far bridges, with a 95 percent interval from -3.6 to +1.6 and a p-value of 0.49, so that is a flat line and not a spill.</p>
+          <p>Then we ran the exact same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, becuase those tunnels have to show a drop, and if they don't, the tool is broken. They did. The tunnels came in 2.29 points below the far bridges over 2025, with an interval from -3.4 to -1.2, and the first month of the fee was the biggest, at -9.18 points in January, then -7.9 in February and -8.0 in March, before it faded to about zero by the fall. That is what a fee doing its job looks like, and it is what the Bronx bridges do not show.</p>
+          <p id="did-perm-line">Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps. The point estimate is -0.15 percent, the two-sided permutation p is 0.77, and the bootstrap 95 percent interval is -1.10 to +0.80, so the flat read holds up under a harder test.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig3-did.svg" alt="Bronx bridges stay about flat while tunnels into the paid zone drop." width="1152" height="683">
@@ -454,7 +453,7 @@ h1,h2{
           <p class="red-note">For some context, the dirt everyone is measuring is PM2.5. It comes off tailpipes, brakes, and tires. The dots on the map are every monitor result we could find, colored by whether the air went down, went up, or did not move.</p>
           <p>In Fraser's paper, Figure 1 shows the paid zone got about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That drop shrinks as you leave the zone. The 22 percent is Fraser's number for inside the fee line.</p>
           <p>In Barber's thesis, Table A.8 shows downtown falling from 8.70 to 7.56, which is 13 percent. In the paper on page 25 he quotes Fraser's 22 percent, but he does not claim it as his own, and his placebo plot says to read his number carefully.</p>
-          <p>We looked at a preprint on six live monitors too. Queensboro got better, about −9 percent. Williamsburg, the Cross Bronx, and Broadway at 35th got worse. Only one of the six sites cleaned up.</p>
+          <p>We looked at a preprint on six live monitors too. Queensboro got better, about -9 percent. Williamsburg, the Cross Bronx, and Broadway at 35th got worse. Only one of the six sites cleaned up.</p>
           <p>South Bronx Unite put up 19 community sensors. Twelve to fourteen went up. The biggest jump was +1.29 µg/m³ at the Deegan by the Third Avenue Bridge, right next to East 138th.</p>
           <p>The city health department ran official monitors for a year with the Van Wyck as a control. They found no fee-sized change they could call, and they note traffic is only about 14 percent of PM2.5 here.</p>
           <p>We would say the honest answer is three answers, so we do not average them. Inside the zone the air got cleaner. Outside it depends on the monitor. In Mott Haven the nearest official monitor is on East 135th, and it was never one of Fraser's six, while the community sensors say the Deegan got a little worse. That is why the trees have to answer to the Deegan, not to the fee.</p>
@@ -511,7 +510,7 @@ h1,h2{
           </article>
           <article class="dset">
             <h3>Preprint / SBU / DOHMH</h3>
-            <p>We read each air paper separately for what it said after the fee. We do not average them, because they do not all say the same thing.</p>
+            <p>We read each air paper separately for what it said after the fee. We do not average them, becuase they do not all say the same thing.</p>
           </article>
           <article class="dset">
             <h3>NFH <code>r3dx-pew9</code> + HVI <code>4mhf-duep</code></h3>
@@ -524,7 +523,7 @@ h1,h2{
       </article>
 
       <article class="step" data-step="5" hidden aria-label="Citywide rankings">
-        <p class="beat">Rankings</p>
+        <p class="beat">Rankings + scan</p>
         <div class="facts">
           <p>To know objectively what the best street to build we had to actually combine all the spatial data we had, weighing it. We scored about 99,357 streets into 33,785 stretches, eight factors, three weightings (equal, burden-heavy, plantable-heavy). Junk stubs and zoo roads got filtered out first. The closest one that was valuable was East 138th (rank 22 / non-overlap #3, and it sits on the Deegan +1.29 monitor). Southern Blvd scores higher, but it has no published post-fee monitor, so it is not the valuable fee-spill pick.</p>
           <p>Ran it in open-source Python on my Lab's machine, using the city's CSCL file.</p>
@@ -537,31 +536,61 @@ h1,h2{
             <tbody id="rank-equal-body"></tbody>
           </table>
           <p>Southern Blvd is #1 on burden factors, but Monitor is blank becuase there is no published post-fee air monitor on that corridor (not a hole in our file). E 138 has Major Deegan / Third Ave Bridge. That is why East 138th is the fee-spill pick even though Southern wins  the cleaned list on income, heat, and highway adjacency.</p>
+          <p>So we picked five moves, and the order is the argument. First is a Mott Haven grid, not one street alone. East 138th stays the spine (bridge landing, Deegan exit, worst community sensor) and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on teh same scan, so we plant them as one package.</p>
+          <div id="choices-list" class="dsets"></div>
+          <p>Midtown Broadway, Queensboro, and the Van Wyck aren't here becuase the scan already put them where they belong. Queensboro got cleaner (~-9%), Midtown is inside the fee, Van Wyck is the city's control. Williamsburg Bridge went up ~+6.3%, but burden is lower there, so it loses once income, asthma, and heat are in.</p>
         </div>
         <figure class="plate tall">
           <img src="story-art/fig-citywide-rank.svg" alt="Top corridor windows under equal weights, with East 138th highlighted." width="1100" height="640">
         </figure>
-      </article>
-
-      <article class="step" data-step="6" hidden aria-label="Our choices">
-        <p class="beat">Our choices</p>
-        <div class="facts">
-          <p>So we picked five moves, and the order is the argument. First is a Mott Haven grid, not one street alone. East 138th stays the spine — bridge landing, Deegan exit, worst community sensor — and East 141st, East 132nd, East 135th, and Exterior Street sit next to it on teh same scan, so we plant them as one package.</p>
-          <div id="choices-list" class="dsets"></div>
-          <p>Midtown Broadway, Queensboro, and the Van Wyck aren't here becuase the scan already put them where they belong. Queensboro got cleaner (~−9%), Midtown is inside the fee, Van Wyck is the city's control. Williamsburg Bridge went up ~+6.3%, but burden is lower there, so it loses once income, asthma, and heat are in.</p>
-        </div>
         <figure class="plate">
           <img src="story-art/map-citywide-heat.png" alt="Citywide heat map of corridor scores across four boroughs, with East 138th outlined." width="1200" height="1200">
         </figure>
       </article>
 
-      <article class="step" data-step="7" hidden aria-label="What solutions were on the table">
-        <p class="beat">What solutions were on the table</p>
+      <article class="step" data-step="6" hidden aria-label="Where is the one specific location">
+        <p class="beat">Where is the one specific location</p>
         <div class="facts">
-          <p class="red-note">Brief said don't default to trees everywhere, and invited a lid or boulevard over the Deegan. We priced what the city can buy now against what it takes to lock highway air off East 138th.</p>
-          <p>Trees (~$2,500–$4,000, Parks avg ~$3,110), canyon plants on the one tall-narrow block, and DEP rain gardens (~$40k–$50k) can start now — DEP already has green-infra money the Bronx should claim. They help. They don't shut the Deegan off.</p>
-          <p id="cost-line">Fourth option is physical: a lid from East 138th to East 149th (~12.9 acres), like Dallas's Klyde Warren over a sunken freeway. Comps ~$20M–$90M/acre → about $250M to $1.2B for this stretch. Trees clean around pollution; a cap locks it under the road.</p>
-          <p>Lid is later — Deegan is a state road, so  the clock is years. Plant the Mott Haven grid now; put the cap on the table so the real fix has a start date.</p>
+          <p>Picking one place wasn't that hard once we looked at the map. We knew it had to be the Bronx. Congestion paths climb from the bottom of Manhattan up, and the analysis top options were all Bronx luckily.</p>
+          <p>Then highest priority was closest to the congestion zone AND aligning with the other MTA / air data we already had. That landed on the Deegan at East 138th. Other hot areas are harder becuase trees are already there, so it is big risk big reward and needs something really innovative. Money is already going toward Deegan road work luckily, which helps the case.</p>
+          <p>East 138th is where the Third Avenue Bridge lands in the Bronx, and it is also where the Major Deegan exit dumps into the neighborhood, so it takes bridge traffic and highway traffic at the same time. The one community sensor that got worse after the fee is right at the Deegan by that bridge (+1.29 µg/m³). The city's own Mott Haven monitor sits on East 135th, about 330 meters south. The street runs 1.6 km through Hunts Point, Longwood, and Melrose, about 40 meters wide face to face, median H/W 0.38, so nine of ten blocks are open enough for trees to actually work.</p>
+          <p>Adults here go to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Heat score is 5 out of 5. Poverty is 29.3 percent. Those neighborhood numbers say this street deserves the work first; they can't pick one block over another, and that is what the block table is for.</p>
+          <table class="sit-table" id="tree-pick-table">
+            <caption>Ten scored 120 m blocks on East 138th, by score. Gap is living trees minus the street's own mean of 7 per block.</caption>
+            <thead>
+              <tr><th>Block</th><th>H/W</th><th>Living trees</th><th>Gap vs 7</th><th>Score</th><th>Pick</th></tr>
+            </thead>
+            <tbody id="tree-pick-body"></tbody>
+          </table>
+          <p>We tested whether the trees on East 138th are spread evenly across the blocks, and they are not (chi-square 58.86, p 2.2e-9). Becuase they are clustered, we plant the open blocks under the street's own average: 4, 3, 9, 5, 12, and 11. The one block at H/W 0.58 gets wall plants plus spaced trees instead of a full row. Blocks on the map follow the real OSM centerline, so they sit on the road and not through buildings.</p>
+        </div>
+        <figure class="plate">
+          <img src="story-art/fig4-canyon.svg" alt="East 138th Street: nine blocks can take trees, one tall-narrow block needs walls." width="1367" height="521">
+        </figure>
+      </article>
+
+      <article class="step" data-step="7" hidden aria-label="What we can buy now">
+        <p class="beat">What we can buy now</p>
+        <div class="facts">
+          <p>We are not inventing a new budget. First horizon is the Mott Haven grid, and it can start now through Parks and DEP programs that already have money in them.</p>
+          <p>East 138th gets six open blocks under the street's own tree average with honeylocust, coffeetree, or zelkova in tree-pit rain gardens. Block 10 gets plants on the walls with spaced trees. East 141st, East 132nd, East 135th, and Exterior Street get the same open-crown package. Keep away from London plane and other dense crowns here; a closed roof of leaves would hold highway air at breathing height instead of clearing it.</p>
+          <p>Southern Blvd and the Cross Bronx frontage on Park, Jerome, and Boone are the next tranche. Bruckner with Westchester is the medium-term truck corridor, with green medians instead of quiet sidewalk planting alone.</p>
+          <p>Planning-grade i-Tree numbers say the whole corridor program removes about 10.6 pounds of PM2.5 a year and catches about 7.2 million gallons of stormwater. That PM2.5 number does not cancel a +1.29 µg/m³ highway hit, which is why the lid stays in the last step.</p>
+          <p>Fraser's 22 percent is inside the paid zone. Barber's 13 percent in Table A.8 is his downtown average. Neither one is a tree number and we did not use them here.</p>
+          <p class="red-note">We bet our solution was in the Bronx, and the citywide ranking put East 138th in the top three non-overlapping corridors, so that bet held.</p>
+        </div>
+      </article>
+
+      <article class="step" data-step="8" hidden aria-label="Constraint and solutions">
+        <p class="beat">Constraint + solutions</p>
+        <div class="facts">
+          <p class="red-note">We aren't architects. We're data analysts. We can't invent a magic cheap new structure. We had to use what humanity has already done.</p>
+          <p>The main issue at Mott Haven by I-87 is the highway trench. Exhaust sits at breathing height under and beside the sunken Deegan, and the community sensor that got worse after the fee sits right there. Trees and rain gardens are what we can buy now. They help around the edges. They don't shut the road off.</p>
+          <p>So the practical idea, not elegant sounding, just practical: put a lid / cap on the sunken Deegan so cars stay under, the top becomes ground / park, and vents push exhaust away. Same idea as lids other cities already built (Klyde Warren in Dallas; Buffalo Kensington-style cross-sections are that type of deck, not our site). Trees clean around pollution; a cap locks it under the road.</p>
+          <p>Why a lid can work here in principle: the Deegan at Mott Haven is below grade. It is already a trench. You don't need sideways room to invent a new corridor. You deck upward over the sunken road, cars stay under, and the top becomes usable ground. That vertical build is the whole point of this geometry, and it is why this is the same family as those other caps.</p>
+          <p id="cost-line">Our measured stretch estimate is a lid from East 138th to East 149th (~12.9 acres). Public comps run about $20M to $90M per acre, so about $250M to $1.2B for this stretch. Those are estimates. Nobody has priced this exact span yet.</p>
+          <p>We're still not engineers. Exact bay widths, vent stacks, and constructability details stay open. The corridor photo shows trucks, towers, thin edge with trees, so the detailing is real work. But the big feasibility read from our side is the trench itself: the road is already down, so the lid goes up.</p>
+          <p>Lid is later. Deegan is a state road (I-87 / NYSDOT), so the clock is years: FHWA NEPA, city CEQR, maybe ULURP if the top becomes mapped parkland. Plant the Mott Haven grid now. Put the cap on the table so the real fix has a start date.</p>
           <table class="sit-table">
             <caption>Four options, with estimate ranges.</caption>
             <thead>
@@ -571,45 +600,17 @@ h1,h2{
               <tr><td>Street trees</td><td id="est-trees">about $2,500 to $4,000 each</td><td>Now</td></tr>
               <tr><td>Canyon wall plants</td><td>block-scale, with the owners</td><td>Now, block 10 only</td></tr>
               <tr><td>Rain gardens</td><td id="est-gi">about $40,000 to $50,000 each</td><td>Now, with the trees</td></tr>
-              <tr><td>Deegan cap / lid</td><td id="est-lid">about $250M to $1.2B</td><td>Later, locks the pollution under the road</td></tr>
+              <tr><td>Deegan cap / lid</td><td id="est-lid">about $250M to $1.2B</td><td>Later, locks pollution under the sunken road</td></tr>
             </tbody>
           </table>
         </div>
         <figure class="plate">
           <img src="story-art/fig-solutions.svg" alt="Four options: trees, canyon walls, rain gardens, and a Deegan cap over the road." width="1100" height="560">
         </figure>
-      </article>
-
-      <article class="step" data-step="8" hidden aria-label="Where the trees go">
-        <p class="beat">Where the trees go</p>
-        <div class="facts">
-          <p>For some context on why East 138th is still the street we measured block by block, the brief asked us to pick one specific place that our Part 1 map showed as underserved or newly burdened, and it named a bridge approach as one kind of place that counts. East 138th Street is where the Third Avenue Bridge lands in the Bronx, and it is also where the Major Deegan exit dumps into the neighborhood, so it is the one street in Mott Haven that takes both the bridge traffic and the highway traffic at the same time. The one dot on our air map that got worse after the fee is the South Bronx Unite sensor at the Deegan by the Third Avenue Bridge, at +1.29 µg/m³, and that sensor sits at the west end of this street. The city's own Mott Haven monitor is on East 135th, about 330 meters south, so this is also the most measured street in the neighborhood. It runs 1.6 kilometers straight through Hunts Point, Longwood, and Melrose, and it is about 40 meters wide from building face to building face with a median H/W of 0.38, which means it is open enough for trees to actually work on nine of ten blocks. The citywide scan put this street in the top three non-overlapping corridors under equal and burden weights, so the block table below is how we plant the spine of the Mott Haven grid.</p>
-          <table class="sit-table" id="tree-pick-table">
-            <caption>Ten scored 120 m blocks on East 138th, by score. Gap is living trees minus the street's own mean of 7 per block.</caption>
-            <thead>
-              <tr><th>Block</th><th>H/W</th><th>Living trees</th><th>Gap vs 7</th><th>Score</th><th>Pick</th></tr>
-            </thead>
-            <tbody id="tree-pick-body"></tbody>
-          </table>
-          <p>We tested whether the trees on East 138th are spread evenly across the blocks, and they are not, with a chi-square of 58.86 and a p-value of 2.2e-9. Because the trees are clustered, we plant the open blocks that sit under the street's own average, which are blocks 4, 3, 9, 5, 12, and 11. The one block at an H/W of 0.58 gets plants on the walls plus spaced trees instead of a full row. The blocks on the map follow the real street centerline from OpenStreetMap, so they sit on the road and not through the buildings.</p>
-          <p>The reason this is the Bronx and not somewhere easier is that this is the community most at risk, and that is exactly why it should be first in line. Adults here go to the emergency room for asthma at 193.5 per 10,000 against 66.4 citywide, the heat score is 5 out of 5, the poverty rate is 29.3 percent, and the one place the community sensors found the air getting worse after the fee is the Deegan, which is the west end of this street. Those are neighborhood numbers, so they tell us this street deserves the work first, but they can't pick one block over another, and that is what the chi-square is for.</p>
-          <p>Better design matters more than more trees, and the brief said so. The street already has 81 living trees and 30 of them are honeylocust, which is the right call, because honeylocust, Kentucky coffeetree, and zelkova are open-crowned and salt-tolerant, so exhaust can rise through them and road salt won't kill them. We would keep to those and stay away from London plane and other dense crowns, because on this street a closed roof of leaves would hold the highway air at breathing height instead of clearing it. The rain gardens are not there for the air, they are there for the ground, so we would build them as tree-pit rain gardens, one structure that takes the stormwater and grows the tree, instead of two separate holes in the sidewalk. Planning-grade i-Tree numbers say the whole corridor program removes about 10.6 pounds of PM2.5 a year and catches about 7.2 million gallons of stormwater, and that PM2.5 number does not cancel a +1.29 µg/m³ highway, which is why the lid stays in the plan.</p>
-          <p>Fraser's paper, is the 22 percent inside the paid zone, and Barber's 13 percent in Table A.8 is his downtown average, so neither one is a tree number and we did not use them here.</p>
-        </div>
-        <figure class="plate">
-          <img src="story-art/fig4-canyon.svg" alt="East 138th Street: nine blocks can take trees, one tall-narrow block needs walls." width="1367" height="521">
+        <figure class="plate captioned">
+          <img src="story-art/refs/deegan-corridor-room.png" alt="Sunken Major Deegan corridor with trucks and towers. The road sits below grade, so a lid decks upward over it." width="1280" height="720">
+          <figcaption>Deegan trench near Mott Haven. Road is already below grade, so a lid goes up over it; exact bays and vents are engineering, not our call.</figcaption>
         </figure>
-      </article>
-
-      <article class="step" data-step="9" hidden aria-label="What we would build">
-        <p class="beat">What we would build</p>
-        <div class="facts">
-          <p>We would build this in two horizons, and the order is the argument. The first horizon is the Mott Haven grid, and it starts now. East 138th gets six open blocks under the street's own tree average with honeylocust, coffeetree, or zelkova in tree-pit rain gardens, block 10 gets plants on the walls with spaced trees, and East 141st, East 132nd, East 135th, and Exterior Street get the same open-crown package. The whole thing runs through NYC Parks and DEP programs that already have money in them, so nobody has to invent a budget. Southern Blvd and the Cross Bronx frontage on Park, Jerome, and Boone are the next tranche, and Bruckner with Westchester is the medium-term truck corridor, with green medians instead of quiet sidewalk planting alone.</p>
-          <p>The second horizon is the Deegan lid, and this is the part that actually fixes the air instead of filtering it. The Major Deegan is Interstate 87, and from East 138th up to East 149th it runs below the grade of the neighborhood, in a trench between Exterior Street and the Grand Concourse. A lid means you deck over that trench, so the highway keeps running underneath and the top becomes ground, about 12.9 acres of it by our measurement, which is a park two and a half times the size of Dallas's Klyde Warren. The exhaust that now rises straight into East 138th at breathing height gets collected in the covered section and pushed out through vent stacks, away from the sidewalk, which is why we say the lid removes the source and the trees only clean up after it. Public comps run from about $20 million an acre up past $90 million an acre, so our estimate for this stretch is about $250 million to $1.2 billion, and nobody has priced this exact span yet.</p>
-          <p>The lid is later because of who owns what. I-87 is a state road, so it is NYSDOT's, and a lid with federal money needs an FHWA NEPA review with 45 to 60 days of public comment on a draft EIS, a city CEQR review with its own 30-day comment window, and ULURP if the top becomes mapped parkland, which runs 60 days at the Community Board, 30 at the Borough President, 60 at City Planning, and 50 at the City Council. The closest live cousin is the BQE Central rebuild, which has been years of study before any steel. So the street package goes first because the city can start it this year, and the lid goes on the table now so the clock starts, because a clock that starts in 2026 finishes a lot sooner than one that starts in 2030.</p>
-          <p>The brief built the whole competition around one W.E.B. Du Bois passage from 1950, where he looks out a high window in a New York of the future and sees flower gardens, then vegetables, shrubs, and orchards, then forests, and beyond the forests the sea, and he says the city did not look like New York. The brief reads that as a claim about land, and we would say that reading is right. You cannot get the forest and then the sea inside a city until something first stops needing that ground at street level. Downtown, the fee did that, and the Queens Midtown and Carey tunnels show it at −9 percent in the first month. In Mott Haven nothing was taken off the ground, because the fee stopped at 60th Street and the highway kept running. So Du Bois's window in the Bronx is the lid. The trees are what you plant while you wait for it, and they are worth planting, but the forest he saw needs the highway to stop needing the trench first.</p>
-          <p class="red-note">We bet our solution was in the Bronx, and the citywide ranking put East 138th in the top three non-overlapping corridors, so that bet held.</p>
-        </div>
       </article>
     </div>
 
@@ -671,7 +672,7 @@ h1,h2{
     const p = C.cbdtp && C.cbdtp.phase1_ezpass_usd;
     const fee = document.getElementById('fee-line');
     if(fee && p){
-      fee.innerHTML = 'A car pays <b>' + usd(p.car_peak) + '</b> in the morning and <b>' + usd(p.car_overnight) + '</b> at night. More trucks go at night because a company can cut trucking cost by running overnight. That is what the 2025 fee file shows. We cannot say they "moved" because the file has no before.';
+      fee.innerHTML = 'A car pays <b>' + usd(p.car_peak) + '</b> in the morning and <b>' + usd(p.car_overnight) + '</b> at night, so more trucks go at night, becuase if you\'re a company you\'d cut your trucking cost by running overnight, and that is exactly what the 2025 fee file shows. We cannot say the trucks "moved" to the night, though, becuase the file has no before to compare against.';
     }
     // Keep the solutions narrative in #cost-line. Table cells stay as estimate ranges.
     const treeCell = document.getElementById('est-trees');
@@ -731,9 +732,9 @@ h1,h2{
     const rb = document.getElementById('rank-equal-body');
     if(rb && C.rankings && C.rankings.equal){
       rb.innerHTML = C.rankings.equal.map(r => {
-        const mon = r.monitor ? r.monitor : '—';
-        const ash = r.asthma_adult == null ? '—' : Number(r.asthma_adult).toFixed(1);
-        const hvi = r.hvi == null ? '—' : Number(r.hvi).toFixed(0);
+        const mon = r.monitor ? r.monitor : '-';
+        const ash = r.asthma_adult == null ? '-' : Number(r.asthma_adult).toFixed(1);
+        const hvi = r.hvi == null ? '-' : Number(r.hvi).toFixed(0);
         const uhf = (r.uhf || '').replace('Hunts Point - Mott Haven', 'Mott Haven').replace('High Bridge - Morrisania', 'High Bridge').replace('Crotona - Tremont', 'Crotona').replace('Fordham - Bronx Park', 'Fordham');
         return '<tr><td>'+r.rank+'</td><td>'+r.street+'</td><td>'+uhf+'</td><td>'+Number(r.total).toFixed(3)+'</td><td>'+ash+'</td><td>'+hvi+'</td><td>'+mon+'</td></tr>';
       }).join('');
@@ -986,10 +987,9 @@ h1,h2{
     {center:[-73.895, 40.772], zoom:10.55, pitch:0, bearing:0},
     {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
     {center:[-73.90, 40.84], zoom:11.2, pitch:0, bearing:0},
-    {center:[-73.91, 40.83], zoom:11.5, pitch:0, bearing:0},
-    {center:[-73.9265, 40.809], zoom:13.4, pitch:0, bearing:0},
     {center:[-73.9242, 40.8092], zoom:14.6, pitch:0, bearing:0},
-    {center:[-73.925, 40.8105], zoom:15.15, pitch:52, bearing:-24}
+    {center:[-73.925, 40.8105], zoom:14.2, pitch:35, bearing:-18},
+    {center:[-73.9265, 40.809], zoom:13.4, pitch:0, bearing:0}
   ];
 
   let ready = false;
@@ -1038,11 +1038,10 @@ h1,h2{
       case 2: show(['crz-line','fac','fac-label']); setStoryScroll(false); break;
       case 3: show(['crz-fill','crz-line','air','air-label']); setStoryScroll(true, 'air'); break;
       case 4: show(['crz-line','traffic','traffic-label']); setStoryScroll(true); break;
-      case 5: show(['ranktop','ranktop-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
-      case 6: show(['choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
-      case 7: show(['place','place-label','trees','cap','cap-label']); setStoryScroll(false); break;
-      case 8: show(['site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
-      case 9: show(['bld','seg','trees','cap','cap-label']); setStoryScroll(false); break;
+      case 5: show(['ranktop','ranktop-label','choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
+      case 6: show(['site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
+      case 7: show(['bld','seg','trees','site','site-label']); setStoryScroll(false); break;
+      case 8: show(['place','place-label','trees','cap','cap-label']); setStoryScroll(false); break;
       default: show(['crz-line']); setStoryScroll(false); break;
     }
   }
@@ -1296,7 +1295,6 @@ h1,h2{
     if(exploring) return;
     const n = parseInt(e.key, 10);
     if(n >= 1 && n <= 9) applyStep(n - 1, true);
-    if(e.key === '0') applyStep(9, true);
   });
   window.addEventListener('resize', () => map.resize());
 })();
