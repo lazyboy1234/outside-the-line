@@ -430,9 +430,9 @@ h1,h2{
       <article class="step" data-step="2" hidden aria-label="Did cars spill?">
         <p class="beat">Did cars spill?</p>
         <div class="facts">
-          <p>We compared this year against last year on the four Bronx crossings, the RFK Bridge on the Bronx side, the Whitestone, the Throgs Neck, and the Henry Hudson, against three far bridges that should never have felt a downtown dump, the Verrazzano, the Cross Bay, and the Marine Parkway, and if cars were dodging the fee by cutting through the Bronx, the Bronx line would have climbed above the far bridges after January 2025, but it didn't, and over 2025 the Bronx grew 1.04 percentage points slower than the far bridges, with an interval from -3.6 to +1.6 and a p-value of 0.49, so that was flat and not a spill.</p>
-          <p>Then we ran the same check on the two MTA tunnels that go straight into the paid zone, the Queens Midtown Tunnel and the Hugh L. Carey Tunnel, because those tunnels had to show a drop or the tool was broken, and they did, so the tunnels came in 2.29 points below the far bridges over 2025, with an interval from -3.4 to -1.2, and January was the biggest, at -9.18 points, then -7.9 in February and -8.0 in March, before it faded to about zero by the fall, and that was what a fee doing its job looked like, and it was what the Bronx bridges did not show.</p>
-          <p id="did-perm-line">Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps, and the point estimate was -0.15 percent, the permutation p was 0.77, and the bootstrap 95 percent interval was -1.10 to +0.80, so it still straddled zero.</p>
+          <p>We compared Bronx bridges to far bridges outside the fee, this year against last year. If cars were dodging downtown through the Bronx, the Bronx line should have climbed after January 2025. Over 2025 the Bronx grew about 1.04 percentage points slower than the far bridges, with an interval from -3.6 to +1.6 and a p-value of about 0.49. That interval crossed zero and the p-value was high, so we had no statistically significant evidence of a spill.</p>
+          <p>We ran the same check on the tunnels that go into the paid zone. Those tunnels came in 2.29 points below the far bridges, with an interval from -3.4 to -1.2. That interval stayed below zero, so the fee looked like it was doing its job. January was the biggest drop, at -9.18 points.</p>
+          <p>We got the same null when we shuffled the labels. Cars did not spill into the Bronx in a detectable way. Counts came from MTA Bridges and Tunnels.</p>
         </div>
         <figure class="plate">
           <img src="story-art/fig3-did.svg" alt="Bronx bridges stay about flat while tunnels into the paid zone drop." width="1152" height="683">
@@ -706,11 +706,6 @@ h1,h2{
   (function fillCitywide(){
     const C = D.citywide;
     if(!C) return;
-    const did = document.getElementById('did-perm-line');
-    if(did && C.did){
-      const ci = C.did.ci95_pct || [];
-      did.textContent = "Using my Lab's computer, we re-ran that Bronx spill test with an exact permutation of the facility labels and 10,000 week block bootstraps, and the point estimate was " + C.did.did_pct + ' percent, the permutation p was ' + Number(C.did.perm_p).toFixed(2) + ', and the bootstrap 95 percent interval was ' + Number(ci[0]).toFixed(2) + ' to ' + (ci[1] >= 0 ? '+' : '') + Number(ci[1]).toFixed(2) + ', so it still straddled zero.';
-    }
     const er = document.getElementById('e138-rank-line');
     if(er && C.e138 && C.e138.by_weights && C.e138.by_weights.equal){
       const eq = C.e138.by_weights.equal;
