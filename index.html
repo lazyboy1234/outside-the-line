@@ -150,6 +150,93 @@ h1,h2{
 .facts > .copy:last-child > p:last-child{margin-bottom:0}
 .lede b,
 .facts b{font-weight:700}
+.takeaway{
+  margin:0 0 .75rem;
+  padding:.55rem .65rem;
+  border-left:3px solid var(--line);
+  background:#f7f4ef;
+  color:var(--ink);
+  font-size:var(--fs-body);
+  font-weight:700;
+  line-height:1.4;
+}
+.lookat{
+  margin:0 0 .7rem;
+  color:var(--mute);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.45;
+}
+.story-block{margin:0 0 .75rem}
+.story-block h3{
+  margin:0 0 .28rem;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:normal;
+  color:var(--ink);
+}
+.story-block ul{
+  margin:0;
+  padding:0 0 0 1.15rem;
+}
+.story-block li{
+  margin:0 0 .28rem;
+  font-size:var(--fs-body);
+  line-height:1.45;
+}
+.story-block li:last-child{margin-bottom:0}
+.methods{
+  margin:.85rem 0 .5rem;
+  border:1px solid #ddd;
+  background:#faf9f7;
+  padding:.35rem .55rem .45rem;
+}
+.methods summary{
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  color:var(--mute);
+  list-style:none;
+}
+.methods summary::-webkit-details-marker{display:none}
+.methods summary::before{
+  content:"+ ";
+  color:var(--line);
+  font-weight:700;
+}
+.methods[open] summary::before{content:"– "}
+.methods .methods-body{
+  margin:.4rem 0 0;
+  padding-top:.35rem;
+  border-top:1px solid #e4e0d8;
+}
+.methods .methods-body p,
+.methods .methods-body li{
+  margin:0 0 .28rem;
+  font-size:13px;
+  line-height:1.4;
+  color:var(--mute);
+}
+.methods .methods-body ul{
+  margin:0;
+  padding:0 0 0 1.1rem;
+}
+.counter-block{
+  margin:0 0 .65rem;
+  padding:.45rem .55rem;
+  border:1px solid #ddd;
+}
+.counter-block .claim{
+  margin:0 0 .25rem;
+  font-weight:700;
+  font-size:var(--fs-body);
+}
+.counter-block .refute{
+  margin:0;
+  font-size:var(--fs-body);
+  line-height:1.45;
+  color:var(--mute);
+}
 .dsets{margin:0}
 .dset{
   margin:0 0 .7rem;
@@ -414,7 +501,7 @@ h1,h2{
           <div class="copy" data-copy="lead"></div>
         </div>
         <figure class="plate">
-          <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero." width="927" height="588">
+          <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero, so any car spill had to show up on bridges, not gates." width="927" height="588">
         </figure>
       </article>
 
@@ -622,6 +709,74 @@ h1,h2{
     }
     return ctx;
   }
+  function appendFilled(el, text, ctx){
+    el.textContent = window.STORY.fill(text, ctx);
+    return el;
+  }
+  function renderBlocks(container, blocks, ctx){
+    (blocks || []).forEach(block => {
+      const wrap = document.createElement('div');
+      wrap.className = 'story-block';
+      if(block.sub){
+        const h = document.createElement('h3');
+        h.textContent = block.sub;
+        wrap.appendChild(h);
+      }
+      if(block.bullets && block.bullets.length){
+        const ul = document.createElement('ul');
+        block.bullets.forEach(line => {
+          const li = document.createElement('li');
+          appendFilled(li, line, ctx);
+          ul.appendChild(li);
+        });
+        wrap.appendChild(ul);
+      } else if(block.text){
+        const p = document.createElement('p');
+        appendFilled(p, block.text, ctx);
+        wrap.appendChild(p);
+      }
+      container.appendChild(wrap);
+    });
+  }
+  function renderMethods(container, methods, ctx){
+    if(!methods) return;
+    const details = document.createElement('details');
+    details.className = 'methods';
+    const summary = document.createElement('summary');
+    summary.textContent = methods.summary || 'Methods';
+    details.appendChild(summary);
+    const body = document.createElement('div');
+    body.className = 'methods-body';
+    if(methods.bullets && methods.bullets.length){
+      const ul = document.createElement('ul');
+      methods.bullets.forEach(line => {
+        const li = document.createElement('li');
+        appendFilled(li, line, ctx);
+        ul.appendChild(li);
+      });
+      body.appendChild(ul);
+    } else if(methods.text){
+      const p = document.createElement('p');
+      appendFilled(p, methods.text, ctx);
+      body.appendChild(p);
+    }
+    details.appendChild(body);
+    container.appendChild(details);
+  }
+  function renderCounters(container, items, ctx){
+    (items || []).forEach(item => {
+      const wrap = document.createElement('div');
+      wrap.className = 'counter-block';
+      const claim = document.createElement('p');
+      claim.className = 'claim';
+      appendFilled(claim, item.claim, ctx);
+      const refute = document.createElement('p');
+      refute.className = 'refute';
+      appendFilled(refute, item.refute, ctx);
+      wrap.append(claim, refute);
+      container.appendChild(wrap);
+    });
+  }
   function renderStory(){
     const S = window.STORY;
     if(!S){
@@ -648,15 +803,61 @@ h1,h2{
       const slots = {};
       article.querySelectorAll('[data-copy]').forEach(el => { slots[el.dataset.copy] = el; });
       Object.keys(slots).forEach(name => slots[name].replaceChildren());
-      (section.render || []).forEach(item => {
-        const slot = slots[item.slot] || slots.lead;
-        if(!slot) return;
-        const p = document.createElement('p');
-        if(item.note) p.className = 'red-note';
-        if(item.id) p.id = item.id;
-        p.textContent = S.fill(item.text, ctx);
-        slot.appendChild(p);
-      });
+      const lead = slots.lead;
+      if(lead){
+        if(section.takeaway){
+          const t = document.createElement('p');
+          t.className = 'takeaway';
+          if(key === 'night_trucks') t.id = 'fee-line';
+          if(key === 'scores') t.id = 'e138-rank-line';
+          appendFilled(t, section.takeaway, ctx);
+          lead.appendChild(t);
+        }
+        if(section.lookat){
+          const look = document.createElement('p');
+          look.className = 'lookat';
+          appendFilled(look, section.lookat, ctx);
+          lead.appendChild(look);
+        }
+        renderBlocks(lead, section.blocks, ctx);
+        renderMethods(lead, section.methods_expandable, ctx);
+        if(key === 'close' && S.sections.counters){
+          const h = document.createElement('h3');
+          h.textContent = 'Four objections';
+          h.style.margin = '.85rem 0 .4rem';
+          lead.appendChild(h);
+          renderCounters(lead, S.sections.counters.items, ctx);
+        }
+        if(section.cite && !(section.methods_expandable && section.methods_expandable.bullets)){
+          const c = document.createElement('p');
+          c.className = 'lookat';
+          appendFilled(c, section.cite, ctx);
+          lead.appendChild(c);
+        }
+      }
+      if(slots.mid){
+        renderBlocks(slots.mid, section.blocks_mid || [], ctx);
+        (section.render || []).filter(item => item.slot === 'mid').forEach(item => {
+          const p = document.createElement('p');
+          if(item.note) p.className = 'red-note';
+          if(item.id) p.id = item.id;
+          appendFilled(p, item.text, ctx);
+          slots.mid.appendChild(p);
+        });
+      }
+      if(slots.tail){
+        renderBlocks(slots.tail, section.blocks_tail || [], ctx);
+        (section.render || []).filter(item => item.slot === 'tail').forEach(item => {
+          const p = document.createElement('p');
+          if(item.note) p.className = 'red-note';
+          if(item.id) p.id = item.id;
+          appendFilled(p, item.text, ctx);
+          slots.tail.appendChild(p);
+        });
+        if(key === 'location' && section.methods_expandable && !lead){
+          renderMethods(slots.tail, section.methods_expandable, ctx);
+        }
+      }
       const caps = article.querySelectorAll('figcaption[data-cap]');
       (section.captions || []).forEach((text, i) => {
         if(caps[i]) caps[i].textContent = text;

@@ -56,14 +56,31 @@
       beat: "Introduction",
       beatSub: "",
       headline: "Congestion pricing didn't dump a detectable car spill on the Bronx. The real hit was local highway air on East 138th next to the Deegan, so we plant now and we put a lid on the table.",
-      hook: "For some context, the downtown fee was there because Manhattan below 60th was the high-traffic core, and the idea was to push drivers onto the MTA. The open question was whether cars dumped north of that line, where nobody paid.",
-      background: "The paid zone stopped at 60th Street, and the Bronx had no fee gates, so the gate file couldn't see Mott Haven at all. The spill question was the bridges. Those crossings were the only vehicle counts we could use to ask whether cars dodged the fee by going north.",
-      claim: "Congestion pricing didn't dump a detectable car spill on the Bronx. The real hit was local highway air on East 138th next to the Deegan. So we plant now, and we put a lid on the table. The next pages are how we prove it.",
+      takeaway: "No detectable car dump hit Bronx bridges. The hit we could name was highway air on East 138th next to the Deegan.",
+      lookat: "You're looking at the twelve fee gates by region. The Bronx has zero. Cars north of 60th weren't paying at a gate, so any fee dodge had to show up on bridges. We tested those bridges next. They did not grow faster than far crossings the fee shouldn't have touched.",
+      blocks: [
+        {
+          sub: "Why the Bronx was the spill question",
+          bullets: [
+            "The downtown fee stopped at 60th Street because that was the high-traffic core, and the idea was to push drivers onto the MTA.",
+            "Mott Haven sat north of that line with no fee gates, so the gate file couldn't see it.",
+            "The only way to ask if cars dumped north was the bridge counts."
+          ]
+        },
+        {
+          sub: "What this page claims",
+          bullets: [
+            "Congestion pricing didn't dump a detectable car spill on the Bronx.",
+            "The real hit was local highway air on East 138th next to the Deegan.",
+            "We plant now, and we put a lid on the table. The next pages are how we prove it."
+          ]
+        }
+      ],
+      methods_expandable: null,
       cite: null,
       plan: [
-        P(["hook"]),
-        P(["background"]),
-        P(["claim"], { note: true })
+        P(["lookat"]),
+        P(["takeaway"], { note: true })
       ]
     },
     sections: {
@@ -71,50 +88,141 @@
         beat: "Body",
         beatSub: "night air",
         headline: "Night trucks meant night air next to the highway",
-        topic: "Overnight truck share against cars",
-        comparison: "We compared overnight shares in the 2025 fee file, multi-unit trucks against cars.",
-        numbers: "Multi-unit trucks took 31.8 percent of their entries overnight, and cars took 19.7 percent, so the gap was 12.1 points. The null was that those two shares were equal. The chi-square was about 57,241 on 1 degree of freedom, and the p-value was about 0, but the file has entries in the tens of millions, so that p-value would fire on almost any gap. Cramer's V was 0.0185, which is small. The number that proves the claim is the 12.1 point gap, not the p-value. A car paid {car_peak} in the morning and {car_overnight} at night, so a company would run trucks overnight to cut the cost, and the file lined up with that price.",
-        warrant: "That gap supports the thesis because people next to a highway breathe the overnight load when windows are open and kids are home. The night share was a night air burden on the highway edge, which is the hit we are arguing, not a new car spill.",
-        falsifier: "Matching overnight shares would have falsified it. We wouldn't say the trucks moved, because the file had no before, and a before with the same night share would have killed a moved claim. We didn't have that test, so we didn't make that claim.",
+        takeaway: "Overnight, multi-unit trucks took 12.1 points more of their entries than cars did (31.8% vs 19.7%). That is a night air burden for people living next to the highway.",
+        blocks: [
+          {
+            sub: "What we compared",
+            bullets: [
+              "We compared overnight shares in the 2025 fee file: multi-unit trucks against cars.",
+              "Trucks took 31.8 percent of their entries overnight. Cars took 19.7 percent."
+            ]
+          },
+          {
+            sub: "Why the 12.1 point gap matters",
+            bullets: [
+              "People next to a highway breathe that overnight load when windows are open and kids are home.",
+              "Night truck share is a night air burden on the highway edge. That is the hit we are arguing, not a new car spill.",
+              "A car paid {car_peak} in the morning and {car_overnight} at night, so a company had a reason to run trucks overnight to cut cost, and the file lined up with that price."
+            ]
+          },
+          {
+            sub: "What this does not claim",
+            bullets: [
+              "Matching overnight shares would have falsified the gap.",
+              "We wouldn't say the trucks moved, because the file had no before period. We didn't make that claim."
+            ]
+          }
+        ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "Null: overnight truck share equals overnight car share.",
+            "Chi-square was about 57,241 on 1 degree of freedom; p-value about 0. The file has tens of millions of entries, so that p-value would fire on almost any gap.",
+            "Cramer's V was 0.0185 (small). The number that proves the claim is the 12.1 point gap, not the p-value.",
+            "Source: MTA fee entries."
+          ]
+        },
         cite: "The shares came from MTA fee entries.",
-        bridge: "The spill question needed a before, and the next page is that file.",
         price: { peak: 9, overnight: 2.25 },
         plan: [
-          P(["comparison", "numbers"], { id: "fee-line" }),
-          P(["warrant", "falsifier", "cite", "bridge"])
+          P(["takeaway"], { note: true, id: "fee-line" }),
+          P(["cite"])
         ]
       },
       spill: {
         beat: "Body",
         beatSub: "spill test",
         headline: "Cars didn't dodge the fee through the Bronx",
-        topic: "Bronx bridges against far bridges",
-        comparison: "Spill meant drivers dodging the downtown fee by taking Bronx bridges instead of the paid zone. The null was that Bronx bridges grew at the same rate as far bridges the fee shouldn't have touched, which is no spill. The alternative was that the Bronx grew faster. We compared year-over-year growth, Bronx bridges against those far bridges, 2025 against 2024.",
-        numbers: "The Bronx grew about 1.04 percentage points slower than the far bridges. The 95 percent interval ran from -3.6 to +1.6, and the p-value was about 0.49. The interval crossed zero and the p-value was high, so we failed to reject the null. There was no statistically significant evidence of a spill.",
-        warrant: "That result supports the first line of the thesis. A detectable car dump would have been a positive gap, the Bronx growing faster, with the interval sitting above zero. What we got was a gap the wrong way, and a test that couldn't call it different from zero. Shuffling the labels gave the same null.",
-        falsifier: "An interval entirely above zero, or a p-value under 0.05 with the Bronx growing faster, would have falsified the no-spill claim.",
-        evidence: "We ran the same comparison on the tunnels that go into the paid zone. Those tunnels came in 2.29 points below the far bridges, and the interval ran from -3.4 to -1.2, so it stayed below zero. January was the biggest drop, at -9.18 points. An interval that crossed zero on the tunnels would have meant the test couldn't see the fee where cars actually pay. It could see it there, and it couldn't see a Bronx spill.",
+        takeaway: "Bronx bridges did not grow faster than far bridges after the fee. We did not find a detectable car spill.",
+        blocks: [
+          {
+            sub: "What data this page uses",
+            bullets: [
+              "MTA Bridges and Tunnels facility counts.",
+              "Bronx bridges against far bridges the fee shouldn't have touched.",
+              "Year-over-year growth, 2025 against 2024."
+            ]
+          },
+          {
+            sub: "What spill meant",
+            bullets: [
+              "Spill meant drivers dodging the downtown fee by taking Bronx bridges instead of the paid zone.",
+              "We asked whether Bronx bridges grew faster than far bridges. Faster growth would have meant a dump."
+            ]
+          },
+          {
+            sub: "What we found",
+            bullets: [
+              "The Bronx grew about 1.04 percentage points slower than the far bridges.",
+              "The 95 percent interval ran from -3.6 to +1.6, and it crossed zero.",
+              "There was no statistically significant evidence of a spill."
+            ]
+          },
+          {
+            sub: "Did the test work where cars actually pay?",
+            bullets: [
+              "Tunnels into the paid zone fell 2.29 points vs far bridges (interval -3.4 to -1.2), so the test could see the fee where cars pay.",
+              "January was the biggest tunnel drop, at -9.18 points."
+            ]
+          }
+        ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "Design: year-over-year difference-in-differences, Bronx bridges vs far bridges, 2025 vs 2024.",
+            "Null: same growth rate (no spill). Alternative: Bronx grew faster.",
+            "Estimate about -1.04 points; 95% CI -3.6 to +1.6; p about 0.49. Interval crossed zero, so we failed to reject the null.",
+            "AP-stats read: failing to reject is not proof of zero spill. It means we did not find statistically significant evidence of a dump.",
+            "Positive check: paid-zone tunnels. Label shuffle gave the same Bronx null.",
+            "Cite once: counts came from MTA Bridges and Tunnels."
+          ]
+        },
         cite: "Counts came from MTA Bridges and Tunnels.",
-        bridge: "The Bronx case wasn't a new car load. The next page is the air that was already on the Deegan edge.",
         plan: [
-          P(["comparison", "numbers"]),
-          P(["warrant", "falsifier"]),
-          P(["evidence", "cite", "bridge"])
+          P(["takeaway"], { note: true }),
+          P(["cite"])
         ]
       },
       air: {
         beat: "Body",
         beatSub: "the air",
         headline: "The Deegan rose locally, not as a citywide background rise",
-        topic: "Deegan sensor against the Van Wyck and the local mean",
-        takeaway: "We had no other-city air control. The control we used was the city's own. DOHMH treated the Van Wyck as a highway the fee should not have touched, and over a year they found no fee-sized change they could call.",
-        comparison: "What we compared was the Deegan community sensor by the Third Avenue Bridge against that Van Wyck control, against the South Bronx Unite network, and against downtown monitors inside the paid zone.",
-        numbers: "South Bronx Unite ran 19 community sensors, 2024 against 2025. Twelve to fourteen went up. The mean rise across those 19 was only +0.22 µg/m³. The Deegan edge jumped +1.29 µg/m³, right next to East 138th. If the Bronx were just riding a shared background, the Deegan wouldn't stick out that far above the local mean.",
-        evidence: "Downtown moved the other way. Fraser's paper, Figure 1, showed the paid zone about 22 percent cleaner than a no-fee model of the same six months, about 3 µg/m³. That 22 percent is Fraser's Figure 1, and it is only inside the zone. Barber's thesis, Table A.8, showed downtown falling from 8.70 to 7.56, which was 13 percent. That 13 percent is Barber's Table A.8, not Fraser's 22 percent. DOHMH also noted traffic was only about 14 percent of PM2.5 here. Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six, so the street answered to the Deegan sensor we could name, not to the zone's 22 percent in Fraser's Figure 1.",
-        warrant: "The +1.29 supports the thesis because the real hit was local highway air, not a citywide background rise and not a car spill. If the rise were weather or a global background, the Van Wyck and the 19-sensor mean would have jumped with the Deegan, and downtown would have risen too. The controls stayed small, and downtown fell.",
-        falsifier: "What would have falsified the local-hit claim was a Deegan change about the size of that +0.22 mean, a fee-sized change on the Van Wyck, or downtown rising with the Deegan.",
-        cite: "Fraser's paper, Figure 1; Barber's thesis, Table A.8.",
-        bridge: "The next page is why those controls were the right ones to trust.",
+        takeaway: "The Deegan edge jumped +1.29 µg/m³ while the South Bronx Unite network mean rose only +0.22. That local jump is about 6× the network mean, on a highway edge where people live.",
+        blocks: [
+          {
+            sub: "What the units mean",
+            bullets: [
+              "µg/m³ means micrograms of fine particles (PM2.5) per cubic meter of air. Higher is dirtier air.",
+              "We are not inventing deaths from these two deltas. We are saying the Deegan change stuck out above the local background.",
+              "For scale: EPA's current annual PM2.5 standard is 9 µg/m³ (primary NAAQS, revised 2024). These year-over-year changes sit on top of whatever baseline the street already had."
+            ]
+          },
+          {
+            sub: "What we compared",
+            bullets: [
+              "Deegan community sensor by the Third Avenue Bridge against the Van Wyck (DOHMH highway control), against the South Bronx Unite 19-sensor network, and against downtown monitors inside the paid zone.",
+              "South Bronx Unite: 12 to 14 of 19 sensors went up. Network mean rise was +0.22 µg/m³. Deegan edge: +1.29 µg/m³ next to East 138th."
+            ]
+          },
+          {
+            sub: "Why that supports a local hit",
+            bullets: [
+              "If the Bronx were just riding a shared background, the Deegan wouldn't stick out that far above the local mean.",
+              "Downtown moved the other way. Fraser's paper, Figure 1, showed the paid zone about 22 percent cleaner than a no-fee model (~3 µg/m³). Barber's thesis, Table A.8, showed downtown falling from 8.70 to 7.56 (13 percent). Those are different numbers from different files.",
+              "DOHMH treated the Van Wyck as a highway the fee should not have touched and found no fee-sized change they could call."
+            ]
+          }
+        ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "We had no other-city air control. The control we used was the city's own.",
+            "Traffic is only about 14 percent of PM2.5 citywide (DOHMH). Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six.",
+            "What would have falsified the local-hit claim: a Deegan change about the size of +0.22, a fee-sized Van Wyck change, or downtown rising with the Deegan.",
+            "Cite once for health scale: U.S. EPA annual PM2.5 NAAQS, 9 µg/m³ (2024 revision). Air deltas: Fraser Figure 1; Barber Table A.8; SBU network."
+          ]
+        },
+        cite: "Fraser's paper, Figure 1; Barber's thesis, Table A.8. EPA annual PM2.5 NAAQS 9 µg/m³ (2024).",
         captions: [
           "Fraser's paper, Figure 1. The bottom panel is the 22 percent, and it is only inside the paid zone."
         ],
@@ -130,88 +238,153 @@
         },
         plan: [
           P(["takeaway"], { note: true }),
-          P(["comparison", "numbers"]),
-          P(["evidence"]),
-          P(["warrant", "falsifier", "bridge"])
+          P(["cite"])
         ]
       },
       controls: {
         beat: "Body",
         beatSub: "the controls",
         headline: "The controls were the places the fee shouldn't have moved",
-        topic: "Far bridges and the Van Wyck",
-        comparison: "The spill test only proves no detectable car dump if the control is a set of crossings the fee doesn't touch. We used the far bridges, not the tunnels that enter the paid zone. Bronx bridges against those far bridges, 2025 against 2024, is the comparison on the spill page.",
-        numbers: "The Bronx grew about 1.04 percentage points slower, the 95 percent interval ran from -3.6 to +1.6, and the p-value was about 0.49, so we failed to reject the null of no spill. Using the paid-zone tunnels as the control would have faked that test. We ran those tunnels as the positive check instead, and their interval stayed below zero, from -3.4 to -1.2.",
-        cite: "Counts came from MTA Bridges and Tunnels.",
-        falsifier: [
-          "An interval entirely above zero on the Bronx comparison would have falsified this page.",
-          "A Deegan change about the size of +0.22, or a fee-sized Van Wyck change, would have falsified the local hit."
+        takeaway: "Far bridges and the Van Wyck were the right controls: places the fee shouldn't move. Those stayed quiet while the Deegan jumped.",
+        blocks: [
+          {
+            sub: "Spill control",
+            bullets: [
+              "We used far bridges, not the tunnels that enter the paid zone.",
+              "Bronx bridges against those far bridges, 2025 against 2024, is the spill comparison.",
+              "The Bronx grew about 1.04 points slower; interval -3.6 to +1.6; p about 0.49. We failed to reject no-spill."
+            ]
+          },
+          {
+            sub: "Air control",
+            bullets: [
+              "DOHMH's Van Wyck control had no fee-sized change.",
+              "Deegan community sensor was +1.29 µg/m³ against a South Bronx Unite mean of +0.22 across 19 sensors.",
+              "Downtown went the other way (Fraser Figure 1; Barber Table A.8)."
+            ]
+          },
+          {
+            sub: "What we could not use",
+            bullets: [
+              "MTA fee entries started on day one, and the Bronx had no gates, so that file can describe the 12.1 point overnight gap and it can't see a spill.",
+              "We looked for a South Bronx street in the DOT counts counted both before and after the fee. We didn't find one, so we didn't invent a block-level spill test."
+            ]
+          }
         ],
-        warrant: "The fee file couldn't be that test. MTA fee entries started on day one, and the Bronx had no gates in it, so it can describe the 12.1 point overnight gap and it can't see a spill. We looked for a South Bronx street in the DOT counts that was counted both before and after the fee, and we didn't find one, so we didn't invent a block-level spill test. A before in the gate file, or a paired DOT street, would have been a different test. We didn't have either, so we didn't pretend we did.",
-        evidence: "The air claim only holds if a highway the fee shouldn't touch stayed put while the Deegan jumped. DOHMH's Van Wyck control had no fee-sized change. The Deegan community sensor was +1.29 µg/m³ against a South Bronx Unite mean of +0.22 across 19 sensors. Downtown went the other way. Fraser's paper, Figure 1, is the about 22 percent inside the paid zone, and Barber's thesis, Table A.8, is the 13 percent from 8.70 to 7.56. We had no other-city air control. Mixing those into one percent would have faked a citywide story the files don't support.",
-        score: "The street files scored people, not a traffic change. Buildings and the 2015 tree census measured the block. The street centerline was every segment we scored. Equal weights were 1/8 on eight factors, then we renormalized. Burden used income, asthma ED, heat, and highway exposure, because an empty street shouldn't win. A score that ignored who lived there would have falsified the ranking we're about to show. The next page is that ranking.",
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "Using paid-zone tunnels as the spill control would have faked the test. We ran those tunnels as the positive check instead (interval stayed below zero, -3.4 to -1.2).",
+            "We had no other-city air control. Mixing Fraser's 22 percent and Barber's 13 percent into one citywide percent would have faked a story the files don't support.",
+            "Street scores (next page) used equal 1/8 weights on eight factors, then renormalized. Burden pushed people inputs higher."
+          ]
+        },
+        cite: "Counts came from MTA Bridges and Tunnels.",
         plan: [
-          P(["comparison", "numbers", "cite", "falsifier:0"]),
-          P(["warrant"]),
-          P(["evidence", "falsifier:1"]),
-          P(["score"])
+          P(["takeaway"], { note: true }),
+          P(["cite"])
         ]
       },
       scores: {
         beat: "Body",
         beatSub: "the people",
         headline: "Scores ranked people on the highway edge, not empty streets",
-        topic: "Equal weights, burden, and who lives on the edge",
-        comparison: "The spill test said cars didn't dump onto Bronx bridges, so we still had to pick where to plant. We scored about 99,357 streets from the city's street file into 33,785 stretches. Junk stubs and zoo roads got filtered out first. Equal weights put 1/8 on each of eight factors, then we renormalized. Burden pushed the people inputs higher, health, income, and heat at 0.15 each, exposure at 0.15, and the monitor at 0.10. Feasibility pushed plantable streets instead, height-to-width, canopy gap, and exposure at 0.20 each.",
-        numbers: "We didn't invent a head count. People entered through the inputs we already had: PUMA median income, poverty, and NFH; asthma ER rates by neighborhood; heat; and how close a street sat to a highway, ramp, or bridge landing. Four Mott Haven and Melrose census tracts next to the design site held about 14,525 people, and 94 to 100 percent of them were low- or moderate-income in the city's CDBG file. Adults in Hunts Point and Mott Haven went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Those numbers support burden weights because the score was ranking people who already breathe the corridor, not empty asphalt.",
-        b01: "We saw B01 needed the support; $15,510 median income was crazy, and that was another reason the burden weights belonged in the score.",
-        evidence: "Under equal weights the best half-coverage window on our corridor was {rank_all} of {n_windows} ({percentile}th percentile), {nonoverlap} if you only counted non-overlapping corridors, and burden said the same thing, but feasibility knocked it to non-overlap #{feas_rank}, and it sat on the Deegan +1.29 monitor.",
-        support: "That rank supports East 138th because it stayed in the top three non-overlapping corridors and it sat on the named +1.29 hit.",
-        blvd: "Southern Blvd won the cleaned list on income, heat, and highway adjacency, but Monitor was blank because there was no published post-fee air monitor there.",
-        grid: "We planted a Mott Haven grid, not one street alone. East 138th stayed the spine, because it is the bridge landing, the Deegan exit, and the worst community sensor, and East 141st, East 132nd, East 135th, and Exterior Street sat next to it on the same scan. The next page is why that spine, block by block.",
-        scope: "Midtown Broadway stayed inside the fee. The Van Wyck was the city's fee control, and we had no other-city air control. Lower-burden corridors lost once income, asthma, and heat were in the score.",
-        falsifier: [
-          "Citywide asthma and citywide income on that same edge would have falsified the population case.",
-          "What would have falsified the pick was equal weights and burden weights both dropping it out of that top set, or the +1.29 sensor sitting on another corridor.",
-          "A named air hit on Southern Blvd would have flipped the pick.",
-          "A ranking that put those corridors first would have meant the burden weights weren't doing the job."
+        takeaway: "Higher index means a stronger case to plant: more burden and exposure stacked together. It is not an asthma-only rank.",
+        blocks: [
+          {
+            sub: "What the index is for",
+            bullets: [
+              "The spill test said cars didn't dump onto Bronx bridges, so we still had to pick where to plant.",
+              "A higher total (0 to 1) means worse stacked human burden plus plantable street conditions, not \"more asthma alone.\"",
+              "Four Mott Haven and Melrose census tracts next to the design site held about 14,525 people, and 94 to 100 percent of them were low- or moderate-income in the city's CDBG file."
+            ]
+          },
+          {
+            sub: "Why Southern Blvd can score highest while asthma ED looks lower",
+            bullets: [
+              "Southern Blvd scored about .931. East 132nd scored about .878. Asthma ED on Southern Blvd was about 132 per 10,000; East 132nd was about 193.5.",
+              "That is not a bug. Asthma is only one of eight equal inputs. Southern Blvd can win on income, heat, highway exposure, and plantability even when its asthma ED is lower.",
+              "The index is not \"asthma rank.\" Equal weights put 1/8 on each factor, then we renormalized. A street can lead the list without leading every column."
+            ]
+          },
+          {
+            sub: "Why we still pick East 138th",
+            bullets: [
+              "Under equal weights the best half-coverage window on our corridor was {rank_all} of {n_windows} ({percentile}th percentile), {nonoverlap} among non-overlapping corridors.",
+              "East 138th sat on the named Deegan +1.29 monitor. Southern Blvd's monitor cell was blank (no published post-fee air monitor there).",
+              "We planted a Mott Haven grid with East 138th as the spine: bridge landing, Deegan exit, and worst community sensor."
+            ]
+          }
         ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "About 99,357 streets scored into 33,785 stretches. Junk stubs and zoo roads filtered out first.",
+            "Eight equal factors (each 0.125): exposure, monitor, health (asthma ED), econ (income/NFH), heat, height-to-width, canopy gap, Du Bois share. Then renormalize.",
+            "Burden variant: health, income, heat, exposure at 0.15 each; monitor 0.10. Feasibility variant: height-to-width, canopy gap, and exposure at 0.20 each.",
+            "Adults in Hunts Point and Mott Haven went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Those numbers support burden weights; they do not make the equal-weight total an asthma ranking.",
+            "A named air hit on Southern Blvd would have flipped the pick. Equal and burden both dropping East 138th out of the top set would have falsified it."
+          ]
+        },
         cite: null,
         captions: [
           "We looked at household income across districts as context for burden (Bronx ran darker / lower income). That wasn't a scoring input; our score used PUMA median income and NFH from the derived data."
         ],
-        rankCaption: "Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1.",
+        rankCaption: "Top streets under equal weights after junk streets are filtered out. Total is the length-weighted score from 0 to 1. Higher total is not \"higher asthma.\"",
+        b01: "We saw B01 needed the support; $15,510 median income was crazy, and that was another reason the burden weights belonged in the score.",
         plan: [
-          P(["comparison"], { slot: "lead" }),
-          P(["numbers", "falsifier:0", "b01"], { slot: "lead" }),
-          P(["evidence"], { slot: "lead", id: "e138-rank-line" }),
-          P(["support", "falsifier:1", "blvd", "falsifier:2", "grid"], { slot: "mid" }),
-          P(["scope", "falsifier:3"], { slot: "tail" })
+          P(["takeaway"], { note: true, slot: "lead" }),
+          P(["b01"], { slot: "mid" })
         ]
       },
       location: {
         beat: "Body",
         beatSub: "the street",
         headline: "East 138th sat on the named air hit next to the Deegan",
-        topic: "East 138th on the Deegan sensor",
-        comparison: "We compared the top corridors against the one place that had a named post-fee air hit. The spill test had already failed to reject no-spill, and the Deegan jump was local, not a shared citywide rise, so the street had to be Bronx and it had to sit on that sensor. The top options were Bronx. East 138th was the closest of those to the paid zone, and it lined up with the bridge counts and the air file we already had. Other hot corridors were harder because trees were already there. Money was already going toward Deegan road work, which helped the case for staying on this trench.",
-        numbers: "East 138th is where the Third Avenue Bridge lands in the Bronx, and it is where the Major Deegan exit dumps into the neighborhood, so the street takes bridge traffic and highway traffic at the same time. The community sensor that got worse after the fee sits at the Deegan by that bridge, at +1.29 µg/m³. The city's own Mott Haven monitor sits on East 135th, about 330 meters south, and it was never one of Fraser's six, so Fraser's Figure 1 (about 22 percent inside the zone) was not measured here. The street runs 1.6 km through Hunts Point, Longwood, and Melrose, about 40 meters wide face to face, with a median height-to-width of 0.38, so nine of ten blocks were open enough for trees to work. Adults here went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Heat was 5 out of 5, and poverty was 29.3 percent.",
-        warrant: "Those numbers say the street deserved the work first. They can't pick one block over another.",
-        evidence: "The null on the blocks was that living trees were spread evenly, about 7 per block, and they weren't, with a chi-square of 58.86 and a p-value of 2.2e-9, so we rejected even spread. That supports planting the open blocks under the street's own average, which were 4, 3, 9, 5, 12, and 11, because the trees were clustered and those blocks were the gap.",
-        bridge: "The one block at height-to-width 0.58 got wall plants plus spaced trees instead of a full row, because a closed roof there would trap air. Blocks on the map followed the real street centerline, so they sat on the road and not through buildings. The next page is what we can do now, and what we can't pretend trees will fix.",
-        falsifier: [
-          "A +1.29 sensor on a different landing, or a top set that wasn't Bronx, would have falsified this street.",
-          "A p-value above 0.05 would have falsified that pick and left us with a blanket plant."
+        takeaway: "East 138th is where the bridge lands, the Deegan exits, and the +1.29 sensor sits. That is why it is the spine.",
+        blocks: [
+          {
+            sub: "Why this street",
+            bullets: [
+              "East 138th is where the Third Avenue Bridge lands in the Bronx and where the Major Deegan exit dumps into the neighborhood.",
+              "The community sensor that got worse after the fee sits at the Deegan by that bridge, at +1.29 µg/m³.",
+              "The city's Mott Haven monitor sits on East 135th, about 330 meters south, and it was never one of Fraser's six."
+            ]
+          },
+          {
+            sub: "Who already lives there",
+            bullets: [
+              "Adults here went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide.",
+              "Heat was 5 out of 5. Poverty was 29.3 percent.",
+              "The street runs 1.6 km through Hunts Point, Longwood, and Melrose, about 40 meters wide face to face."
+            ]
+          },
+          {
+            sub: "Where trees go on the blocks",
+            bullets: [
+              "Living trees were clustered, not spread evenly across blocks.",
+              "Open blocks under the street's own average of 7 trees per block were 4, 3, 9, 5, 12, and 11.",
+              "The one block at height-to-width 0.58 got wall plants plus spaced trees instead of a full row."
+            ]
+          }
         ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "Median height-to-width was 0.38, so nine of ten blocks were open enough for trees.",
+            "Living-tree even-spread test: chi-square 58.86, p 2.2e-9.",
+            "Blocks on the map followed the real street centerline, so they sat on the road and not through buildings.",
+            "A +1.29 sensor on a different landing, or a top set that wasn't Bronx, would have falsified this street."
+          ]
+        },
         cite: "Fraser's paper, Figure 1.",
         captions: [
           "We looked at FAR zoning intensity across the city as context for how built-up places were. That wasn't our H/W score, but it was the related density picture."
         ],
         blockCaption: "Ten scored 120 m blocks on East 138th, by score. Gap is living trees minus the street's own mean of 7 per block.",
         plan: [
-          P(["comparison"], { slot: "lead" }),
-          P(["numbers", "warrant", "falsifier:0"], { slot: "lead" }),
-          P(["evidence", "falsifier:1", "bridge"], { slot: "tail" })
+          P(["takeaway"], { note: true, slot: "lead" }),
+          P(["cite"], { slot: "tail" })
         ]
       },
       counters: {
@@ -240,20 +413,42 @@
         beat: "Counters",
         beatSub: "conclusion",
         headline: "We plant now, and we put a lid on the table",
-        topic: "Plant now, lid on the table",
-        restatement: "We didn't invent a new budget. Parks and DEP already had money in them, so we could start planting Mott Haven streets now. We put open trees and rain gardens on the open blocks, and the map shows where. We skipped dense leafy roofs near the highway, because those trap air at breathing height instead of clearing it. A roof that cleared the trench would have stayed in the plan, and this one doesn't, so we left it out.",
-        recap: "We ran i-Tree on the corridor program and compared that removal to the highway hit. It removed about 10.6 pounds of PM2.5 a year and caught about 7.2 million gallons of stormwater. Those numbers don't cancel +1.29 µg/m³, because a few pounds a year isn't a concentration jump on the Deegan edge.",
-        decision: "The removal wasn't on that scale, so the trees are the now move, and the lid stays on the table.",
-        comparison: "We weren't architects. The Major Deegan, I-87, sits in a sunken trench through Mott Haven, so exhaust stays at breathing height on the neighborhood edge. A Deegan lid is a deck over that trench. Cars keep running underneath, and a park sits on top, with vents for the fumes. We compared that job to Klyde Warren Park in Dallas, Phase I, which was about $110 million to $112 million for about 5.2 to 5.4 acres, opened in 2012.",
-        numbers: "That was the park deck, not a $2.5 billion highway program. A later Phase 2 expansion is a separate roughly $100 million to $125 million deck job. Our stretch ran about East 138th to East 149th, roughly 12.9 acres. At about $20 million to $90 million per acre from public U.S. lid comparisons, the band is about $250 million to $1.2 billion, and those were estimates. Dallas at about $21 million an acre sits near the low end of that band.",
-        warrant: "Trees only help around the edges of the trench. They don't cover the highway. The Deegan is a state road, so the clock is years.",
-        falsifier: [
-          "An i-Tree removal on the scale of that +1.29 would have meant the trees were the fix, and we would have stopped there.",
-          "A lid priced like pocket change would have killed the case that this takes years. A Phase I sticker of $2.5 billion would have killed the Dallas comparison, and Phase I was about $110 million to $112 million, so that objection fails too."
+        takeaway: "Trees are the now move. A Deegan lid stays on the table. 10.6 pounds a year of PM2.5 removal does not cancel +1.29 µg/m³.",
+        blocks: [
+          {
+            sub: "What we do now",
+            bullets: [
+              "Parks and DEP already had money in them, so we could start planting Mott Haven streets now.",
+              "We put open trees and rain gardens on the open blocks.",
+              "We skipped dense leafy roofs near the highway, because those trap air at breathing height."
+            ]
+          },
+          {
+            sub: "What trees can't pretend to fix",
+            bullets: [
+              "i-Tree on the corridor program removed about 10.6 pounds of PM2.5 a year and caught about 7.2 million gallons of stormwater.",
+              "Those numbers don't cancel +1.29 µg/m³ on the Deegan edge."
+            ]
+          },
+          {
+            sub: "What a Deegan lid is",
+            bullets: [
+              "The Major Deegan (I-87) sits in a sunken trench through Mott Haven, so exhaust stays at breathing height on the neighborhood edge.",
+              "A lid is a deck over that trench: cars underneath, park on top, vents for fumes.",
+              "Klyde Warren Park in Dallas, Phase I, was about $110 million to $112 million for about 5.2 to 5.4 acres, not $2.5 billion.",
+              "Our stretch ran about East 138th to East 149th, roughly 12.9 acres. Band about $250 million to $1.2 billion. The Deegan is a state road, so the clock is years."
+            ]
+          }
         ],
+        methods_expandable: {
+          summary: "Methods / how we got this",
+          bullets: [
+            "Dallas Phase I is the park deck sticker, not a $2.5 billion highway program.",
+            "A later Phase 2 expansion is a separate roughly $100 million to $125 million deck job.",
+            "Public U.S. lid comparisons sat about $20 million to $90 million per acre. Dallas at about $21 million an acre sits near the low end of our band."
+          ]
+        },
         cite: "Klyde Warren Park, Dallas, Phase I.",
-        evidence: null,
-        takeaway: "Congestion pricing didn't hand the Bronx a car spill we could detect. The hit we could name was local highway air on East 138th next to the Deegan. The spill interval crossed zero, the Deegan jumped while the Van Wyck and the sensor mean stayed small, downtown got cleaner, the people on that edge were already there, and 10.6 pounds a year doesn't cover the trench. We plant now, and we put a lid on the table.",
         captions: [
           "Deegan trench near Mott Haven. Road is already below grade, so a lid goes up over it; exact bays and vents are engineering, not our call.",
           "E 135th beside the Deegan wall. Neighborhood street on one side, highway grade on the other.",
@@ -269,11 +464,9 @@
           ]
         },
         plan: [
-          P(["restatement"]),
-          P(["recap", "falsifier:0", "decision"]),
-          P(["comparison", "numbers", "falsifier:1", "warrant"], { note: true, id: "cost-line" }),
+          P(["takeaway"], { note: true }),
           { counters: true },
-          P(["takeaway"], { note: true })
+          P(["cite"], { note: true, id: "cost-line" })
         ]
       }
     }
@@ -295,15 +488,9 @@
 
   function derive(section) {
     if (!section.takeaway) section.takeaway = section.headline || section.claim || "";
-    if (section.evidence == null && !Object.prototype.hasOwnProperty.call(section, "evidence") && (typeof section.comparison === "string" || typeof section.numbers === "string")) {
-      section.evidence = [section.comparison, section.numbers].filter(function (v) { return typeof v === "string" && v; }).join(" ");
-    }
   }
 
   derive(STORY.thesis);
-  STORY.thesis.comparison = STORY.thesis.hook;
-  STORY.thesis.warrant = STORY.thesis.background;
-  STORY.thesis.takeaway = STORY.thesis.claim;
   STORY.order.forEach(function (key) {
     const section = STORY.sections[key];
     if (key !== "counters") derive(section);
