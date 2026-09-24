@@ -54,81 +54,74 @@
   const STORY = {
     thesis: {
       beat: "Introduction",
-      beatSub: "",
-      headline: "Congestion pricing didn't dump a detectable car spill on the Bronx. The real hit was local highway air on East 138th next to the Deegan, so we plant now and we put a lid on the table.",
-      takeaway: "No detectable car dump hit Bronx bridges. The hit we could name was highway air on East 138th next to the Deegan.",
-      lookat: "You're looking at the twelve fee gates by region. The Bronx has zero. Cars north of 60th weren't paying at a gate, so any fee dodge had to show up on bridges. We tested those bridges next. They did not grow faster than far crossings the fee shouldn't have touched.",
+      beatSub: "the claim",
+      headline: "The Deegan air number is the claim because East 138th next to the highway rose while the other local sensors barely moved.",
+      takeaway: "The Deegan sensor by the Third Avenue Bridge rose 1.29 µg/m³ while the South Bronx Unite mean rose 0.22 µg/m³, and that local jump is the claim because people live on East 138th next to the highway.",
+      lookat: "You're looking at the air sensors. Red went up, green went down, and the Deegan edge is the jump that stuck out.",
       blocks: [
         {
-          sub: "Why the Bronx was the spill question",
+          sub: "Why this number is the claim",
           bullets: [
-            "The downtown fee stopped at 60th Street because that was the high-traffic core, and the idea was to push drivers onto the MTA.",
-            "Mott Haven sat north of that line with no fee gates, so the gate file couldn't see it.",
-            "The only way to ask if cars dumped north was the bridge counts."
+            "People live on East 138th next to the Deegan, so a rise on that sensor is a hit we can point at.",
+            "I would say that the Deegan sticking out above the local mean is a highway-edge problem, not a whole borough getting dirtier together."
           ]
         },
         {
-          sub: "What this page claims",
+          sub: "For some context",
           bullets: [
-            "Congestion pricing didn't dump a detectable car spill on the Bronx.",
-            "The real hit was local highway air on East 138th next to the Deegan.",
-            "We plant now, and we put a lid on the table. The next pages are how we prove it."
+            "For some context, the downtown fee stopped at 60th Street, and Mott Haven sat north of that line with no fee gates.",
+            "We tested the bridges for cars dodging the fee, and those bridges didn't grow faster than far crossings the fee shouldn't have touched.",
+            "Now the issue is the air, because the gate file couldn't see this street."
+          ]
+        },
+        {
+          sub: "What we claim",
+          bullets: [
+            "We didn't find a detectable car spill.",
+            "We found dirtier air on that Deegan edge, so we plant now and we put a lid on the table."
+          ]
+        },
+        {
+          sub: "How we checked the air",
+          bullets: [
+            "We compared the Deegan community sensor by the Third Avenue Bridge with the South Bronx Unite 19-sensor mean, with DOHMH's Van Wyck control, and with downtown monitors inside the paid zone.",
+            "The Deegan edge rose 1.29 µg/m³, and the network mean rose 0.22 µg/m³. 12 to 14 of the 19 sensors went up.",
+            "Fraser's paper, Figure 1, showed the paid zone about 22 percent lower than a no-fee model. Barber's thesis, Table A.8, showed downtown PM2.5 from 8.70 to 7.56, about 13 percent lower. We didn't mix those two percents into one city number.",
+            "DOHMH's Van Wyck had no fee-sized change they could call. We had no other-city air control.",
+            "A Deegan rise about the size of 0.22 would have killed the claim, and a fee-sized Van Wyck change or downtown rising with the Deegan would have killed it too."
           ]
         }
       ],
-      methods_expandable: null,
-      cite: null,
+      methods_expandable: {
+        summary: "Methods / how we got this",
+        bullets: [
+          "µg/m³ means micrograms of fine particles (PM2.5) in a cubic meter of air, and higher is dirtier.",
+          "We didn't invent deaths from these two deltas. EPA's annual PM2.5 standard is 9 µg/m³ in the 2024 revision, and these year-over-year changes sit on top of the baseline the street already had.",
+          "Traffic is only about 14 percent of PM2.5 citywide in DOHMH's account. Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six.",
+          "We had no other-city air control, so the control we used was the city's own.",
+          "The 22 percent is Fraser's paper, Figure 1. The 13 percent, 8.70 to 7.56, is Barber's thesis, Table A.8. The 1.29 and the 0.22 came from the Deegan community sensor and the South Bronx Unite network."
+        ]
+      },
+      cite: "Fraser's paper, Figure 1; Barber's thesis, Table A.8. EPA annual PM2.5 NAAQS 9 µg/m³ (2024).",
+      captions: [
+        "Fraser's paper, Figure 1. The bottom panel is the 22 percent, and it is only inside the paid zone."
+      ],
+      table: {
+        caption: "What rose, what fell, what the control said.",
+        rows: [
+          ["Paid zone (Fraser, Figure 1)", "About 22% lower vs no-fee model"],
+          ["Downtown (Barber, Table A.8)", "13% lower (8.70 to 7.56)"],
+          ["SBU network mean", "+0.22 across 19 sensors"],
+          ["Deegan / Third Ave Bridge", "+1.29 (peak sensor)"],
+          ["Van Wyck (DOHMH control)", "No fee-sized change DOHMH could call"]
+        ]
+      },
       plan: [
         P(["lookat"]),
         P(["takeaway"], { note: true })
       ]
     },
     sections: {
-      night_trucks: {
-        beat: "Body",
-        beatSub: "night air",
-        headline: "Night trucks meant night air next to the highway",
-        takeaway: "Overnight, multi-unit trucks took 12.1 points more of their entries than cars did (31.8% vs 19.7%). That is a night air burden for people living next to the highway.",
-        blocks: [
-          {
-            sub: "What we compared",
-            bullets: [
-              "We compared overnight shares in the 2025 fee file: multi-unit trucks against cars.",
-              "Trucks took 31.8 percent of their entries overnight. Cars took 19.7 percent."
-            ]
-          },
-          {
-            sub: "Why the 12.1 point gap matters",
-            bullets: [
-              "People next to a highway breathe that overnight load when windows are open and kids are home.",
-              "Night truck share is a night air burden on the highway edge. That is the hit we are arguing, not a new car spill.",
-              "A car paid {car_peak} in the morning and {car_overnight} at night, so a company had a reason to run trucks overnight to cut cost, and the file lined up with that price."
-            ]
-          },
-          {
-            sub: "What this does not claim",
-            bullets: [
-              "Matching overnight shares would have falsified the gap.",
-              "We wouldn't say the trucks moved, because the file had no before period. We didn't make that claim."
-            ]
-          }
-        ],
-        methods_expandable: {
-          summary: "Methods / how we got this",
-          bullets: [
-            "Null: overnight truck share equals overnight car share.",
-            "Chi-square was about 57,241 on 1 degree of freedom; p-value about 0. The file has tens of millions of entries, so that p-value would fire on almost any gap.",
-            "Cramer's V was 0.0185 (small). The number that proves the claim is the 12.1 point gap, not the p-value.",
-            "Source: MTA fee entries."
-          ]
-        },
-        cite: "The shares came from MTA fee entries.",
-        price: { peak: 9, overnight: 2.25 },
-        plan: [
-          P(["takeaway"], { note: true, id: "fee-line" }),
-          P(["cite"])
-        ]
-      },
       spill: {
         beat: "Body",
         beatSub: "spill test",
@@ -183,64 +176,6 @@
           P(["cite"])
         ]
       },
-      air: {
-        beat: "Body",
-        beatSub: "the air",
-        headline: "The Deegan rose locally, not as a citywide background rise",
-        takeaway: "The Deegan edge jumped +1.29 µg/m³ while the South Bronx Unite network mean rose only +0.22. That local jump is about 6× the network mean, on a highway edge where people live.",
-        blocks: [
-          {
-            sub: "What the units mean",
-            bullets: [
-              "µg/m³ means micrograms of fine particles (PM2.5) per cubic meter of air. Higher is dirtier air.",
-              "We are not inventing deaths from these two deltas. We are saying the Deegan change stuck out above the local background.",
-              "For scale: EPA's current annual PM2.5 standard is 9 µg/m³ (primary NAAQS, revised 2024). These year-over-year changes sit on top of whatever baseline the street already had."
-            ]
-          },
-          {
-            sub: "What we compared",
-            bullets: [
-              "Deegan community sensor by the Third Avenue Bridge against the Van Wyck (DOHMH highway control), against the South Bronx Unite 19-sensor network, and against downtown monitors inside the paid zone.",
-              "South Bronx Unite: 12 to 14 of 19 sensors went up. Network mean rise was +0.22 µg/m³. Deegan edge: +1.29 µg/m³ next to East 138th."
-            ]
-          },
-          {
-            sub: "Why that supports a local hit",
-            bullets: [
-              "If the Bronx were just riding a shared background, the Deegan wouldn't stick out that far above the local mean.",
-              "Downtown moved the other way. Fraser's paper, Figure 1, showed the paid zone about 22 percent cleaner than a no-fee model (~3 µg/m³). Barber's thesis, Table A.8, showed downtown falling from 8.70 to 7.56 (13 percent). Those are different numbers from different files.",
-              "DOHMH treated the Van Wyck as a highway the fee should not have touched and found no fee-sized change they could call."
-            ]
-          }
-        ],
-        methods_expandable: {
-          summary: "Methods / how we got this",
-          bullets: [
-            "We had no other-city air control. The control we used was the city's own.",
-            "Traffic is only about 14 percent of PM2.5 citywide (DOHMH). Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six.",
-            "What would have falsified the local-hit claim: a Deegan change about the size of +0.22, a fee-sized Van Wyck change, or downtown rising with the Deegan.",
-            "Cite once for health scale: U.S. EPA annual PM2.5 NAAQS, 9 µg/m³ (2024 revision). Air deltas: Fraser Figure 1; Barber Table A.8; SBU network."
-          ]
-        },
-        cite: "Fraser's paper, Figure 1; Barber's thesis, Table A.8. EPA annual PM2.5 NAAQS 9 µg/m³ (2024).",
-        captions: [
-          "Fraser's paper, Figure 1. The bottom panel is the 22 percent, and it is only inside the paid zone."
-        ],
-        table: {
-          caption: "What rose, what fell, what the control said.",
-          rows: [
-            ["Paid zone (Fraser, Figure 1)", "About 22% lower vs no-fee model"],
-            ["Downtown (Barber, Table A.8)", "13% lower (8.70 to 7.56)"],
-            ["SBU network mean", "+0.22 across 19 sensors"],
-            ["Deegan / Third Ave Bridge", "+1.29 (peak sensor)"],
-            ["Van Wyck (DOHMH control)", "No fee-sized change DOHMH could call"]
-          ]
-        },
-        plan: [
-          P(["takeaway"], { note: true }),
-          P(["cite"])
-        ]
-      },
       controls: {
         beat: "Body",
         beatSub: "the controls",
@@ -258,15 +193,13 @@
           {
             sub: "Air control",
             bullets: [
-              "DOHMH's Van Wyck control had no fee-sized change.",
-              "Deegan community sensor was +1.29 µg/m³ against a South Bronx Unite mean of +0.22 across 19 sensors.",
-              "Downtown went the other way (Fraser Figure 1; Barber Table A.8)."
+              "The Van Wyck stayed quiet while the Deegan jumped, and that comparison is on the first page."
             ]
           },
           {
             sub: "What we could not use",
             bullets: [
-              "MTA fee entries started on day one, and the Bronx had no gates, so that file can describe the 12.1 point overnight gap and it can't see a spill.",
+              "MTA fee entries started on day one, and the Bronx had no gates, so that file can't see a spill.",
               "We looked for a South Bronx street in the DOT counts counted both before and after the fee. We didn't find one, so we didn't invent a block-level spill test."
             ]
           }
@@ -472,7 +405,7 @@
     }
   };
 
-  STORY.order = ["night_trucks", "spill", "air", "controls", "scores", "location", "counters", "close"];
+  STORY.order = ["spill", "controls", "scores", "location", "counters", "close"];
 
   STORY.fill = function (text, ctx) {
     ctx = ctx || {};

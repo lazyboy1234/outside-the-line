@@ -309,18 +309,18 @@ h1,h2{
 }
 .plate.tall.captioned img{height:calc(100% - 3.2rem)}
 
-/* Rankings step (button 6 / data-step 5): oversized plates */
-.step[data-step="5"] .plate,
+/* Rankings step (button 4 / data-step 3): oversized plates */
+.step[data-step="3"] .plate,
 .plate.rank{
   height:84vh;
   min-height:640px;
 }
-.step[data-step="5"] .plate.captioned,
+.step[data-step="3"] .plate.captioned,
 .plate.rank.captioned{
   height:86vh;
   min-height:680px;
 }
-.step[data-step="5"] .plate.captioned img,
+.step[data-step="3"] .plate.captioned img,
 .plate.rank.captioned img{height:calc(100% - 3.2rem)}
 .credit{
   flex:0 0 auto;
@@ -463,12 +463,12 @@ h1,h2{
     min-height:380px;
   }
 
-  .step[data-step="5"] .plate,
+  .step[data-step="3"] .plate,
   .plate.rank{
     height:78vh;
     min-height:480px;
   }
-  .step[data-step="5"] .plate.captioned,
+  .step[data-step="3"] .plate.captioned,
   .plate.rank.captioned{
     height:80vh;
     min-height:520px;
@@ -485,8 +485,6 @@ h1,h2{
     <button type="button" data-step="3">4</button>
     <button type="button" data-step="4">5</button>
     <button type="button" data-step="5">6</button>
-    <button type="button" data-step="6">7</button>
-    <button type="button" data-step="7">8</button>
   </nav>
 </header>
 
@@ -499,24 +497,27 @@ h1,h2{
         <h1></h1>
         <div class="facts">
           <div class="copy" data-copy="lead"></div>
+          <table class="sit-table">
+            <caption data-caption="air"></caption>
+            <thead>
+              <tr><th>Place</th><th>What happened</th></tr>
+            </thead>
+            <tbody data-table="air"></tbody>
+          </table>
         </div>
         <figure class="plate">
           <img src="story-art/fig1-gates.svg" alt="Twelve fee gates by region. Bronx has zero, so any car spill had to show up on bridges, not gates." width="927" height="588">
         </figure>
-      </article>
-
-      <article class="step" data-step="1" data-story="night_trucks" hidden aria-label="Night air">
-        <p class="beat"></p>
-        <h2></h2>
-        <div class="facts">
-          <div class="copy" data-copy="lead"></div>
-        </div>
+        <figure class="plate captioned">
+          <img src="paper/refs/cornell-npj-fig1.png" alt="Fraser's paper, Figure 1. About 22 percent lower inside the paid zone." width="611" height="685">
+          <figcaption data-cap="0"></figcaption>
+        </figure>
         <figure class="plate">
-          <img src="story-art/fig2-trucks.svg" alt="Overnight share of 2025 paid entries. Multi-unit trucks are higher than cars. Not a moved claim." width="1164" height="591">
+          <img src="story-art/cornell/table-a8-summary.png" alt="Barber Table A.8. PM2.5 8.70 to 7.56, minus 13 percent. Not Fraser's 22 percent." width="1366" height="422">
         </figure>
       </article>
 
-      <article class="step" data-step="2" data-story="spill" hidden aria-label="Spill test">
+      <article class="step" data-step="1" data-story="spill" hidden aria-label="Spill test">
         <p class="beat"></p>
         <h2></h2>
         <div class="facts">
@@ -527,29 +528,7 @@ h1,h2{
         </figure>
       </article>
 
-      <article class="step" data-step="3" data-story="air" hidden aria-label="The air">
-        <p class="beat"></p>
-        <h2></h2>
-        <div class="facts">
-          <div class="copy" data-copy="lead"></div>
-          <table class="sit-table">
-            <caption data-caption="air"></caption>
-            <thead>
-              <tr><th>Place</th><th>What happened</th></tr>
-            </thead>
-            <tbody data-table="air"></tbody>
-          </table>
-        </div>
-        <figure class="plate captioned">
-          <img src="paper/refs/cornell-npj-fig1.png" alt="Fraser's paper, Figure 1. About 22 percent lower inside the paid zone." width="611" height="685">
-          <figcaption data-cap="0"></figcaption>
-        </figure>
-        <figure class="plate">
-          <img src="story-art/cornell/table-a8-summary.png" alt="Barber Table A.8. PM2.5 8.70 to 7.56, minus 13 percent. Not Fraser's 22 percent." width="1366" height="422">
-        </figure>
-      </article>
-
-      <article class="step" data-step="4" data-story="controls" hidden aria-label="The controls">
+      <article class="step" data-step="2" data-story="controls" hidden aria-label="The controls">
         <p class="beat"></p>
         <h2></h2>
         <div class="facts">
@@ -557,7 +536,7 @@ h1,h2{
         </div>
       </article>
 
-      <article class="step" data-step="5" data-story="scores" hidden aria-label="Who sits on the edge">
+      <article class="step" data-step="3" data-story="scores" hidden aria-label="Who sits on the edge">
         <p class="beat"></p>
         <h2></h2>
         <div class="facts">
@@ -585,7 +564,7 @@ h1,h2{
         </figure>
       </article>
 
-      <article class="step" data-step="6" data-story="location" hidden aria-label="The street">
+      <article class="step" data-step="4" data-story="location" hidden aria-label="The street">
         <p class="beat"></p>
         <h2></h2>
         <div class="facts">
@@ -608,7 +587,7 @@ h1,h2{
         </figure>
       </article>
 
-      <article class="step" data-step="7" data-story="close" hidden aria-label="Counters and conclusion">
+      <article class="step" data-step="5" data-story="close" hidden aria-label="Counters and conclusion">
         <p class="beat"></p>
         <h2></h2>
         <div class="facts">
@@ -808,7 +787,6 @@ h1,h2{
         if(section.takeaway){
           const t = document.createElement('p');
           t.className = 'takeaway';
-          if(key === 'night_trucks') t.id = 'fee-line';
           if(key === 'scores') t.id = 'e138-rank-line';
           appendFilled(t, section.takeaway, ctx);
           lead.appendChild(t);
@@ -863,7 +841,7 @@ h1,h2{
         if(caps[i]) caps[i].textContent = text;
       });
     });
-    const air = S.sections.air.table;
+    const air = S.thesis.table;
     const airCap = document.querySelector('[data-caption="air"]');
     const airBody = document.querySelector('[data-table="air"]');
     if(airCap && air) airCap.textContent = air.caption;
@@ -1189,10 +1167,8 @@ h1,h2{
   }
 
   const CAM = [
-    {center:[-73.955, 40.785], zoom:11.1, pitch:0, bearing:0},
-    {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
-    {center:[-73.91, 40.82], zoom:10.6, pitch:0, bearing:0},
     {center:[-73.895, 40.772], zoom:10.55, pitch:0, bearing:0},
+    {center:[-73.91, 40.82], zoom:10.6, pitch:0, bearing:0},
     {center:[-73.96, 40.78], zoom:10.9, pitch:0, bearing:0},
     {center:[-73.90, 40.84], zoom:11.2, pitch:0, bearing:0},
     {center:[-73.9242, 40.8092], zoom:14.6, pitch:0, bearing:0},
@@ -1237,14 +1213,12 @@ h1,h2{
     const cam = CAM[i] || CAM[0];
     goCam(cam);
     switch(i){
-      case 0: show(['crz-line']); setStoryScroll(false); break;
-      case 1: show(['crz-line','gates','gates-label']); setStoryScroll(true); break;
-      case 2: show(['crz-line','fac','fac-label']); setStoryScroll(false); break;
-      case 3: show(['crz-fill','crz-line','air','air-label']); setStoryScroll(true, 'air'); break;
-      case 4: show(['crz-line','fac','fac-label','air','air-label']); setStoryScroll(true, 'air'); break;
-      case 5: show(['ranktop','ranktop-label','choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
-      case 6: show(['place','place-label','site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
-      case 7: show(['place','place-label','bld','seg','trees','cap','cap-label']); setStoryScroll(false); break;
+      case 0: show(['crz-fill','crz-line','air','air-label']); setStoryScroll(true, 'air'); break;
+      case 1: show(['crz-line','fac','fac-label']); setStoryScroll(false); break;
+      case 2: show(['crz-line','fac','fac-label','air','air-label']); setStoryScroll(true, 'air'); break;
+      case 3: show(['ranktop','ranktop-label','choices','choices-label','sbu','sbu-label']); setStoryScroll(true, 'rank'); break;
+      case 4: show(['place','place-label','site','site-label','sbu','sbu-label']); setStoryScroll(true, 'site'); break;
+      case 5: show(['place','place-label','bld','seg','trees','cap','cap-label']); setStoryScroll(false); break;
       default: show(['crz-line']); setStoryScroll(false); break;
     }
   }
@@ -1455,7 +1429,7 @@ h1,h2{
 
   window.addEventListener('keydown', e => {
     const n = parseInt(e.key, 10);
-    if(n >= 1 && n <= 8) applyStep(n - 1, true);
+    if(n >= 1 && n <= 6) applyStep(n - 1, true);
   });
   window.addEventListener('resize', () => map.resize());
 })();
