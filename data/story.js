@@ -55,9 +55,9 @@
     thesis: {
       beat: "Introduction",
       beatSub: "the claim",
-      headline: "The Deegan air number is the claim because East 138th next to the highway rose while the other local sensors barely moved.",
-      takeaway: "The Deegan sensor by the Third Avenue Bridge rose 1.29 µg/m³ while the South Bronx Unite mean rose 0.22 µg/m³, and that local jump is the claim because people live on East 138th next to the highway.",
-      lookat: "You're looking at the air sensors. Red went up, green went down, and the Deegan edge is the jump that stuck out.",
+      headline: "People on East 138th caught the dirtier air.",
+      takeaway: "The Deegan sensor rose 1.29 micrograms, and that is the hit we plant on.",
+      lookat: "You're looking at the Deegan from the East 138th overpass. That photo is the place.",
       blocks: [
         {
           sub: "Why this number is the claim",
@@ -87,9 +87,13 @@
             "We compared the Deegan community sensor by the Third Avenue Bridge with the South Bronx Unite 19-sensor mean, with DOHMH's Van Wyck control, and with downtown monitors inside the paid zone.",
             "The Deegan edge rose 1.29 µg/m³, and the network mean rose 0.22 µg/m³. 12 to 14 of the 19 sensors went up.",
             "Fraser's paper, Figure 1, showed the paid zone about 22 percent lower than a no-fee model. Barber's thesis, Table A.8, showed downtown PM2.5 from 8.70 to 7.56, about 13 percent lower. We didn't mix those two percents into one city number.",
-            "DOHMH's Van Wyck had no fee-sized change they could call. We had no other-city air control.",
+            "DOHMH's Van Wyck had no fee-sized change they could call. The original test had no other-city control.",
             "A Deegan rise about the size of 0.22 would have killed the claim, and a fee-sized Van Wyck change or downtown rising with the Deegan would have killed it too."
           ]
+        },
+        {
+          sub: "Outside check",
+          text: "We asked if this was just the climate getting worse everywhere. Houston has no congestion-pricing cordon. EPA's Air Quality System has a monitor at North Wayside, next to truck yards and a rail yard. That annual mean went from 13.10 in 2024 to 12.17 in 2025, about 0.93 lower. The Deegan rose 1.29, and the South Bronx Unite mean rose 0.22. If it was a national warming rise, Houston would have gone up too. It didn't. This is an outside check, not our original test, and it doesn't prove the fee caused the 1.29."
         }
       ],
       methods_expandable: {
@@ -98,7 +102,12 @@
           "µg/m³ means micrograms of fine particles (PM2.5) in a cubic meter of air, and higher is dirtier.",
           "We didn't invent deaths from these two deltas. EPA's annual PM2.5 standard is 9 µg/m³ in the 2024 revision, and these year-over-year changes sit on top of the baseline the street already had.",
           "Traffic is only about 14 percent of PM2.5 citywide in DOHMH's account. Mott Haven's nearest official monitor sat on East 135th and was never one of Fraser's six.",
-          "We had no other-city air control, so the control we used was the city's own.",
+          "We had no other-city control in the original test, so the control we used there was the city's own.",
+          "Outside check: EPA Air Quality System, annual concentration by monitor, files annual_conc_by_monitor_2024.zip and annual_conc_by_monitor_2025.zip, posted 2026-06-25 at https://aqs.epa.gov/aqsweb/airdata/download_files.html.",
+          "Site 48-201-0046, Houston North Wayside, 7330 1/2 North Wayside. Parameter 88101, 24-hour block average, POC 1, PM25 Annual 2024 standard, quarterly means of daily means, no events. 2024 mean 13.102121 µg/m³, completeness Y, 90 percent of observations, 330 valid days, certified. 2025 mean 12.170033 µg/m³, completeness N, 84 percent, 307 valid days, certification requested but not concurred. 12.170033 minus 13.102121 is a drop of 0.932 µg/m³, about 0.93.",
+          "We didn't match South Bronx Unite's hourly design (January 2024 through December 2025 on community sensors). This Houston number is a regulatory annual mean, calendar 2024 against calendar 2025, and we didn't test whether that drop is statistically significant.",
+          "TCEQ's March 5, 2024 North Wayside note puts truck yards within about 0.2 miles and the Union Pacific rail yard about 0.4 miles from that monitor. https://www.h-gac.com/getmedia/0f3b01d4-20ca-439e-9e4b-0401cb92b424/ITEM-4a-Presentation-North-Wayside-PM-Update",
+          "New York is the only U.S. city with a congestion-pricing cordon. Houston isn't one. City of Chicago, congestion-fee revenue note, 2026: https://www.chicago.gov/content/dam/city/depts/COFA/RevenueResources/COFA_Revenue%20Resource_Congestion%20Fee.pdf",
           "The 22 percent is Fraser's paper, Figure 1. The 13 percent, 8.70 to 7.56, is Barber's thesis, Table A.8. The 1.29 and the 0.22 came from the Deegan community sensor and the South Bronx Unite network."
         ]
       },
@@ -113,7 +122,8 @@
           ["Downtown (Barber, Table A.8)", "13% lower (8.70 to 7.56)"],
           ["SBU network mean", "+0.22 across 19 sensors"],
           ["Deegan / Third Ave Bridge", "+1.29 (peak sensor)"],
-          ["Van Wyck (DOHMH control)", "No fee-sized change DOHMH could call"]
+          ["Van Wyck (DOHMH control)", "No fee-sized change DOHMH could call"],
+          ["Houston North Wayside (EPA AQS, outside check)", "Annual mean 13.10 to 12.17, about 0.93 lower. 2025 file not complete."]
         ]
       },
       plan: [
@@ -208,7 +218,7 @@
           summary: "Methods / how we got this",
           bullets: [
             "Using paid-zone tunnels as the spill control would have faked the test. We ran those tunnels as the positive check instead (interval stayed below zero, -3.4 to -1.2).",
-            "We had no other-city air control. Mixing Fraser's 22 percent and Barber's 13 percent into one citywide percent would have faked a story the files don't support.",
+            "We had no other-city control in the original test. An outside EPA check for Houston is on the first page. Mixing Fraser's 22 percent and Barber's 13 percent into one citywide percent would have faked a story the files don't support.",
             "Street scores (next page) used equal 1/8 weights on eight factors, then renormalized. Burden pushed people inputs higher."
           ]
         },
@@ -221,8 +231,8 @@
       scores: {
         beat: "Body",
         beatSub: "the people",
-        headline: "Scores ranked people on the highway edge, not empty streets",
-        takeaway: "Higher index means a stronger case to plant: more burden and exposure stacked together. It is not an asthma-only rank.",
+        headline: "These scores pick people who live on the highway edge.",
+        takeaway: "A higher score means more reason to plant, and it isn't just asthma.",
         blocks: [
           {
             sub: "What the index is for",
@@ -256,7 +266,8 @@
             "Eight equal factors (each 0.125): exposure, monitor, health (asthma ED), econ (income/NFH), heat, height-to-width, canopy gap, Du Bois share. Then renormalize.",
             "Burden variant: health, income, heat, exposure at 0.15 each; monitor 0.10. Feasibility variant: height-to-width, canopy gap, and exposure at 0.20 each.",
             "Adults in Hunts Point and Mott Haven went to the ER for asthma at 193.5 per 10,000 against 66.4 citywide. Those numbers support burden weights; they do not make the equal-weight total an asthma ranking.",
-            "A named air hit on Southern Blvd would have flipped the pick. Equal and burden both dropping East 138th out of the top set would have falsified it."
+            "A named air hit on Southern Blvd would have flipped the pick. Equal and burden both dropping East 138th out of the top set would have falsified it.",
+            "Street photos: Southern Blvd, East Coast Roads, June 2014. East 138th overpass, Jim Henderson, public domain. Boone Ave, East 141st, Park Ave in Crotona, and East 132nd are Street View of the ranking points. Exterior St, Flickr user imjustwalkin. Jerome Ave at 167th, DanTD, CC BY-SA 4.0. Park Ave here is the Bronx block."
           ]
         },
         cite: null,
@@ -326,7 +337,7 @@
         items: [
           {
             claim: "People will say the air rise was just weather or a global background.",
-            refute: "That fails because the Van Wyck had no fee-sized change, the South Bronx Unite mean was +0.22 µg/m³, the Deegan jumped +1.29, and downtown fell. Fraser's paper, Figure 1, is the about 22 percent inside the paid zone. Barber's thesis, Table A.8, is the 13 percent, 8.70 to 7.56. We had no other-city air control, and the within-city controls still didn't move with the Deegan."
+            refute: "That fails because the Van Wyck had no fee-sized change, the South Bronx Unite mean was +0.22 µg/m³, the Deegan jumped +1.29, and downtown fell. Fraser's paper, Figure 1, is the about 22 percent inside the paid zone. Barber's thesis, Table A.8, is the 13 percent, 8.70 to 7.56. The original test had no other-city control. An outside EPA check at Houston North Wayside is on the first page, and it fell about 0.93 while the Deegan rose."
           },
           {
             claim: "People will say cars spilled north to dodge the fee.",
